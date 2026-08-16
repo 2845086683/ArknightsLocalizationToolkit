@@ -1,0 +1,5 @@
+// Arknights EN -> zh-CN (operator UI overrides)
+Attributes=属性
+Melee=近战位
+Ranged=远程位
+Trust=信赖值

@@ -1,0 +1,2322 @@
+// Arknights EN -> zh-CN (i18n)
+// Generated offline from matched official locale data.
+#{0:D2} Training Facility={0:D2}号训练所
+'Song of the Pack' has been awakened=“高亢群歌”被惊醒了
+(Applicable to {0} {1}  Class Conversion status.)=（适用于 {0} {1}升变状态）
+(Current exploration's savings - {0})=(本次储备余额-{0})
+(Currently <color\=#d7181c>{0}</color>/{1})=（当前<color\=#d7181c>{0}</color>/{1}）
+(Currently held: <color\=#FFFFFF>{0}</color>)=（当前持有<color\=#FFFFFF> {0} </color>个）
+(Currently held: {0})=（当前持有 {0} 个）
+(Currently {0}/{1})=（当前{0}/{1}）
+(Error Code: {0})=(错误号:{0})
+(Exchangeable at Store)=（采购中心兑换）
+(Max <color\=#008fcb>{0}/{1}</color> in Reception Room)=(会客室内限制摆放<color\=#008fcb>{0}/{1}</color>件)
+(Max {0}/{1} in Reception Room)=(会客室内限制摆放{0}/{1}件)
+(You can also go back to proceed with a regular Dispatch that will not cost Life Points)=(也可返回上一步进入无需消耗目标生命值的普通派遣)
+({0} more Toil and your mind will be Fractured)=（还剩{0}负荷将混乱）
+({0} more Toil and your mind will be Obstructed)=（还剩{0}负荷将阻滞）
+({0} remaining)=（剩余{0}）
+* Please note, the information you provided classifies you as a minor. Such classification may subject this account to the following restrictions\n<color\=#710000>Minors may only log in for 1 hour between 20:00 and 21:00 on Fridays, Saturdays, Sundays and statutory holidays\nFor players aged 8-15, no more than 50 RMB may be spent in a single transaction, with a monthly limit of 200 RMB\nFor players aged 16-17, no more than 100 RMB may be spent in a single transaction, with a monthly limit of 400 RMB</color>\nRefer to official announcements for specific information regarding restrictions on play time.=*请注意，您填写的信息为未成年人，如认证成功账号将可能在未来受到以下限制\n<color\=#710000>仅在周五、周六、周日和法定节假日每日20时至21时，向未成年人提供1小时游戏服务，其余时间将无法登录游戏\n8-15岁，单次充值限额50元，每月限额200元\n16-17岁，单次充值限额100元，每月限额400元</color>\n限制措施具体内容与上线时间请以官方公告为准
+* Please note, the information you provided classifies you as a minor. Such classification may subject this account to the following restrictions\nMinors may only log in for 1 hour between 20:00 and 21:00 on Fridays, Saturdays, Sundays and statutory holidays\nFor players aged 8-15, no more than 50 RMB may be spent in a single transaction, with a monthly limit of 200 RMB\nFor players aged 16-17, no more than 100 RMB may be spent in a single transaction, with a monthly limit of 400 RMB\nRefer to official announcements for specific information regarding restrictions on play time.=*请注意，您填写的信息为未成年人，如认证成功账号将可能在未来受到以下限制\n仅在周五、周六、周日和法定节假日每日20时至21时，向未成年人提供1小时游戏服务，其余时间将无法登录游戏\n8-15岁，单次充值限额50元，每月限额200元\n16-17岁，单次充值限额100元，每月限额400元\n限制措施具体内容与上线时间请以官方公告为准
+* Your current unlock status in [{0}] has no effect on the Relics, events, etc. that may appear. This will not unlock [{0}] and will have no effect on your Relics' status. This mode will not count toward your [{1}] and your Squad unlock progress.\n* All items will become permanent and will be playable at any time.=*可能出现的收藏品、事件等，其解锁状态与您当前【{0}】中的解锁状态无关，也无法解锁【{0}】或更新收藏品的拥有状态。本模式不会对【{1}】和分队解锁进度进行计数。\n*所有条目将会常驻，可以随时游玩。
+*Assistant entrance animations will no longer be played if turned off=*关闭后登录将不会播放助理的入场动画
+*Cannot be set when dynamic art entrance animations are turned off=*动态形象入场动画相关设置关闭时不可设置
+*Cannot be set when dynamic art-related settings are turned off=*动态形象相关设置关闭时不可设置
+*Entering a new floor will reset the cost of re-tossing coins=*进入新一层时，重新投钱的价格将重置
+*Entrance animations will no longer be played if turned off (except manual playback)=*关闭后将不会播放入场动画（主动播放除外）
+*Milestone rewards open for collection on Standard and Adverse Difficulties=*里程碑奖励开放领取的难度为标准或磨难
+*Not enough to last through cycle=*库存不足以维持本周期增益
+*Obtain <color\=#2DC7B1>{0}</color> after clearing stages for the first time=*首次通关可取得<color\=#2DC7B1>{0}</color>
+*Obtain {0} after clearing stages for the first time=*首次通关可取得{0}
+*Reach Breakthrough Milestone Lv. <color\=#E4DF13>{0}</color> to collect=*突破里程碑等级达到<color\=#E4DF13>{0}级</color>领取
+*Reach Breakthrough Milestone Lv. {0} to collect=*突破里程碑等级达到{0}级领取
+*Reach Lv. {0}=*{0}等级达
+*Tap a support unit's skill or module to change the default settings.=*点击助战干员的技能和模组来更换默认配置
+*The remaining furniture from this set can be obtained from '{0}'=*该主题剩余家具可在"{0}"活动中获得
+*While Contingency Contract is active, support units earn extra Credits from helping others complete Contingency Contract missions.=*在危机合约期间，助战干员帮助他人通过危机合约将会获得额外的信用点数
+*While this main theme continues to update, {0} will change at the start of every month\n*After the updates conclude, all {0} will return, however {1} or obtained rewards can no longer be obtained.=*主题更新期间，{0}将在每月初刷新\n*主题更新结束后，所有{0}将会全数回归，但无法再获得{1}或是已获得过的奖励
+*Will be updated in real time after a Construct is placed in the {0}=*在{0}内放置设施后，实时状态将在此处更新
+*{0} EXP will be wasted=*会产生{0}EXP的浪费
+*{0} Reach Lv. <color\=#27FDDE>{1}</color> to obtain=*{0}等级达到<color\=#27FDDE>{1}</color>级获得
+*{0} Reach Lv. <color\=#faed63>{1}</color> to obtain=*{0}等级达到<color\=#faed63>{1}</color>级获得
+*{0} Reach Lv. {1} to obtain=*{0}等级达到{1}级获得
++{0} Toil Limit=负荷临界点+{0}
+-Event is not available, can be obtained during the event=-活动未开启，开启期间可参与获取
+-Event is not available, can be trimmed during the event=-活动未开启，开启期间可参与镀层
+-Unable to obtain=-已无法获得
+1 Sanity will be restored in: {0}=将在{0}后恢复1理智
+10 times per day at most=每日最多10次
+2 Days Ago=前天
+200k+=20万+
+<color\=#000000>The system has randomly chosen a side for you</color>=<color\=#000000>系统随机为您</color> 支持了这一方
+<color\=#000000>You</color> support this side=<color\=#000000>您</color> 支持了这一方
+<color\=#0075A9>{0}-{1}-{2}</color> <color\=#313131>expiring in {3} days</color>=<color\=#0075A9>{0}-{1}-{2}</color> <color\=#313131>{3}日后过期</color>
+<color\=#0075a9FF>{0}</color> Potential upgrade failed=<color\=#0075a9FF>{0}</color> 潜能提升失败
+<color\=#0075a9FF>{0}</color> Potential upgraded!=<color\=#0075a9FF>{0}</color> 潜能提升成功！
+<color\=#0098dc>[{0}]</color> Discarded=已舍弃<color\=#0098dc>[{0}]</color>
+<color\=#0098dc>Stationary Security Service</color> unlocked in Terminal - Regular Tasks=终端-常态事务中解锁了新玩法<color\=#0098dc>保全派驻</color>
+<color\=#0098DC>{0}</color> unlocked=已解锁 <color\=#0098DC>{0}</color>
+<color\=#0099cc>{0}</color> Medals selected=已选择<color\=#0099cc>{0}</color>个蚀刻章
+<color\=#0099cc>{0}</color> other Medals=及其它<color\=#0099cc>{0}</color>枚蚀刻章
+<color\=#00B0FF>Traits</color> improved=<color\=#00B0FF>特性</color>更新
+<color\=#00B0FF>Traits</color> upgraded=<color\=#00B0FF>特性</color> 更新
+<color\=#02afff>{0}</color>/{1} Assistants selected=已选择<color\=#02afff>{0}</color>/{1}个助理
+<color\=#02afff>{0}</color>/{1} Outfits selected=已选择<color\=#02afff>{0}</color>/{1}个装扮
+<color\=#0697DDFF>{0}</color>You can choose up to <color\=#0697DDFF>{1}</color>.=<color\=#0697DDFF>{0}</color>最多只能选择<color\=#0697DDFF>{1}</color>份
+<color\=#1eb090>{0}</color> free attempt(s) left=剩余<color\=#1eb090>{0}</color>次免费通行机会
+<color\=#22BBFF>Module System</color> will be unlocked after reaching Elite 2=精英阶段2后开启<color\=#22BBFF>模组系统</color>
+<color\=#22bbff>{0}</color> amount insufficient, please increase the respective faction's Prestige to obtain=<color\=#22bbff>{0}</color>数量不足，请提升相应阵营声望以获取
+<color\=#22BBFF>{0}</color> locked=<color\=#22BBFF>{0}</color>未解锁
+<color\=#22bbff>{0}</color> Unlocks after Prestige reaches <color\=#22bbff>{1}</color>=<color\=#22bbff>{0}</color>声望到达<color\=#22bbff>{1}</color>解锁
+<color\=#313131>expiring in {0} days</color>=<color\=#313131>{0}日后过期</color>
+<color\=#353535>Abandon this run?</color>\n<color\=#FF6801>Results will be tallied with the current score and ranking.</color>=<color\=#353535>确认放弃本次游玩？</color>\n<color\=#FF6801>将以当前关卡得分与评级进行结算</color>
+<color\=#4ABDFF>[Siestan Fashion Street] </color>unlocked=<color\=#4ABDFF>【汐斯塔风情街】</color>已开放
+<color\=#4abdff>Class Conversion system</color> updated. View Amiya's Operator Details for more=<color\=#4abdff>升变系统</color>已更新，请前往阿米娅干员详情界面查看
+<color\=#4ABDFF>Earn 3 stars</color> <color\=#4ABDFF>without using a support unit</color> to unlock Auto Deploy=<color\=#4ABDFF>不使用好友助战</color>且<color\=#4ABDFF>获得三星评价</color>解锁代理指挥
+<color\=#4ABDFF>{0} reaches Lv.{1}</color>\nTo unlock <color\=#4ABDFF>Drone Acceleration</color>=<color\=#4ABDFF>{0}{1}级后</color>\n解锁功能<color\=#4ABDFF>无人机协助</color>
+<color\=#4ABDFF>{0} reaches Lv.{1}</color>\nTo unlock <color\=#4ABDFF>Fast Charge</color>=<color\=#4ABDFF>{0}{1}级后</color>\n解锁<color\=#4ABDFF>急速充能</color>
+<color\=#4abdff>{0}</color> and a total of {1} track(s) are available as base music=<color\=#4abdff>{0}</color>等{1}首基建音乐已可更换使用
+<color\=#4ABDFF>{0}</color> Emergency Supply mode unlocked=<color\=#4ABDFF>{0}</color>应急补给模式已解锁
+<color\=#4ABDFF>{0}</color> has already been fulfilled.=<color\=#4ABDFF>{0}</color>已收款
+<color\=#4abdff>{0}</color> has been set as base music=<color\=#4abdff>{0}</color>已被设置为基建音乐
+<color\=#4abdff>{0}</color> has been unlocked.=<color\=#4abdff>{0}</color>已解锁
+<color\=#4abdff>{0}</color> Main Theme unlocked=<color\=#4abdff>{0}</color>主题已解锁
+<color\=#4abdff>{0}</color> Strategic Simulation unlocked=已解锁 <color\=#4abdff>{0}</color> 的沙盘推演
+<color\=#4abdff>{0}</color> {1} unlocked=<color\=#4abdff>{0}</color>{1}已解锁
+<color\=#4ABDFF>{0}</color>'s production finished=<color\=#4ABDFF>{0}</color>完成制造
+<color\=#5b5b5b>(</color><color\=#ae1711>{0}</color><color\=#5b5b5b> more Toil and your mind will be </color><color\=#ae1711>Obstructed</color><color\=#5b5b5b>)</color>=<color\=#5b5b5b>（还剩</color><color\=#ae1711>{0}</color><color\=#5b5b5b>负荷将</color><color\=#ae1711>阻滞</color><color\=#5b5b5b>）</color>
+<color\=#5b5b5b>(</color><color\=#c38e37>{0}</color><color\=#5b5b5b> more Toil and your mind will be </color><color\=#c38e37>Fractured</color><color\=#5b5b5b>)</color>=<color\=#5b5b5b>（还剩</color><color\=#c38e37>{0}</color><color\=#5b5b5b>负荷将</color><color\=#c38e37>混乱</color><color\=#5b5b5b>）</color>
+<color\=#636363>Unlock more information after obtaining Stickers</color>=<color\=#636363>获得标志物后解锁更多情报</color>
+<color\=#898989>Changing......</color>=<color\=#898989>更换中……</color>
+<color\=#898989>Received '{0}':\n{1}</color>=<color\=#898989>获得了“{0}”：\n{1}</color>
+<color\=#909090>Choose industrial material to release (available: {0})</color>=<color\=#909090>请选择即将释放的工业原料(可选择：{0})</color>
+<color\=#909090>Choose {0} EC Unit(s) (Available: {1})</color>.=<color\=#909090>请选择{0}导能单元(可选择：{1})</color>
+<color\=#909090>Choose {0} EC Unit(s) (Available: {1}, </color><color\=#FF6600>remaining units will not appear again in this operation)</color>.=<color\=#909090>请选择{0}导能单元(可选择：{1}，</color><color\=#FF6600>其余的本次作战不再出现)</color>
+<color\=#909090>Choose {0} Operator(s) (Available: {1})</color>.=<color\=#909090>请选择{0}干员(可选择：{1})</color>
+<color\=#909090>Choose {0} Operator(s) (Available: {1}, </color><color\=#FF6600>remaining units will not appear again in this operation)</color>.=<color\=#909090>请选择{0}干员(可选择：{1}，</color><color\=#FF6600>其余的本次作战不再出现)</color>
+<color\=#909090>Choose {0} Operator(s) or EC Unit(s) (Available: {1})</color>.=<color\=#909090>请选择{0}干员或导能单元(可选择：{1})</color>
+<color\=#909090>Choose {0} Operator(s) or EC Unit(s) (Available: {1}, </color><color\=#FF6600>remaining units will not appear again in this operation)</color>.=<color\=#909090>请选择{0}干员或导能单元(可选择：{1}，</color><color\=#FF6600>其余的本次作战不再出现)</color>
+<color\=#96AA75>{0} people</color>=<color\=#96AA75>{0}人</color>
+<color\=#9C8F78>Herzenfolgen</color> unlocked=<color\=#9C8F78>循心觅迹</color>已开启
+<color\=#A49B8F>Scout chances are shared between both buying and selling phases</color>=<color\=#A49B8F>进货和售卖阶段将共用打探次数</color>
+<color\=#A49B8F>When selling goods, scouting will reveal the <color\=#B82929>highest price</color> first</color>=<color\=#A49B8F>售卖时将优先打探出<color\=#B82929>定价较高者</color>的售卖价格</color>
+<color\=#ae1711>{0}</color> more Toil and your mind will be <color\=#ae1711>Obstructed</color>=还剩<color\=#ae1711>{0}</color>负荷将<color\=#ae1711>阻滞</color>
+<color\=#AFC094>{0}</color> chances daily=每日<color\=#AFC094>{0}</color>次机会
+<color\=#BC2323>{0}</color> {1} needed to upgrade {2} to LV.{3}=需要 <color\=#BC2323>{0}</color> {1} 将{2}迭代至LV.{3}
+<color\=#c01a4b>Sign in daily</color> to obtain {0}=<color\=#c01a4b>每日登录</color>领取{0}
+<color\=#C34342>The number of Agenda Proposals has reached the maximum limit {0}, any extra gained cannot be recovered.</color>=<color\=#C34342>[议程提案]次数已达到上限{0},多余的次数不再计入</color>
+<color\=#c38e37>{0}</color> more Toil and your mind will be <color\=#c38e37>Fractured</color>=还剩<color\=#c38e37>{0}</color>负荷将<color\=#c38e37>混乱</color>
+<color\=#CCCCCC>From</color> {0}=<color\=#CCCCCC>来自</color> {0}
+<color\=#d8d769>{0}</color> left=剩余<color\=#d8d769>{0}</color>
+<color\=#D8D769FF>{0}</color>d left until Strange Territory exploration=距离开始陌域探访还剩<color\=#D8D769FF>{0}</color>日
+<color\=#e1360a>{0}</color> items will be converted into <color\=#e1360a>{1}</color> {2}.=购买的<color\=#e1360a>{0}</color>个商品会转变为<color\=#e1360a>{1}</color>{2}
+<color\=#f3eb68>Elite Advancement Tokens</color> sent to warehouse=<color\=#f3eb68>多种精英进阶信物</color>已转运入库
+<color\=#f3eb68>Elite Rank {0} Training Rewards</color> automatically placed in Armory=<color\=#f3eb68>精英职称{0}培训奖励</color>已自动发放到战备
+<color\=#f3eb68>{0}</color> sent to warehouse=<color\=#f3eb68>{0}</color>已转运入库
+<color\=#F9E828>{0}</color> Contestants=<color\=#F9E828>{0}</color>位参赛者
+<color\=#FCD500>increased</color>=<color\=#FCD500>已提升</color>
+<color\=#feb301>{0}</color> must be added to your Squad.=编队中须加入<color\=#feb301>{0}</color>
+<color\=#FF6101>Giving up will immediately end the current exploration</color>\nGive up this battle?=<color\=#FF6101>放弃将直接结束本次探索</color>\n确认放弃这场战斗吗？
+<color\=#FF6101>Retreating</color> refunds {0} Sanity <color\=#FF6101>(only {1} Sanity will be consumed)</color>:=<color\=#FF6101>放弃行动</color>将会恢复{0}理智<color\=#FF6101>（仅消耗{1}理智）</color>：
+<color\=#FF6101>Retreating</color> refunds {0} Sanity <color\=#FF6101>(totally returned)</color>:=<color\=#FF6101>放弃行动</color>将会恢复{0}理智<color\=#FF6101>（全部返还）</color>：
+<color\=#FF6101>Retreating</color> refunds {0} {1} <color\=#FF6101>(totally returned)</color>:=<color\=#FF6101>放弃行动</color>将会返还{0}{1}<color\=#FF6101>（全部返还）</color>：
+<color\=#FF6101>Retreating</color> refunds {0} {2} <color\=#FF6101>(only {1} {2} will be consumed)</color>:=<color\=#FF6101>放弃行动</color>将会返还{0}{2}<color\=#FF6101>（仅消耗{1}{2}）</color>：
+<color\=#ff8948>Shop items can no longer be refreshed</color>=<color\=#ff8948>本商店已经无法刷新</color>
+<color\=#ffa000>Did not reach clear condition</color>=<color\=#ffa000>未达成通关条件</color>
+<color\=#ffa000>Reached clear condition</color>=<color\=#ffa000>已达成通关条件</color>
+<color\=#FFD800>Cannot be downloaded alone. At least one of the regular voice packs above must be selected in order to download this</color>=<color\=#FFD800>无法单独下载,至少勾选以上任意一种常规配音包时才可下载</color>
+<color\=#ffd800>{0}★</color>other character drop rate<color\=#ffd800>【{1}%】</color>{2}x rate boost.=在<color\=#ffd800>{0}★</color>剩余出率<color\=#ffd800>【{1}%】</color>中以{2}倍权值出率提升
+<color\=#FFF4E6>You can scout to find our rivals' <color\=#B82929>selling prices</color>, to help us decide our selling price</color>=<color\=#FFF4E6>打探消息可以知悉对手的<color\=#B82929>售卖价格</color>，辅助我们进行竞价决策</color>
+<color\=#FFF4E6>You can scout to learn our rivals' <color\=#B82929>purchasing strategies</color>, to help us decide our purchasing price</color>=<color\=#FFF4E6>打探消息可以知悉对手的<color\=#B82929>进货策略</color>，辅助我们进行竞价决策</color>
+<color\=#ffffff>{0}/{1} Outfits selected</color>=<color\=#ffffff>已选择{0}/{1}个装扮</color>
+<color\=#ffffff>{0}</color> move(s) left=剩<color\=#ffffff>{0}</color>步
+<color\=#FFFFFF>{0}</color> supporting this side······=共 <color\=#FFFFFF>{0}</color> 人支持此队伍······
+<color\=#FFFFFFFF>Auto Deploy {0} times</color> <color\=#898989FF>in progress</color>=<color\=#898989FF>正在进行</color>  <color\=#FFFFFFFF>{0}倍代理作战</color>
+<color\=00000080>Incomplete</color>{0}=<color\=00000080>未结算</color>{0}
+<color\=4abdff>Integrated Strategies</color> and <color\=4abdff>Reclamation Algorithm</color> unlocked=<color\=4abdff>集成战略</color>和<color\=4abdff>生息演算</color>已解锁
+<color\=4abdff>Movement</color> overview available=<color\=4abdff>乐章</color>总览功能开启
+<color\={0}>{1}</color> day(s)=<color\={0}>{1}</color>天
+<color\={0}>{1}</color> hrs=<color\={0}>{1}</color>小时
+<color\={0}>{1}</color> min=<color\={0}>{1}</color>分钟
+<size\=22><color\=black>{0}</color></size> deployed / <size\=22><color\=black>{1}</color></size> maximum=已部署 <size\=22><color\=black>{0}</color></size> / 同类可部署 <size\=22><color\=black>{1}</color></size>
+<{0}> In Progress=<{0}>进行中
+[Clairvoyance] Receive Foldartal after current floor=【远见】完成本层后将获得该密文板
+[Commissione di Fuochi d'Artificio] open=【烟花筹委会】已开放
+[Siestan Fashion Street] unlocked=【汐斯塔风情街】已开放
+[Workshop] open=【装配工坊】已开放
+[{0} 6★ rate increase!]=【{0}6★出率提升中！】
+[{0} <color\=#ffd800>6★</color> rate increase!]=【{0}<color\=#ffd800>6★</color>出率提升中！】
+[{0}] Discarded=已舍弃[{0}]
+A Fungi Mist Maze has already formed. Please wait for the mist to dissipate.=已经生成灰蕈迷境，请等待迷雾消散
+A new Limiter Unit can be upgraded=已有新遏制单元可升级
+A new Limiter Unit is available=已有新遏制单元可使用
+A predetermined squad is selected for this operation. You can still modify your squad before starting. Do you want to start directly?=本次行动已配置预选阵容，行动前仍可对编队进行调整。是否直接开始行动？
+A recap has been prepared for Doctors about to enter Stormwatch to\nquickly review the story of the 'Shatter of a Vision' Main Theme (EP04-EP08)=为进入主题曲风暴瞭望的博士准备了前情提要\n可以快速浏览 主题曲“幻灭”(EP04-EP08) 的剧情
+A recap has been prepared for Doctors about to enter Stormwatch to\nquickly review<color\=#FF5757FF> the story of the 'Shatter of a Vision' Main Theme (EP04-EP08)</color>=为进入主题曲风暴瞭望的博士准备了前情提要\n可以快速浏览 <color\=#FF5757FF>主题曲“幻灭”(EP04-EP08) 的剧情</color>
+A recruitment timer set below 9 hours will not guarantee recruitment for your chosen tags. Are you sure you want to continue?=当前招募时限小于9小时，未锁定稀有职业需求，是否确认招募?
+A special enemy will appear on round {0}; Defeat them to obtain extra rewards=第{0}回合将有特殊敌人登场，击破将获得额外奖励
+A Sudden Revelation=灵光乍现
+A Sudden Revelation! Select a Collectible=灵光乍现！请选择一个收藏品
+A: {0}=答：{0}
+Abandon exchange?=确认要放弃此次交换机会吗？
+Abandon operation?=是否放弃行动？
+Abandon Run=放弃游玩
+Abandon this run?\nResults will be tallied with the current score and ranking.=确认放弃本次游玩？\n将以当前关卡得分与评级进行结算
+Abandoning this battle will not end the investigation, and will instead <color\=#FF6101>calculate Current Investigation Experience, reduce Max Life Points</color>, and continue onto the next step\nGive up this battle?=放弃不会结束探索，将<color\=#FF6101>结算当前的调查经验，降低目标生命上限</color>并继续下一步行动\n确认放弃这场战斗吗？
+Abandoning this battle will not end the investigation, and will instead calculate Current Investigation Experience, reduce Max Life Points, and continue onto the next step\nGive up this battle?=放弃不会结束探索，将结算当前的调查经验，降低目标生命上限并继续下一步行动\n确认放弃这场战斗吗？
+Abnormal activity in Multivariate Cooperation has been detected on this account. This account has been automatically restricted by the system and will be released on {0}=检测到此账号在多维合作玩法中存在异常行为，系统自动进行限制，将于{0}解除
+Abnormal data, initialization failed.\nPlease log in again and try again.=数据异常，开始行动失败\n请重新登录并重试
+Abnormal situation detected (code:{0})=检测到异常情况(code:{0})
+Abnormal situation detected when applying for Test Project. Returning to the login interface=申请测试项目时检测到异常情况，将返回游戏登录界面
+Abnormal situation detected when attempting to Matchmake. Returning to the login interface=尝试匹配测试项目时检测到异常情况，将返回游戏登录界面
+Abnormal situation detected when entering the Test Site. Returning to the login interface=进入测试场地时检测到异常情况，将返回游戏登录界面
+Abnormal situation detected when joining Test Project=加入测试项目时检测到异常情况
+Abnormal situation detected when joining Test Project. Returning to the login interface=加入测试项目时检测到异常情况，将返回游戏登录界面
+Abnormal situation detected when searching for cooperator. Returning to the login interface=寻找合作团队时检测到异常情况，将返回游戏登录界面
+Abnormal situation detected. Battle stopped=检测到异常情况，战斗终止
+Abnormal situation detected. The battle will be stopped=检测到异常情况，将终止战斗
+Abnormal situation detected. The battle will be stopped (code:{0})=检测到异常情况，将终止战斗(code:{0})
+Abort current battle?\n<color\=#FF6101>Doing so will not end your exploration</color>=确认放弃本次战斗吗？\n<color\=#FF6101>放弃不会结束探险。探险仍将继续</color>
+Abort current battle?\nDoing so will not end your exploration=确认放弃本次战斗吗？\n放弃不会结束探险。探险仍将继续
+Abort current battle? Doing so will not end your exploration\nBattle progress will be saved (Enemies left: <color\=#FF6101>{0}</color>/{1})<color\=#FF6101> and you can still carry on</color>=确认放弃本次战斗吗？放弃决斗不会结束探索\n作战进度将保留(剩余敌人:<color\=#FF6101>{0}</color>/{1})<color\=#FF6101>等准备妥当后可以继续挑战</color>
+Abort current battle? Doing so will not end your exploration\nBattle progress will be saved (Enemies left: {0}/{1}) and you can still carry on=确认放弃本次战斗吗？放弃决斗不会结束探索\n作战进度将保留(剩余敌人:{0}/{1})等准备妥当后可以继续挑战
+Abort current trial?\n\n<color\=#FF6101>Doing so will not end your exploration</color>=确定要放弃此次秉烛考验吗？\n\n<color\=#FF6101>放弃考验不会结束探索，探索仍将继续</color>
+Abort current trial?\n\nDoing so will not end your exploration=确定要放弃此次秉烛考验吗？\n\n放弃考验不会结束探索，探索仍将继续
+About {0}=关于{0}
+Accelerate=协助制造
+Acceleration completed.=无人机完成协助
+According to the verification, you are not authorized to make purchases. Please make purchases under the supervision of your guardian!=检测到您的实名身份信息为未成年人，请您在监护人监督下进行充值操作！
+Account time is desynced from the server; Please verify account information and try again.=账号时间信息失去同步，请确认账号信息后重试
+Accounts for <color\=#ffd800>{1}%</color> of the odds when pulling a <color\=#ffd800>{0}★</color>=占<color\=#ffd800>{0}★</color>出率的<color\=#ffd800>{1}%</color>
+Accounts for {1}% of the odds when pulling a {0}★=占{0}★出率的{1}%
+Accumulate {0} {1} to claim a new operator=累计获得{0}{1}干员加入
+Accumulate {0} {1} to earn an exclusive outfit.=累计{0}{1}获得专属服装
+Accumulating strength=正在积攒力量
+Achievement '{0}' Unlocked=完成了丰碑"{0}"
+Acquiring=获取中
+Acquiring update...=正在获取更新…
+Acquisition Date=获取时间
+Acquisition of recent visitors failed\nError code: {0}=获取近期访客失败\n错误号:{0}
+Acquisition of resource update configuration failed. Please check your network and try again.=获取资源更新配置失败，请检查网络连接后确认重试
+Activate in Construction Strategies first=需要先应用营建策略
+Activate {0} to unlock=激活【{0}】后开放
+Activity Room user Trust=活动室使用者信赖值
+Add=添加好友
+Add {0}#{1} as your friend?=是否添加{0}#{1}为好友？
+Add {0}-{1} {2} Production Modules you need=请选择{0}-{1}个需要编入的{2}生产模块
+Added to active toolbox=已自动加入工具编组
+Additional Operators can be deployed when you reach phase {0} of Security Missions.=保全任务进行至第{0}阶段，您可以增调干员加入作战
+Advancing towards Deserted Town=正在前往荒废城镇
+Adverse Combat=险地作战
+Adverse Environment=磨难险地环境
+Affected Operators:=受影响的干员：
+After=行动后
+After changing the Garrison, the Post will still be Garrisoned, but the members will be changed. At the same time, the current Auto Deploy for {0}\n<color\=#FF3434>will no longer be available</color>.=更换驻守队伍后，该据点将被继续驻守，但小队成员会更换。同时，现在的{0}的\n<color\=#FF3434>代理指挥将会失效</color>。
+After changing the Garrison, the Post will still be Garrisoned, but the members will be changed. At the same time, the current Auto Deploy for {0}\nwill no longer be available.=更换驻守队伍后，该据点将被继续驻守，但小队成员会更换。同时，现在的{0}的\n代理指挥将会失效。
+After Operation=行动后
+After Promotion=精英化后
+After Rhodes Island Operators are Garrisoned, a new OpFor <color\=#FF7800>{0}</color> will appear at {1}. Defeat it to obtain even more\nCompetition Points! At the same time, the current Auto Deploy for {1} <color\=#FF3434>will no longer be available</color>.=罗德岛干员驻守后，新的假想敌 <color\=#FF7800>{0}</color> 将出现在{1}。击败他将获得更多\n赛事积分！同时，现在的{1}的<color\=#FF3434>代理指挥将会失效</color>。
+After Rhodes Island Operators are Garrisoned, a new OpFor {0} will appear at {1}. Defeat it to obtain even more\nCompetition Points! At the same time, the current Auto Deploy for {1} will no longer be available.=罗德岛干员驻守后，新的假想敌 {0} 将出现在{1}。击败他将获得更多\n赛事积分！同时，现在的{1}的代理指挥将会失效。
+After Rhodes Island Operators withdraw from the Post, the OpFor {0} will leave {1}.\nAt the same time, the current Auto Deploy for {1} <color\=#FF3434>will no longer be available</color>.\nConfirm withdrawal?=罗德岛干员撤离据点后，假想敌{0}将离开{1}。\n同时，现在的{1}的<color\=#FF3434>代理指挥将会失效</color>。\n是否确认撤离？
+After Rhodes Island Operators withdraw from the Post, the OpFor {0} will leave {1}.\nAt the same time, the current Auto Deploy for {1} will no longer be available.\nConfirm withdrawal?=罗德岛干员撤离据点后，假想敌{0}将离开{1}。\n同时，现在的{1}的代理指挥将会失效。\n是否确认撤离？
+After the exploration is complete, the score obtained during this exploration will be converted to {0}.=每次探索结束时，本次探索得分将按比例换算为{0}
+Agenda Proposals +{0}=今日[议程提案]次数+{0}
+Agree to proceed with local protocal verification?=本地协议校验,是否同意？
+All=全部
+All claimed=已全部领取
+All deployment spots=全部位
+All Stages Cleared=全部完成
+All Support Operators from non-friended players have capped Specialization levels (Level 7 max).=非好友的助战干员 技能专精等级受限（最高为7级）
+All Test Sites do not have Challenge Tests available currently. Please change the Test Project requirement=当前全部场地不提供危急测试，请重新设置您希望参与的测试项目条件
+All the local cache, including resource files and account data, will be deleted. Continue?=即将删除所有本地缓存的资源文件和账号数据，确定要继续吗？
+All types=全部类型
+Already cheered today=今日已助威
+Already claimed: {0}=已领取次数:{0}
+Already visited today=今日已光顾
+Alternate Operator Task=干员异格任务
+Always Open.=常驻开放
+Ambience Limit=氛围上限
+Amount of <color\=#22bbff>{0}</color> insufficient, please head to the Honors Showcase to obtain the corresponding rewards=<color\=#22bbff>{0}</color>数量不足，请前往荣誉陈列区获取对应奖励
+Amount of {0} insufficient, please head to the Honors Showcase to obtain the corresponding rewards={0}数量不足，请前往荣誉陈列区获取对应奖励
+Amount of {0} insufficient, unable to unlock module={0}数量不足，无法解锁模组
+Amplify Impression=加深印象
+An abnormality has been detected. The match will end automatically=战斗异常结算，将自动退赛
+An extremely rare tag is present but unselected, proceed with recruitment?=当前未选中最高稀有度职业需求，是否确认开始招募？
+Annihilation Missions=剿灭委托
+Annihilation Simulation=剿灭战模拟
+Anti-Interference Index limit reached=抗干扰指数已达上限
+Are you sure you don't want to bring any Operators into battle?=确认不携带任何干员进入战斗吗？
+Are you sure you want to abandon the battle and end the run?\n<color\=#c61515>Evacuating will cause the Algorithm or Strange Territory exploration to fail</color>.=确认放弃战斗并结束本局游戏？\n<color\=#c61515>撤离将导致演算失败或探访陌域失败</color>。
+Are you sure you want to abandon the battle and end the run?\nEvacuating will cause the Algorithm or Strange Territory exploration to fail.=确认放弃战斗并结束本局游戏？\n撤离将导致演算失败或探访陌域失败。
+Are you sure you want to ask this partner to leave?=确认要请协作者离开房间吗？
+Are you sure you want to clear the current setup?=是否清空当前的摆放？
+Are you sure you want to close the room? Partner will leave automatically=确认关闭房间吗？已加入的协作者将自动离开
+Are you sure you want to conclude Critical Contentions?=确认结束“险途”吗？
+Are you sure you want to consume {0} {1}, {2}?=是否消耗{0}个{1}，{2}
+Are you sure you want to exit?=是否确认退出游戏？
+Are you sure you want to investigate '{0}'?=确认调查[{0}]？
+Are you sure you want to leave early?\nAll remaining Candles will be <color\=#ff8948>blown out</color>=确定提前离开吗？\n将会<color\=#ff8948>清空</color>剩余的烛火
+Are you sure you want to leave early?\nAll remaining Candles will be blown out=确定提前离开吗？\n将会清空剩余的烛火
+Are you sure you want to leave the adjustment page?\nAll unsaved changes will be lost.=确认退出调整吗？\n将会丢失所有未保存的修改
+Are you sure you want to leave the group?=确认退出群组吗？
+Are you sure you want to leave the group? The group will automatically disband=确认退出群组吗？群主退出后群组将自动解散
+Are you sure you want to open <color\=#22bbff>{0}</color> {1}?=确认开启<color\=#22bbff> {0} </color>个{1}？
+Are you sure you want to open {0} {1}?=确认开启 {0} 个{1}？
+Are you sure you want to pass up this recruitment opportunity?=确认要放弃此次招募机会吗？
+Are you sure you want to pass up this reward?=确认要放弃奖励吗？
+Are you sure you want to pass up this upgrade opportunity?=确认要放弃此次进阶机会吗？
+Are you sure you want to purchase {1}\nfor Operator {0}?=是否为干员 {0}\n购买服饰  {1}  ?
+Are you sure you want to purchase<color\=#0075a9> {1} </color>\nfor Operator <color\=#0075a9>{0}</color>?=是否为干员 <color\=#0075a9>{0}</color>\n购买服饰 <color\=#0075a9> {1} </color> ?
+Are you sure you want to release?=确认放归吗？
+Are you sure you want to remove Operator from the Presets and assign them to a locked slot?=是否确认将预设队列中的干员撤下，进驻锁定位？
+Are you sure you want to remove the locked Operator?=是否确认撤下宿舍锁定位的干员？
+Are you sure you want to remove this member from the group?=确认将该成员从群组中移除吗？
+Are you sure you want to sell at this price? ({0}s not sold today can be carried over to the next day)=确定要以以上价格售卖吗？（当日没有售出的{0}将被保留至下一日）
+Are you sure you want to sell at this price? ({0}s not sold today will be destroyed)=确定要以以上价格售卖吗？（当日没有售出的{0}将被销毁）
+Are you sure you want to spend {0} {1} to travel vertically?=是否消耗{0}缕{1}，打开纵向通路
+Are you sure you want to use 1 free headhunting roll?=是否使用1次赠送寻访机会招募干员？
+Are you sure you want to use {0} to begin?=是否确认使用“{0}”开始行动？
+Are you sure you want to use {0} {1} to unlock {2}?=确认消耗 {0}个{1}解锁 {2}？
+Are you sure you want to wipe your save?=仍要删除存档？
+Are you sure you wish to continue without recruiting an Operator?=确认要在不编入干员的情况下开始行动吗？
+Are you sure you wish to purchase this outfit  {0} ?=是否为干员购买服饰  {0}  ?
+Are you sure you wish to purchase this outfit <color\=#0075a9> {0} </color>?=是否为干员购买服饰 <color\=#0075a9> {0} </color> ?
+Are you sure you wish to spend {0} {1} to reconstruct past events?=是否消耗{0}个{1}重建过往事件？
+Are you sure you'd like to use {0}?=是否确认使用{0}
+Area cannot be investigated yet=该区域暂时无法调查
+Arts=法术
+ASPD=攻击速度
+Assign Operators to collect Clues.=进驻干员可搜集线索
+Assign Trainee=进驻训练者
+Assign Trainer=进驻协助者
+Assistants at max=助理选择已达上限
+Assistants' Trust=副手信赖值
+At max=已达最大数量
+At max {0} level=已达到当前{0}等级上限
+ATK=攻击
+Authentication system HCI failed; Please try again.=认证系统人机校验失败，请重试
+Authorized Investigation Permits=授权调查许可
+Auto=自动触发
+Auto Deploy error.\nAbandon operation: <color\=#FF6101>Operation will fail and sanity will be refunded.</color>\nContinue to results: <color\=#FF6101>Results will be calculated as 2-stars, and you will receive a partial sanity refund.</color>\nContinue to results?=代理指挥出现失误\n放弃行动<color\=#FF6101>本场作战视为失败并返还理智</color>\n继续结算<color\=#FF6101>以二星评价结算本局作战并返还未进行作战的理智</color>\n是否继续结算？
+Auto Deploy error.\nAbandon operation: Operation will fail and sanity will be refunded.\nContinue to results: Results will be calculated as 2-stars, and you will receive a partial sanity refund.\nContinue to results?=代理指挥出现失误\n放弃行动本场作战视为失败并返还理智\n继续结算以二星评价结算本局作战并返还未进行作战的理智\n是否继续结算？
+Auto Deploy has made a mistake. Retreating from the operation <color\=#FF6101>refunds {0} {1}</color> while proceeding with the settlement <color\=#FF6101>grants reduced rewards</color>\nSettle with 2 stars?=代理指挥出现失误，放弃行动<color\=#FF6101>返还{0}{1}</color>，继续结算<color\=#FF6101>获得部分奖励</color>\n是否以二星评价结算？
+Auto Deploy has made a mistake. Retreating from the operation refunds {0} {1} while proceeding with the settlement grants reduced rewards\nSettle with 2 stars?=代理指挥出现失误，放弃行动返还{0}{1}，继续结算获得部分奖励\n是否以二星评价结算？
+Auto Deploy succeeded <color\=#00b0ff>{0}</color> times=已成功代理作战<color\=#00b0ff>{0}</color>次
+Auto Deploy succeeded {0} times=已成功代理作战{0}次
+Auto Deploy will be no longer available if you take over the battle.\nAre you sure you would like to take over?=接管后,本次行动内将无法回到代理指挥模式\n确认要接管作战吗？
+Auto Deploy will be unavailable for the rest of this operation if you take control.\nContinuous operation will end after this battle.\nAre you sure you want to take control?=接管后,本次行动将无法回到代理指挥模式\n本场战斗结束后行动将终止\n确认要接管作战吗？
+Auto Deploy {0} times in progress=正在进行  {0}倍代理作战
+Available in {0}d={0}天后可领取
+Available tomorrow=明日可补领
+Average=中等
+Awaiting Construction=待建造
+Awaiting Restock=等待补货
+Back=返回
+Back in {0}d={0}日后返回
+Back to Main=返回主页
+Backyard Garage unlocked!=后院工坊已开放！
+Bad connection. Acquisition of squad name failed.=连接状态不良，获取行动小队名称失败
+Bad connection. Battle record saving failed.=通讯不佳，战斗记录未能成功保存
+Bad connection. The editing record has been lost.=连接状况不良，编队记录丢失
+Balance Withdrawal limit reached=已达到当前商店的余额提取上限
+Banned for {0:D2}:{1:D2}=禁赛中 {0:D2}:{1:D2}
+Banned word detected=提交内容不可用
+Base Assistant=基建副手
+Base bonus=基础激励
+Base Skill Improved=后勤技能获得提升
+Base stat changes=基础数值变化
+Base stats=基础数值
+Basic Trial=初始试炼
+Batch setting <color\=#AE3737>{0}</color> voices will overwrite the current voice settings of some characters\nConfirm?=批量设置<color\=#AE3737>{0}</color>配音将覆盖部分角色当前的语音选择\n是否确认？
+Batch setting {0} voices will overwrite the current voice settings of some characters\nConfirm?=批量设置{0}配音将覆盖部分角色当前的语音选择\n是否确认？
+Battle ended. Leaving the area=战斗已结束，将离开当前场地
+Battle ends after {0}={0}后战斗终止
+Battle Paused=战斗已暂停
+Battle record data lost. Saving failed.=战斗记录信息缺失，保存失败
+Battle record submission failed due to disconnection from the neural network.\nError code: {0}=与神经网络断开连接，战斗记录提交失败\n错误号{0}
+Battle resources corrupted. Please clear cache or re-install the game.\nPlease contact customer service if the problem remains.=战斗资源损坏，请尝试清除缓存或重新安装游戏\n仍未解决请咨询客服
+Battle Resumed=战斗已继续
+Before=行动前
+Before Operation=行动前
+Begin combat?\n<color\=#C84227>Operator skills can be adjusted before the operation</color>=是否开始战斗?\n<color\=#C84227>行动前可对干员技能进行调整</color>
+Begin combat?\nOperator skills can be adjusted before the operation=是否开始战斗?\n行动前可对干员技能进行调整
+Begin Deployment=开始部署
+Birthday saved. You can edit it from your Profile.=生日设置成功，可在个人名片处编辑展示
+Birthday will be shown publicly=生日将进行公开显示
+Bracelet=手环
+Branch Trait changes=分支特性更新
+Browse story=前往浏览故事
+Buildable=可建造
+Buy outfit {1} for {0}\n{2}=为{0}购买时装{1}\n{2}
+Buy the Outfit {1} for {0}=为{0}购买时装{1}
+Byproduct gained: <color\=#4ABDFF>{0}</color>=获得副产物:<color\=#4ABDFF>{0}</color>
+Byproduct gained: {0}=获得副产物:{0}
+Calculation Day today=今日即是量定之日
+Campaign=主线任务
+Can be challenged multiple times; proceed to conclude and save current Zone status=可多次挑战；将以当前进度结算区块，进度将保留
+Can be switched after {0} reaches Lv.{1}={0}{1}级后可切换
+Can enter Build Mode after Headquarters level is {0}=驻扎地等级达到{0}级后可进入建造
+Can no longer Act today=今日没有决断次数了
+Can only be borrowed from friends; Proficiency and Potential are at base values for the corresponding tier=仅可向好友借用，练度和潜能均为对应阶位的基础状态
+Can only challenge {0} after performing squad setup={0}需要进行编队设置后才可挑战
+Cancel=取消
+Cancel ready status to go back=需要先取消准备,才可以返回上一步
+Candle(s) Left: {0}=当前剩余烛火{0}
+Cannot adjust yet=当前无法进行调整
+Cannot be downloaded alone. At least one of the regular voice packs above must be selected in order to download this=无法单独下载,至少勾选以上任意一种常规配音包时才可下载
+Cannot be modified at the moment=暂时无法进行修改
+Cannot be unlocked yet=暂未开放获取途径
+Cannot be used now, please use on main map=当前不可用，请返回地图中使用
+Cannot challenge while in Strange Territory=陌域中无法挑战
+Cannot change Self-Driving Cart gear in this operation=本次行动自走车装备不可更改
+Cannot currently view Enemy Archives=当前关卡无法查看敌人图鉴
+Cannot execute with 0 expected Orundum reward=预计可获得合成玉报酬为0，无法使用
+Cannot move to the specified furniture=无法移动至指定家具前
+Cannot save as one or more furniture exceeds limits=存在超量布置的家具，无法保存
+Cannot set components at this time=当前无法装配组件
+Cannot view at this time=当前无法查看
+Cannot view secret zone, complete {0} first=无法查看秘密区块，请先通关{0}
+Cannot visit friends' Base. Please build a {0} first.=尚无法访问好友基建，请建造一间{0}
+Capacity limit reached. Please collect the products first.=已达仓库容量上限，请先收取
+Captured [{0}]!=成功捕捉【{0}】！
+Carry out pursuit=进行追捕行动
+Caster=术师
+Challenge Test=危急测试
+Challenge: {0}=突袭：{0}
+Chance waits for the right time.=因缘待天时。
+Changes will be auto saved=修改将自动保存
+Changing......=更换中……
+Character limit exceeded=提交超过字数上限
+Charge Speed +{0:##.#%}=充能速度+{0:##.#%}
+Charge Speed <color\=#{1}>+{0:##.#%}</color>=充能速度<color\=#{1}>+{0:##.#%}</color>
+Checking resource integrity, no data used...=正在检查资源完整性，不消耗流量…
+Cheer for the boat you support=为你支持的赛艇呐喊助威
+Cheered {0} times=助威{0}次
+Cheering complete, now racing at full speed=助威已完成，全力加速中
+Choose a collectible from the right to exchange=从右侧选择一个收藏品来交换
+Choose a Foldartal=选择一个密文板
+Choose a Foldartal from the right to exchange=从右侧选择一个密文板来交换
+Choose a Tongbao to exchange=需选择一枚通宝与其交换
+Choose an Operator to hire:=可以在以下列表中选择聘用一名干员:
+Choose an Operator:=请在以下列表中点击选择聘用一名干员:
+Choose any Lv. {0} tag to unlock=选择Lv.{0}任意词条后解锁
+Choose at least one Assistant=请至少选择一名助理
+Choose at least one Outfit=请至少选择一个装扮
+Choose industrial material to release (available: {0})=请选择即将释放的工业原料(可选择：{0})
+Choose the side you support=请选择支持的队伍
+Choose {0} <color\=#fecd4f>{1}★ Operators</color> to rate up.=请选择{0}名概率提升的<color\=#fecd4f>{1}★干员</color>
+Choose {0} EC Unit(s) (Available: {1}).=请选择{0}导能单元(可选择：{1})
+Choose {0} EC Unit(s) (Available: {1}, remaining units will not appear again in this operation).=请选择{0}导能单元(可选择：{1}，其余的本次作战不再出现)
+Choose {0} Operator(s) (Available: {1}).=请选择{0}干员(可选择：{1})
+Choose {0} Operator(s) (Available: {1}, remaining units will not appear again in this operation).=请选择{0}干员(可选择：{1}，其余的本次作战不再出现)
+Choose {0} Operator(s) or EC Unit(s) (Available: {1}).=请选择{0}干员或导能单元(可选择：{1})
+Choose {0} Operator(s) or EC Unit(s) (Available: {1}, remaining units will not appear again in this operation).=请选择{0}干员或导能单元(可选择：{1}，其余的本次作战不再出现)
+Choose {0} {1}★ Operators to rate up.=请选择{0}名概率提升的{1}★干员
+Claim rewards to unlock the next page=领取奖励后解锁下一页
+Claimed=已领取
+Class Conversion system updated. View Amiya's Operator Details for more=升变系统已更新，请前往阿米娅干员详情界面查看
+Class extension! Enter bonus round?=拖堂了！要进入额外轮次吗？
+Cleanable=可清理
+Cleaned. Available drones +{0}.=清理完毕，可用无人机+{0}
+Clear\n{0}=通关\n{0}
+Clear <color\=#4ABDFF>{0}</color> to unlock=通关<color\=#4ABDFF>{0}</color>后解锁
+Clear a combat zone's third stage to unlock (without using Combat Buffs)=通过上一交战区域第3关卡以解锁（不使用增益）
+Clear current operation to unlock=通关当前作战后解锁
+Clear current squad?=确实清空当前编队吗？
+Clear event stages to obtain more Idle Gossips=通关活动关卡以获取更多闲言碎语
+Clear stage <color\=#22bbff>{0}</color> to unlock=通过关卡<color\=#22bbff>{0}</color>解锁
+Clear stage {0} to unlock=通过关卡{0}解锁
+Clear the previous training to unlock.=完成上一训练解锁
+Clear {0} floors without using a support unit to unlock Total Proxy Command Authority=不使用好友助战且通关{0}层后解锁全权委托功能
+Clear {0} to get rewards=通关 {0} 可领取奖励
+Clear {0} to unlock this area=通过 {0} 以解锁该区域
+Clear {0}, {1}=通关{0}，{1}
+Clear {0}{1}=通关{0}{1}
+Clear {1} with {0} stars to unlock.={0}星评价通关{1}后解锁
+Clear {1} with {0}-star rating, and unlock and upgrade Lv. {4} {3} x{2}={0}星评价通关{1}且{2}间Lv.{4}的{3}解锁并完成升级
+Cleared all cache data=成功清除了所有缓存数据
+Clearing=清理中
+Clearing a stage will also count as clearing it on all lower difficulty levels with the highest rating, and clearing the same stage with a higher rating will count as clearing it with all lower ratings=通关更高难度关卡，视为所有更低难度关卡以最高评价通关，同一关卡内以更高评价通关，视为完成所有更低评价
+Client error, operation complete.=发生客户端内部错误，相关操作已完成
+Close=关闭
+Close room=确认关闭
+Closes at: {0}=关闭时间 ：{0}
+Clue Exchange=线索交流
+Clue Search=搜集线索
+Collect <color\=#CF364B>{0}</color>{1} to obtain this.=累积收集<color\=#CF364B>{0}</color>{1}可领取
+Collect a total of {0} collectibles=总计持有{0}个收藏品
+Collect in {0} day(s).={0}日后领取
+Collect more <color\=#0098DC>{0}</color> to get gear=收集更多<color\=#0098DC>{0}</color>以获得装备
+Collect more {0} to get gear=收集更多{0}以获得装备
+Collect {0}=集齐{0}个
+Collect {0} day(s) later={0}日后可领取
+Collect {0} {1}, {2}=收集{0}个{1}，{2}
+Collect {0}{1} to obtain this.=累积收集{0}{1}可领取
+Collectable=可收获
+Collected=已领取
+Come back after the current meal effect has worn off=当前餐点效果用完后再来吧
+Commission not yet completed=该委托尚未送达
+Complete <color\=#4ABDFF>{0}</color> to unlock Integrated Strategies=通关<color\=#4ABDFF>{0}</color>后，解锁集成战略
+Complete <color\=#4ABDFF>{0}</color> to unlock rotating contracts.=通关<color\=#4ABDFF>{0}</color>后解锁轮替委托
+Complete All=全部完成
+Complete all missions to unlock new [Criteria] in [Main Test Site]=完成所有任务可在【主测试地】解锁新【指标】
+Complete all Routine Visitations to obtain 1 Authorization Warrant=完成全部例行查访获得1个授权密令
+Complete all stages in any security contract to unlock Tactical Equipment switching.=完成任意保全委托中的全部关卡后，可解锁战术装备切换功能
+Complete an Annihilation without using a support unit to unlock (including Auto Deploy)=不使用好友助战进行一次剿灭作战解锁(包括代理指挥)
+Complete an operation\nat this site (Support can be used).=在该行动地点\n完成行动（含支援）
+Complete an operation at the <color\=#ff6801>designated Site</color> in <color\=#ff6801>any mode</color> to receive an Unlock Rank corresponding to your completed Contingency Level.=<color\=#ff6801>任意模式</color>中，在<color\=#ff6801>指定行动地点</color>完成行动，根据完成的危机等级获得对应的开放等级
+Complete an operation at the designated Site in any mode to receive an Unlock Rank corresponding to your completed Contingency Level.=任意模式中，在指定行动地点完成行动，根据完成的危机等级获得对应的开放等级
+Complete an operation at this site\nwith a Contingency Level of {0}.=在该行动地点\n完成危机等级{0}
+Complete an operation with a Contingency Level of at least {0}.=以危机等级{0}或以上评价完成行动
+Complete construction of the Workshop first=加工站建造中，请先完成建造
+Complete deal to unlock customer information=成交订单后解锁客人情报
+Complete Elite Promotion Mission(s) to increase Special Operator Lv. cap=前往完成精英阶段突破任务，提升特勤干员等级上限
+Complete Investigations to unlock=完成调查后解锁内容
+Complete Missions to get=完成任务获得
+Complete more stages to unlock this charge=完成更多关卡以解锁此装药
+Complete Regular Events guide first=需要先完成常规赛教学引导
+Complete Rotating Test Site mission to unlock=完成轮换测试地任务后可解锁
+Complete special missions, collect {0}, and earn event rewards!=完成评定任务，收集{0}，领取活动奖励
+Complete the previous episode's Standard Environment to unlock=通过前一章节的标准实战环境后解锁
+Complete {0}=完成{0}
+Complete {0} to obtain=完成{0}获得
+Complete {0} to unlock Integrated Strategies=通关{0}后，解锁集成战略
+Complete {0} to unlock rotating contracts.=通关{0}后解锁轮替委托
+Completed=已完成
+Completion progress: {0}/{1}=完成进度：{0}/{1}
+Completion time: {0}=完成时间：{0}
+Conclude scored at <color\=#cbcbcb>{0}</color> to obtain a medal; at <color\=#cbcbcb>{1}</color> a trimmed medal=结算评分达<color\=#cbcbcb>{0}</color>获得蚀刻章；达<color\=#cbcbcb>{1}</color>获得镀层蚀刻章
+Conclude scored at {0} to obtain a medal; at {1} a trimmed medal=结算评分达{0}获得蚀刻章；达{1}获得镀层蚀刻章
+Condition has not been discovered=尚未见过此品相
+Confirm Purchase=确认购买
+Confirm release=确认放归
+Confirm Wipe=确认删除
+Connecting to the neural network of Rhodes Island.=正在尝试与Rhodes Island™取得神经连接
+Connection failed. Leaving room=连接失败，已离开房间
+Connection failed. Match ended=连接失败，观赛终止
+Connection failed. Match has ended\nPlease check your connection for a smooth experience=连接失败，比赛终止\n请调整网络环境获得更佳体验
+Connection Lost=失去联络
+Connection timeout. Unable to enter battle=连接超时，无法进入战斗
+Connection to neural network lost. Please log in again.=与神经网络连接丢失，请重新连接
+Conserve limit reached=留存的招募券数量已达上限
+Conserved {0}/{1}=已留存 {0}/{1}
+Consolidate Impression=固化印象
+Construct damage details=拓展设施受损
+Construction completed.=建造完成
+Constructs upgrade details=拓展设施可升级
+Consume  {0} {1} to hire operators  {2}?=确认消耗 {0} {1} 聘用干员 {2}?
+Consume <color\=#0093D5>{1}</color> {0} to upgrade to {2}?=是否消耗 <color\=#0093D5>{1}</color> 个 {0} 升级至{2}?
+Consume <color\=#{3}> {0} </color>{1} to hire operators <color\=#{3}> {2}</color>?=确认消耗<color\=#{3}> {0} </color>{1} 聘用干员<color\=#{3}> {2}</color>?
+Consume {0} to light up the bonus node=消费{0}以点亮加成节点
+Consume {1} {0} to upgrade to {2}?=是否消耗 {1} 个 {0} 升级至{2}?
+Contact Speed=联络速度
+Contacting=联络中
+Contacting...=待联络
+Contains words that are not allowed.=有非法字符
+Contains {0} <color\=white>x{1}</color>=内含赠送{0}<color\=white>x{1}</color>
+Contains {0} x{1}=内含赠送{0}x{1}
+Contention Reiteration Objective Completed=战争浪潮目标已完成
+Contingency Contract=危机合约
+Contingency Level {0}=危机等级{0}
+Continue=继续
+Continue building?=确认继续组装吗？
+Continue exploring to unlock more information=继续探索以解锁更多信息
+Continue exploring to unlock this play=继续探索以获得此剧目
+Continue where you left off to better understand the basics of this game mode=从中断处继续训练，能够更好地了解基本操作和规则
+Contract=招聘合同
+Contract cannot be completed at this time=当前无法完成委托
+Contract complete=委托完成
+Cooperator has ignored your pause request=合作方忽略了您的暂停申请
+Cooperator has left the battlefield. Deployed operators will initiate auto-battle=合作方离开战场，已部署干员将自动战斗
+Cooperator has reconnected=合作方恢复了连接
+Cooperator has refused your pause request=合作方拒绝了您的暂停申请
+Cooperator is joining the Test Project=合作团队正在加入测试项目
+Core Goal achieved, proceed to end exploration=核心目标已达成，确认后将终止本次探访
+Core Goal incomplete=核心目标未完成
+Core Goal incomplete, unable to obtain corresponding rare reward, proceed to end exploration=核心目标尚未完成，无法获得对应稀有报酬，确认后将终止本次探访
+Core Goal lost, unable to obtain corresponding rare reward, proceed to end exploration=核心目标已丢失，无法获得对应稀有报酬，确认后将终止本次探访
+Craft Qty {0}=组装数量{0}
+Create Group=创建群组
+Credit Tally=信用结算
+Critica Artistica is closed=艺术评论已关闭
+Critical Contentions Available=“险途”测试演算现已开放
+Cumulative Sign-In: {0} days=累计签到   {0} 天
+Currency=币制
+Current Anti-Interference Index is {0}=当前抗干扰指数为{0}
+Current Battle=本次作战
+Current Coin(s) counting as Flower Coins: {0}; Balance Coins: {1}; Risk Coins: {2}=当前通宝可被视为花钱的有{0}枚，衡钱有{1}枚，厉钱有{2}枚
+Current Collapse Value {0}/{1}=当前坍缩值{0}/{1}
+Current design does not match the requirements and cannot be submitted=当前设计与委托不符，无法提交
+Current Immersion Level insufficient to select more Buffs=当前拟真度不足，无法选择更多增益
+Current Life Points: {0}=当前目标生命值{0}
+Current module at maximum quantity=当前选择组件数量已达到上限，不可继续增选
+Current ping {0}=当前延迟{0}
+Current ping {0}ms=当前延时 {0}ms
+Current Selection=当前选择
+Current stage does not provide any efficiency bonuses=无法查看，该关卡不产出任何收益效率
+Current status will be saved on confirmation=确认后将保存当前状态
+Current {0}=当前{0}
+Currently held: <color\=#EDEDED>{0}</color>=当前拥有：<color\=#EDEDED>{0}</color>
+Currently held: {0}=当前拥有：{0}
+Currently in the Critical Contentions of another theme and unable to enter=正在游玩其它主题的“险途”测试演算，暂时无法进入
+Currently in Wasteland Survival Training=当前正在荒地生存训练中
+Currently organizing game resources. This will not use data. ( {0}/{1} )=正在整理游戏资源，不消耗流量（{0}/{1}）
+Currently unable to change tools=当前无法修改作战道具
+Custom Facility=自定义设施
+Custom Squad=自定义编队
+d=天
+Daily=日常任务
+Daily purchase limit reached.=今日购买次数已达上限
+Daily Supply=常规配给
+Data error. Please try again.=游戏数据异常，请确认重试
+Data expired. Please log in again.=数据文件已过期，请重新登录
+Data expired. Tap to download the new version.=数据文件已过期，点击下载新版本
+Data initialization failed, now returning to the main menu.\n{0}=数据初始化失败，将返回主界面\n{0}
+Data Iteration updated=数据已迭代
+Data synchronization complete=数据同步完成
+Data synchronization failed. Please log in again.=数据同步失败，请重新登录
+Data transmission to neural network was interrupted. Please try again.=神经网络数据传输中断，请重试
+Data update failed. Please log in again.=数据更新失败，请重新登录
+Data updated. Please restart the game.=已更新数据，点击重启游戏
+Data updated. Starting synchronization.=数据已更新，即将进行同步
+Data verification failed. Please clear your cache or reinstall the game.\nIf problems persist, please contact customer service.=数据文件校验失败，请尝试清除缓存或重新安装游戏\n仍未解决请咨询客服
+DAY {0} Special Development Fund=DAY {0} 特别发展赞助
+Decompressing files. No traffic data will be consumed...=正在解压文件，不消耗流量…
+Decoration Level=装扮等级
+DEF=防御
+Defeat a total of {0} enemies in a single operation.=单次作战达到{0}歼灭数
+Defeat as many {0} as possible=击倒尽量多的{0}
+Defeated 'Liquid Shifter' and obtained an [Assist Gear]!=击倒了“流质透镜”，获得了【制式道具】！
+Defeated [{0}]!=成功击倒【{0}】！
+Defensive Recovery=受击回复
+Delete this friend?=是否确定删除好友？
+Delete this preset formation?=是否删除该排班预设？
+Delete this UI config?=确认删除该界面配置？
+Deploying Constructs will be beneficial to your Operations=合理的设施部署有利于作战
+Deployment Cost=部署费用
+Deserted Town Seized=已经占领荒废城镇
+Design updated=外观设计已更新
+Destroy=销毁
+Did not reach <{0}>=<{0}>未抵达
+Did not reach Blue Objective Point on previous stage=前置关卡未抵达蓝色目标点
+Did not reach clear condition=未达成通关条件
+Directional EC Component can be obtained when you reach phase {0} of Security Missions=保全任务进行至第{0}阶段，您可以获得定向导能配件
+Discard=确认放弃
+Discard selection?=确认放弃选择？
+Disconnected from neural network. Please log in again.=与神经网络断开连接，请重新登录
+Disconnected from the neural network. Re-synchronization required.=与神经网络的连接丢失，需要重新同步
+Disconnected from the operation location. Please log in again.=与行动地点失去连接，请重新登录
+Disconnected to the network. Update downloading failed. Please check your network and try again.=网络连接已断开，更新下载失败，请检查网络连接后确认重试
+Dispatch will cost {0} {1}=调遣需要消耗{0}{1}
+Dispatch {0}?=确认撤出{0}吗？
+Dispatched=远征中
+Display custom Medal loadout=·展示自定义蚀刻章
+Distance {0}=距离{0}
+Do not display any Medals=·不展示任何蚀刻章
+Do not show again this round=本次对局不再提示
+Do not show again this session=本次不再提示
+Do you remember your name?=能回忆起你的名字吗？
+Do you want to consume these potions for a total of  {0}  Sanity?=是否花费以上理智合剂提升 {0} 理智？
+Do you want to consume these potions for a total of <color\=#22bbff> {0} </color> Sanity?=是否花费以上理智合剂提升<color\=#22bbff> {0} </color>理智？
+Downgrade refund: <color\=#4ABDFF>{0}</color>=房间降级返还:<color\=#4ABDFF>{0}</color>
+Downgrade refund: {0}=房间降级返还:{0}
+Downgraded=降级完成
+Downgrading will result in insufficient power. Unable to proceed=降级后电力供给不足，无法降级设施
+Download CN - Mandarin voice pack=下载中文-普通话配音包
+Download complete. Please install.=下载完毕，请前往安装
+Download EN voice pack=下载英文配音包
+Download failed, not enough storage=更新下载失败，存储空间不足
+Download JP voice pack=下载日文配音包
+Download KR voice pack=下载韩文配音包
+Download personalized voice pack=下载个性化配音包
+Download the basic resource package ({0}) to enter the game quickly.=下载基础资源（{0}）快速体验游戏
+Download the complete resource package ({0}) for the best gameplay experience.=下载完整资源（{0}）获得更优体验
+Downloading update...=正在下载更新…
+DP Cost +<color\=#ff6801>{0}</color>=增加部署费用<color\=#ff6801>{0}</color>
+DP Cost +{0}=增加部署费用{0}
+DP Cost -<color\=#00B0FF>{0}</color>=减少部署费用<color\=#00B0FF>{0}</color>
+DP Cost -{0}=减少部署费用{0}
+Dr. {0} has obtained {1} reward=Dr.{0}获得{1}奖励
+Drag here to put back=拖至此放回
+Draw x{0}=抽取{0}次
+Drones charged=急速充能完成
+Due to the host's actions, you cannot return to the group room. Returning to home page now=由于群主操作，已无法回到群组，即将返回主页
+Duplicate=重复获得
+Duplicate Operators exist. Please make sure all Operators are unique.=存在干员冲突，请确保每一名干员都是独一无二的
+During Additional Special Bounty, each phase drops {0}, with a chance to drop {1} starting from phase 3.=特别赏金追加期间每阶段挑战固定掉落{0}，从第三阶段开始每阶段挑战概率掉落{1}。
+During the event, complete stages with special drops, collect {0}, and unlock rewards through the Intelligence Process.=活动期间挑战附带限时掉落奖励的关卡，收集{0}，解锁奖励！
+During this event, {0} expires in {1}=本活动中{0}过期时间为{1}
+During this event,{0} expires in: {1}=该活动中{0}过期时间为:{1}
+Dynamic Art=动态形象
+Earn 3 stars without using a support unit to unlock Auto Deploy=不使用好友助战且获得三星评价解锁代理指挥
+Earn {0} points to obtain=获取{0}点数可领取
+Edit Birthday=生日编辑
+Effect obtained: [{0}]=获得效果【{0}】
+Eliminated. Entering next round as a spectator=已淘汰，即将观战下一轮比赛
+Elite Advancement Tokens sent to warehouse=多种精英进阶信物已转运入库
+Elite Promotion Available=可进行精英化晋升
+Elite Rank {0} Training Rewards automatically placed in Armory=精英职称{0}培训奖励已自动发放到战备
+Elite {0}=精英阶段{0}
+Emergency Dispatch completed=紧急派遣任务已完成
+Emergency Evacuation=紧急撤离
+Encounter Ahead=前方遭遇
+Encounter complete=奇遇已完成
+End class and calculate score?=要结束课程吗？将进入分数结算。
+End Drill=结束演练
+End the current security operation and end the drill?=是否确认结束当前保全作战，并结束演练？
+End the current security operation and leave the mission?=是否确认结束当前保全作战，并离开任务？
+End the current security operation?=是否确认结束当前保全作战？
+Ended your journey at <color\=#{1}>{0}</color>=驻足在 <color\=#{1}>{0}</color>
+Ended your journey at <color\=#{1}>{2}</color> on <color\=#{1}>{0}</color>=驻足在 <color\=#{1}>{0}</color>级难度的<color\=#{1}>{2}</color>
+Ended your journey at {2} on {0}=驻足在 {0}级难度的{2}
+Ends after <color\=#ffffff>{0}</color> move(s)=将于<color\=#ffffff>{0}</color>步后结束
+Ends after {0}={0}后结束
+Ends after {0} move(s)=将于{0}步后结束
+Ends at: {0}=结束时间: {0}
+Ends: {0}/{1:D2}/{2:D2} {3:D2}:{4:D2}=结束时间: {0}/{1:D2}/{2:D2} {3:D2}:{4:D2}
+Enemies have surrounded our camp=营地已被敌袭围困
+Enemies have surrounded our Forward Camp=前进营地已被敌袭围困
+Enemy Operators may react based on where allied units are=敌方干员可能会根据友方单位所在位置做出反应
+Energetic=精力充沛
+Energy drinks not provided in this cycle=本生息周未提供能量饮料
+Enter Build Mode=进入建造
+Enter or paste a seed=请输入或粘贴预设参数
+Enter Preparation Area=进入预备区
+Enter Recuperation Area=进入休整区
+Enter the corresponding redemption code in the Gift Store.=在兑换商店输入相应兑换码
+Enter UI config name (max 7 characters)=请输入界面配置名称（不超过7个汉字）
+Entered=参与
+Entering next round=即将进入下一轮比赛
+Entering preparation stage...=即将进入备赛...
+Environment Degradation=环境恶化
+Environmental Pressure=环境压力
+Epilogue=后记
+Episode <color\=#d51c47>EP {0} {1}</color> available.\nIt is recommended to read the stories chronologically for a better experience.=章节<color\=#d51c47>EP {0} {1}</color>开放，\n为获得更完整的阅读体验，推荐依照顺序阅读故事内容
+Episode complete=本章完成
+Episode EP {0} {1} available.\nIt is recommended to read the stories chronologically for a better experience.=章节EP {0} {1}开放，\n为获得更完整的阅读体验，推荐依照顺序阅读故事内容
+Episode Locked=当前篇章未解锁
+Error analyzing corresponding battle record. Unable to use Auto Deploy.=相关的战斗记录解析错误，无法代理指挥
+Error occurred during the resource completeness check. Please tap on Confirm to re-download the missing files.=检查资源完整性时发生异常，请确认重新下载缺失文件
+Error saving editing record. Unable to proceed=当前编队记录失效，无法继续行动
+Error when joining battle:=加入战斗出错：
+Event concluded. Leaving test site=活动已结束，将离开测试场地
+Event Ends at: <color\=#22bbff>{0:D4}/{1:D2}/{2:D2} {3:D2}:{4:D2}</color>=活动结束时间:<color\=#22bbff>{0:D4}/{1:D2}/{2:D2} {3:D2}:{4:D2}</color>
+Event Ends at: {0:D4}/{1:D2}/{2:D2} {3:D2}:{4:D2}=活动结束时间:{0:D4}/{1:D2}/{2:D2} {3:D2}:{4:D2}
+Event has ended=活动已结束
+Event Not Open=活动暂未开放
+Event not yet available=活动尚未解锁
+Event Recruitment tags refreshed=已刷新活动公开招募标签
+Event stages close in=关卡开放剩余
+Event Store now has=商店兑换剩余
+Exchange <color\=#0697DDFF>{0}</color> <color\=#0697DDFF>{1}</color> for these items?=是否使用 <color\=#0697DDFF>{0}</color> 个 <color\=#0697DDFF>{1}</color> 兑换以上道具？
+Exchange All=点击全部交付
+Exchange excess Kernel Tokens for certificates?=是否兑换满潜能干员多余的中坚信物？
+Exchange excess Tokens for certificates?=是否兑换满潜能干员多余的信物？
+Exchange visit limit reached today.=今日参与交流已达上限
+Exchange {0} {1} for these items?=是否使用 {0} 个 {1} 兑换以上道具？
+Exit=确认退出
+Exiting <color\=#FF6101>will not end</color> the entire round. You can return to the main page to <color\=#FF6101>end the simulation</color> or <color\=#FF6101>restart</color> this round of the battle.\nAre you sure you want to exit?=此时退出<color\=#FF6101>不会终止</color>整场对局，可以回到主页<color\=#FF6101>结束模拟</color>或<color\=#FF6101>重新开始</color>本回合战斗\n确认退出吗？
+Exiting will not end the entire round. You can return to the main page to end the simulation or restart this round of the battle.\nAre you sure you want to exit?=此时退出不会终止整场对局，可以回到主页结束模拟或重新开始本回合战斗\n确认退出吗？
+EXP & LMD=声望&龙门币奖励
+EXP & LMD Reward=声望&龙门币奖励
+EXP increased=经验提升完成
+Expired Clues=线索过期
+Expired Clues have been turned into <color\=#F47B28>{0}</color> LMD.=过期线索已转化为<color\=#F47B28>{0}</color>龙门币
+Expired Clues have been turned into {0} LMD.=过期线索已转化为{0}龙门币
+Expires in <color\=#0098dc>{0}</color>=当期月卡剩余<color\=#0098dc>{0}</color>
+Expires in {0}=当期月卡剩余{0}
+expiring in {0} days={0}日后过期
+Exploration ends today=今日行动结束后探访将终止
+Exploration has ended=探索已结束
+Explore more areas first=探索更多区域后再回到这里
+Exploring Strange Territory today=今日即将前往陌域
+Facility limit reached. Unable to build more {0}.=已达到最大设施限制，无法建造更多的{0}
+Failed resource code:=失败资源编码:
+Failed to clear cache data. Please try again.=清除缓存数据失败，请重试
+Failed to find room, please check your network and try again=搜索失败，请检查网络环境后再试
+Failed to initialize authentication system. Try again.=认证系统启动失败，请重试
+Failed to obtain game protocol version, please login again=获取游戏协议版本失败，请重新登录
+Failed to open page.=页面打开失败
+Failed to release update resource. Please check storage space.=释放更新资源失败，请确认是否有足够的存储空间
+Failed to save voice settings\nError code {0}=保存语音设置失败\n错误号{0}
+Failed to start battle!=启动战斗失败！
+Failed to submit game protocol update, please login again=提交游戏协议更新失败，请重新登录
+Failed to synchronize identity information. Please try again.\nError code: {0}=同步身份信息失败，请重试\n错误号{0}
+Failed to update client. Insufficient storage space.\nError code: {0}=更新客户端版本失败，存储空间不足\n错误号:{0}
+Failed to update resource configuration. Please confirm to download again.=更新资源配置失败，请确认重新下载
+Failed to acquire product information. Please log in again.=获取付费商品信息失败，请重新登录后重试
+Fast=快
+Fatigued=注意力涣散
+Fatigued Operators=干员疲劳
+Fight {0} time(s)=交战{0}次
+Final Objective: Deal as much damage to the Monument of Trial within the time limit=最终目标：在限定时间内对试炼丰碑造成尽可能多的伤害
+Final Proving Ground=最终试炼场所
+Finished with business here? Proceed to conclude and save current zone progress=事情都办完了吗？将以当前进度结算区块，并保存进度
+Firework demos maxed out, cannot add more=使用烟花样片数量已达上限，无法添加
+First try. Sanity will be refunded.=首次尝试，恢复本次消耗理智
+First-time Hire=首次获得
+Flying=飞行
+Focused=专注
+Foldartal does not meet requirements and cannot be used=该密文板未满足条件暂不可用
+For every {0} Mama John's Vouchers recycled, Ernesto will give 1 gift\nWhen there are still uncollected Stickers, the gift will be one of the uncollected Stickers; Otherwise, he will give a random Sticker from those which have value.=每在回收柜台回收{0}约翰老妈代金券，即可从埃内斯托那里获得1份礼物\n尚未收集全部标志物时，礼物会从当前未收藏的部分中挑选；否则他将会在有价值的标志物中选择1份
+For Operators of any rarity=当前助战位可配置任意干员
+For this event, {0} expires in {1}.=本次活动中{0}过期时间为{1}
+Forever=永鲜
+Formation {0}=队列{0}
+Free Plan=自由策略
+Frequently-used Operators will be prioritized.=将尽量调配常跟随您作战的干员
+Fri/=五
+Friend limit reached. Unable to add more friends.=好友数量达到上限，无法添加好友
+Friend limit reached. Unable to send the request.=好友数量达到上限，无法发送好友申请
+Friend Slot=提供好友位
+Friends Visited Today {0}/{1}=今日造访好友{0}/{1}
+Frozen=冻结
+Full=已饱和
+Full Zone. {0} cannot join.=待部署区域拥挤，{0}无法加入。
+Function under maintenance, please wait for further news=功能维护中，请等待后续开放
+Functional Facility=功能设施
+Gained <color\=#F47B28>{0}</color> Credit.=获得信用点<color\=#F47B28>{0}</color>
+Gained {0} Credit.=获得信用点{0}
+Game configuration acquisition timeout. Please try again.=获取游戏配置超时，请重试
+Game configuration acquisition timeout. Please try again.\nError code {0}=获取游戏配置失败，请重试\n错误号{0}
+Game data already exists on this account. Please log in again to confirm.=该账号已存在游戏角色，请重新登录以确认
+Game has yet to end, and leaving now will <color\=#FF4D2A>eliminate you from the match</color>.\nAre you sure you want to leave?=游戏尚未结束，现在退出会将<color\=#FF4D2A>视为被淘汰</color>\n是否确认退出？
+Game has yet to end, and leaving now will <color\=#FF4D2A>eliminate you from the match</color>.\nAs the room host, leaving will<color\=#FF4D2A>automatically disband the group</color> after this round ends.\nAre you sure you want to leave?=游戏尚未结束，现在退出会将<color\=#FF4D2A>视为被淘汰</color>\n由于您是房主，退出后，本局结束时<color\=#FF4D2A>房间将被自动解散</color>\n是否确认退出？
+Game has yet to end, and leaving now will <color\=#FF4D2A>eliminate you from the match</color>.\nOnce you leave, you will also <color\=#FF4D2A>leave the room</color>.\nAre you sure you want to leave?=游戏尚未结束，现在退出会将<color\=#FF4D2A>视为被淘汰</color>\n退出后，将<color\=#FF4D2A>离开房间</color>\n是否确认退出？
+Game has yet to end, and leaving now will eliminate you from the match.\nAre you sure you want to leave?=游戏尚未结束，现在退出会将视为被淘汰\n是否确认退出？
+Game has yet to end, and leaving now will eliminate you from the match.\nAs the room host, leaving willautomatically disband the group after this round ends.\nAre you sure you want to leave?=游戏尚未结束，现在退出会将视为被淘汰\n由于您是房主，退出后，本局结束时房间将被自动解散\n是否确认退出？
+Game has yet to end, and leaving now will eliminate you from the match.\nOnce you leave, you will also leave the room.\nAre you sure you want to leave?=游戏尚未结束，现在退出会将视为被淘汰\n退出后，将离开房间\n是否确认退出？
+Game has yet to end. Are you sure you want to leave?=游戏尚未结束，是否确认退出？
+Game has yet to end. As the room host, leaving will<color\=#FF4D2A>automatically disband the group</color> after this round ends.\nAre you sure you want to leave?=游戏尚未结束，由于您是房主，退出后，本局结束时<color\=#FF4D2A>房间将被自动解散</color>\n是否确认退出？
+Game has yet to end. As the room host, leaving willautomatically disband the group after this round ends.\nAre you sure you want to leave?=游戏尚未结束，由于您是房主，退出后，本局结束时房间将被自动解散\n是否确认退出？
+Game has yet to end. Once you leave, you will also <color\=#FF4D2A>leave the room</color>.\nAre you sure you want to leave?=游戏尚未结束，退出后，将<color\=#FF4D2A>离开房间</color>\n是否确认退出？
+Game has yet to end. Once you leave, you will also leave the room.\nAre you sure you want to leave?=游戏尚未结束，退出后，将离开房间\n是否确认退出？
+Game resource corrupted. Tap on Confirm to download again.=游戏资源损坏，请确认重新下载
+Garrisoned Operator is unable to participate and has been removed from the squad=驻守中的干员无法出战，已从编队中移除
+Gathered Blessings: {0}/{1}=集祝辞:  {0}/{1}
+Gelato Stop=冰淇淋机
+General Order=综合订单
+Get new Likes daily for Premiere=首演每日可获得新的点赞次数
+Get ready...=请准备......
+Get {0} to increase level=获取{0}提升等级
+Get {0} {1} to complete.=获得{0}{1}可完成
+Give up on the current exploration?\n(If you are still at [{0}], you will not enter the completion screen)=是否确认放弃本次探索？\n（若仍在【{0}】，放弃将不会进入结算）
+Give up on the current exploration?\n<color\=#FF6101>(If you are still at [{0}], you will not enter the completion screen)</color>=是否确认放弃本次探索？\n<color\=#FF6101>（若仍在【{0}】，放弃将不会进入结算）</color>
+Give up on the current simulation?\n(If you haven't selected a strategy, you will not enter the completion screen)=是否确认放弃本次模拟\n（若尚未选择策略，放弃将不会进入结算）
+Give up on the current simulation?\n<color\=#FF6101>(If you haven't selected a strategy, you will not enter the completion screen)</color>=是否确认放弃本次模拟\n<color\=#FF6101>（若尚未选择策略，放弃将不会进入结算）</color>
+Giving up will immediately end the current exploration\nGive up this battle?=放弃将直接结束本次探索\n确认放弃这场战斗吗？
+Go to <color\=#00B0FF>Settings-Game-Additional Resources</color> and download <color\=#00B0FF>Voice Resources</color>=请先前往<color\=#00B0FF>设置-游戏-追加资源</color>下载<color\=#00B0FF>语音资源</color>
+Go to Home > Store > Packs to view=请前往【主页】-【采购中心】-【组合包】进行预览
+Go to Settings-Game-Additional Resources and download Voice Resources=请先前往设置-游戏-追加资源下载语音资源
+Go to Squads=前往编队
+Gramophone=留声机
+Ground=地面
+Group Code [{0}], Dr. {1} invites you to join a {2} session. Paste the code into the input field to join.=群组编号[{0}]，Dr.{1}邀请您加入{2}，直接粘贴本消息加入群组
+Group disbanded=群组已关闭
+Group disbanded from timeout=群组已超时解散
+Group will automatically disband after {0:D2}:{1:D2}={0:D2}:{1:D2}后群组将自动关闭
+Group will be disbanded if you return to home page\nAre you sure you want to continue?=回到主页后，群组将自动解散，其余玩家也将离开群组\n确认返回主页吗？
+Guerilla Squad Badge=游击队员徽章
+Guest account cannot be upgraded. Please log in first.=当前游客用户尚不能进行升级操作，请先登录游戏
+Guest account upgrade failed. Please try again.\nError code: {0}=游客账号升级服务失败，请稍后重试\n错误号：{0}
+h=小时
+Hand is full=手牌已满
+Hardware error occurred during the clearing of cache data. Please try again=清除缓存数据时遭遇硬件异常，请重试
+Hardware error occurred during the old resource cleaning. Please tap on Confirm to try again.=清除过时资源时发生硬件异常，请确认重试
+Hardware error occurred during the resource difference calculation. Please tap on Confirm to try again.=计算资源差量时发生异常，请确认重试
+Hardware error occurred during the resource list update. Please tap on Confirm to try again.=更新资源列表时发生硬件异常，请确认重试
+Hardware error occurred during the resource update. Please tap on Confirm to try again.=更新资源时遭遇硬件异常，请确认重试
+Have yet to venture into this epoch=尚未进入过此年代
+Have yet to venture into this epoch period=尚未进入过该等级的年代
+Have yet to venture into this Hour of Sui=尚未进入该等级的岁时
+Have {0} to unlock Alternate Operator Task=拥有{0}后解锁干员异格任务
+Headquarters cannot be upgraded for the time being=驻扎地暂时无法升级
+Headquarters level not sufficient=驻扎地等级未达到要求
+Healing=治疗
+Herzenfolgen unlocked=循心觅迹已开启
+Hibiscus' Diary=芙蓉的工作日记
+Hidden Front is now open=隐秘战线现已开放
+High-Pressure Test=高压测试
+Hit Target Score for {0} rounds!=完成{0}轮目标分数挑战!
+Holographic Combat Matrix=全息作战矩阵
+How about saying something to prove your existence?=是否输入一些东西来证明自己存在过
+How lucky!\nThe recruitment ended in advance and the necessary resources have not been consumed.=太幸运了\n招募提前结束，快速招募所需的资材并未消耗
+How lucky!\nThe recruitment ended in advance. Tap on the slot to check the result.=太幸运了\n招募提前结束，请点击槽位查看结果
+How to get {0}={0}获取方式一览
+How To Obtain {0}={0}获取方式
+I ask that you allow me to be your vicar, so that I may protect Kjerag one last time=我请求，就让我作为你的代行者，最后一次保护谢拉格
+I asked countless times what made Kjerag Kjerag, what made us the way we are=我不止一次叩问，是什么让谢拉格成为谢拉格，让我们成为我们
+I want to believe that the things you left upon this land are blessings, not shackles=我愿意相信，你留在这片土地上的痕迹，是祝福，而不是束缚
+If this test fails repeatedly, please contact customer service and try again=若多次重试失败，可联系客服并尝试
+If voice settings have been saved previously, then use the saved voice settings=如果之前保存过语音设置，则使用已保存的语音设置
+If you have waited for a long period, please try Matchmaking again=如等待过久可以尝试重新匹配
+Impression Consolidated=印象固化成功
+Improve Trust to see more info.=提升信赖以查看更多信息
+In accordance with national policy, players must undergo ID verification using a valid identification card.=根据国家相关政策规定，游戏用户需要使用有效身份证件进行实名认证。
+In Guess Royale, the participation rate in all rounds is {0}=在【竞猜对决】模式中，轮次参与度均为{0}
+Inaccessible=无法进入
+Incomplete{0}=未结算{0}
+Increase buff by dispatching <color\=#faed63>{0}</color> more Operators=再任命<color\=#faed63>{0}</color>名干员后可提升增益
+Increase buff by dispatching {0} more Operators=再任命{0}名干员后可提升增益
+Increase level to Lv. {0}=继续提升等级至LV{0}
+Increase the effect of Talent <color\=#00B0FF>{0}</color>=天赋 <color\=#00B0FF>{0}</color> 效果增强
+Increase the effect of Talent {0}=天赋 {0} 效果增强
+increased=已提升
+Increases base stats.=基础属性全面提升
+Ineffective in Strange Territory=陌域中不生效
+Information has been fully recorded=信息已录入完毕
+Ingredients have been used up, please come again next time=食材已经用完了，下次再来喵。
+Initial Collectible=初始收藏品
+Initial Recruitment=初始招募
+Initialization of network security configuration failed. Please try again\nError code {0}=网络安全配置初始化失败，请重试\n错误号{0}
+Initialization of verification system failed.\nError code: {0}=认证系统初始化失败\n错误号:{0}
+Inspirer <color\=#0098dc>[{0}]</color> Used=已使用灵感<color\=#0098dc>[{0}]</color>
+Inspirer [{0}] Used=已使用灵感[{0}]
+Insufficient attempts.=剩余次数不足
+Insufficient Battle Records=提升等级所需的作战记录不足
+Insufficient capacity\nPlease collect the products first=剩余体积不足\n请先收取产品
+Insufficient Coupons to toss again=票券不足，无法重新投钱
+Insufficient currency. Unable to buy=货币不足，无法购买
+Insufficient Data Blackboxes=数据黑盒不足
+Insufficient drones.=无人机不足
+Insufficient event currency. Unable to buy.=活动货币不足，无法完成购买
+Insufficient Gold Coins=金币不足
+Insufficient keys=钥匙不足
+Insufficient LMD and Battle Records=提升等级所需的作战记录和龙门币不足
+Insufficient LMD.=龙门币不足
+Insufficient materials=材料不足
+Insufficient materials.=材料不足
+Insufficient materials. Unable to acquire orders.=商品不足，无法执行销售计划
+Insufficient materials. Unable to process.=原材料不足，无法进行加工
+Insufficient materials. Unable to produce.=原材料不足，无法执行制造计划
+Insufficient members in squad, unable to enter\nProceed to squad adjustment?=存在人数不足编队，无法进入\n是否前往调整编队？
+Insufficient Plans=构想数量不足
+Insufficient power. Unable to build.=电力不足，无法建造
+Insufficient power. Unable to upgrade.=电力不足，无法升级
+Insufficient Practice Drill Plans.=行动所需演习券不足
+Insufficient Production Modules equipped=携带生产模块数量不足
+Insufficient props=道具不足
+Insufficient Sanity. Unable to use Fast Charge.=理智不足，无法进行急速充能
+Insufficient Slug Trainers=学习诱导器数量不足
+Insufficient {0} for the operation.=行动所需的{0}不足
+Insufficient {0} to upgrade module.={0}数量不足，无法升级模组
+Insufficient {0}, unable to refresh={0}不足，无法刷新
+Insufficient {0}. Buy {0} from the Store?={0}不足，是否前往商店购买{0}？
+Insufficient {0}. Unable to buy={0}不足，无法购买
+Insufficient {0}. Unable to buy.={0}不足无法，完成购买
+Insufficient {0}; please decipher the Antique Diary to obtain rewards={0}不足，请破解古旧日记并领取奖励
+Integrated Strategies=集成战略
+Integrated Strategies and Reclamation Algorithm unlocked=集成战略和生息演算已解锁
+Interlude=幕间
+Invalid name=预设名称不合法
+Invest in the <color\=#02D3AE>Prospective Investment System</color> to unlock additional product slots=投资<color\=#02D3AE>前瞻性投资系统</color>以解锁额外商品栏位
+Invest in the Prospective Investment System to unlock additional product slots=投资前瞻性投资系统以解锁额外商品栏位
+Investigate <{0}>, and complete the following in a single run:=调查<{0}>，在一局内完成：
+Investigate area to unlock=调查区域以解锁
+Investigation available once [The Lingering of the Past] is unlocked=等[过往未尽]开放后可继续调查
+Investment reward updated=投资奖赏更新了
+Invite code copied to clipboard. Now get your friends in here!=邀请码已复制，快去邀请好友吧
+Invite sent=已发送邀请
+Keep current settings=维持原有配置
+Keep exploring to unlock=继续探索以解锁
+Keep exploring to unlock more information=继续探索以解锁更多信息
+Keep exploring to unlock this area=继续探索以解锁该区域
+Kernel Locating pool introduction=中坚甄选卡池介绍
+Lake of Consciousness=意识之湖
+Lantern Festival Treasure=元宵通宝
+Launch game without downloading voices=不下载语音进行游戏
+Learned how to craft {0}!=学会了{0}的组装方法！
+Leave battle? Operation will conclude with current progress:\n<color\=#ffa000>{0}</color> 'Hands of Prototype' Destroyed=要离开本次作战吗？会根据当前进度结算\n已拆除“原型之手”数量：<color\=#ffa000>{0}</color>
+Leave battle? Operation will conclude with current progress:\n{0} 'Hands of Prototype' Destroyed=要离开本次作战吗？会根据当前进度结算\n已拆除“原型之手”数量：{0}
+Leave Class=暂离课堂
+Leave Current Zone=离开当前区块
+Leave match=确认退赛
+Leave room=确认离开
+Leave the Base?\n(You can enable/disable this notice in 'Settings')=是否确认离开罗德岛基建？\n(可在\\"设置\\"中开启/关闭本提示)
+Leave the current battle?=确认离开本次战斗？
+Leave the Test Project?=是否确认退出测试项目？
+Leaving now will end the match=此刻退出将造成比赛终止
+Leaving now will end the match. Leaving early repeatedly will result in a suspension.=此刻退出将造成比赛终止，多次退赛会受到禁赛惩罚
+Length limit exceeded. Please enter another one.=长度过长，请重新输入
+Level=等级
+Level increased to {0}=等级提升到{0}
+Level up!=干员等级提升!
+Light Candle=秉烛
+Like=点赞评论
+Like public comments from critics to obtain their relevant item=点赞揭晓剧评作者，获得相关物件
+Limit before promotion=进阶前上限
+Limited to {0} Purchase(s)=限购{0}次
+Limiter Unit <color\=#0697DDFF>{0}</color> is available=遏制单元<color\=#0697DDFF>{0}</color>已可以使用
+Limiter Unit {0} is available=遏制单元{0}已可以使用
+Limiter Units <color\=#0697DDFF>{0}</color> are available=<color\=#0697DDFF>{0}</color>等多个遏制单元已可以使用
+Limiter Units {0} are available={0}等多个遏制单元已可以使用
+Lineup complete, no need to configure supports=阵容完整，无需选配助战
+Little Handy unlocked!=“小帮手”已解锁！
+Load the set?=确定要载入预设吗？
+Loading error. Please enter the Operator interface again.=加载错误，请重新进入角色详情页面重试
+Loading network configuration...=正在加载网络配置…
+Local resources are about to be repaired. Missions resources may be downloaded again during this process.\nAre you sure you want to continue?=即将进行本地资源修复，过程中可能会尝试重新下载缺损的资源\n确定要继续吗？
+Locked=尚未解锁
+Login error. Please try again.\nError code: {0}=登入时发生错误，请重新尝试\n错误号{0}
+Logistics cannot be adjusted in while Strange Territory=陌域中无法对后勤系统进行调整
+Logistics Operators can only be adjusted at the start of a Reclamation Cycle=仅可在每个生息周开始时调整后勤干员
+Long press to speed up story playback.=长按屏幕可加速剧情播放
+Lost connection to cooperator. Deployed operators will initiate auto-battle=合作方失去连接，已部署干员将自动战斗
+Lower Level Test Area=下层测试区
+Lower Level Test Team=下层测试团队
+Luggage=行囊
+Lv. cap increased to {0}=等级上限提升至{0}
+Lv. {0}={0}级
+Lv.{0}=等级{0}
+Lv.{0} {1} is built on the basis of this facility. Unable to downgrade it={0}级{1}依赖于该设施为前置条件，无法降级设施
+LV{0} to LV{1}=LV{0} 升至 LV{1}
+m=分钟
+Main=乐章
+Main menu updated=主界面已更新
+Main Story Stages {0} unlocked=已解锁主线关卡{0}
+Manual=手动触发
+Match ended. Entering results screen=比赛已结束，即将进入总结算
+Matchmake=匹配
+Max Hope + {0}=希望上限+{0}
+Max HP=生命上限
+Max level=等级已满
+Max level of Dormitory Decoration reached.=宿舍装扮已经达到最大等级
+Max level reached.=已经达到最大等级
+Max Life Points +{0}=最大目标生命值+{0}
+Max rank reached!=已达到最高评级!
+Max squad capacity reached=当前队伍配置人数已达上限
+Max Trust reached=信赖已满
+Max Units Blocked +<color\=#00B0FF>{0}</color>=阻挡数增加<color\=#00B0FF>{0}</color>
+Max Units Blocked +{0}=阻挡数增加{0}
+Maximum deployable quantity reached=放置数量已达上限
+Maximum number of Corral deployed, unable to add more=兽栏容量已达上限，无法继续部署
+Maximum number of Medals selected=可选蚀刻章数已达上限
+Maximum Sanity increased from <color\=#898989>{0}</color> to <color\=#22bbff>{1}</color>=理智自然恢复上限提升 <color\=#898989>{0}</color> → <color\=#22bbff>{1}</color>
+Maximum Sanity increased from {0} to {1}=理智自然恢复上限提升 {0} → {1}
+Melding products already maxed out; unable to add any more materials=炼金数量将超过上限，无法继续添加素材
+Memory has become vague. Please enter your login information again=记忆已经模糊，请重新输入登录信息
+Milestone bonus +{0}%=里程碑激励+{0}%
+Min level reached. Unable to downgrade.=等级已经达到最低，无法降级
+Mind is <color\=#fcb01d>Fractured</color>, {0}\nAre you sure you wish to enter node?=思维已<color\=#fcb01d>混乱</color>，{0}\n是否进入节点?
+Mind is Fractured, {0}\nAre you sure you wish to enter node?=思维已混乱，{0}\n是否进入节点?
+Mind Obstructed. Unable to enter node. Please organize your Thoughts first=思维已阻滞，无法进入节点。请先调整思绪
+Minimum Operators: {0}=编队至少{0}人
+Missing <color\=#FF6101>{0}</color> assets detected; Would you like to go to the hotfix interface to download missing assets?\n<color\=#FF6101>[Notice] You may download these assets from Settings at any time.</color>=检测到有未下载的<color\=#FF6101>{0}</color>资源，是否前往热更新界面进行下载？\n<color\=#FF6101>【注意】可随时前往设置页下载</color>
+Missing story resources detected.=检测到剧情资源缺失
+Missing Time-sensitive intelligence, cannot view this story.\nRelevant clues can be obtained from current events to reconstruct past events.=有效信息暂缺，情报无法进行浏览\n从现开放活动中可以取得相关线索并修复本情报
+Missing Time-sensitive intelligence, cannot view this story. Please wait for clue compilation to complete.=有效信息暂缺，情报无法进行浏览\n线索整合会陆续完成，请耐心等待
+Missing {0} assets detected; Would you like to go to the hotfix interface to download missing assets?\n[Notice] You may download these assets from Settings at any time.=检测到有未下载的{0}资源，是否前往热更新界面进行下载？\n【注意】可随时前往设置页下载
+Mission progress can accumulate across runs=任务进度可以跨局累计
+Mobile Headquarters=移动驻扎地
+Mode Not Open=玩法暂未开放
+Module <color\=#00b0ff>{0}</color> Unlockable=模组<color\=#00b0ff>{0}</color>可解锁
+Module locked=模组未解锁
+Module System will be unlocked after reaching Elite 2=精英阶段2后开启模组系统
+Module upgraded=模组已升级
+Module {0} Unlockable=模组{0}可解锁
+Modules collected=总收集模组
+Mon/=一
+Monthly Card expires in {0}=月卡剩余{0}
+Monthly card in effect=月卡已生效
+Monthly Card not active=月卡未购买
+Monthly Rewards Expanded=本月奖励已扩充
+Morale +{0}=心情 +{0}
+Morale Consumed=心情消耗率
+Morale Restored/hr=心情恢复/时
+Movement overview available=乐章总览功能开启
+Multiple completed missions to be turned in=当前有多个已完成待收集的任务
+Multiple completed missions to claim rewards for=当前有多个已完成待领取的任务
+Multiple instances of negative behavior in Multivariate Cooperation has been detected on this account. This account is temporarily restricted from Matchmaking, please try again after the countdown ends=检测到此账号在多维合作玩法中消极行为频率过高，暂时无法参与匹配，请在倒计时结束后重新尝试
+Multiple missions completed=当前有多个任务已完成
+Must reach Elite Rank {0} before skills can be upgraded=需要达到精英职称{0}后才能提升技能等级
+My beloved Kjeragandr... I ask that you hear my prayer=亲爱的耶拉冈德......我恳请你聆听我的祈祷
+Network configuration acquisition failed. Please try again\nError code {0}=获取网络配置失败，请重试\n错误号{0}
+Network configuration acquisition timeout. Please try again.=获取网络配置超时，请重试
+Network configuration analysis failed. Please try again.=网络配置解析失败，请重试
+Network configuration expired. Please synchronize again.=网络配置已过期，请确认重新同步
+Network error. Unable to connect to server=网络异常，无法连接服务器
+Network request expired. Please check your network and try again.=网络请求超时，请检查网络状态后重试
+Network request failed. Error code {0}=网络请求失败，错误号{0}
+Network request failed. Unable to acquire the specified content.=网络请求失败，未能获取到指定内容
+Neural network synchronization error. Please try again.=神经同步异常，请重试
+New area [{0}] unlocked in [Case Investigation]=【专项调查】中解锁了新的区域[{0}]
+New background <color\=#4abdff>{0}</color> can now be used=新的主页场景<color\=#4abdff>{0}</color>已可更换使用
+New background {0} can now be used=新的主页场景{0}已可更换使用
+New base music <color\=#4abdff>{0}</color> available=新的基建音乐<color\=#4abdff>{0}</color>已可更换使用
+New base music {0} available=新的基建音乐{0}已可更换使用
+New capsule machine has been unlocked=解锁了新的扭蛋机
+New character unlocked=解锁新角色
+New client version detected. Total size: <color\=#FF0000>{0}</color>. The game must first be updated before you can log in.\nWe recommend connecting to WiFi before updating the client.=检测到新的客户端版本，总大小为<color\=#FF0000>{0}</color>，需要更新后才能进行游戏\n建议使用WIFI网络更新客户端版本
+New client version detected. Total size: {0}. The game must first be updated before you can log in.\nWe recommend connecting to WiFi before updating the client.=检测到新的客户端版本，总大小为{0}，需要更新后才能进行游戏\n建议使用WIFI网络更新客户端版本
+New Clues received=获得了新的线索
+New component available!=已有新的可装配组件！
+New criteria unlocked=已解锁新的指标
+New firework demos available=有新的烟花样片可用
+New Formula=新增配方
+New Hidden Front stage unlocked=隐秘战线中解锁了新的阶段
+New node(s) unlocked=解锁了新的节点
+New product launch at <color\=#4ABDFF>[Siestan Fashion Street]</color> completed=<color\=#4ABDFF>【汐斯塔风情街】</color>中新商品的上市任务已完成
+New product launch at [Siestan Fashion Street] completed=【汐斯塔风情街】中新商品的上市任务已完成
+New product launch task incomplete; you can only do business with old products and <color\=#AF1A1A>cannot obtain a higher profit margin.</color> Are you sure you want to continue?\n<color\=#898989>You can go to 'Release Plan' to check tasks for new products</color>=暂未完成最新商品的上市任务，只能以旧商品进行营业，<color\=#AF1A1A>无法获得更高的利润空间</color>，确认直接开始营业吗？\n<color\=#898989>可以前往“上市计划”查看商品上市任务</color>
+New product launch task incomplete; you can only do business with old products and cannot obtain a higher profit margin. Are you sure you want to continue?\nYou can go to 'Release Plan' to check tasks for new products=暂未完成最新商品的上市任务，只能以旧商品进行营业，无法获得更高的利润空间，确认直接开始营业吗？\n可以前往“上市计划”查看商品上市任务
+New resource pack detected. Total size: <color\=#FF0000>{0}</color>. The game must first be updated before you can log in.\nWe recommend that you are on WiFi before downloading the resource pack.=检测到新的资源包，总大小为<color\=#FF0000>{0}</color>，需要更新后才能进行游戏\n建议使用WIFI网络下载新版本
+New resource pack detected. Total size: {0}. The game must first be updated before you can log in.\nWe recommend that you are on WiFi before downloading the resource pack.=检测到新的资源包，总大小为{0}，需要更新后才能进行游戏\n建议使用WIFI网络下载新版本
+New reward in [Technological Transformation]=【技术转化】新增了报酬
+New skill:=获得新技能：
+New stages unlock in {0}={0}后开放新关卡
+New Talent [{0}]=新增天赋【{0}】
+Next page ({0}/{1})=下一页({0}/{1})
+Next phase's rewards unlock after {0}=下阶段奖励{0}后开放
+Next Rank=下一评级
+Nickname length limit exceeded.=昵称长度超过限制
+No=放弃加速
+No '{0}'.\nAre you sure you want to use '{1}' to increase potential?=暂无【{0}】，\n确认消耗【{1}】提升潜能吗？
+No Acts left, please proceed to next day=本日已无决断次数，请前往下一日
+No Ambience from the same pieces beyond the {0}th=相同家具只有前{0}件能够获得氛围
+No available Recruitment Vouchers=暂无可用的招募券
+No Clues=暂无线索
+No Clues received=暂未收到新的线索
+No collectibles obtained=暂未获得任何收藏品
+No collectibles selected. Are you sure you want to leave?\nYou will return to the previous scene.=未选择任何收藏品，确认离开吗？\n将会返回上一个场景
+No Credit to collect=没有信用可以收取
+No Credits to collect=没有信用可收取
+No data=暂无数据
+No Environmental Pressure in effect=当前无环境压力效果
+No extra gear available to be recycled=当前没有多余的装备可供回收
+No Foldartal selected. Are you sure you want to leave?\nYou will return to the previous scene.=未选择任何密文板，确认离开吗？\n将会返回上一个场景
+No furniture yet=暂无家具
+No Kernel Tokens available to exchange=暂时没有可以兑换的中坚信物
+No Logistics Operators=暂无参与后勤人员
+No mail to claim=没有未领取邮件
+No mail to delete=没有邮件需要删除
+No more notices=暂时没有公告
+No more Scouting for today=本日的打探次数已用完
+No new Tasks available=暂无新事务
+No Operator can be upgraded with this item=暂时没有干员可以通过此物品进行等级提升
+No Operator can take the Specialization training with this item=暂时没有干员可以通过此物品进行专精训练
+No Operators are able to take the Specialization training.=暂无干员可以进行专精训练
+No Operators selected. Are you sure you want to leave?\nYou will return to the previous scene.=未选择任何干员，确认离开吗？\n将会返回上一个场景
+No Operators to select=暂无干员可供选择
+No prerequisites for this operation=此行动没有前置事件需求
+No projected rewards. Proxy card cannot be used.=预计无法获得报酬，无法使用代理卡
+No qualified Operator=没有满足条件的干员可供选择
+No remaining Authorized Investigation Permits=授权调查许可已使用完毕
+No scenario selected=未选择假设
+No special symbols are allowed in the nickname. Please use letters or digits.=昵称中不允许使用特殊符号。请使用汉字、英文字母或数字
+No Test Projects available=当前暂无测试项目
+No theme yet=暂无主题
+No Tokens to exchange=暂时没有可以兑换的信物
+No Tongbao selected. Are you sure you want to leave?\nYou will return to the previous scene.=未选择任何通宝，确认离开吗？\n将会返回上一个场景
+No traces of <{0}> found yet=暂未发现<{0}>的踪迹
+No {0}=未持有{0}
+No! Not enough!=小刻并不满意！
+Node can be refreshed {0} more times=本节点还可以刷新{0}次
+Node Refreshed=节点刷新成功
+Non-Activity Room Facility=非活动室设施
+Nonallowed comment. Please enter another one.=非法的好友备注，请重新输入
+Normal Test=普通测试
+Not Active=尚未购买
+Not available in Annihilation Simulation=剿灭战模拟无法使用该功能
+Not cleared=未通关
+Not enough energy drinks. Brew some?=能量饮料不足，是否前往制作？
+Not enough Expedition Operators selected=未选择足够的远派干员
+Not enough members in 1st squad to start operation.=首批作战小队人数未满，无法开始任务
+Not enough rewards available; unable to add any more materials=剩余可获得奖励不足，无法继续添加素材
+Not enough Special Ops Permits, continue to increase investigation progress=特殊作战许可数量不足，请继续提升调查进度
+Not enough Tech Tree points=技术点数不足
+Not enough Vibe Checks=剩余望气次数不足
+Not enough {1}. {0} required.=需要{0}张{1}，当前持有量不足。
+Not needed=不需要的
+Not Now=暂不下载
+Not obtained=尚未获得
+Not open=暂未开放
+Not visiting today=本轮不光顾
+Not yet obtained.=尚未获得此收藏品
+Nothing here to see yet=暂无可以查看的内容
+Null=无
+Number of Prayers Today: {0}=今日祈愿次数：{0}
+Objective complete=目标已完成
+Objective · Defense=目标·防守
+Obtain=获得
+Obtain <color\=#d51c47>{0}</color> more points for reward=再得<color\=#d51c47>{0}</color>分获得报酬
+Obtain by collecting {0} {1}=累积{0}{1}可获得
+Obtain by collecting {0} {1}.=累计{0}{1}即可获得
+Obtain by collecting<color\=#F77719>{0}</color>{1}=累计<color\=#F77719>{0}</color>{1}获得
+Obtain by collecting{0}{1}=累计{0}{1}获得
+Obtain more Operators to unlock=获取更多干员以解锁
+Obtain permission to search the occupied area=获得沦陷区搜索许可
+Obtain {0}=获得{0}
+Obtain {0} Medals first=-获得{0}枚前置蚀刻章
+Obtain {0} more points for reward=再得{0}分获得报酬
+Obtain {0} random Sticker(s) after this round of recycling=本次回收可额外获得{0}件随机标志物
+Obtain {0} Sticker(s) after this round of recycling=本次回收可额外获得{0}件标志物
+Obtain {0} to unlock=获得{0}可解锁
+Obtained after <color\=#0098dc>logging in for {0} days</color>=<color\=#0098dc>累计登录第{0}天</color>获得
+Obtained after logging in for {0} days=累计登录第{0}天获得
+Obtained new Sticker\n<color\=#0098DCFF>{0}</color>=获得了新标志物\n<color\=#0098DCFF>{0}</color>
+Obtained new Sticker\n{0}=获得了新标志物\n{0}
+Obtained Today=今日获取
+Obtained {0}=获得{0}数量
+Occupy {0}=占领{0}
+Offensive Recovery=攻击回复
+Onboarding date will be shown publicly=入职日将进行公开显示
+Once confirmed, all Originium slugs will be released from {0}=确定后，所有{0}内的源石虫都将放归
+Once the Critical Contentions session ends, all data during the experiment will be reset=“险途”测试演算结束后，数据将还原到开启测试前，所有在测试演算中进行的数据更改都不会被记录
+Ongoing=正在进行
+Only for Operators of rarity {0}★ and below=当前助战位仅可配置{0}★及以下干员
+Only includes CN - Mandarin voices. Voices will not be present if not yet supported (excluding single-language Collaboration Operators)=仅包含中文-普通话配音，尚未支持的则没有配音（单语种联动干员除外）
+Only includes EN voices. Voices will not be present if not yet supported (excluding single-language Collaboration Operators)=仅包含英文配音，尚未支持的则没有配音（单语种联动干员除外）
+Only includes JP voices. Voices will not be present if not yet supported (excluding single-language Collaboration Operators)=仅包含日文配音，尚未支持的则没有配音（单语种联动干员除外）
+Only includes KR voices. Voices will not be present if not yet supported (excluding single-language Collaboration Operators)=仅包含韩文配音，尚未支持的则没有配音（单语种联动干员除外）
+Only includes special voices, such as dialects. Voices will not be present if not yet supported (excluding single-language Collaboration Operators)=仅包含特殊配音，如方言。尚未支持的则没有配音（单语种联动干员除外）
+Only {0} of this Construct can be placed. Assembling extra pieces will not let you deploy any more past the limit.=该类设施最多部署{0}个，组装后超出上限的部分将无法部署
+Open a vertical path? This attempt is free=是否打开竖直通路？本次可以免费通行
+Open again on <color\=#c82a39>{1}/{2}/{0}</color>=将于<color\=#c82a39>{0}年{1}月{2}日</color>再次开放
+Open again on {1}/{2}/{0}=将于{0}年{1}月{2}日再次开放
+Open on {0}=周{0}开放
+Opens after {0}.{1}, {2:D2}:{3:D2}:{4:D2}={0}月{1}日 {2:D2}:{3:D2}:{4:D2} 后开启
+Opens at {0:D2}:{1:D2} today=本日{0:D2}:{1:D2}开启
+Operation calculated as <color\=#d33434>a single battle</color>, unused Sanity has been refunded=本场战斗已视为<color\=#d33434>单次作战</color>结算，未进行作战的理智已返还
+Operation calculated as a single battle, unused Sanity has been refunded=本场战斗已视为单次作战结算，未进行作战的理智已返还
+Operation complete=当前作战行动已完成
+Operation complete. Tap the objective to continue.=作战行动已完成，点击目标地点继续推进
+Operation Ends at:=作战结束时间
+Operation Failed=行动失败
+Operation has ended. You can review in Azione Solo=行动告一段落，可以在个人行动中再次回顾
+Operation Start=开始作战
+Operation Successful=行动成功
+Operator <color\=#22bbff>{0}</color> has reached max Potential=干员 <color\=#22bbff>{0}</color> 潜能已达到最高等级
+Operator <color\=#22bbff>{0}</color> Potential improved=干员 <color\=#22bbff>{0}</color> 潜能提升成功
+Operator <color\=#22bbff>{0}</color>'s Trust has increased=干员 <color\=#22bbff>{0}</color> 的信赖值提升了
+Operator <color\=#22bbff>{0}</color>'s Trust is already max=干员 <color\=#22bbff>{0}</color> 的信赖值已满
+Operator <color\=#824AADFF>{0}</color> will return with supplies after this floor is complete.=干员<color\=#824AADFF>{0}</color>将会在本层结束后归来，并带回一些物资。
+Operator <color\=#DDC01DFF>{0}</color> will return with supplies after this floor is complete.=干员<color\=#DDC01DFF>{0}</color>将会在本层结束后归来，并带回一些物资。
+Operator can only increase Potential using <color\=#22BBFF>{0}</color>=该干员仅能使用 <color\=#22BBFF>{0}</color> 提升潜能
+Operator can only increase Potential using {0}=该干员仅能使用 {0} 提升潜能
+Operator does not have any skills.=该干员无技能
+Operator does not yet have\n<color\=#ffb400>{0}</color> voice(s)=该干员暂无\n<color\=#ffb400>{0}</color>语音
+Operator does not yet have\n{0} voice(s)=该干员暂无\n{0}语音
+Operator is already bearing a <color\=#ff8948>lit candle</color>, and will bring back lesser rewards on return. Are you sure you wish to proceed?=该干员<color\=#ff8948>已燃烛</color>，继续派遣只能获得少量收益，确认派遣吗？
+Operator is already bearing a lit candle, and will bring back lesser rewards on return. Are you sure you wish to proceed?=该干员已燃烛，继续派遣只能获得少量收益，确认派遣吗？
+Operator is already garrisoned=相同干员驻防中
+Operator level insufficient, unable to unlock module=干员等级不足，无法解锁模组
+Operator Records=干员密录
+Operator Trust insufficient, unable to unlock module=干员信赖不足，无法解锁模组
+Operator Trust insufficient, unable to upgrade module=干员信赖不足，无法升级模组
+Operator {0} has reached max Potential=干员 {0} 潜能已达到最高等级
+Operator {0} has reached max Potential.=干员 {0} 潜能已达到最高等级
+Operator {0} Potential improved=干员 {0} 潜能提升成功
+Operator {0} will return with supplies after this floor is complete.=干员{0}将会在本层结束后归来，并带回一些物资。
+Operator {0}'s story, '{1},' has been unlocked.={0}干员的《{1}》故事已解锁
+Operator {0}'s Trust has increased=干员 {0} 的信赖值提升了
+Operator {0}'s Trust is already max=干员 {0} 的信赖值已满
+Operator's current Provision buff will be replaced=将会替换该干员当前已有的食品效果
+Operator(s)=个干员
+Operator(s) have returned from outside the Tomb of Sui=岁陵外的干员归队了
+Operators at this tier cannot=该干员阶级无法
+Operators dispatched, back in {0} days=干员已出发，预计{0}日后归来
+Operators will be chosen at random.=将在您拥有的干员中进行随机调配
+Operators with an increased chance in this orienteering:\n{0}\n\nThe pick cannot be changed once confirmed. Confirm pick?=本次定向甄选出率提升干员：\n{0}\n\n选定后本次定向甄选不可更改，确认甄选干员吗？
+Operators with CN voices will change to CN voices, overwriting the currently saved voice settings=支持中文配音的干员将使用中文配音，会覆盖已保存的语音设置
+Operators with EN voices will change to EN voices, overwriting the currently saved voice settings=支持英文配音的干员将使用英文配音，会覆盖已保存的语音设置
+Operators with increased chance in this Kernel Locating:\n6★ {0} (Available at Store), 6★ {1}\n5★ {2} (Available at Store), 5★ {3}, 5★ {4}\n\nKernel Locating cannot be changed once selected. Confirm pick?=本次中坚甄选出率提升干员：\n6★{0}（可在采购中心兑换），6★{1}\n5★{2}（可在采购中心兑换），5★{3}，5★{4}\n\n选定后本次中坚甄选不可更改，确认甄选干员吗？
+Operators with increased chance in this Kernel Locating:\n<color\=#0098DC>6★ {0} (Available at Store)</color>, 6★ {1}\n<color\=#0098DC>5★ {2} (Available at Store)</color>, 5★ {3}, 5★ {4}\n\nKernel Locating cannot be changed once selected. Confirm pick?=本次中坚甄选出率提升干员：\n<color\=#0098DC>6★{0}（可在采购中心兑换）</color>，6★{1}\n<color\=#0098DC>5★{2}（可在采购中心兑换）</color>，5★{3}，5★{4}\n\n选定后本次中坚甄选不可更改，确认甄选干员吗？
+Operators with JP voices will change to JP voices, overwriting the currently saved voice settings=支持日文配音的干员将使用日文配音，会覆盖已保存的语音设置
+Operators with KR voices will change to KR voices, overwriting the currently saved voice settings=支持韩文配音的干员将使用韩文配音，会覆盖已保存的语音设置
+Operators with Modules=拥有模组干员
+Order creation service failed. Please try again later.\nError code: {0}=创建订单服务失败，请稍后重试。\n错误号{0}
+Order creation service failed. Please try again.\nError code: {0}=创建订单服务失败，请重试\n错误号:{0}
+Order creation service timed out. Please check your network to try again.=创建订单服务超时，请检查网络状况后重试
+Order Limit=订单上限
+Order limit reached. Please collect the orders first.=已达销售额上限，请先收取
+Order Quality=订单品质
+Order status acquisition failed. Please log in again to confirm the result.\nPlease contact customer service if you need any help. Error code: {0}=获取订单状态失败，请重新登录确认结果\n如有问题请联系客服，错误号:{0}
+Orders Acquired=订单交付
+Orientation Trial=定向试炼
+Other=其他
+Out of exchange attempts.=兑换次数耗尽
+Outfit limit reached=选择装扮数量超过上限
+Over=已结束
+Overflowing Distraction=杂念横生
+Pair a Source and Layout=拼合本因和布局
+Paradox Simulation=悖论模拟
+Part 1=上
+Part 1.5=中
+Part 2=下
+Participate in stage <color\=#22bbff>{0}</color> to unlock=参与关卡<color\=#22bbff>{0}</color>解锁
+Participate in stage {0} to unlock=参与关卡{0}解锁
+Participate in the event and collect a certain number of items\nto claim rewards.=参与活动收集积分\n累计获得一定积分可领取奖励
+Partner has abandoned match=协作者已放弃比赛
+Partner has ignored request to pause=协作者忽略暂停申请
+Partner has left, ending match=协作者已退出，比赛终止
+Partner has left, ending match\nPartner will be penalized=协作者已退出，比赛终止\n退赛的协作者将受到系统惩罚
+Partner has refused to pause=协作者拒绝暂停申请
+Partner has temporarily left. Protect their Objective Point for 30 seconds as you wait for their return=协作者暂时退场，请坚守协作者的目标点30秒，等待协作者回归
+Partner ready=协作者已准备
+Partner reconnected=协作者恢复连接
+Partner reconnecting=协作者正在重新连接
+Partner requests to pause=协作者发送暂停申请
+Partner timed out=协作者离线过久
+Partner's connection unstable, currently reconnecting\nProceed to preparation?=当前协作者网络不稳定，正在重连\n确认进入备赛？
+Passive=被动
+Pausing neurotransmitter release=暂停释放神经递质
+Payment result acquisition timeout. Please log in again to confirm the result. Please contact customer service if you need any help.=获取支付结果超时，请重新登录确认结果，如有问题请联系客服。
+Payment system service failed\nError code: {0}=支付系统服务失败\n错误号:{0}
+Pc=份
+Perform Area Case Investigation to activate=进行区域专项调查以启用
+Permanent Annihilation Missions=长期剿灭委托
+Phase {0}/{1}=阶段{0}/{1}
+Physical=物理
+Pick 1st Squad=首批作战小队选任
+Pinboard=信息板
+Placed=已放置
+Placement completed=已完成布置
+Plan saved=方案保存成功
+Plausible Comprehension=若有所悟
+Plausible Comprehension... Select a Collectible=若有所悟......请选择一个收藏品
+Play Annihilation once without using a support unit to unlock Auto Deploy.=不使用好友助战且进行一次剿灭作战解锁代理指挥
+Play {0} {1}\nto raise this Operator=参与{0} {1}\n继续养成干员
+Player did not leave any information=该玩家没有留下任何信息
+Please build {0}=请建造{0}
+Please build {0} first.=请先建造{0}
+Please choose a battlefield and begin your combat simulation=请选择一处交战地点开始模拟作战
+Please choose a default style for profile <color\=#0085bf><{0}></color>=请选择名片<color\=#0085bf><{0}></color>的默认样式
+Please choose a default style for profile <{0}>=请选择名片<{0}>的默认样式
+Please collect the rewards from the previous stages before continuing.=请先领取前置地图奖励
+Please complete the squad setup for at least one Test Site=请先进行至少一个测试场地的编队设置
+Please download the additional dynamic art assets first=请先下载动态形象追加资源
+Please enable dynamic art-related settings=请开启动态形象相关设置
+Please enter a Room ID=未输入房间编号
+Please handle the Emergency Situation at Headquarters first=驻扎地遭遇紧急事态，请先前往处理
+Please handle the Emergency Situation at the Campervan first=旷野房车遭遇紧急事态，请先前往处理
+Please increase {0} level to unlock the next Specialization Level=请提升{0}等级以解锁下一级专精
+Please note, accounts classified as minors may be subject to these following restrictions in the future\n<color\=#ffd800>Minors may only log in for 1 hour between 20:00 and 21:00 on Fridays, Saturdays, Sundays and statutory holidays\nFor players aged 8-15, no more than 50 RMB may be spent in a single transaction, with a monthly limit of 200 RMB\nFor players aged 16-17, no more than 100 RMB may be spent in a single transaction, with a monthly limit of 400 RMB</color>\nRefer to official announcements for specific information regarding restrictions on play time.=请注意，实名信息为未成年人账号将可能在未来受到以下限制\n<color\=#ffd800>仅在周五、周六、周日和法定节假日每日20时至21时，向未成年人提供1小时游戏服务，其余时间将无法登录游戏\n8-15岁，单次充值限额50元，每月限额200元\n16-17岁，单次充值限额100元，每月限额400元</color>\n具体限制内容与上线时间请以官方公告为准
+Please note, accounts classified as minors may be subject to these following restrictions in the future\nMinors may only log in for 1 hour between 20:00 and 21:00 on Fridays, Saturdays, Sundays and statutory holidays\nFor players aged 8-15, no more than 50 RMB may be spent in a single transaction, with a monthly limit of 200 RMB\nFor players aged 16-17, no more than 100 RMB may be spent in a single transaction, with a monthly limit of 400 RMB\nRefer to official announcements for specific information regarding restrictions on play time.=请注意，实名信息为未成年人账号将可能在未来受到以下限制\n仅在周五、周六、周日和法定节假日每日20时至21时，向未成年人提供1小时游戏服务，其余时间将无法登录游戏\n8-15岁，单次充值限额50元，每月限额200元\n16-17岁，单次充值限额100元，每月限额400元\n具体限制内容与上线时间请以官方公告为准
+Please select a customization project.=需要选择一个定制项目
+Please select an existing piece of equipment to replace with\n(selected equipment will be destroyed)=请选择一个已有装备以完成更换\n（被选择的装备将被销毁）
+Please select at least one voice pack=请至少选择一种配音包
+Please select exploration difficulty=请选择探索难度
+Please select node(s)=请选择节点
+Please select one of the {0}★ Operators listed below to Promote to Elite 2 Lv. 1=请在以下列表中点击选择一名{0}★干员晋升至 精英阶段2，等级1
+Please select one of the {0}★ Operators listed below to Promote to Elite 2 Lv. 1 (Excluding the Special Operator)=请在以下列表中点击选择一名{0}★干员晋升至 精英阶段2，等级1（不包含特勤干员）
+Please select the desired Test Difficulty=请选择您希望使用的测试难度
+Please select the desired Test Layer=请选择您希望负责的测试层
+Please select the desired Test Site=请选择您希望申请的测试场地
+Please set a formula first=请先制定制造计划
+Please set the desired Test Project requirement=请设置您希望参与的测试项目条件
+Please set the number you would like to buy.=请指定要购买的家具数量
+Please think carefully. You will surely be able to remember it.=请再仔细想想，你一定能回忆起来
+Position: {0}/{1}=位置：{0}/{1}
+Post=据点
+Power Consumed=消耗电力
+Preceding nodes not lit yet=前置节点未被点亮
+Predicted Result=解读预测
+Predicted Result: <color\=#987cbf>Uncommon Reward</color>=解读预测: <color\=#987cbf>高级奖励</color>
+Predicted Result: <color\=#bababa>Regular Reward</color>=解读预测: <color\=#bababa>寻常奖励</color>
+Predicted Result: <color\=#c08301>Rare Reward</color>=解读预测: <color\=#c08301>稀有奖励</color>
+Predicted Result: Rare Reward=解读预测: 稀有奖励
+Predicted Result: Regular Reward=解读预测: 寻常奖励
+Predicted Result: Uncommon Reward=解读预测: 高级奖励
+Preferred Plan=优选策略
+Preparing transformation...=准备转化中…
+Prerequisite node not yet completed=需完成前置节点
+Prerequisite: '{0}' completed=已完成前置事件“{0}”
+Prerequisite: '{0}' incomplete=未完成前置事件“{0}”
+Presets ({0}/{1})=预设队列 ({0}/{1})
+Prestige has reached {0}=声望到达{0}
+Prestige with {0} has increased! {1} -> {2}={0}的声望增加了！{1}->{2}
+Prestige with {0} has reached the maximum={0}的声望已达到最大值
+Preview unavailable=暂不支持预览
+Previous criteria not unlocked=未点亮前置指标
+Prized=珍贵
+Probability: <color\=#ffd800>{0}%</color>=出率<color\=#ffd800>{0}%</color>
+Probability: {0}%=出率{0}%
+Proceed to <color\=#bc2020>Critica Artistica</color> to get this item=前往<color\=#bc2020>艺术评论</color>可获取此物件
+Proceed to brew energy drinks?=确认后将前往制作饮料
+Proceed to Critica Artistica to get this item=前往艺术评论可获取此物件
+Proceed to hotfix interface to download=前往热更界面下载
+Proceed to {0}=前往{0}
+Processing third-party payment. Unable to acquire the payment result. Please restart the game to confirm the result. If you need any help, please contact customer service.=第三方支付处理中，未能获取到支付结果，请重启游戏后以实际结果为准，如有问题请联系客服。
+Production almost complete. Request disabled.=制造即将完成，无人机协助请求失效
+Production Facility=产出设施
+Productivity=生产力
+Proficiency <color\=#00b0ff>{0}</color> Unlockable=精通<color\=#00b0ff>{0}</color>可解锁
+Proficiency {0} Unlockable=精通{0}可解锁
+Profile avatar updated=名片形象已更新
+Progress will not be saved; Are you sure you want to exit?=当前进度不会被保存，确认退出吗？
+Progress {0}%=训练进度 {0}%
+Project cancelled after {0}={0}后项目取消
+Project Number copied=工程编号复制成功
+Project Number format error. Please check the input information=工程编号格式有误，请检查输入信息
+Promote and Light=进阶并秉烛
+Promote the Operator to continue to increase their level.=精英化晋升干员以继续提高干员等级
+Promote to Elite {0}=晋升至精英阶段{0}
+Promote to Elite {0} to see more info.=提升至精英阶段{0}以查看更多信息
+Protect Ursus Civilians until they enter the Objective Point=保护乌萨斯平民进入目标点
+Protected from elimination once within the next <color\=#F2D22A>{0}</color> rounds=<color\=#F2D22A>{0}</color>轮内可免受一次淘汰惩罚
+Protected from elimination once within the next {0} rounds={0}轮内可免受一次淘汰惩罚
+Purchase and exchange=购买并交换
+Purchase succeeded, but the acquisition of the result failed. Please log in again to confirm it.\nPlease contact customer service if you need any help. Error code: {0}=购买成功，但获取购买结果失败，请重新登录后确认。\n如有问题请联系客服，错误号{0}
+Purchased=购买成功
+Push the Anti-Witchcraft Repositionable Bomb=推进反巫术变位炸弹
+Q: {0}=问：{0}
+Raise this operator's Promotion status to unlock this skill.=提升角色精英化等级以解锁该技能
+Raising the equipment's power to explore a new path will decrease the device's Anti-Interference Index. Are you sure you want to continue?=提高设备功率探索新路径会使设备抗干扰指数降低。确认要使用吗?
+Random Event=随机项目
+Random Events locked=随机项目未开放
+Random Faction=随机阵营
+Random Material=随机材料
+Randomly obtain=随机获得
+Range Up=攻击范围扩大
+Reach Elite 2 for Skill Specialization.=干员需要达到精英阶段2才可以专精技能
+Reach Elite {0} Level {1}.=提升至精英阶段{0}等级{1}
+Reach Lv. {0}=等级达到   {0} 级
+Reach Lv.{0} to buy=Lv.{0}解锁购买
+Reach {0}=到达{0}
+Reach {0} rank in the previous stage to unlock=前置关卡达到{0}评级后解锁
+Reach {0} to unlock=推进至{0}后解锁
+Reach {0} to unlock.=达到{0}解锁
+Reach {0} Trust.=提升信赖至{0}
+Reached clear condition=已达成通关条件
+Reached Likes limit.\nCome back tomorrow.=当前点赞次数已用完，\n明天再来吧
+Reached the maximum number of Markings. Please try again later=当前标记数量已达到上限，请稍后再试
+Ready=准备就绪
+Received '{0}':\n{1}=获得了“{0}”：\n{1}
+Received {0}=获得{0}
+Recipe selected {0}=当前选中配方{0}
+Recorded in the Communication Recorder ({0}/{1})=通讯记录已收录（{0}/{1}）
+Records Restored=记录已全额修复
+Recruit and Light=招募并秉烛
+Recruit Slot=提供招募位
+Recruiting. Unable to dismantle=正在招募中，无法拆除
+Recruitment can be completed immediately for {0} LMD.\nYou don't have enough LMD to expedite the process.=立即完成招募需要消耗 {0}龙门币\n当前龙门币不足，无法加速
+Recruitment can be completely immediately for <color\=#F9C464FF>{0}</color> LMD.\nExpedite the recruitment?=立即完成招募需要消耗 <color\=#F9C464FF>{0}</color>龙门币\n是否确认加速招募？
+Recruitment can be completely immediately for {0} LMD.\nExpedite the recruitment?=立即完成招募需要消耗 {0}龙门币\n是否确认加速招募？
+Recruitment stopped.=已停止招募
+Redeem the following outfit: {0}=兑换时装{0}
+Redeemed=转换成功
+Redeploy=再部署
+Reduce leader enemy HP by as much as possible=尽量削减领袖敌人的生命值
+Refresh=刷新
+Refresh Attempts: <color\=white>{0}</color>=剩余更新次数：<color\=white>{0}</color>
+Refresh Attempts: {0}=剩余更新次数：{0}
+Refresh node? No Plans are required for this refresh=是否要刷新本节点？本次刷新不需要消耗构想
+Refresh shop items?\nThis will refresh <color\=#01856e>all item slots</color>=是否刷新商品？\n将会刷新商店内<color\=#01856e>所有栏位</color>
+Refresh shop items?\nThis will refresh <color\=#01856e>all item slots</color>, every shop can only be refreshed <color\=#01856e>once</color>=是否刷新商品？\n将会刷新商店内<color\=#01856e>所有栏位</color>，每个商店只有<color\=#01856e>1次</color>刷新机会
+Refresh shop items?\nThis will refresh all item slots=是否刷新商品？\n将会刷新商店内所有栏位
+Refresh shop items?\nThis will refresh all item slots, every shop can only be refreshed once=是否刷新商品？\n将会刷新商店内所有栏位，每个商店只有1次刷新机会
+Refresh shop items? This refresh will not cost any {0}=是否刷新商品？本次不需要消耗{0}
+Refresh the selected contract?\nThe progress for the current contract will be reset and a random contract of the same <color\=#{0}>{1}Type</color> will be selected\nRemaining refreshes this month: {2}=确认刷新该委托？\n当前委托进度将会清空，并会从与其同类的<color\=#{0}>{1}类委托</color>中进行重新随机\n本月剩余刷新次数：{2}
+Refresh the selected contract?\nThe progress for the current contract will be reset and a random contract of the same {1}Type will be selected\nRemaining refreshes this month: {2}=确认刷新该委托？\n当前委托进度将会清空，并会从与其同类的{1}类委托中进行重新随机\n本月剩余刷新次数：{2}
+Refreshes in {0}={0}后刷新
+Regional Contracts=地区委托
+Registration opens in {0}={0}后开放报名
+Release all Originium slugs in {0}?=确定将{0}内源石虫全部放归？
+Release to put back=松手放回工艺
+Releasing neurotransmitter=正在释放神经递质
+Releasing neurotransmitter ({0}/{1})=正在释放神经递质（{0}/{1}）
+Remaining Time(s): {0}=剩余{0}次
+Remote data expired.=远程数据已经失效
+Remove all furniture?=确定要撤掉所有家具？
+Remove all the Operators in the Squad?=是否确认移除当前编队中的所有干员？
+Remove the cooperator from the Test Project?=是否确认将合作团队从测试项目中移除？
+Repair all Constructs?=确认维修所有设施吗？
+Repeated visits don't grant Credit.=重复访问无法获得信用
+Require Rank {0}\nto unlock=开放等级{0}\n解锁
+Required Melding value hasn't been met; please insert more Melding materials=所需炼金值不足，请放入炼金素材
+Requirements not met. Unable to build.=建造的前提条件未满足，无法建造
+Requirements not met. Unable to start the operation.=行动条件不满足，无法开始行动
+Requirements not met. Unable to upgrade.=升级的前提条件未满足，无法升级
+Requires assignment=需要调配的
+RES=法术抗性
+Reselect Assistant ({0})=重新选择助理（{0}）
+Reset settings?=是否确认重置设置？
+Reset Successfully=重置成功
+Resets after {0}={0}后刷新
+Resource Consumed=招募消耗
+Resource Gained=获得物资
+Resource loading error. Please try again.\nError code: {0}=资源载入异常，请重试\n错误号:{0}
+Resource Today=今日配给
+Resource update configuration service failed. Unable to log in for now. Please pay attention to relevant notices.=资源更新配置服务失效，暂时无法登录，请留意相关通知
+Resource update system exception, please restart\nError code:{0}=资源更新系统遭遇未知异常，请重新启动游戏\n错误号:{0}
+Resources Insufficient=所需资源不足
+Rest Ops=干员休整
+Resting. You may deploy on the battlefield.=休整中，可进行战场部署
+Restock after {0}={0}后补货
+Restore with {0}=使用{0}恢复
+Restoring local resource information. This will not use data. ( {0}/{1} )=正在恢复本地资源信息，不消耗流量（{0}/{1}）
+Retreat=放弃行动
+Retreating refunds {0} Sanity (only {1} Sanity will be consumed):=放弃行动将会恢复{0}理智（仅消耗{1}理智）：
+Retreating refunds {0} Sanity (totally returned):=放弃行动将会恢复{0}理智（全部返还）：
+Retreating refunds {0} {1} (totally returned):=放弃行动将会返还{0}{1}（全部返还）：
+Retreating refunds {0} {2} (only {1} {2} will be consumed):=放弃行动将会返还{0}{2}（仅消耗{1}{2}）：
+Return=返回
+Return to <color\=#d8d769>{0}{1}</color>?=确认回到 <color\=#d8d769>{0}{1}</color> 吗？
+Return to the friend interface?=是否确定返回好友列表？
+Return to your Base?=是否确定返回自己的基建？
+Return to {0}{1}?=确认回到 {0}{1} 吗？
+Returning to the login interface. Continue?=即将返回登录界面，是否继续？
+Revoke Authority=结束委托
+Reward <color\=#FF6800>{0}</color>=报酬 <color\=#FF6800>{0}</color>
+Reward {0}=报酬 {0}
+Rewards=报酬
+Rewards added after {0} next month=次月{0}后扩充报酬
+Rewards Expansion in {0} days={0}天后奖励扩充
+Rewards must be collected daily and will not stack if uncollected=每日奖励需当日领取，逾期不累计
+Room closed=房间已被关闭
+Room timed out and closed=房间已超时关闭
+Rooms: {0}=房间数量：{0}
+Rooms: {0}/{1}=房间{0}/{1}
+Rotate=队列轮换
+Rotating Operation Site=轮替行动地点
+Rotating Test Site=轮换测试地
+Rotating Test Site Criteria not unlocked=轮换测试地指标未开放
+Round {0}=第{0}轮
+Round {0} Materials=第{0}轮加工原料
+Sales Limit=销售额上限
+Sales Speed=销售速度
+Sami has no Foldartal information to reveal=萨米没有揭示此密文的内容
+Sanity exchanged with Potions cannot exceed {0}.=使用药剂兑换理智无法超过{0}
+Sanity exchanged with Potions or Originium cannot exceed {0}.=使用药剂或源石兑换理智无法超过{0}
+Sanity Protection, restores spent Sanity=理智保护，恢复本次消耗理智
+Sanity restored=理智已经成功恢复
+Sanity restored +{0}=理智已恢复+{0}
+Sanity successfully restored=理智已经成功恢复
+Sanity will be refunded and Orundum will be awarded based on the number of enemies defeated.=根据歼灭数将返还对应的理智，并获得合成玉
+Sanity will be refunded based on the number of enemies defeated.=根据歼灭数将返还对应的理智
+Sanity will be refunded.=恢复本次消耗理智
+Sat/=六
+Save changes?=确定要保存房间的装扮？
+Save the set?=确认要保存预设吗？
+Saved to Mail Folder=已收录至邮件夹
+Scout chances are shared between both buying and selling phases=进货和售卖阶段将共用打探次数
+Script file verification failed. Please clear cache or re-install the game.\nPlease contact customer service if the problem persists.=脚本文件校验失败，请尝试清除缓存或重新安装游戏\n仍未解决请咨询客服
+Search Again chances increased! {0} -> {1}=每日事务的重新搜索次数增加了！{0}->{1}
+Searching Again will clear and overwrite the current Daily Tasks list, proceed?=重新搜索会清空并覆盖当前的待选每日事务列表，确认重新搜索吗？
+Searching for cooperator ({0} second(s) remaining)=正在寻找合作团队（剩余{0}秒）
+Select=选择
+Select a fragment=选择一个碎片
+Select a recruitment voucher=选择一张招募券
+Select a Slug first=未选择参加本次比赛的源石虫
+Select a strategy from the list below=从下方列表选择一个策略
+Select a {0} to explore and complete {1} to obtain a one-time reward! (Check [{2}] for more details)=选择{0}参与探索，完成{1}可获得一次性奖励！（详情请查阅【{2}】）
+Select Conductive Unit for {0}=请进行{0}的导能配件甄选
+Select Difficulty=选择难度
+Select Investigation Equipment=选择调查装备
+Select one Investigation Equipment=选择一个调查装备
+Select Operator in [Headhunt]--[Kernel Locating]=请前往【干员寻访】--【中坚甄选】选定干员
+Select Recruitment Voucher=请先选择招募券
+Select Squad=选择分队
+Select this outfit as <color\=#22bbff>{0}</color>'s assistant outfit?=是否选择该装扮作为 <color\=#22bbff>{0}</color> 助理装扮?
+Select this outfit as {0}'s assistant outfit?=是否选择该装扮作为 {0} 助理装扮?
+Select {0} required {1} Production Modules=请选择{0}个需要编入的{1}生产模块
+Select {0} Thoughts=请先选择{0}缕思绪
+Select {0} Thoughts from the right=从右侧选择{0}缕思绪
+Select {0}/{1} Operators to increase your Mental Toil Limit={0}/{1} 选择干员以提升负荷临界点
+Selected Operator\ncannot be deployed.=该干员\n无法出战
+Selected Operator cannot be deployed.=该干员无法出战
+Selected Operators will be removed even if they are working. Proceed?=选择的干员中正在工作的将被撤下，是否继续？
+Selected Recruitment Set=选择招募组合
+Self-Driving Cart configuration not saved! Really want to leave?=当前自走车装配还未保存！就这样离开吗？
+Self-Driving Cart configuration updated=自走车装配已更新
+Self-Driving Cart design not saved! Really want to leave?=当前自走车外观设计还未保存！就这样离开吗？
+Selling=销售中
+Sent pause request=已发送暂停申请
+Service timeout. Please try again.=服务超时，请重试
+Set applied=成功应用预设
+Set saved=成功保存预设
+Settings saved=设置已保存
+Shared successfully=分享成功
+Sharing failed\nError code: {0}=分享失败\n错误号:{0}
+Shop items can be refreshed <color\=#1eb090>{0}</color> more time(s)=本商店还可以刷新<color\=#1eb090>{0}</color>次
+Shop items can be refreshed {0} more time(s)=本商店还可以刷新{0}次
+Shop items can no longer be refreshed=本商店已经无法刷新
+Shop Refreshed=商品已刷新
+Sign in daily to obtain {0}=每日登录领取{0}
+Sign-in ends at: {0}=签到结束时间：{0}
+Simulation in progress. Cannot allocate resources=模拟进行中，无法调配物资
+Simulation Start=开始推演
+Single=单件
+Skill <color\=#00b0ff>{0}</color> Unlockable=技能<color\=#00b0ff>{0}</color>可解锁
+Skill data loading failed. Please enter the interface again.=技能数据加载失败，请重新进入页面再试.
+Skill specialization in progress; Unable to use Class Conversion.=正在进行技能专精，无法升变
+Skill upgraded.=技能已升级
+Skill {0} Unlockable=技能{0}可解锁
+Skip\n{0} selections=确认跳过\n{0}次选择
+Skip over today?=要跳过这一日吗？
+Skip Rest=跳过休整
+Skip the story?=是否要跳过剧情？
+Skip Training=跳过训练
+Skip Wasteland Survival Training?=确认跳过荒地生存训练？
+Skip?\n(Can be checked in the Communication Recorder after the exploration ends)=是否确认跳过？\n（探索结束后可在通讯记录仪中查看）
+Slightly Slow=较慢
+Slot unlocked=公开招募槽位解锁成功
+Some changes have not been saved. Quit anyway?=房间装扮有尚未保存的更改，确定要退出？
+Some error occurred when we recruited this Operator.\nThe Operator has been added (Error code: {0})=获取这位干员的信息时发生了一些阻碍\n干员已成功添加(错误号:{0})
+Some facilities are built on the basis of this facility. Unable to downgrade it=部分设施依赖于该设施，无法降级
+Some furniture doesn't exist. Unable to apply the set: {0}=部分家具不存在，无法应用预设:{0}
+Some furniture is not enough. Unable to apply the set: {0}=部分家具库存量不足，无法应用预设:{0}
+Some Test Sites do not have Challenge Tests available. Matchmaking will be automatically restricted to available Tests=部分场地不提供危急测试 将自动限制匹配项目内容
+Sorry, could you repeat that again?=嗯...不好意思，能再说一遍吗？
+Sort out your hand first.=请在整理手牌后操作
+Special Front=特别战线
+Specialization=专精训练
+Specialization starts=技能专精开始
+Spectacular Trial=恢宏试炼
+Spectating. Please wait for other players to make their choice=观战中，等待其他观众选择支持的队伍
+Spend  {0} {1} to recover  {2}  Sanity?=是否花费 {0} {1}兑换 {2} 理智？
+Spend 1 die roll to refresh items?\nRandomly refreshes 2 shop slots. If roll is 5 or higher, refresh all slots instead. If roll is 7 or higher, randomly refresh slots with higher-value collectibles.=是否消耗1掷骰次数，刷新商品？\n随机刷新2个商店栏位，骰子点数不小于5时刷新所有栏位；不小于7时随机刷新更高价值的收藏品
+Spend 1 die roll to refresh items?\nRandomly refreshes <color\=#d13132>2</color> shop slots. If roll is <color\=#d13132>5 or higher</color>, refresh all slots instead. If roll is <color\=#d13132>7 or higher</color>, randomly refresh slots with higher-value collectibles.=是否消耗1掷骰次数，刷新商品？\n随机刷新<color\=#d13132>2个</color>商店栏位，骰子点数<color\=#d13132>不小于5</color>时刷新所有栏位；<color\=#d13132>不小于7</color>时随机刷新更高价值的收藏品
+Spend 1 refresh attempt?=是否消耗1次联络机会?
+Spend 1 {0} to complete the recruitment immediately?=是否消耗一张{0}立即完成招募？
+Spend 1 {0} to exchange?=是否消耗1张{0}兑换礼包？
+Spend <color\=#009ee8>{1}</color> <color\=#009ee8>{0}</color> to get these materials?=是否消耗 <color\=#009ee8>{1}</color> 个 <color\=#009ee8>{0}</color> 领取以上所有材料？
+Spend <color\=#166ABF>{0}</color> {1} to upgrade {2} to LV.{3}?=是否消耗 <color\=#166ABF>{0}</color> {1} 将{2}迭代至LV.{3}？
+Spend <color\=#22bbff> {0} </color>{1} to recover <color\=#22bbff> {2} </color> Sanity?=是否花费<color\=#22bbff> {0} </color>{1}兑换<color\=#22bbff> {2} </color>理智？
+Spend <color\=#7B0021>{0}</color> Sanity charging <color\=#7B0021>{1}</color> drones?=确定消耗<color\=#7B0021>{0}</color>理智急速充能<color\=#7B0021>{1}</color>架无人机?
+Spend Acts first=需消耗完本日决断
+Spend {0} <size\=25><color\=#FF6801>{1}</color></size>=将消耗{0} <size\=25><color\=#FF6801>{1}</color></size>
+Spend {0} Coupon(s) to toss Tongbao again?=是否消耗{0}点票券重新投钱？
+Spend {0} for recruitment?=是否消耗{0}招募干员？
+Spend {0} Sanity charging {1} drones?=确定消耗{0}理智急速充能{1}架无人机?
+Spend {0} {1}=将消耗{0} {1}
+Spend {0} {1} to buy {2} and complete the recruitment immediately?=是否消耗{0}{1}购买一张{2}并完成立即招募？
+Spend {0} {1} to exchange for {2} {3}, and recruit this Operator?=是否消耗{0}{1}兑换{2}{3}并招募干员？
+Spend {0} {1} to exchange for {2} {3}?=是否花费{0}{1}兑换{2}{3}
+Spend {0} {1} to exchange for {2}, and buy {3} to complete the recruitment?=是否消耗{0}{1}兑换{2}并购买{3}完成招募？
+Spend {0} {1} to recover {2} Sanity? ({3} times remaining today)=是否花费 {0} {1}兑换 {2} 理智？(今日剩余{3}次)
+Spend {0} {1} to refresh node?=是否消耗{0}缕{1}，刷新本节点?
+Spend {0} {1} to unlock another recruitment slot?=是否消耗{0}{1}解锁公开招募槽位？
+Spend {0} {1} to upgrade {2} to LV.{3}?=是否消耗 {0} {1} 将{2}迭代至LV.{3}？
+Spend {0} {1}(s) to refresh shop items?=是否消耗{0}{1}，刷新商品？
+Spend {0} {1}(s) to travel vertically?=是否消耗 {0} {1}，打开纵向通路？
+Spend {1} {0} to get these materials?=是否消耗 {1} 个 {0} 领取以上所有材料？
+Squad and Tools cleared=干员编队和工具编组都将清空
+Squad Members=小队干员
+Squad must include at least 1 Operator to begin combat=编队中要包含至少一名干员才能出战
+Squad Operator limit reached=小队干员数量已达到上限
+Squad Size Limit + {0}=可携带干员数+{0}
+Stage currently unavailable, please try again later.=关卡尚未开放，请稍后重试
+Stage locked=关卡尚未解锁
+Stage not yet unlocked=关卡暂未解锁
+Stage not yet unlocked, please challenge the preceding stage first=关卡暂未解锁，请先挑战前置关卡
+STAGE3 Module=STAGE3模组
+Standard=标准
+Standard Combat=常规作战
+Start=开始行动
+Start Critical Contentions?=确认进入“险途”测试演算？
+Start exploring with Azione Solo=可以通过个人行动开始探索
+Start Operation=进入作战
+Starting soon! Make your choice=即将开赛！请确认你的选择
+Stationary Security Service=保全派驻
+Stationary Security Service unlocked after owning at least <color\=#4abdff>{0}</color> exclusive modules.=拥有至少<color\=#4abdff>{0}</color>个专属模组后解锁保全派驻
+Stationary Security Service unlocked after owning at least {0} exclusive modules.=拥有至少{0}个专属模组后解锁保全派驻
+Stationary Security Service unlocked in Terminal - Regular Tasks=终端-常态事务中解锁了新玩法保全派驻
+Still need {0}=还需{0}
+Still need {0}, approximately {1}x{2}=还需{0}，约{1}x{2}
+Stop Production=制造停工
+Stop Trade=贸易停工
+Stopped=已停止
+Stopped: {0}=已停工 {0}
+Stopping recruitment now will discard used resources and current tags will be refreshed. Are you sure you wish to continue?=停止招募将放弃已投入的资源并刷新当前标签列表，是否确认停止招募？
+Storage full=当前储备余额已达上限
+Store not yet available=采购中心尚未解锁
+Store Refreshes In: {0}=库存更新倒计时: {0}
+Story=剧情
+Story Environment=剧情体验环境
+String successfully copied=字符串复制成功
+Style changed=样式切换成功
+Subscribed to Integrated Strategies [{0}].=集成战略【{0}】已添加至终端订阅
+Successfully accepted. The task has been added to the list of current tasks=接取成功，事务已添加到当前事务栏目
+Successfully added friend.=成功添加好友
+Successfully exchanged. The task has been added to the list of current tasks=替换成功，事务已添加到当前事务栏目
+Successfully refreshed tags=刷新标签完成
+Sun=日
+Support list is currently limited and only includes dispatched Operators. Unlock the limit in Construction Strategies=当前助战列表受限，仅包含已任命干员，可通过应用营建策略解除限制
+Support list limit unlocked, unobtained Operators now available=助战列表限制已解除，已包含所有未持有干员
+Support units' status have been adjusted based on the highest level unit in the squad.=根据编队中单位的最高等级调整了助战干员的状态
+Supports at max=可用助战已达上限
+Surplus acceleration time will be wasted.=多余加速时间会被浪费
+Survive for as long as possible=坚持存活尽量久的时间
+Survive {0} days in Critical Contentions=在险途中生存{0}日
+Suspend current battle?=确认中止本次战斗？
+Switch to <color\=#797717>{0}</color> and <color\=#d83b3b>lose</color> the following effects?=是否切换到<color\=#797717>{0}</color>？将会<color\=#d83b3b>失去</color>以下效果：
+Switch to <color\=#797717>{0}</color> and obtain the following effects?=是否切换到<color\=#797717>{0}</color>？将会获得以下效果：
+Switch to {0} and lose the following effects?=是否切换到{0}？将会失去以下效果：
+Switch to {0} and obtain the following effects?=是否切换到{0}？将会获得以下效果：
+Switch voice of Operator {0} to\n<color\=#0098DC>{1}</color>?=是否将干员{0}语音设置为\n<color\=#0098DC>{1}</color>配音?
+Switch voice of Operator {0} to\n{1}?=是否将干员{0}语音设置为\n{1}配音?
+Switch voices of all selected Operators to\n<color\=#0098DC>{0}</color>?=是否将该页面干员语音全部设置为\n<color\=#0098DC>{0}</color>配音?
+Switch voices of all selected Operators to\n{0}?=是否将该页面干员语音全部设置为\n{0}配音?
+Switched to {0}=已切换为{0}
+Synchronization lost with the network time. Upgrade has not been finished=与网络时间失去同步，设备升级尚未完成
+Tactical Equipment: {0}=战术装备·{0}
+Take it=收下
+Takes effect when exploring on difficulty {0}{1} and above=<{0}{1}>及以上难度进行探索时生效
+Talent <color\=#00b0ff>{0}</color> Unlockable=天赋<color\=#00b0ff>{0}</color>可解锁
+Talent [{0}]=天赋【{0}】
+Talent [{0}] upgraded=天赋【{0}】更新
+Talent after Promotion:=精英化后天赋：
+Talent improved: <color\=#00B0FF>{0}</color>=天赋<color\=#00B0FF>{0}</color>获得提升
+Talent improved: {0}=天赋{0}获得提升
+Talent Iteration=天赋迭代
+Talent {0} Unlockable=天赋{0}可解锁
+Tap a 5-star Operator below to increase its chance {0}:=请在以下列表中点击选择概率提升的5星干员{0}:
+Tap a 6-star Operator below to increase its chance {0}:=请在以下列表中点击选择概率提升的6星干员{0}:
+Tap anywhere to close=点击任意处关闭
+Tap anywhere to continue=点击任意处继续
+Tap anywhere to restart=点击任意处重新开始游戏
+Tap on enemy Operators to view their attack range and skills=点击敌方干员可以查看干员的攻击范围和技能
+Tap on the right to view collection details.=点击右侧查看收藏品详情
+Task Completed=事务已完成
+Tech Tree=技术脉络
+Technological transformation +{0}%=技术转化率 +{0}%
+Technological transformation <color\=#E97646>+{0}%</color>=技术转化率 <color\=#E97646>+{0}%</color>
+Technological transformation rules=技术转化规则
+Temporarily unable to resend invite=暂时无法重复发送邀请
+Temporarily Unavailable=暂未开放获取途径
+Terminate the Test Project?=是否确认解散测试项目？
+Test Project has reached capacity, unable to join=测试项目已满员，无法加入
+Test Project has started, unable to join=测试项目正在进行中，无法加入
+Test Site entry timed out. Ending battle.=进入测试场地超时，将终止战斗
+Testing network connection=网络检测
+Thank you for the patronage. Ding dong————=多谢光顾。叮当————
+The <color\=#02D3AE>Prospective Investment System</color> is unavailable in the current exploration, unable to unlock=本次探索<color\=#02D3AE>前瞻性投资系统</color>未开放，暂时无法解锁
+The <color\=#4abdff>Class Conversion system</color> has been unlocked. Please check Amiya's Operator Details.=<color\=#4abdff>升变系统</color>已开启，请前往阿米娅干员详情界面查看
+The assigned Operators don't have enough Morale. Unable to start the sales.=进驻人员体力不足，无法执行销售计划
+The battle record cannot be synchronized with the neural network\nTry again?=战斗记录未能成功同步到神经网络\n是否重试？
+The battlefield is ever changing; plan your route with prudence and direct your squad to the city=战场的情况瞬息万变，请合理规划行程，为小队指引方向
+The Challenge Mode of <color\=#4abdff>{0}</color> has been unlocked.=<color\=#4abdff>{0}</color>的突袭作战已解锁
+The Challenge Mode of {0} has been unlocked.={0}的突袭作战已解锁
+The Class Conversion system has been unlocked. Please check Amiya's Operator Details.=升变系统已开启，请前往阿米娅干员详情界面查看
+The client version <color\=#FF0000>is out of date</color>. Preparing to update the client.=当前客户端版本<color\=#FF0000>已过时</color>，即将更新客户端版本
+The client version is out of date. Checking for the latest version.=当前客户端版本已过时，将检测最新客户端
+The client version is out of date. Preparing to update the client.=当前客户端版本已过时，即将更新客户端版本
+The comment field must not be empty.=好友备注不能为空
+The comment is too long. Please enter another one.=非法的好友备注，长度过长，请重新输入
+The consciousness is empty=残识空荡荡的
+The content must not be empty=搜索内容不能为空
+The corresponding battle record has expired. Unable to use Auto Deploy.=相关的战斗记录已经失效，无法代理指挥
+The current account is not a guest account.=当前登录用户并非游客账号
+The current battle has not ended yet, unable to remove the Team=当前战斗尚未终止，暂无法移除当前团队
+The current client version is <color\=#FF0000>out of date</color>. Please download the latest client=当前客户端版本<color\=#FF0000>已过时</color>，请下载最新客户端
+The current client version is out of date. Please download the latest client=当前客户端版本已过时，请下载最新客户端
+The current Clues gained have reached the maximum limit.=当前获得线索数已经达到最大值
+The current drones have reached the maximum limit.=当前无人机已达到上限
+The current formula will be canceled if you use a new one. Proceed?=更改配方后将取消当前制造计划，是否确认更改？
+The current login data has expired. Please log in again.=当前登录信息已经失效，请重新登录
+The current Operator Headhunting event is temporarily unavailable. Please check official announcements for details.=当前干员寻访暂无法使用，详情请关注官方公告
+The current sales will be canceled if you use a new formula. Proceed?=更改配方后将取消当前销售计划，是否确认更改？
+The current setup has already been saved=当前摆放已保存
+The current tactical prop will be replaced=将会替换当前战术道具
+The date has changed. Updating data.=今天的数据已经更新
+The difficulty of the selected contracts is very high.\nProceed with caution.=当前合约难度极大\n请谨慎行动
+The duration will expire 90 days after the purchase. Unable to buy again for now.=购买后持续时间大于90天，暂不可再次购买
+The event has expired. Please go to the homepage to update data.=该卡池已过期，请返回主页更新
+The facility is being upgraded. Cannot assign any Operators=当前设施升级中，进驻状态锁定
+The facility is working and cannot be degraded=当前设施处于工作状态，无法降级设施
+The facility is working and cannot be upgraded=当前设施处于工作状态，无法升级设施
+The following furniture do not have specific limits=以下家具无特殊摆放数量限制
+The furniture is not available for purchase currently.=家具不在可购买时间段内
+The guest function is unavailable. Refer to official announcements for more details=游客功能不可用，详情参考官网公告
+The highest Elite phase in the squad is <color\=#ff6801>{0}</color>; your support unit has been synchronized.=编队中最高精英阶段为<color\=#ff6801>{0}</color>, 支援单位已同步到对应状态
+The highest Elite phase in the squad is {0}; your support unit has been synchronized.=编队中最高精英阶段为{0}, 支援单位已同步到对应状态
+The name is too long=预设名称过长
+The new name must not be empty=新名字不能为空
+The number of Agenda Proposals has reached the maximum limit {0}, any extra gained cannot be recovered, best use them soon=[议程提案]次数已到达上限{0}，多余的次数不再计入，请尽快使用
+The number of Agenda Proposals has reached the maximum limit {0}, any extra gained cannot be recovered.=[议程提案]次数已达到上限{0},多余的次数不再计入
+The number of Agenda Proposals is about to reach the maximum limit, best use them soon=[议程提案]次数即将到达上限，请尽快使用
+The Operator has reached highest Promotion phase.=当前角色已达最大精英阶段
+The Operator is being trained and cannot be replaced or removed.=干员训练中，无法撤下或替换
+The order has been acquired and the request failed.=订单已获取，无人机协助请求失效
+The party's only getting started, so before that, you should grab a slice of apple pie! Why does it always have to be apple pie?=真正的狂欢从现在开始，在此之前，你应该先来一块苹果派。为什么总是苹果派？
+The player has reached the friend limit. Unable to add more friends.=对方好友数量达到上限，无法添加好友
+The production is done and the request failed=制造已完成，无人机协助请求失效
+The Prospective Investment System is unavailable in the current exploration, unable to unlock=本次探索前瞻性投资系统未开放，暂时无法解锁
+The rarer the Thoughts, the better the reward=思绪的稀有度越高，奖励品质越好
+The recruited Operator is preparing to be hired.\nPlease wait patiently and try again later.=招募到的干员正在做入职准备\n请耐心等待一段时间后重试
+The request has expired.=该申请已过期
+The Rogue Burdenbeast's baggage broke, and [Rare Minor Ingredients] dropped!=放归驮兽背负的行囊被打破，散落了一地【稀有辅料】！
+The room will disband after this round ends if you leave the match. Are you sure you want to leave?=若离开比赛，本局结束后房间将被解散。确认离开？
+The server has not yet opened=服务器目前暂未开放
+The shop is empty. Are you sure you want to enter?=商品已售罄，确定进入吗？
+The squad name must not be empty.=编队名称不能为空
+The squad name must not exceed 12 characters.=编队名称不能超过6个汉字
+The stage has not been cleared. Unable to use Story Replay.=尚未通关，无法开启剧情重放
+The stage is not currently open. Trying to re-synchronize data.=当前关卡不在开放时间内，将尝试重新同步信息
+The support unit is already {0}. Remove it from the squad?=与助战干员{0}冲突，是否将其强制离队？
+The support units have not been saved. Save now?=助战角色未保存，是否保存
+The system balance consumed for withdrawing reserves will be doubled.=每次提取储备所消耗的系统余额会翻倍。
+The system balance consumed for withdrawing reserves will be increased.=每次提取储备所消耗的系统余额会增加
+The system has randomly chosen a side for you=系统随机为您 支持了这一方
+The system will initialize a stress test based on the most recent Calculation Day in Arsalan. In Critical Contentions, you cannot save or load data, nor proceed further in any storylines=系统将会基于来自阿尔萨兰最近一次量定日的数据开始模拟压力测试，在“险途”测试演算中，无法进行存档、读档和剧情推进等相关功能
+The total number of Agenda Proposals: {0} (Including accumulated unused Agenda Proposals)=当前总[议程提案]次数：{0}（包含累计未使用提案）
+The Tribulation Mode of <color\=#4abdff>{0}</color> has been unlocked.=<color\=#4abdff>{0}</color>的遭遇作战已解锁
+The Tribulation Mode of {0} has been unlocked.={0}的遭遇作战已解锁
+The unknown still lurks within the shadows.=未知还潜伏在阴影之中。
+The verification system request service is unavailable\nIf you have any questions, please contact customer service.=认证系统验证请求未开启\n如有问题请联系客服
+The void of helplessness will be filled by the joy and satisfaction of gain.=失去的空洞与无措，会被获得的满足与喜悦填充。
+Theme {0}={0}主题
+Themed Background set=主题场景设置成功
+There are already {0} similar Operators on the squad.=队伍中已有{0}名同类干员
+There are currently no squads setup for the selected Test Site <color\=#FFC600>{0}</color>=您选择的测试地点<color\=#FFC600>{0}</color> 当前尚无任何编队
+There are currently no squads setup for the selected Test Site {0}=您选择的测试地点{0} 当前尚无任何编队
+There are more items available to exchange.=还有可兑换的物品，请继续兑换
+There are Operators <color\=#ff8948>unable to fight</color> in the squad. Are you sure you want to begin the operation?=编队中存在<color\=#ff8948>不可出战</color>的干员，确定开始行动吗？
+There are Operators unable to fight in the squad. Are you sure you want to begin the operation?=编队中存在不可出战的干员，确定开始行动吗？
+There are unsaved changes, return anyway?=当前界面有未保存的修改，确定退出吗？
+There are unsaved changes. Do you wish to save and proceed?=存在尚未保存的操作，是否保存并前往
+There are unsaved changes. Exit anyway?=有未保存的修改，确认直接退出吗
+There are unused Candle Stands. Are you sure you want to proceed?=还有未部署干员的明烛台，确认直接开始考验吗？
+There is a chance to get any gear other than {0} at the Gear Trading Center=在装备集换处有几率获取除{0}之外的所有装备
+There is a rare tag present, proceed with refresh?=当前存在稀有职业需求，是否确认刷新？
+There is an active subscription for [{0}].\n<color\=#0098dc>Replace with</color> [{1}]?=当前存在已订阅的主题【{0}】\n是否确认<color\=#0098dc>替换为</color>【{1}】？
+There is an active subscription for [{0}].\nReplace with [{1}]?=当前存在已订阅的主题【{0}】\n是否确认替换为【{1}】？
+There is an ongoing exploration, unable to switch modes=当前已有正在进行的探索，无法切换模式
+There is no reverting your decision. Please act with caution.=该操作无法回退，请谨慎操作
+There will be no rewards or penalties given=本次退赛无奖励，同时不计违规次数
+There's an issue with your current setup, do you still wish to proceed?=当前编队中存在异常情况，是否仍然要进入战斗
+This account is banned.\nPlease contact customer service for more details=该账号已被封禁\n如有问题请联系客服
+This account is banned. Please contact customer service for more details.=此账号禁止登入游戏，详情请咨询客服
+This Base system is locked=基建系统尚未解锁
+This collectible has not been obtained=尚未获得此收藏品
+This event has not yet opened.=该卡池尚未开放
+This Flair has not been obtained=尚未获得该修辞
+This function is locked=该功能尚未解锁
+This function is temporarily unusable, please refer to the official news for more details=该功能暂时不可使用，详情请参考官方公告
+This item has been removed. Please log in again to update the data.=当前商品已下架，请重新登录以更新信息
+This item hasn't been unlocked=当前道具未解锁
+This mail has been claimed=该邮件已收取
+This meal event has ended. Thanks for your patronage!=本次活动用餐已结束，感谢光顾！
+This month's {0}=本月{0}
+This nickname is not allowed.=这个昵称不允许被使用
+This Operator already has Max Potential, the letter is unsealed.=该干员潜能已提升至最高，信件被启封
+This Operator has already reached the {0} Class Conversion status.=该角色当前已是{0}升变状态
+This order can be completed. Delete it anyway?=该订单可以交付，是否确认删除？
+This page shows that the Operator has reached a Promotion stage of {0}=此页面展示内容为干员精英阶段{0}的状态
+This page shows your Operators' condition after enhancement=此页面展示内容为干员强化后状态
+This page shows your Operators' promoted status during Integrated Strategies=此页面展示内容为干员在集成战略玩法内进阶后的状态
+This plan has not been saved; Are you sure you want to exit?=当前方案尚未保存，确认离开吗？
+This prop has not been obtained=尚未获得该道具
+This shift change will result in staffing changes to <color\=#4ABDFF>{0}</color> rooms.=本次排班调整将会引起以下<color\=#4ABDFF>{0}</color>个房间的进驻干员变动
+This shift change will result in staffing changes to {0} rooms.=本次排班调整将会引起以下{0}个房间的进驻干员变动
+This skill cannot be Specialized.=该技能不可专精
+This skill has reached the max Specialization level.=该技能已达到专精上限
+This slot is locked=该槽位尚未解锁
+This squad lineup is fixed, and cannot be changed.=本次行动小队固定，不可修改
+This will override the current active Inspirer. Are you sure you want to continue?=当前正在生效的灵感效果将会被覆盖，确认替换吗？
+This will reach max level. Excess {0} will be lost.\nAre you sure?=本次购买至最高等级，溢出的{0}将无法继承。\n确认购买吗？
+Thought unobtained=尚未捕捉到该思绪
+Thoughts - {0}=思绪-{0}
+Thu/=四
+Tier {0}={0}阶
+Time changes all=时间改变一切
+Time Consumed=消耗时间
+Time left: {0} days=剩余时间：{0}天
+Time to {0}=时间到达{0}
+Tired=已出战
+To be sold: {0}=剩余可售数量：{0}
+to improve=后提升
+to unlock=后解锁
+Today=今日
+Today's Acts will be consumed=将会消耗当日剩余全部的决断数
+Today's Self-Driving Cart sharing has ended=今日自走车交流已结束
+Today's Training Site=今日模拟场地
+Tongbao currently tossed, and <color\=#E47624>effect will be lost</color>\nwhen exchanged. Are you sure you want to proceed?=这枚通宝已被掷出，交换后将会<color\=#E47624>失去正在生效的效果</color>\n确认交换吗？
+Tongbao currently tossed, and <color\=#ff8948>effect will be lost</color>\nwhen exchanged. Are you sure you want to proceed?=这枚通宝已经被投出，交换之后将会<color\=#ff8948>失去正在生效的效果</color>\n确认要交换吗？
+Tongbao has different conditions and can grant different bonus effects.=通宝的品相不同，可赋予的额外效果也不同。
+Tongbao has not been obtained=尚未获得此通宝
+Too many actions entered. Please try again later.=当前操作过于频繁，请稍后再试.
+Too many Operators are currently assigned to this squad for this operation. Please adjust the squad and try again.=当前编队中的干员数量超过限制，无法进行战斗，请调整之后重试
+Too many units. Unable to purchase now.=单位过多，无法购买
+Toss Tongbao again? This re-toss will not cost Coupons=是否重新投钱？本次不需要消耗票券
+Total login days {0}/{1}=累计登录天数 {0}/{1}
+Total of {0} collectible(s)=总计{0}个收藏品
+Total {0}=累计获得{0}
+Total {0} operators=总计{0}名干员
+Total {0}{1}=累计获得{0}{1}
+Trainee=训练位
+Training=训练中
+Training Base=训练基地
+Training Plan=特设训练
+Training Room not yet available. Build a Training Room first.=训练室尚未开放，请前往基建建造训练室
+Trait and range=特性&攻击范围
+Traits improved=特性更新
+Traits upgraded=特性 更新
+Transaction was not completed.=支付未完成
+Transformation complete=转化已结束
+Trial ended=试炼结束
+Trial passed=试炼通过
+Tue/=二
+Turn down the selected task? ({0} Agenda Proposals will be returned)\nProgress will be lost and the task will not return to the task list=确认驳回该事务吗?(将返还[议程提案]次数{0})\n会失去当前进度,且不会回到待选每日事务列表
+UI config name cannot be blank=界面配置名称不能为空
+UI Theme set=界面主题设置成功
+UID copied to clipboard=已复制uid至剪贴板
+Ultimate Trial=最终试炼
+Unable to access this region.\nError code: {0}=该地区无法访问\n错误号:{0}
+Unable to add to the squad as the same character is already present=编队中已有角色，不可编入同一队伍出战
+Unable to apply for Test Project due to too many participants. Please try again later=当前参与人数过多，无法申请测试项目，请稍后再试
+Unable to attempt Challenge Test. Please complete the High-Pressure Test first=危急测试暂不可挑战，请先完成高压测试
+Unable to bring any more Production Modules=携带生产模块数量已达上限
+Unable to bring any more tools=可携带道具数量已达上限
+Unable to buy furniture in multiple ways at the same time.=无法同时用多种方式购买家具
+Unable to clean=无法清理
+Unable to deploy any more Arts.=可部署法术已达到上限
+Unable to detect the signal.\nPlease upgrade {0}=无法检测到信号\n请提升{0}等级
+Unable to download update. Please check your network and try again.\nError code:{0}=更新下载失败，请检查网络连接后确认重试\n错误号:{0}
+Unable to exceed the furniture number limit.=无法购买超出上限数量的家具
+Unable to exchange for Sanity in excess of {0}=兑换理智无法超过{0}
+Unable to find suitable cooperator. Please adjust the Matchmaking parameters or try again later=未匹配到合适的团队，请调整匹配范围或过段时间再尝试
+Unable to find the Test Project. Please check the input information=无法找到测试项目，请检查输入信息
+Unable to make Provision=该食品无法制作
+Unable to Matchmake due to too many participants. Please try again later=当前参与人数过多，无法匹配到测试项目，请稍后再试
+Unable to Matchmake due to unknown error. Please try again later=发生未知错误，无法匹配到测试项目，请稍后再试
+Unable to obtain resource version info. Please check your network and try again.\nError code: {0}=获取资源版本信息失败，请检查网络连接后重试\n错误号:{0}
+Unable to re-do if skipped=本次训练跳过后无法再次进入
+Unable to retrieve battle results. The battle will be stopped=无法获取战斗结果，将终止战斗
+Unable to return once left. Are you sure you want to leave?=将无法返回房间，确认离开？
+Unable to save this layout due to overlapping furniture. Please adjust the layout.=存在家具位置部分重叠，无法保存，请调整家具位置
+Unable to set a {0}★ Operator in the current slot=当前助战位无法装配{0}★干员
+Unable to start battle as system is busy. Please try again later=当前系统繁忙，战斗无法开始，请稍后再试
+Unable to synchronize corresponding battle record. Unable to use Auto Deploy.=未能同步到相关战斗记录，无法代理指挥
+Unable to toss again right now, please return to the main map first=当前无法重新投钱，请返回大地图后操作
+Unable to unlock this special investigation, please clear the preceding stages first=无法解锁当前特别调查内容，请先通关前置关卡
+Unable to unpack update resources, not enough storage=释放更新资源失败，存储空间不足
+Unable to unpack update resources. Please try again. Error code:{0}=释放更新资源失败，请重试，错误号:{0}
+Unable to upgrade.=无法升级装扮
+Unable to use Auto Deploy.=无法代理指挥
+Unable to use on this Class Conversion.=当前升变状态无法使用
+Unable to use right now, please return to the main map first=当前无法操作，请返回地图后操作
+Unable to use this support unit on this operation.=本次作战无法使用该助战干员
+Unclaimed=未领取
+Unclaimed order found, but failed to claim.\nPlease contact customer service if you need any help.=发现未兑付订单，但兑付失败，请重试。\n如有问题请联系客服
+Unclaimed order found. Claiming items now.=发现未兑付订单，将自动领取其中商品
+Uncleared=未通过
+Uncollected=尚未收集
+Unexperienced Hour of Sui=尚未经历此岁时
+Unfrozen=解冻
+Unknown error occurred during the connection to the neural network. Please try again later.=与神经网络连接时发生未知错误，请等待重试
+Unknown error occurred when the operation started. Please log in again.\nError code: {0}=开始行动发生未知错误，请重新登录\n错误号{0}
+Unknown error. Please log in again.=当前系统发生未知故障，尝试重新恢复
+Unknown verification system error.\nPlease pay attention to other notices and contact customer service=认证系统发生未知错误\n请留意其它提示并联系客服
+Unknown verification system error. Please restart the game.\nError code: {0}=认证系统遭遇未知异常，请重新启动游戏\n错误号:{0}
+Unlock <color\=#22BBFF>{0}</color>?=是否解锁<color\=#22BBFF>{0}</color>?
+Unlock after clearing {0}=通关{0}后开启
+Unlock and upgrade Lv. {2} {1} x{0}={0}间Lv.{2}的{1}解锁并完成升级
+Unlock by completing the game on {0} difficulty.={0}难度下完成游戏结局解锁
+Unlock Challenge Mode by <color\=#4ABDFF>obtaining 3 stars</color>=<color\=#4ABDFF>获得三星评价</color>解锁突袭作战
+Unlock Challenge Mode by obtaining 3 stars=获得三星评价解锁突袭作战
+Unlock condition=解锁条件
+Unlock condition - {0}=解锁条件 - {0}
+Unlock Conditions=解锁条件
+Unlock Conditions: {0}=解锁条件：{0}
+Unlock in {0}={0}后开启
+Unlock mission incomplete, unable to unlock module=尚未完成解锁任务，无法解锁模组
+Unlock more information after obtaining Stickers=获得标志物后解锁更多情报
+Unlock new information after the first clear of {0}=首次通关{0}后解锁新情报
+Unlock Rank=开放等级
+Unlock story=前往解锁故事
+Unlock the area?=是否确定解锁区域？
+Unlock this functionality after clearing {0}=通关{0}后解锁该功能
+Unlock Tribulation Mode by <color\=#4ABDFF>obtaining 3 stars</color>=<color\=#4ABDFF>获得三星评价</color>解锁遭遇作战
+Unlock Tribulation Mode by obtaining 3 stars=获得三星评价解锁遭遇作战
+Unlocked after collecting {0} Miss Ch'en Commemorative Medals and obtaining the rewards=收集{0}个陈小姐纪念奖牌并领取奖励后可解锁
+Unlocked after completing Security Drill.=完成保全演练后正式开放
+Unlocked after completing Standard Supply mode=通关标准补给模式后解锁
+Unlocked after completing {0}=通过{0}后开启
+Unlocked after increasing module level=提升模组等级后解锁
+Unlocked after increasing the elite level=提升精英等级后解锁
+Unlocked after obtaining {0} pieces of Self-Driving Cart gear=获取{0}种自走车装备后开启
+Unlocked after promotion=进阶后解锁
+Unlocked at {0:D2}/{1:D2}, {2:D2}:{3:D2}={0:D2}月{1:D2}日{2:D2}:{3:D2}开放
+Unlocked new Base Skill=解锁新后勤技能
+Unlocked new skill=解锁新技能
+Unlocked new skill: {0}=解锁新技能：{0}
+Unlocked new Talent=解锁新天赋
+Unlocked new Talent: {0}=解锁新天赋：{0}
+Unlocked {0} new Thoughts in this exploration=本次探索新解锁{0}缕思绪
+Unlocks after clearing <color\=#4ABDFF>{0}</color> event <color\=#4ABDFF>{1}</color>=通关<color\=#4ABDFF>{0}</color>活动<color\=#4ABDFF>{1}</color>后解锁
+Unlocks after clearing {0}=通关{0}后解锁
+Unlocks after clearing {0} event {1}=通关{0}活动{1}后解锁
+Unlocks after completing <color\=#0098DC>{0}</color>=完成 <color\=#0098DC>{0}</color> 后解锁
+Unlocks after completing <color\=#4ABDFF>{0}</color>=完成<color\=#4ABDFF>{0}</color>后开放
+Unlocks after completing <color\=#bc2020>{0}</color>=完成 <color\=#bc2020>{0}</color> 后解锁
+Unlocks after completing training stage {0}=完成训练关卡{0}后开放
+Unlocks after the next Calculation Day=需进行一次量定日存档后解锁
+Unlocks after {0}={0}后解锁
+Unlocks in {0}={0}后开放
+Unlocks in {0}d={0}日后解锁
+Unobtained Foldartals=尚未获得此密文板
+Unowned Operators will automatically switch to Model Operators\nYou can currently borrow the following Support Operators:=未持有干员自动替换为原型干员\n当前可以借用助战干员
+Unsaved changes will be reset=将会重置所有未保存的操作
+Unseal <color\=#0075a9FF>{0}</color> and raise the Operator to Max Potential?\n<color\=#ffb400FF>* Will also consume all possessed {1}</color>=是否启封<color\=#0075a9FF>{0}</color>，将潜能提升至满级？\n<color\=#ffb400FF>*同时也将消耗全部已有的{1}</color>
+Unseal {0} and raise the Operator to Max Potential?\n* Will also consume all possessed {1}=是否启封{0}，将潜能提升至满级？\n*同时也将消耗全部已有的{1}
+Unselectable=不可选择
+Unstable signal. Connection timeout. Please synchronize again.=当前信号不稳定，连接超时，请重新同步
+Unsubscribed from Integrated Strategies [{0}].=集成战略【{0}】已取消终端订阅
+Update failed after multiple tries. Please check your network and try again.=尝试多次更新依然失败，请检查网络连接后确认重试
+Updates after <color\=#d8d769>{0}</color>=<color\=#d8d769>{0}</color>后更新
+Updates after {0}={0}后更新
+Updates in {0}={0}后更新
+Upgrade <color\=#22BBFF>{0}</color> to Lv.<color\=#22BBFF>{1}</color>?=确认将<color\=#22BBFF>{0}</color>升至<color\=#22BBFF>{1}</color>级?
+Upgrade <color\=#d8d769>Headquarters Level to {0}</color> to unlock the following=升级至<color\=#d8d769>驻扎地等级{0}</color>后将解锁以下内容
+Upgrade Headquarters Level to {0} to unlock the following=升级至驻扎地等级{0}后将解锁以下内容
+Upgrade the skills from <color\=#0075a9FF>Lv.{0}</color> to <color\=#0075a9FF>Lv.{1}</color>?=是否升级技能<color\=#0075a9FF>等级{0}</color>到<color\=#0075a9FF>等级{1}</color>
+Upgrade the skills from Lv.{0} to Lv.{1}?=是否升级技能等级{0}到等级{1}
+Upgrade to Lv. {0}=升级至LV{0}：
+Upgrade your Headquarters to unlock Logistics Support=提升驻扎地等级可解锁后勤支援
+Upgrade your Headquarters to unlock more Logistics slots=提升驻扎地等级可解锁更多的后勤栏位
+Upgrade {0} to Lv.{1}?=确认将{0}升至{1}级?
+Upper Level Control Area=上层控制区
+Upper Level Control Team=上层控制团队
+Use 1 <color\=#3399cc>{0}</color>\nto execute a <color\=#3399cc>Total Proxy Auto Deploy</color>?=确认使用1张<color\=#3399cc>{0}</color>\n执行一次<color\=#3399cc>全权委托代理指挥</color>？
+Use 1 {0}\nto execute a Total Proxy Auto Deploy?=确认使用1张{0}\n执行一次全权委托代理指挥？
+Use <color\=#22BBFF>{0}</color>\nto increase Potential?=确认使用 <color\=#22BBFF>{0}</color>\n提升潜能？
+Use <color\=#{1}>{0}</color> as your new name?=是否使用<color\=#{1}>{0}</color>作为新的名字？
+Use a Slug Trainer=消耗一个学习诱导器
+Use a Slug Trainer to grant the selected Slug a new Trait?=是否使用一个学习诱导器让目标源石虫获得新的特性？
+Use after casting the special recruitment Arts.=请在完成特殊招募法术后使用
+Use after completing the tutorial.=请在教程结束后使用
+Use CN voices=使用中文配音
+Use drones to accelerate the acquisition of the order?=是否确认消耗无人机加速获取订单
+Use drones to accelerate the production?=是否确认消耗无人机加速制造
+Use EN voices=使用英文配音
+Use JP voices=使用日文配音
+Use KR voices=使用韩文配音
+Use the monthly {0} to explore and clear the mission objectives to obtain a one-time reward!{2} (Check [{1}] for more details)=使用每月{0}参与探索，达成任务条件获得一次性奖励！{2}（详情请查阅【{1}】）
+Use this Provision?=确认选用此食品？
+Use {0}\nto increase Potential?=确认使用 {0}\n提升潜能？
+Use {0} <color\=#3399cc>{1}</color>\nto perform one <color\=#3399cc>Stationary Security Service Total Proxy Command Authority</color>?=确认使用{0}张<color\=#3399cc>{1}</color>\n执行一次<color\=#3399cc>保全派驻全权委托代理指挥</color>？
+Use {0} as your new name?=是否使用{0}作为新的名字？
+Use {0} to refresh node?=是否消耗1次[{0}]的效果，刷新该节点？
+Use {0} {1}\nto perform one Stationary Security Service Total Proxy Command Authority?=确认使用{0}张{1}\n执行一次保全派驻全权委托代理指挥？
+Used up refreshes for this node=该节点的刷新次数已用完
+Used up refreshes for this shop=本商店刷新次数已用完
+User not found=没有搜索到用户
+Using a support unit will disqualify this battle from counting towards your Contingency level.=使用支援无法记录危机等级
+Variable=陌域变量
+Vector Breakthrough=矢量突破
+Verification expired. Please log in again.=登录认证已失效，请重新登录
+Verification expired. Please log in again.\nError code: {0}=认证已过期，请重新登录\n错误号{0}
+Verification expired. Please synchronize again.=身份验证已过期，需要重新同步
+Verification system authentification request failed\nError code: {0}=认证系统验证请求失败\n错误号:{0}
+Verification system service failed\nError code: {0}=认证系统服务失败\n错误号:{0}
+Very Fast=非常快
+Very Slow=非常慢
+View on the Operator page after Class Conversion=请前往干员界面升变后查看
+Viewed by {0}=阅读量 {0}
+Visiting Credit limit reached today=今日造访信用已达上限
+Visitor Limit=访问上限
+Voice=语音
+Voice of Operator {0} is currently\n<color\=#0098DC>{1}</color>=当前干员{0}语音为\n<color\=#0098DC>{1}</color>配音
+Voice of Operator {0} is currently\n{1}=当前干员{0}语音为\n{1}配音
+Voice of Rosebud=玫瑰之声
+Waiting for another cooperator to join the Test Project=等待另一测试团队加入项目
+Waiting for event to be selected=等待选择比赛项目
+Waiting for Partner to approve...=等待协作者同意暂停......
+Waiting for partner to get ready...=等待协作者准备...
+Warriors ought to welcome death.=战士应当视死如归
+Wave {0} Elite=第{0}波强敌
+We're short-handed, Doctor=我们的人手有限，博士
+Weak signal. Unable to synchronize record to neural network.\nCurrent scene will be exited.=通讯不佳，记录未能成功同步到神经网络\n将退出当前场景
+Wed/=三
+Weekly=周常任务
+Weekly Deployments=每周部署
+When selling goods, scouting will reveal the highest price first=售卖时将优先打探出定价较高者的售卖价格
+When wiping save data, Tech Tree progress will be cleared, but points will be refunded. Unlocked Achievements and Formulating content will remain while Algorithm details will be completely cleared (including map exploration progress, Constructs placed in Headquarters, etc)=删除存档后仅会保留技术点数（技术进度将被清空并返还等量点数）、丰碑和见闻陈列内的解锁状态，其余演算内容均会被清空（包括地图探索进度、驻扎地建设等）
+While operation is in progress, you can obtain <color\=#CC6E3B>{0}</color> Authorized Investigation Permits per day=作战时间内，每日可获取<color\=#CC6E3B>{0}</color>授权调查许可
+While operation is in progress, you can obtain {0} Authorized Investigation Permits per day=作战时间内，每日可获取{0}授权调查许可
+While the main theme updates, complete monthly contracts in Regular Operations to obtain <color\=#{0}>{1}</color>!\nMonthly contracts will be refreshed at the start of every month and the previous month's progress will not carry over=主题持续更新期间，游玩常规行动完成每月限时委托可获得<color\=#{0}>{1}</color>！每月初会更新委托，上月进度不继承
+While the main theme updates, complete monthly contracts in Regular Operations to obtain {1}!\nMonthly contracts will be refreshed at the start of every month and the previous month's progress will not carry over=主题持续更新期间，游玩常规行动完成每月限时委托可获得{1}！每月初会更新委托，上月进度不继承
+Widgets set to display by default=小组件已设置为默认显示
+Widgets set to hidden by default=小组件已设置为默认隐藏
+Wipe save data?=确认删除存档？
+Withdrawal successful. Ding dong————=提取成功。叮当————
+Witnessed <color\=#{1}>{2}</color> on <color\=#{1}>{0}</color>=见证了 <color\=#{1}>{0}</color>级难度的<color\=#{1}>{2}</color>
+Witnessed the <color\=#{1}>{0}</color>=见证了 <color\=#{1}>{0}</color>
+Witnessed the {0}=见证了 {0}
+Witnessed {2} on {0}=见证了 {0}级难度的{2}
+Workbench=组装台
+Working=工作中
+Would you like to go to the hotfix interface to download missing assets?=是否确认前往热更新界面下载追加资源？
+X{0}  Reconstruct past events=X{0}   重建过往事件
+You are about to perform a network connectivity check. This will gather and report information on the state of your network connection.\nTap confirm to continue=您即将进行一次网络拨测，该操作将采集您的网络状态并上报\n点击确认继续
+You are removed from the group=群主已将你移出群组
+You can copy the Project Number to invite friends to join=您可以复制工程编号邀请好友快速加入
+You can level an Elite 2 4★ Operator to max.=可以选择一位已达到精英阶段2的4★干员直接提升至满级
+You can level an Elite 2 5★ Operator to max.=可以选择一位已达到精英阶段2的5★干员直接提升至满级
+You can level an Elite 2 6★ Operator to max (Excluding the Special Operator)=可以选择一位已达到精英阶段2的6★干员直接提升至满级（不包含特勤干员）
+You can load a save from the last two Calculation Days, and cannot return to the current state once you proceed=读取存档可以选择回到在此之前的两个量定日中的一日，进入读取后将无法返回当前游戏进度
+You can now play <{0}>=可以游玩<{0}>了
+You can now use Total Proxy Command Authority=可以全权委托指挥作战了
+You can only Specialize 1 skill at a time=同时只能升级专精一个技能
+You can promote a hired 5★ Operator to Elite 2 Lv. 1.=可以选择一位已聘用的5★干员直接晋升至精英阶段2，等级1
+You can refresh again after the contact is done.=联络完成后才可刷新职业需求
+You can scout to find our rivals' selling prices, to help us decide our selling price=打探消息可以知悉对手的售卖价格，辅助我们进行竞价决策
+You can scout to learn our rivals' purchasing strategies, to help us decide our purchasing price=打探消息可以知悉对手的进货策略，辅助我们进行竞价决策
+You can select a {0}★ Operator that meets the requirements and level a skill to Specialization Level 3=可以选择一个满足专精条件的{0}★干员的技能，提升至专精3级
+You can select a {0}★ Operator that meets the requirements and level a skill to Specialization Level 3 (Excluding the Special Operator)=可以选择一个满足专精条件的{0}★干员的技能，提升至专精3级（不包含特勤干员）
+You can spend <color\=#CC6E3B>{0}</color> Authorized Investigation Permits to try to get information on the area.=消耗<color\=#CC6E3B>{0}</color>授权调查许可，可能会获得该区域的一些情报……
+You can spend {0} Authorized Investigation Permits to try to get information on the area.=消耗{0}授权调查许可，可能会获得该区域的一些情报……
+You can still ask <color\=#e9e5df><size\=22>{0}</size></color> time(s).=还能问 <color\=#e9e5df><size\=22>{0}</size></color> 次
+You can still ask {0} time(s).=还能问 {0} 次
+You can still select more Operator(s). Are you sure you want to proceed?=尚未选满干员，确认直接开始吗？
+You can still spend <color\=#1eb090>{0}</color> Coupon(s) to refresh=你仍可以消耗<color\=#1eb090>{0}</color>票券进行刷新
+You can still spend {0} Coupon(s) to refresh=你仍可以消耗{0}票券进行刷新
+You can view current event contents in the Terminal, and they will be recorded here after it ends=可在终端查看当前活动内容，活动结束后将被收录至此
+You can't block all the routes. Please re-deploy.=禁止封死道路，请重新放置
+You can't cancel the deployment in the tutorial.=教学中无法取消干员部署
+You cannot retrieve this Slug upon release=放归后将无法再次获得该源石虫
+You cannot return to the current state if you proceed. Please act with caution.=进入读取后将无法返回当前的地图，请谨慎操作
+You deployed a {0} and triggered {1}.=你调度了一枚{0}，触发了{1}
+You don't have enough Sanity for the operation.\nReturn to the homepage to replenish it?=当前理智不足以支持本次行动\n是否返回首页进行补充？
+You don't have {0} with you...=行囊里没有{0}...
+You have already selected {0} as your personal customization.=您已选择  {0}  作为个人定制
+You have been asked to leave the room=您已被请离房间
+You have collected the Credit today=今日已收取过信用
+You have marked the selected Operator=您已为该干员添加特别关注
+You have no Constructs placed in your Forward Camp, do you still wish to proceed?=前进营地未部署任何设施，是否仍然进入战斗？
+You have not set a new formula. Leave anyway?=尚未执行新的制造计划，是否确认离开设施
+You have obtained all collectibles=你已获得所有收藏品
+You have selected <color\=#FFC600>{0}</color>as <color\=#FFC600>{1}</color>responsible for creating <color\=#FFC600>{2}</color> project.=您已选择<color\=#FFC600>{0}</color> 作为<color\=#FFC600>{1}</color> 负责团队创建<color\=#FFC600>{2}</color> 项目
+You have selected {0}as {1}responsible for creating {2} project.=您已选择{0} 作为{1} 负责团队创建{2} 项目
+You have set a Test Project requirement. Please use Matchmaking to search for a cooperator=您已设置了测试项目条件，请进行匹配寻找合作团队
+You have visited this friend today=今日已造访过该好友
+You have {0}=持有{0}缕
+You have {0} applicable Operator(s)=你有{0}名可以生效的干员
+You have {0} available Foldartal(s) to make a deal with=你有{0}个可以交易的密文板
+You have {0} Candleguest(s) prepared for combat=你有{0}名伺烛客可出战
+You have {0} collectible(s) available for trade.=你有{0}个可供交换的收藏品
+You have {0} Foldartal(s) to use this with=你有{0}个可组装的密文板
+You have {0} Operator(s) able to light candles=你有{0}名可燃烛干员
+You have {0} Operator(s) available to transport supplies.=你有{0}名可以运送物资的干员
+You have {0} Recruitment Voucher(s)=你有{0}张招募券
+You have {0} upgradable Operators.=你有{0}名可以进阶的干员
+You must assign at least 1 Operator to start the production.=至少需要配置一名干员后才能执行制造计划
+You must assign at least 1 Operator to start the sales.=至少需要配置一名干员后才能执行销售计划
+You must have at least 1 Operator in the squad to start.=编队中要包含至少一位干员才能出战
+You must select a Clue first.=没有选择要传递的线索
+You need a Lv.{0} Training Room for Specialization.=需要{0}级训练室才可专精
+You obtained <color\=#2DA186>{0}</color> and other Operators, so the corresponding model or support Operator has been withdrawn\nGo to Stronghold Logistics to make adjustments=由于获得<color\=#2DA186>{0}</color>等干员，对应原型干员或助战干员已撤离\n请前往物资调配处调整
+You obtained <color\=#2DA186>{0}</color>, so the corresponding model or support Operator has been withdrawn\nGo to Stronghold Logistics to make adjustments=由于获得<color\=#2DA186>{0}</color>干员，对应原型干员或助战干员已撤离\n请前往物资调配处调整
+You obtained {0} and other Operators, so the corresponding model or support Operator has been withdrawn\nGo to Stronghold Logistics to make adjustments=由于获得{0}等干员，对应原型干员或助战干员已撤离\n请前往物资调配处调整
+You obtained {0}, so the corresponding model or support Operator has been withdrawn\nGo to Stronghold Logistics to make adjustments=由于获得{0}干员，对应原型干员或助战干员已撤离\n请前往物资调配处调整
+You still have Gold Coins left. Do you want to start the next round of combat?\nYou'll <color\=#FF6101>lose</color> all unspent Gold Coins from this round.=还有金币剩余，是否开始下一轮作战？\n本回合未消耗完的金币将会<color\=#FF6101>清零</color>
+You still have Gold Coins left. Do you want to start the next round of combat?\nYou'll lose all unspent Gold Coins from this round.=还有金币剩余，是否开始下一轮作战？\n本回合未消耗完的金币将会清零
+You still have unsaved changes. Are you sure you want to exit?=存在尚未保存的更改，是否确认退出？
+You support this side=您 支持了这一方
+You tricked me! I'm SO mad!=糊弄小刻，小刻生气了！
+You unlocked {0} new collectibles during this adventure.=在这次冒险中，你解锁了{0}个新的收藏品
+You will not be penalized for leaving=您退出比赛将不会受到处罚
+You will not obtain any rewards if you leave now=主动离开不会获得任何奖励
+You're about to enter EP {0} [{1}]. We recommend you read previous chapters first for a more cohesive narrative experience.\nContinue?=即将进入EP{0}【{1}】，建议观看前置章节了解更多内容，按照章节顺序阅读可获得更佳剧情体验。\n是否进入？
+You're acting too frequently. Please try again later=操作过于频繁，请稍后再试
+You've already sent a friend request to this doctor.=已对该博士进行过好友申请
+You, <color\=#{4}>Dr. {0}</color> used the <color\=#{4}>{1}</color> and spent <color\=#{4}>{2}</color> on <color\=#{4}>{3}</color>=您 <color\=#{4}>Dr.{0}</color> 使用 <color\=#{4}>{1}</color> 历时 <color\=#{4}>{2}</color> 于 <color\=#{4}>{3}</color>
+You, Dr. {0} used the {1} and spent {2} on {3}=您 Dr.{0} 使用 {1} 历时 {2} 于 {3}
+Your Algorithm save data and progress will not be affected; this battle's progress will also not be saved=对演算存档和进度均无影响；本次作战进度不会保留
+Your Capture Box is full!=捕获箱已满，无法继续捕捉！
+Your current squad has no Operators but will still require energy drinks=当前队伍未携带任何干员，仍会消耗能量饮料
+Your hand has exceeded the limit [{0}/{1}]. Adjust as soon as possible.=手牌超出上限【{0}/{1}】，请尽快进行调整
+Your hand has exceeded the limit. Sort out your hand first.=手牌超出上限，请在整理手牌后操作
+Your hand is full [{0}/{1}]. Unable to buy supplies from the Barge.=手牌已满【{0}/{1}】，无法从驳船购买补给
+Your ingots have been stolen=你的源石锭被吸走了
+Your name must not include special characters or exceed 8 characters=你的名字不包含特殊字符，且不能多于8个字符
+Your Thoughts are lost to the Philosophical Epoch, unable to continue interpreting=思维迷失于哲学年代，无法继续解读思绪
+Your Thoughts have been lost to the Philosophical Epoch, unable to interpret them=思维已迷失于哲学年代，无法尝试解读
+Your topic #{0} has a new post.=你关注的话题#{0}有一条新发布
+Your topic <color\=#{1}>#{0}</color> has a new post.=你关注的话题<color\=#{1}>#{0}</color>有一条新发布
+Zone Locked=区块尚未解锁
+{0:00}:{1:00}:{2:00} until next available meal=距离下次可用餐{0:00}:{1:00}:{2:00}
+{0:D2} hrs {1:D2} min {2:D2} sec={0:D2}时{1:D2}分{2:D2}秒
+{0:D2}/{1:D2} {2:D2}:{3:D2}~{4:D2}/{5:D2} {6:D2}:{7:D2} {8} days {9} hrs remaining={0:D2}/{1:D2} {2:D2}:{3:D2}~{4:D2}/{5:D2} {6:D2}:{7:D2} 剩余{8}日{9}时
+{0:D2}/{1:D2}/{2:D2}:{3:D2}~{4:D2}/{5:D2}/{6:D2}:{7:D2}\n{8} remaining={0:D2}/{1:D2}/{2:D2}:{3:D2}~{4:D2}/{5:D2}/{6:D2}:{7:D2}\n剩余{8}
+{0:D4}/{1:D2}/{2:D2} {3:D2}:{4:D2}  <color\=#{5}>{6} remaining</color>={0:D4}/{1:D2}/{2:D2} {3:D2}:{4:D2}  <color\=#{5}>剩余 {6}</color>
+{0:D4}/{1:D2}/{2:D2} {3:D2}:{4:D2}  {6} remaining={0:D4}/{1:D2}/{2:D2} {3:D2}:{4:D2}  剩余 {6}
+{0:D4}/{1:D2}/{2:D2} {3:D2}:{4:D2} Remaining {5}={0:D4}/{1:D2}/{2:D2} {3:D2}:{4:D2}  剩余 {5}
+{0:f1} times={0:f1}倍
+{0:F1}0k={0:F1}万
+{0:N1} x EXP & LMD={0:N1}倍声望&龙门币奖励
+{0}\n\n<color\=#b9b9b9>{1}  Prestige +{2}</color>={0}\n\n<color\=#b9b9b9>{1} 声望+{2}</color>
+{0}\n\n{1}  Prestige +{2}={0}\n\n{1} 声望+{2}
+{0}\n<color\=#C30A0A8A>Exchange will cost {1} {2}</color>={0}\n<color\=#C30A0A8A>交换需要消耗{1}{2}</color>
+{0}\nExchange will cost {1} {2}={0}\n交换需要消耗{1}{2}
+{0}  Prestige +{1}={0} 声望+{1}
+{0}  {1}  Reconstruct past events={0}  {1}  重建过往事件
+{0} (must be claimed in Trial Tasks after completion)={0}（达成后需前往试炼任务领取）
+{0} (Remaining: {1})={0}（库存：{1}）
+{0} ({1} times left)={0}(剩余{1}次)
+{0} <color\=#FF7903>({1} times left)</color>={0}<color\=#FF7903>(剩余{1}次)</color>
+{0} accounts for <color\=#ffd800>{1}%</color> of the odds={0}·占总出率的<color\=#ffd800>{1}%</color>
+{0} accounts for {1}% of the odds={0}·占总出率的{1}%
+{0} added to supports, now available for training=已助战{0}，可前往战备培训
+{0} amount insufficient, please increase the respective faction's Prestige to obtain={0}数量不足，请提升相应阵营声望以获取
+{0} and a total of {1} track(s) are available as base music={0}等{1}首基建音乐已可更换使用
+{0} appeared=已出现{0}
+{0} can hold up to <color\=#e50d0d>{1}</color> slugs. Exceeded ones will not be captured={0}当前可容纳源石虫数量小于等于<color\=#e50d0d>{1}</color>，超出可容纳数量会导致捕捉失败
+{0} can hold up to {1} slugs. Exceeded ones will not be captured={0}当前可容纳源石虫数量小于等于{1}，超出可容纳数量会导致捕捉失败
+{0} chances daily=每日{0}次机会
+{0} claimed={0}已领取
+{0} Completed={0}已完成
+{0} consumed=已消耗 {0}
+{0} consumed will be restored.=返还本次消耗的{0}
+{0} Contestants={0}位参赛者
+{0} Contingency can be selected.={0}危机已可选择
+{0} Crude Gold consumed=将消耗粗制赤金 {0}
+{0} Damaged Constructs={0}设施受损
+{0} days={0}天
+{0} days remaining=剩余{0}天
+{0} days {1:D2} hrs {2:D2} min {3:D2} sec={0}日{1:D2}时{2:D2}分{3:D2}秒
+{0} days {1} hrs={0}天{1}小时
+{0} deployed / {1} maximum=已部署 {0} / 同类可部署 {1}
+{0} doesn't meet the Promotion requirement={0}不满足提升条件
+{0} Emergency Supply mode unlocked={0}应急补给模式已解锁
+{0} expires: {1}=“{0}”过期时间：{1}
+{0} extra chances tomorrow=明日额外赠送{0}次选择机会
+{0} free attempt(s) left=剩余{0}次免费通行机会
+{0} Free Roll=赠送 {0} 次
+{0} full={0}容量已达上限
+{0} has already been fulfilled.={0}已收款
+{0} has appeared={0}已登场
+{0} has been automatically refilled={0}已自动补货
+{0} has been set as base music={0}已被设置为基建音乐
+{0} has been unlocked={0}现已解锁
+{0} has been unlocked.={0}已解锁
+{0} has escaped from the chaotic future={0}从混沌未来中逃脱
+{0} has reached limit={0}达到上限
+{0} has reached Specialization level {1}=技能 {0} 已完成专精等级{1}
+{0} has returned.={0}归队了
+{0} hrs={0}小时
+{0} in training={0}在训练中
+{0} is an NPC and you cannot change its lock status.={0}是剧情人物，不能改变其锁定状态
+{0} item(s)={0}件
+{0} items={0}项
+{0} items will be converted into {1} {2}.=购买的{0}个商品会转变为{1}{2}
+{0} left=剩余{0}
+{0} limited=限量 {0}
+{0} locked={0}未解锁
+{0} Logistics Bonus={0}项后勤加成
+{0} Logistics buffs active=共{0}项后勤增益
+{0} Main Theme unlocked={0}主题已解锁
+{0} Medals selected=已选择{0}个蚀刻章
+{0} min={0}分钟
+{0} mission complete={0}任务完成
+{0} mission incomplete={0}任务未完成
+{0} more members\nneeded=至少还需\n{0}名群成员
+{0} more Toil and your mind will be Fractured=还剩{0}负荷将混乱
+{0} more Toil and your mind will be Obstructed=还剩{0}负荷将阻滞
+{0} move(s) left=剩{0}步
+{0} must be added to your Squad.=编队中须加入{0}
+{0} must reach <color\=#feb301>Promotion {1}</color>.={0}须达到<color\=#feb301>精英阶段{1}</color>
+{0} must reach Lv.{1} for the Promotion.={0}需要达到{1}级才能进行精英化
+{0} must reach Promotion {1}.={0}须达到精英阶段{1}
+{0} Needed=需加工{0}
+{0} new collectible(s) unlocked during this exploration=本次探索新解锁{0}个收藏品
+{0} new Foldartal(s) unlocked during this exploration=本次探索新解锁{0}个密文板
+{0} New Stage Unlocked={0}玩法解锁新关卡
+{0} new Tongbao(s) were unlocked on this adventure=本次冒险新解锁{0}枚通宝
+{0} now in {1}!={0}已被放入{1}！
+{0} obtained=获得了关卡解锁道具[{0}]
+{0} Obtained Today=今日{0}获取
+{0} Operator(s) of the same type=已有{0}名同类干员
+{0} Operators required for Security Operation=干员不足{0}名，无法开始保全作战
+{0} Order(s)={0}笔
+{0} other Medals=及其它{0}枚蚀刻章
+{0} Owned=持有{0}
+{0} pcs={0}份
+{0} people={0}人
+{0} Potential upgrade failed={0} 潜能提升失败
+{0} Potential upgraded!={0} 潜能提升成功！
+{0} Progress synced={0}已同步作战进度
+{0} Raids Defeated=击败{0}次敌袭
+{0} Reach={0}等级达
+{0} reaches Lv.{1}\nTo unlock Drone Acceleration={0}{1}级后\n解锁功能无人机协助
+{0} reaches Lv.{1}\nTo unlock Fast Charge={0}{1}级后\n解锁急速充能
+{0} reaches Lv.{1} to unlock={0}Lv.{1}解锁
+{0} reaches Lv.{1} to unlock.={0}Lv{1}解锁
+{0} Recipe Learned=学会了{0}的烹调方法
+{0} Remaining=剩余{0}
+{0} removed from supports=已移除助战{0}
+{0} requirement+={0}需求+
+{0} Round {1}={0} 第 {1} 轮
+{0} Round {1}/<color\=#7C7C7C>{2}</color>={0} 第 {1}/<color\=#7C7C7C>{2}</color> 轮
+{0} Round {1}/{2}={0} 第 {1}/{2} 轮
+{0} sec={0}秒
+{0} sent to warehouse={0}已转运入库
+{0} sets completed=已有完整 {0} 套
+{0} Severely damaged={0}严重受损
+{0} smelted=冶炼数量{0}
+{0} Strategic Simulation unlocked=已解锁 {0} 的沙盘推演
+{0} supporting this side······=共 {0} 人支持此队伍······
+{0} times={0}次
+{0} times remaining today.=今日剩余{0}次
+{0} times total!=共计{0}次！
+{0} to Get={0}获得
+{0} total times={0}累计次数
+{0} Unlock Conditions={0}解锁条件
+{0} unlocked.=解锁了{0}
+{0} Unlocks after Prestige reaches {1}={0}声望到达{1}解锁
+{0} until next business day=距离下次营业还有{0}
+{0} Upgradeable Constructs={0}设施可升级
+{0} Upgraded={0}章已升级
+{0} upgraded={0}升级已完成
+{0} was not downloaded, and the corresponding segment will be skipped during the story.=未下载{0}资源，剧情将会跳过相应片段
+{0} Week(s)={0}周
+{0} {1} consumed=已消耗 {0} 份 {1}
+{0} {1} needed to upgrade {2} to LV.{3}=需要 {0} {1} 将{2}迭代至LV.{3}
+{0} {1} unlocked={0}{1}已解锁
+{0}'s Base={0}的基建
+{0}'s Basic Badge={0}的基础证章
+{0}'s Exclusive Outfit={0}专属时装
+{0}'s Order={0}的订单
+{0}'s production finished={0}完成制造
+{0}'s resume={0}的简历
+{0}, etc.={0}等
+{0}-{1}-{2} expiring in {3} days={0}-{1}-{2} {3}日后过期
+{0}/per recruitment={0}/每招募
+{0}/{1} Assistants selected=已选择{0}/{1}个助理
+{0}/{1} Obtained={0}/{1} 已获得
+{0}/{1} Outfits selected=已选择{0}/{1}个装扮
+{0}/{1} {2:D2}:{3:D2}={0}月{1}日{2:D2}:{3:D2}
+{0}<color\=#0098dc>[{1}]</color> unlock mission status updated.={0}<color\=#0098dc>[{1}]</color>解锁任务进度已更新
+{0}<color\=#22BBFF>{1}</color> locked={0}<color\=#22BBFF>{1}</color>未解锁
+{0}<color\=#C8D6F6> New Stage Unlocked</color>={0}<color\=#C8D6F6>玩法解锁新关卡</color>
+{0}<color\=#C8D6F6> Upgraded</color>={0}<color\=#C8D6F6>章已升级</color>
+{0}[{1}] unlock mission status updated.={0}[{1}]解锁任务进度已更新
+{0}Construct Status={0}内设施现状
+{0}d left=剩余{0}日
+{0}d left until return=远征剩余{0}日
+{0}d left until Strange Territory exploration=距离开始陌域探访还剩{0}日
+{0}d to Calculation Day=距离量定之日还有{0}日
+{0}d until arrival=还有{0}日抵达
+{0}d until available={0}日后可补领
+{0}d until escape=还有{0}日逃离
+{0}d until Exploration completed=距离探访计划结束还有{0}日
+{0}D {1:00}:{2:00}={0}日{1:00}时{2:00}分
+{0}Dined{1}={0}已进餐{1}
+{0}Exclusive module unlocked={0}解锁专属模组
+{0}Must reach {1}{2} before skills can be upgraded.={0}需要达到{1}{2}才能提升技能等级
+{0}You can choose up to {1}.={0}最多只能选择{1}份
+{0}{1} locked={0}{1}未解锁
+{0}{1}k={0}.{1}万
+{0}★other character drop rate【{1}%】{2}x rate boost.=在{0}★剩余出率【{1}%】中以{2}倍权值出率提升
+{1} day(s)={1}天
+{1} hrs={1}小时
+{1} in {0}={0}后{1}
+{1} min={1}分钟
+{1} new article(s) added to '{0}' in Info Port=[信息端口]新增了[{0}]中的{1}篇内容
+{1} new backgrounds <color\=#4abdff>{0}</color> and more can now be used=<color\=#4abdff>{0}</color>等{1}个新的主页场景已可更换使用
+{1} new backgrounds {0} and more can now be used={0}等{1}个新的主页场景已可更换使用
+{1} new Main Themes including <color\=#4abdff>{0}</color> unlocked=<color\=#4abdff>{0}</color>等{1}个新的主题已解锁
+{1} new Main Themes including {0} unlocked={0}等{1}个新的主题已解锁
+· Collect {0} {1}=·累计收集{0}个{1}
+·<color\=#ffd800>Immediately get</color> {0} x{1}=·<color\=#ffd800>立即获得</color>{0}x{1}
+·Immediately get {0} x{1}=·立即获得{0}x{1}
+·Operator {0}'s Contract=·干员 {0} 招聘合同
+·Operator {0}'s Contract x1=·干员 {0} 招聘合同x1
+·Outfit {0} x1=·时装 {0} x1
+·Sign in every day for {0} x{1}=·每日签到获得{0}x{1}
+······<color\=#FFFFFF>{0}</color> supporting this side=······共 <color\=#FFFFFF>{0}</color> 人支持此队伍
+······{0} supporting this side=······共 {0} 人支持此队伍
+×{0} to unlock=x{0}解锁
+∞ limited=限量 ∞
