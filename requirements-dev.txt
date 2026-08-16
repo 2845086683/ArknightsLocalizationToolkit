@@ -1,0 +1,3 @@
+-r requirements.txt
+pyinstaller~=6.22
+pytest~=9.1

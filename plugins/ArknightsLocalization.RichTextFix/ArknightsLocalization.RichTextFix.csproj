@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>ArknightsLocalization.RichTextFix</AssemblyName>
+    <RootNamespace>ArknightsLocalization.RichTextFix</RootNamespace>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>..\..\tools\runtime\</OutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx.Core" Private="false">
+      <HintPath>..\..\outputs\runtime\jp-zh-offline-final\BepInEx\core\BepInEx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Unity.IL2CPP" Private="false">
+      <HintPath>..\..\outputs\runtime\jp-zh-offline-final\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+    </Reference>
+    <Reference Include="XUnity.AutoTranslator.Plugin.Core" Private="false">
+      <HintPath>..\..\outputs\runtime\jp-zh-offline-final\BepInEx\plugins\XUnity.AutoTranslator\XUnity.AutoTranslator.Plugin.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

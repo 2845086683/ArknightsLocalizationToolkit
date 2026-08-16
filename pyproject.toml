@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arknights-localization-toolkit"
+version = "0.1.0"
+description = "Offline Arknights EN/JP to Simplified Chinese localization toolkit"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "UnityPy~=1.25",
+  "flatbuffers~=25.12",
+  "lz4~=4.4",
+  "numpy~=2.2",
+  "pycryptodome~=3.22",
+  "py7zr~=1.1",
+  "bson~=0.5",
+]
+
+[project.scripts]
+arklocalizer = "arklocalizer.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["arklocalizer*"]

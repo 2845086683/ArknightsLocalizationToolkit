@@ -1,0 +1,7 @@
+bson~=0.5
+flatbuffers~=25.12
+lz4~=4.4
+numpy~=2.2
+pycryptodome~=3.22
+py7zr~=1.1
+UnityPy~=1.25
