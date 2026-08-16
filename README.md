@@ -1,7 +1,8 @@
 # 明日方舟 PC 日服／美服离线中文工具
 
 > 项目作者B站主页：[繁花掠影](https://space.bilibili.com/13552115)
->
+> 相关视频教程[点击此处查看](https://www.bilibili.com/video/BV1sXb96BEnB/)
+> 
 > 重要！使用前请完整阅读“使用声明与风险”一节。
 
 ## 项目简介
