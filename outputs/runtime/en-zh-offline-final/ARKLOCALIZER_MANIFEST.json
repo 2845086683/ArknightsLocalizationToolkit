@@ -220,8 +220,8 @@
     },
     {
       "path": "BepInEx/plugins/README (AutoTranslator).md",
-      "bytes": 158314,
-      "sha256": "e77d82c0af63ced9846288d34d1acfd18243828d0056545b7c34e4990393b633"
+      "bytes": 155674,
+      "sha256": "e1a52a730406952985c8441bcdc6140712c1f07c3d493a460b5fea9e12413b65"
     },
     {
       "path": "BepInEx/plugins/XUnity.AutoTranslator/ExIni.dll",
@@ -285,8 +285,8 @@
     },
     {
       "path": "dotnet/.version",
-      "bytes": 49,
-      "sha256": "4052ab33b00d0411fc9ce103ac9d51564cf8630fddb7464d82ddcc168d4d302c"
+      "bytes": 47,
+      "sha256": "b7d1d0e8f001f9f7bdbe8056f53140763ff0ac15ee427f7d5354f10b79b3eb92"
     },
     {
       "path": "dotnet/clretwrc.dll",
@@ -360,13 +360,13 @@
     },
     {
       "path": "dotnet/Microsoft.NETCore.App.deps.json",
-      "bytes": 32783,
-      "sha256": "879dc0cb9c9a7a41681e399fc4f18c15ef1ac9a3410f68b94a8d13dd0c6c391c"
+      "bytes": 31803,
+      "sha256": "e50bd299287519cf01928d38e96925ce4ccb80aeb7fe21abe6dbe7011f717c60"
     },
     {
       "path": "dotnet/Microsoft.NETCore.App.runtimeconfig.json",
-      "bytes": 159,
-      "sha256": "1b7aa545d9d3216979a9efe8d72967f6e559a9c6a22288d14444d6c5c4c15738"
+      "bytes": 152,
+      "sha256": "77c6ff50411c35773260d714c4e7f10672a4896d2ee77fe13f1a650c9fc53b00"
     },
     {
       "path": "dotnet/Microsoft.VisualBasic.Core.dll",

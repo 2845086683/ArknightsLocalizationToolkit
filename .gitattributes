@@ -1,0 +1,4 @@
+# Runtime bundles are integrity-checked byte-for-byte. Treat every bundled
+# artifact as binary so checkout/archive line-ending conversion cannot make
+# the files disagree with ARKLOCALIZER_MANIFEST.json.
+/outputs/runtime/** -text
