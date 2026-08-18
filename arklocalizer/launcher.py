@@ -525,7 +525,8 @@ class LauncherApp(tk.Tk):
             )
             self._queue_log(
                 f"运行时状态：{runtime['state']}；已验证 {runtime['verified']}，"
-                f"修改 {runtime['modified']}，缺失 {runtime['missing']}。"
+                f"修改 {runtime['modified']}，缺失 {runtime['missing']}，"
+                f"运行期改写 {runtime.get('runtime_modified', 0)}。"
             )
             if result["running_processes"]:
                 self._queue_log(
@@ -710,7 +711,16 @@ class LauncherApp(tk.Tk):
             "clean": ("原版客户端 / 待安装", COLORS["accent"], "未检测到注入文件"),
             "foreign": ("检测到外部注入", COLORS["danger"], "建议先恢复原版客户端"),
             "orphaned": ("检测到旧版卸载残留", COLORS["danger"], "可点击“卸载汉化”彻底清理"),
-            "installed": ("离线汉化已安装", COLORS["good"], f"已验证 {runtime['verified']} 个文件"),
+            "installed": (
+                "离线汉化已安装",
+                COLORS["good"],
+                f"已验证 {runtime['verified']} 个文件"
+                + (
+                    f" · 运行期改写 {runtime.get('runtime_modified', 0)}"
+                    if runtime.get("runtime_modified", 0)
+                    else ""
+                ),
+            ),
             "needs_repair": (
                 "汉化需要修复",
                 COLORS["danger"],

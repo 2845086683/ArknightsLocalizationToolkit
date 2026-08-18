@@ -1,7 +1,12 @@
 from __future__ import annotations
 
+import http.client
 import os
 import shutil
+import socket
+import ssl
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -32,6 +37,35 @@ COMPONENT_URLS = {
     ),
 }
 
+_DOWNLOAD_RETRY_DELAYS = (1.0, 2.0, 4.0)
+_RETRYABLE_HTTP_STATUS = frozenset({408, 425, 429, 500, 502, 503, 504})
+
+
+class _DownloadedHashMismatch(ValueError):
+    """A completed response whose bytes do not match the pinned artifact."""
+
+
+def _is_retryable_download_error(error: BaseException) -> bool:
+    if isinstance(error, urllib.error.HTTPError):
+        return error.code in _RETRYABLE_HTTP_STATUS
+    if isinstance(error, urllib.error.URLError):
+        return isinstance(
+            error.reason,
+            (ConnectionError, OSError, TimeoutError, socket.timeout, ssl.SSLError),
+        )
+    return isinstance(
+        error,
+        (
+            _DownloadedHashMismatch,
+            ConnectionError,
+            TimeoutError,
+            socket.timeout,
+            ssl.SSLError,
+            http.client.IncompleteRead,
+            http.client.RemoteDisconnected,
+        ),
+    )
+
 
 def _download_verified(url: str, destination: Path, expected_hash: str, proxy: str | None) -> str:
     if destination.is_file():
@@ -46,19 +80,40 @@ def _download_verified(url: str, destination: Path, expected_hash: str, proxy: s
     if proxy:
         handlers.append(urllib.request.ProxyHandler({"http": proxy, "https": proxy}))
     opener = urllib.request.build_opener(*handlers)
-    request = urllib.request.Request(url, headers={"User-Agent": "ArknightsLocalizationToolkit/0.1"})
-    try:
-        with opener.open(request, timeout=90) as response, partial.open("wb") as output:
-            shutil.copyfileobj(response, output, length=1024 * 1024)
-        actual = sha256_file(partial)
-        if actual != expected_hash:
-            raise ValueError(f"Downloaded SHA-256 mismatch for {destination.name}: {actual}")
-        os.replace(partial, destination)
-    except Exception:
-        if partial.is_file():
-            partial.unlink()
-        raise
-    return "downloaded"
+    attempts = len(_DOWNLOAD_RETRY_DELAYS) + 1
+    for attempt in range(attempts):
+        request = urllib.request.Request(
+            url,
+            headers={"User-Agent": "ArknightsLocalizationToolkit/0.1"},
+        )
+        try:
+            with opener.open(request, timeout=90) as response, partial.open("wb") as output:
+                shutil.copyfileobj(response, output, length=1024 * 1024)
+            actual = sha256_file(partial)
+            if actual != expected_hash:
+                raise _DownloadedHashMismatch(
+                    f"Downloaded SHA-256 mismatch for {destination.name}: {actual}"
+                )
+            os.replace(partial, destination)
+            return "downloaded"
+        except Exception as error:
+            if partial.is_file():
+                partial.unlink()
+            retryable = _is_retryable_download_error(error)
+            if not retryable:
+                raise
+            if attempt == attempts - 1:
+                proxy_hint = (
+                    "Check the configured HTTP(S) proxy."
+                    if proxy
+                    else "Retry later or configure an HTTP(S) proxy in the launcher."
+                )
+                raise RuntimeError(
+                    f"Failed to download {destination.name} after {attempts} attempts: "
+                    f"{error}. {proxy_hint}"
+                ) from error
+            time.sleep(_DOWNLOAD_RETRY_DELAYS[attempt])
+    raise AssertionError("unreachable")
 
 
 def prepare_official_components(

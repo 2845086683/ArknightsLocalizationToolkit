@@ -29,9 +29,9 @@
 
 维护者更新并生成词库时还需要：
 
-- Git、Anaconda 或 Miniconda，以及可访问所列公开仓库的网络。
+- **Git、Anaconda 或 Miniconda**，以及可访问所列公开仓库的网络。
 - 数 GB 临时磁盘空间；构建环境默认保存在项目内的 `.conda-env`，缓存和检出保存在 `cache`、`vendor`。
-- 完整发布包或源码目录。
+- v1.0.2及以后的完整发布包或源码目录。
 
 ## 快速使用
 
@@ -43,7 +43,7 @@
 ArknightsLocalizationToolkit.exe
 ```
 
-发布包不附带普通用户用不到的 PowerShell 构建、打包或维护脚本。
+v1.0.1及之前的发布包不附带词表重建功能，所有发布包均不携带重建词表必需的运行时，若需要更新/重建词表需要先点击初始化构建环境按钮。在新的词表构建完成后，工具会自动应用最新构建的词表（此功能**需要Conda和Git环境**）。
 
 ### 2. 选择客户端
 
@@ -82,7 +82,7 @@ C:\YostarGames\Arknights_JP\Arknights.exe
 
 1. 完全退出 `Arknights.exe`，在启动器中选择要更新的美服或日服客户端，并确认区域为 `EN` 或 `JP`。
 2. 如果访问 GitHub 需要代理，在“HTTP(S) 代理”中填写例如 `http://127.0.0.1:7890`；不需要时留空。
-3. 第一次维护时点击“初始化构建环境”。工具会在项目内创建 `.conda-env`、安装 `requirements.txt`、下载并校验固定版本 BepInEx/XUnity/字体，并初始化公开数据、Schema 和解析参考仓库。
+3. 第一次维护时点击“初始化构建环境”。工具会在项目内创建 `.conda-env`、安装 `requirements.txt`、下载并校验固定版本 BepInEx/XUnity/字体，并初始化公开数据、Schema 和解析参考仓库。整个流程较长，请耐心等待。
 4. 保持“重建前更新公开仓库”勾选，点击“更新词表并重建”。工具会提取当前客户端的数据表和剧情，对齐中文公开数据，过滤冲突，严格校验词表并封装运行时。
 5. 成功结果位于 `outputs\builds\区域-时间\`，其中包含 `client-tables`、`client-story`、`pack`、`pack-validation.json` 和 `runtime`。启动器同时更新 `outputs\current-en-runtime.txt` 或 `outputs\current-jp-runtime.txt`，后续“安装 / 修复并启动”会优先使用这次生成的运行时。
 6. 关闭游戏后点击“安装 / 修复并启动”，实机检查新增干员信息、剧情内容、活动界面等。另一服务器需要切换区域和客户端后分别重建。
@@ -91,7 +91,7 @@ C:\YostarGames\Arknights_JP\Arknights.exe
 
 ### 命令行完整流程
 
-以下命令在项目根目录的 PowerShell 中执行。示例为美服；日服将 `$Locale` 改为 `jp`，并修改 `$GameDir`。
+以下命令在项目根目录的 PowerShell 中执行。示例为美服；日服将 `$Locale` 改为 `jp`，并修改 `$GameDir` 为你的实际游戏目录。
 
 首次初始化：
 

@@ -1,15 +1,17 @@
 from __future__ import annotations
 
+import configparser
 import csv
 import io
 import json
 import os
 import subprocess
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 
+from .runtime import AUTO_TRANSLATOR_CONFIG_PATH, inspect_orphaned_runtime
 from .util import sha256_file
-from .runtime import inspect_orphaned_runtime
+from .xunity import offline_config
 
 
 INJECTION_MARKERS = (
@@ -73,6 +75,38 @@ def _layer_summary(root: Path) -> dict[str, Any]:
     }
 
 
+def _parse_ini(text: str) -> configparser.ConfigParser:
+    parser = configparser.ConfigParser(
+        interpolation=None,
+        empty_lines_in_values=False,
+    )
+    parser.read_string(text)
+    return parser
+
+
+def _compatible_auto_translator_config(path: Path, manifest: dict[str, Any]) -> bool:
+    staging = manifest.get("staging_manifest", {})
+    source_locale = staging.get("source_locale")
+    if source_locale not in {"en", "jp"}:
+        return False
+    font = staging.get("font")
+    if font is not None and not isinstance(font, str):
+        return False
+    try:
+        expected = _parse_ini(offline_config(source_locale, font or ""))
+        actual = _parse_ini(path.read_text(encoding="utf-8-sig"))
+    except (OSError, UnicodeError, configparser.Error, ValueError):
+        return False
+    return all(
+        actual.has_section(section)
+        and all(
+            actual.get(section, option, raw=True, fallback=None) == value
+            for option, value in expected.items(section, raw=True)
+        )
+        for section in expected.sections()
+    )
+
+
 def _installed_runtime(game_dir: Path) -> dict[str, Any]:
     install_path = game_dir / "ArknightsLocalizationToolkit.install.json"
     if not install_path.is_file():
@@ -87,16 +121,23 @@ def _installed_runtime(game_dir: Path) -> dict[str, Any]:
             "verified": 0,
             "modified": 0,
             "missing": 0,
+            "runtime_modified": 0,
         }
 
     manifest = json.loads(install_path.read_text(encoding="utf-8"))
-    verified = modified = missing = 0
+    verified = modified = missing = runtime_modified = 0
     for item in manifest.get("files", []):
-        destination = game_dir.joinpath(*Path(item["path"]).parts)
+        relative = PurePosixPath(str(item["path"]))
+        destination = game_dir.joinpath(*relative.parts)
         if not destination.is_file():
             missing += 1
         elif sha256_file(destination) == item["sha256"]:
             verified += 1
+        elif (
+            relative.as_posix() == AUTO_TRANSLATOR_CONFIG_PATH
+            and _compatible_auto_translator_config(destination, manifest)
+        ):
+            runtime_modified += 1
         else:
             modified += 1
     source_locale = manifest.get("staging_manifest", {}).get("source_locale")
@@ -110,6 +151,7 @@ def _installed_runtime(game_dir: Path) -> dict[str, Any]:
         "verified": verified,
         "modified": modified,
         "missing": missing,
+        "runtime_modified": runtime_modified,
     }
 
 

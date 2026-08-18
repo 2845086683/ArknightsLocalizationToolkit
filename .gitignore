@@ -1,0 +1,12 @@
+# Local Python/Conda state
+/.conda-env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Downloaded dependencies and generated maintainer workspaces
+/cache/
+/vendor/
+/outputs/builds/
+/outputs/current-*-runtime.txt
+/launcher-crash.log
