@@ -528,6 +528,13 @@ class LauncherApp(tk.Tk):
                 f"修改 {runtime['modified']}，缺失 {runtime['missing']}，"
                 f"运行期改写 {runtime.get('runtime_modified', 0)}。"
             )
+            translation_pack = result.get("translation_pack", {})
+            if translation_pack.get("update_available"):
+                self._queue_log(
+                    "检测到客户端已安装词表与当前默认运行时不一致；"
+                    "建议点击“安装 / 修复并启动”来启动游戏，以获取更佳体验。",
+                    "accent",
+                )
             if result["running_processes"]:
                 self._queue_log(
                     "游戏正在运行，安装和卸载已锁定："
@@ -728,6 +735,18 @@ class LauncherApp(tk.Tk):
             ),
         }
         title, color, detail = mapping.get(runtime["state"], (runtime["state"], COLORS["muted"], ""))
+        translation_pack = result.get("translation_pack", {})
+        if translation_pack.get("update_available"):
+            update_detail = (
+                "客户端词表与当前默认运行时不一致\n"
+                "建议点击“安装 / 修复并启动”来启动游戏并获取更佳体验"
+            )
+            if runtime["state"] == "installed":
+                title = "词表版本待更新"
+                color = COLORS["accent"]
+                detail = update_detail
+            else:
+                detail += "\n" + update_detail
         if result.get("running_processes"):
             detail += " · 游戏运行中"
         self.status_var.set(title)

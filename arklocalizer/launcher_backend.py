@@ -292,4 +292,15 @@ def launch_game(config: LauncherConfig) -> subprocess.Popen[bytes]:
 
 
 def scan_configured_client(config: LauncherConfig) -> dict[str, Any]:
-    return scan_client(Path(config.game_executable))
+    try:
+        default_runtime = runtime_for(project_root(), config)
+    except (OSError, ValueError, json.JSONDecodeError) as error:
+        result = scan_client(Path(config.game_executable))
+        result["translation_pack"] = {
+            "checked": False,
+            "reason": "default_runtime_unavailable",
+            "error": str(error),
+            "update_available": False,
+        }
+        return result
+    return scan_client(Path(config.game_executable), default_runtime=default_runtime)

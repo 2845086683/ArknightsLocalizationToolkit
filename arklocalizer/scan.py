@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import configparser
 import csv
+import hashlib
 import io
 import json
 import os
@@ -20,6 +21,104 @@ INJECTION_MARKERS = (
     "doorstop_config.ini",
     "BepInEx",
 )
+
+TRANSLATION_TEXT_ROOT = PurePosixPath("BepInEx/Translation/zh/Text")
+
+
+def _managed_translation_files(manifest: dict[str, Any]) -> dict[str, str]:
+    """Return only staged dictionaries that are maintained by the toolkit.
+
+    XUnity's underscore-prefixed files are generated or rewritten while the
+    game is running, so they deliberately do not participate in pack version
+    comparisons.
+    """
+    root_parts = tuple(part.casefold() for part in TRANSLATION_TEXT_ROOT.parts)
+    files: dict[str, str] = {}
+    for item in manifest.get("files", []):
+        relative = PurePosixPath(str(item.get("path", "")))
+        parts = tuple(part.casefold() for part in relative.parts)
+        if (
+            relative.is_absolute()
+            or ".." in relative.parts
+            or len(parts) != len(root_parts) + 1
+            or parts[: len(root_parts)] != root_parts
+            or relative.suffix.casefold() != ".txt"
+            or relative.name.startswith("_")
+        ):
+            continue
+        digest = item.get("sha256")
+        if not isinstance(digest, str) or len(digest) != 64:
+            raise ValueError(f"词表清单中的 SHA-256 无效：{relative.as_posix()}")
+        key = relative.as_posix().casefold()
+        if key in files:
+            raise ValueError(f"词表清单中存在重复路径：{relative.as_posix()}")
+        files[key] = digest.casefold()
+    return files
+
+
+def _translation_version(files: dict[str, str]) -> str:
+    digest = hashlib.sha256()
+    for path, file_hash in sorted(files.items()):
+        digest.update(path.encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(file_hash.encode("ascii"))
+        digest.update(b"\n")
+    return digest.hexdigest()
+
+
+def compare_translation_pack(game_dir: Path, default_runtime: Path) -> dict[str, Any]:
+    """Compare the installed and default *dictionary manifests* only.
+
+    Comparing manifests instead of every runtime file keeps logs, caches and
+    configuration migrations from being mistaken for a dictionary update.
+    """
+    install_path = game_dir / "ArknightsLocalizationToolkit.install.json"
+    if not install_path.is_file():
+        return {
+            "checked": False,
+            "reason": "not_installed",
+            "update_available": False,
+        }
+
+    default_runtime = default_runtime.expanduser().resolve()
+    default_manifest_path = default_runtime / "ARKLOCALIZER_MANIFEST.json"
+    installed_manifest = json.loads(install_path.read_text(encoding="utf-8-sig"))
+    default_manifest = json.loads(default_manifest_path.read_text(encoding="utf-8-sig"))
+    installed_files = _managed_translation_files(installed_manifest.get("staging_manifest", {}))
+    default_files = _managed_translation_files(default_manifest)
+    if not default_files:
+        raise ValueError(f"默认运行时清单中没有可比较的主词表：{default_manifest_path}")
+    if not installed_files:
+        return {
+            "checked": False,
+            "reason": "installed_manifest_has_no_translation_pack",
+            "default_runtime": str(default_runtime),
+            "update_available": False,
+        }
+
+    default_paths = set(default_files)
+    installed_paths = set(installed_files)
+    changed = sorted(
+        path
+        for path in default_paths & installed_paths
+        if default_files[path] != installed_files[path]
+    )
+    missing = sorted(default_paths - installed_paths)
+    retired = sorted(installed_paths - default_paths)
+    default_version = _translation_version(default_files)
+    installed_version = _translation_version(installed_files)
+    return {
+        "checked": True,
+        "default_runtime": str(default_runtime),
+        "default_version": default_version,
+        "installed_version": installed_version,
+        "files": len(default_files),
+        "changed": len(changed),
+        "missing": len(missing),
+        "retired": len(retired),
+        "differences": changed + missing + retired,
+        "update_available": default_version != installed_version,
+    }
 
 
 def running_game_processes() -> list[dict[str, str]]:
@@ -155,12 +254,12 @@ def _installed_runtime(game_dir: Path) -> dict[str, Any]:
     }
 
 
-def scan_client(executable: Path) -> dict[str, Any]:
+def scan_client(executable: Path, *, default_runtime: Path | None = None) -> dict[str, Any]:
     executable, game_dir = validate_game_executable(executable)
     data = game_dir / "Arknights_Data"
     base = data / "StreamingAssets" / "AB" / "Windows" / "anon"
     hot = data / "PersistentData" / "Bundles" / "anon"
-    return {
+    result = {
         "ok": True,
         "executable": str(executable),
         "game_directory": str(game_dir),
@@ -172,3 +271,6 @@ def scan_client(executable: Path) -> dict[str, Any]:
         "running_processes": running_game_processes(),
         "runtime": _installed_runtime(game_dir),
     }
+    if default_runtime is not None:
+        result["translation_pack"] = compare_translation_pack(game_dir, default_runtime)
+    return result

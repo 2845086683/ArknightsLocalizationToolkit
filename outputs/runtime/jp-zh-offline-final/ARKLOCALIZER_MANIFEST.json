@@ -15,7 +15,7 @@
   "font": "arialuni_sdf_u2021",
   "rich_text_plugin": {
     "path": "BepInEx/plugins/ArknightsLocalization/ArknightsLocalization.RichTextFix.dll",
-    "sha256": "5da51a5dc0db31209af868a4d5e39bb78c5163469c88072aead14c96440a5c25"
+    "sha256": "ad508074fa64276a655caf55e856f4258984078d0cece92270f3a076b6348d5d"
   },
   "files": [
     {
@@ -215,13 +215,13 @@
     },
     {
       "path": "BepInEx/plugins/ArknightsLocalization/ArknightsLocalization.RichTextFix.dll",
-      "bytes": 8704,
-      "sha256": "5da51a5dc0db31209af868a4d5e39bb78c5163469c88072aead14c96440a5c25"
+      "bytes": 9216,
+      "sha256": "ad508074fa64276a655caf55e856f4258984078d0cece92270f3a076b6348d5d"
     },
     {
       "path": "BepInEx/plugins/README (AutoTranslator).md",
-      "bytes": 155674,
-      "sha256": "e1a52a730406952985c8441bcdc6140712c1f07c3d493a460b5fea9e12413b65"
+      "bytes": 158314,
+      "sha256": "e77d82c0af63ced9846288d34d1acfd18243828d0056545b7c34e4990393b633"
     },
     {
       "path": "BepInEx/plugins/XUnity.AutoTranslator/ExIni.dll",
@@ -255,18 +255,18 @@
     },
     {
       "path": "BepInEx/Translation/zh/Text/10_i18n.txt",
-      "bytes": 219564,
-      "sha256": "227800ad5f4841b2f729db21e4e175d7d0c8efaaacdfc8d3bd2344716ea269bd"
+      "bytes": 219754,
+      "sha256": "c60a23a07237fddc34a9f9981e905d709a0560d84f9dfb541cee1c6fd19684f2"
     },
     {
       "path": "BepInEx/Translation/zh/Text/20_tables.txt",
-      "bytes": 31576136,
-      "sha256": "61d812ae835d0606d361562bb6c65abccdf8f075d8ff5737de1fd125a4c3b0db"
+      "bytes": 31510737,
+      "sha256": "12c8384dbc7278c4ea5a5b22c9f56d386cd9e5f0e0e26d1a6d46353fefe75aa1"
     },
     {
       "path": "BepInEx/Translation/zh/Text/30_story.txt",
-      "bytes": 58698794,
-      "sha256": "a53955bbd8eacb094f5c67b2304bbb45d291f9b37f32e51f48bac1c6526b176d"
+      "bytes": 58693955,
+      "sha256": "57a9511e00256d90bb5bfc07dc72d650cb7658ca1c6ee5ba82ee456bbc69fece"
     },
     {
       "path": "changelog.txt",
@@ -280,8 +280,8 @@
     },
     {
       "path": "dotnet/.version",
-      "bytes": 47,
-      "sha256": "b7d1d0e8f001f9f7bdbe8056f53140763ff0ac15ee427f7d5354f10b79b3eb92"
+      "bytes": 49,
+      "sha256": "4052ab33b00d0411fc9ce103ac9d51564cf8630fddb7464d82ddcc168d4d302c"
     },
     {
       "path": "dotnet/clretwrc.dll",
@@ -355,13 +355,13 @@
     },
     {
       "path": "dotnet/Microsoft.NETCore.App.deps.json",
-      "bytes": 31803,
-      "sha256": "e50bd299287519cf01928d38e96925ce4ccb80aeb7fe21abe6dbe7011f717c60"
+      "bytes": 32783,
+      "sha256": "879dc0cb9c9a7a41681e399fc4f18c15ef1ac9a3410f68b94a8d13dd0c6c391c"
     },
     {
       "path": "dotnet/Microsoft.NETCore.App.runtimeconfig.json",
-      "bytes": 152,
-      "sha256": "77c6ff50411c35773260d714c4e7f10672a4896d2ee77fe13f1a650c9fc53b00"
+      "bytes": 159,
+      "sha256": "1b7aa545d9d3216979a9efe8d72967f6e559a9c6a22288d14444d6c5c4c15738"
     },
     {
       "path": "dotnet/Microsoft.VisualBasic.Core.dll",

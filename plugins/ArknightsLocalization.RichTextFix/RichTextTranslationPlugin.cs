@@ -16,7 +16,7 @@ public sealed class RichTextTranslationPlugin : BasePlugin
 {
     public const string PluginGuid = "arklocalizer.richtextfix";
     public const string PluginName = "Arknights Localization Rich Text Fix";
-    public const string PluginVersion = "1.0.2";
+    public const string PluginVersion = "1.0.3";
 
     private readonly object registrationGate = new();
     private ITranslator? translator;
@@ -27,9 +27,12 @@ public sealed class RichTextTranslationPlugin : BasePlugin
         @"<br\s*/?>",
         RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
-    private static readonly Regex RichTextTag = new(
-        @"<[^>]+>",
-        RegexOptions.Compiled | RegexOptions.CultureInvariant);
+    // Match the same display-only tags stripped by mapping.py. A broad
+    // ``<[^>]+>`` pattern also removed Arknights' visible semantic text such
+    // as <道路障害物>, producing a lookup key that could never match the pack.
+    private static readonly Regex DisplayTag = new(
+        @"</>|<[@$][^>]*>|</?(?:alpha|align|b|br|color|cspace|font|i|indent|line-height|line-indent|link|lowercase|mark|material|margin|mspace|nobr|page|pos|rotate|s|size|smallcaps|space|sprite|style|sub|sup|u|uppercase|voffset|width)(?:=[^>]*)?>",
+        RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
     public override void Load()
     {
@@ -101,7 +104,7 @@ public sealed class RichTextTranslationPlugin : BasePlugin
         }
 
         string plain = BreakTag.Replace(original, "\n");
-        plain = RichTextTag.Replace(plain, string.Empty);
+        plain = DisplayTag.Replace(plain, string.Empty);
         plain = plain.Replace("\r\n", "\n", StringComparison.Ordinal).Replace('\r', '\n');
 
         ITranslator? current = translator;

@@ -23,6 +23,21 @@ from .xunity import write_translation_file
 
 
 CATEGORY_PRIORITY = {"i18n": 10, "tables": 20, "story": 30}
+TABLE_ROOT_WRAPPERS = {
+    "battle_equip_table.json": "equips",
+    "chapter_table.json": "chapters",
+    "char_master_table.json": "master_data_bundles",
+    "character_table.json": "characters",
+    "charm_table.json": "charmList",
+    "handbook_team_table.json": "handbook_teams",
+    "init_text.json": "strings",
+    "main_text.json": "strings",
+    "replicate_table.json": "replications",
+    "skill_table.json": "skills",
+    "story_review_table.json": "story_reviews",
+    "story_table.json": "stories",
+    "token_table.json": "characters",
+}
 DISPLAY_TAG_RE = re.compile(
     r"</>"
     r"|<[@$][^>]*>"
@@ -44,6 +59,22 @@ BUILTIN_OVERRIDES: dict[str, dict[str, str]] = {
         "レア度": "稀有度",
         "職業": "职业",
         "詳細": "详情",
+        # These short stage-screen labels are compiled TMP strings and do not
+        # exist as standalone values in the JP data dump. They are
+        # context-free official UI terminology, so keeping them here also
+        # avoids unsafe guesses from event-specific table collisions.
+        "自動指揮": "代理指挥",
+        "強襲作戦": "突袭作战",
+        "敵情報": "敌情信息",
+        "地図情報": "地图信息",
+        "演習": "演习",
+        "期間限定": "限时",
+        # ``init_text`` contains several context-specific targets for reset;
+        # use the neutral label so XUnity's context-free lookup remains safe.
+        "リセット": "重置",
+        # This Yostar account button has no same-key counterpart in the CN
+        # table, but its standalone meaning is unambiguous.
+        "アカウント管理": "账号管理",
         "昇進段階1開放": "精英阶段1解锁",
         "昇進段階1強化": "精英阶段1强化",
         "昇進段階2開放": "精英阶段2解锁",
@@ -417,6 +448,114 @@ def _collect_parameterized_display_variants(
     return stats
 
 
+def _mission_semantic_signature(mission: Any) -> tuple[Any, ...] | None:
+    """Return locale-independent mission mechanics used across renumberings.
+
+    JP/EN and CN periodically keep the same daily/weekly task under different
+    IDs (for example ``weekly_5xx`` versus ``weekly_7xx``). Matching on the
+    localized description would defeat the purpose, while this combination is
+    the actual task condition consumed by the client.
+    """
+    if not isinstance(mission, dict):
+        return None
+    params = mission.get("param")
+    if not isinstance(params, list) or any(
+        not isinstance(value, (str, int, float, bool)) for value in params
+    ):
+        return None
+    required = ("type", "template", "templateType")
+    if any(not isinstance(mission.get(field), (str, int)) for field in required):
+        return None
+    point = mission.get("periodicalPoint")
+    if point is not None and not isinstance(point, (int, float)):
+        return None
+    return (
+        str(mission["type"]),
+        str(mission["template"]),
+        str(mission["templateType"]),
+        tuple(str(value) for value in params),
+        point,
+    )
+
+
+def _collect_mission_semantic_variants(
+    source_data: Any,
+    target_data: Any,
+    accumulator: MappingAccumulator,
+) -> dict[str, int]:
+    """Recover descriptions skipped solely because mission IDs diverged.
+
+    A signature is accepted only when every matching CN entry agrees on one
+    description. Repeated historical copies are therefore useful evidence,
+    while genuinely ambiguous mechanics stay excluded from the context-free
+    XUnity dictionary.
+    """
+    stats = {
+        "source_missing_keys": 0,
+        "matched_signatures": 0,
+        "ambiguous_target_signatures": 0,
+        "aligned_source_entries": 0,
+        "emitted_pairs": 0,
+    }
+    if not isinstance(source_data, dict) or not isinstance(target_data, dict):
+        return stats
+    source_missions = source_data.get("missions")
+    target_missions = target_data.get("missions")
+    if not isinstance(source_missions, dict) or not isinstance(target_missions, dict):
+        return stats
+
+    target_by_signature: dict[tuple[Any, ...], list[dict[str, Any]]] = defaultdict(list)
+    for mission in target_missions.values():
+        signature = _mission_semantic_signature(mission)
+        if signature is not None:
+            target_by_signature[signature].append(mission)
+
+    proposed_pairs: dict[tuple[str, str], str] = {}
+    matched_signatures: set[tuple[Any, ...]] = set()
+    ambiguous_signatures: set[tuple[Any, ...]] = set()
+    for mission_id, mission in source_missions.items():
+        if mission_id in target_missions or not isinstance(mission, dict):
+            continue
+        stats["source_missing_keys"] += 1
+        signature = _mission_semantic_signature(mission)
+        candidates = target_by_signature.get(signature, []) if signature is not None else []
+        if not candidates:
+            continue
+        targets = {
+            normalize_lookup_text(candidate["description"].replace("\x00", ""))
+            for candidate in candidates
+            if isinstance(candidate.get("description"), str)
+        }
+        if len(targets) != 1:
+            if signature is not None:
+                ambiguous_signatures.add(signature)
+            continue
+        source = mission.get("description")
+        if not isinstance(source, str):
+            continue
+        target = next(iter(targets))
+        matched_signatures.add(signature)
+        stats["aligned_source_entries"] += 1
+        proposed_pairs.setdefault(
+            (source, target),
+            f"table:mission_table.json:missions/{mission_id}/description:semantic",
+        )
+
+    for (source, target), provenance in proposed_pairs.items():
+        _add_display_pair(
+            accumulator,
+            source,
+            target,
+            "tables",
+            provenance,
+            ("missions", "description"),
+        )
+    stats["matched_signatures"] = len(matched_signatures)
+    stats["ambiguous_target_signatures"] = len(ambiguous_signatures)
+    stats["emitted_pairs"] = len(proposed_pairs)
+    return stats
+
+
 def parse_string_map(path: Path) -> dict[str, str]:
     result: dict[str, str] = {}
     for line in path.read_text(encoding="utf-8-sig", errors="replace").splitlines():
@@ -473,13 +612,25 @@ def _collect_tables(
         "unresolved": 0,
         "per_table": {},
     }
+    mission_semantic = {
+        "source_missing_keys": 0,
+        "matched_signatures": 0,
+        "ambiguous_target_signatures": 0,
+        "aligned_source_entries": 0,
+        "emitted_pairs": 0,
+    }
+    unwrapped_roots: dict[str, list[str]] = {"source": [], "target": []}
     for name in common:
         source_data = read_json(source_files[name])
         target_data = read_json(target_files[name])
-        if isinstance(source_data, dict) and name == "character_table.json" and set(source_data) == {"characters"}:
-            source_data = source_data["characters"]
-        if isinstance(source_data, dict) and name == "skill_table.json" and set(source_data) == {"skills"}:
-            source_data = source_data["skills"]
+        wrapper = TABLE_ROOT_WRAPPERS.get(name)
+        if wrapper is not None:
+            if isinstance(source_data, dict) and set(source_data) == {wrapper}:
+                source_data = source_data[wrapper]
+                unwrapped_roots["source"].append(name)
+            if isinstance(target_data, dict) and set(target_data) == {wrapper}:
+                target_data = target_data[wrapper]
+                unwrapped_roots["target"].append(name)
         table_pairs = 0
         for source, target, path in walk_paired(source_data, target_data):
             observed_count += _add_display_pair(
@@ -493,6 +644,12 @@ def _collect_tables(
             table_pairs += 1
         if name == "skill_table.json":
             skill_display = _collect_skill_display_variants(
+                source_data,
+                target_data,
+                accumulator,
+            )
+        elif name == "mission_table.json":
+            mission_semantic = _collect_mission_semantic_variants(
                 source_data,
                 target_data,
                 accumulator,
@@ -517,7 +674,9 @@ def _collect_tables(
         "paired_string_fields": pair_count,
         "candidate_observations": observed_count,
         "skill_display": skill_display,
+        "mission_semantic": mission_semantic,
         "parameterized_display": parameterized_display,
+        "unwrapped_roots": unwrapped_roots,
         "per_table": per_table,
     }
 
