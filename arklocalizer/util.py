@@ -92,14 +92,29 @@ def normalize_lookup_text(text: str) -> str:
     return re.sub(r"[ \t]*\n[ \t]*", "\n", text)
 
 
+# Arknights also wraps visible, translatable terminology in angle brackets,
+# for example ``<Roadblock>`` / ``<障碍物>`` in stage descriptions.  Treating
+# every ASCII-leading ``<...>`` token as markup rejects the whole official
+# locale pair whenever that label is translated.  Keep only actual Arknights
+# and TextMesh Pro formatting tags in the structural-placeholder check.
+RICH_TEXT_TAG_PATTERN = (
+    r"</>"
+    r"|<[@$][^>]*>"
+    r"|</?(?:alpha|align|b|br|color|cspace|font|i|indent|line-height|line-indent|"
+    r"link|lowercase|mark|material|margin|mspace|nobr|page|pos|rotate|s|size|"
+    r"smallcaps|space|sprite|style|sub|sup|u|uppercase|voffset|width)(?:=[^>]*)?>"
+)
+RICH_TEXT_TAG_RE = re.compile(RICH_TEXT_TAG_PATTERN, re.IGNORECASE)
+
+
 PLACEHOLDER_RE = re.compile(
-    r"</?(?:@[^>]*|[A-Za-z][^>]*)>"
-    r"|</>"
-    r"|\{\{[^{}]+\}\}"
+    RICH_TEXT_TAG_PATTERN
+    + r"|\{\{[^{}]+\}\}"
     r"|\{[^{}\r\n]+\}"
     r"|%(?:\d+\$)?[-+#0-9.]*[A-Za-z]"
     r"|\\[nr]"
-    r"|\$[A-Za-z_][A-Za-z0-9_]*"
+    r"|\$[A-Za-z_][A-Za-z0-9_]*",
+    re.IGNORECASE,
 )
 
 

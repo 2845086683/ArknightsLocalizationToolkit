@@ -16,6 +16,7 @@ from .util import (
     normalize_lookup_text,
     placeholder_counter,
     read_json,
+    RICH_TEXT_TAG_RE,
     walk_paired,
     write_json,
 )
@@ -38,14 +39,7 @@ TABLE_ROOT_WRAPPERS = {
     "story_table.json": "stories",
     "token_table.json": "characters",
 }
-DISPLAY_TAG_RE = re.compile(
-    r"</>"
-    r"|<[@$][^>]*>"
-    r"|</?(?:alpha|align|b|br|color|cspace|font|i|indent|line-height|line-indent|"
-    r"link|lowercase|mark|material|margin|mspace|nobr|page|pos|rotate|s|size|"
-    r"smallcaps|space|sprite|style|sub|sup|u|uppercase|voffset|width)(?:=[^>]*)?>",
-    re.IGNORECASE,
-)
+DISPLAY_TAG_RE = RICH_TEXT_TAG_RE
 SKILL_PLACEHOLDER_RE = re.compile(r"\{(?P<token>[^{}\r\n]+)\}")
 
 # A few labels on the operator screens are compiled into the client rather
@@ -91,6 +85,21 @@ BUILTIN_OVERRIDES: dict[str, dict[str, str]] = {
         "Trust": "信赖值",
         "Melee": "近战位",
         "Ranged": "远程位",
+        # PC settings contain several compiled labels that are absent from
+        # the EN/CN data tables. Keep only context-free terms here: ``Key``
+        # collides with the item noun and ``Daily`` with the mission tab, so
+        # those ambiguous labels must not be overridden globally.
+        "Reset": "重置",
+        "General Settings": "常规设置",
+        "Audio": "声音",
+        "Display": "显示",
+        "Account Management": "账号管理",
+        "ON": "开启",
+        "OFF": "关闭",
+        "Home Only": "仅主页",
+        "Every Time": "每次",
+        "Once a Day": "每日一次",
+        "On Login": "登录时",
     },
 }
 
