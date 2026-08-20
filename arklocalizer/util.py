@@ -170,6 +170,7 @@ IDENTITY_FIELDS = (
     "skillId",
     "stageId",
     "itemId",
+    "medalId",
     "enemyId",
     "storyId",
     "skinId",
@@ -201,15 +202,15 @@ def walk_paired(
             yield from walk_paired(source[key], target[key], path + (str(key),))
         return
     if isinstance(source, list) and isinstance(target, list):
-        if len(source) == len(target):
-            for index, (source_item, target_item) in enumerate(zip(source, target)):
-                yield from walk_paired(source_item, target_item, path + (str(index),))
-            return
         source_index = indexed_list(source)
         target_index = indexed_list(target)
         if source_index is not None and target_index is not None:
             for key in source_index.keys() & target_index.keys():
                 yield from walk_paired(source_index[key], target_index[key], path + (key,))
+            return
+        if len(source) == len(target):
+            for index, (source_item, target_item) in enumerate(zip(source, target)):
+                yield from walk_paired(source_item, target_item, path + (str(index),))
 
 
 def relative_files(root: Path, pattern: str) -> dict[str, Path]:

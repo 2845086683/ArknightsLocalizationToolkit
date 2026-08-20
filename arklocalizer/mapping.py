@@ -733,6 +733,23 @@ def _write_placeholder_mismatches(path: Path, items: list[dict[str, Any]]) -> No
             )
 
 
+def _write_resolved_collisions(path: Path, items: list[dict[str, Any]]) -> None:
+    """Expose context collisions whose dominant target was kept globally."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8-sig", newline="") as stream:
+        writer = csv.writer(stream)
+        writer.writerow(("source", "target", "winner_count", "total_count"))
+        for item in items:
+            writer.writerow(
+                (
+                    item["source"],
+                    item["target"],
+                    item["winner_count"],
+                    item["total_count"],
+                )
+            )
+
+
 def build_translation_pack(
     data_root: Path,
     output_root: Path,
@@ -801,6 +818,10 @@ def build_translation_pack(
 
     reports = output_root / "reports"
     _write_collisions(reports / "collisions.csv", collisions)
+    _write_resolved_collisions(
+        reports / "resolved_collisions.csv",
+        accumulator.resolved_collisions,
+    )
     _write_placeholder_mismatches(
         reports / "placeholder_mismatches.csv",
         accumulator.placeholder_mismatches,
