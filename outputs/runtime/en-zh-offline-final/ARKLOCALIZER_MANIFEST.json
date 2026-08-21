@@ -15,7 +15,7 @@
   "font": "arialuni_sdf_u2021",
   "rich_text_plugin": {
     "path": "BepInEx/plugins/ArknightsLocalization/ArknightsLocalization.RichTextFix.dll",
-    "sha256": "ad508074fa64276a655caf55e856f4258984078d0cece92270f3a076b6348d5d"
+    "sha256": "562f3159ff05f35943abd2e330eec3cd970c24b302c65e598e440c0a08a845f2"
   },
   "files": [
     {
@@ -216,7 +216,7 @@
     {
       "path": "BepInEx/plugins/ArknightsLocalization/ArknightsLocalization.RichTextFix.dll",
       "bytes": 9216,
-      "sha256": "ad508074fa64276a655caf55e856f4258984078d0cece92270f3a076b6348d5d"
+      "sha256": "562f3159ff05f35943abd2e330eec3cd970c24b302c65e598e440c0a08a845f2"
     },
     {
       "path": "BepInEx/plugins/README (AutoTranslator).md",
@@ -255,18 +255,23 @@
     },
     {
       "path": "BepInEx/Translation/zh/Text/10_i18n.txt",
-      "bytes": 206931,
-      "sha256": "07c2bb5657ab178200ac31fbc5d285c75ad6e4487a4a46bdc53d16d8e9212813"
+      "bytes": 206946,
+      "sha256": "da7afddaee8129bb127e10e369d96ae38bc2fc192f8eed368758915c4f0b4d16"
+    },
+    {
+      "path": "BepInEx/Translation/zh/Text/15_format_regex.txt",
+      "bytes": 21235,
+      "sha256": "5e3baac7f122ea4f8cae1121498560983983bd3fbe6b6c9621cbe2009a99f834"
     },
     {
       "path": "BepInEx/Translation/zh/Text/20_tables.txt",
-      "bytes": 25840926,
-      "sha256": "94a37fa8ad37eca2ed4de1d53704f4d3935b42bb151baf9d63044a77e2c93b2a"
+      "bytes": 26679912,
+      "sha256": "4f7b243e6108398f478055e63214dc8e1221b05553324e0a4f754385b20ada61"
     },
     {
       "path": "BepInEx/Translation/zh/Text/30_story.txt",
-      "bytes": 47000007,
-      "sha256": "d83cbaee26e04c3ce4c87f67ee2a899c8a10e11e8c217fd8b43b2b8616b4bc58"
+      "bytes": 46998994,
+      "sha256": "928a0be731600d927b861c926ffe37cdd4d8585fb0e0c6b76bb3de1c8ff8347f"
     },
     {
       "path": "changelog.txt",

@@ -16,12 +16,13 @@ public sealed class RichTextTranslationPlugin : BasePlugin
 {
     public const string PluginGuid = "arklocalizer.richtextfix";
     public const string PluginName = "Arknights Localization Rich Text Fix";
-    public const string PluginVersion = "1.0.3";
+    public const string PluginVersion = "1.0.4";
 
     private readonly object registrationGate = new();
     private ITranslator? translator;
     private bool registered;
     private int firstTranslationLogged;
+    private int firstFragmentFallbackBlockedLogged;
 
     private static readonly Regex BreakTag = new(
         @"<br\s*/?>",
@@ -137,6 +138,20 @@ public sealed class RichTextTranslationPlugin : BasePlugin
             if (Interlocked.Exchange(ref firstTranslationLogged, 1) == 0)
             {
                 Log.LogInfo("Applied the first whole rich-text translation.");
+            }
+        }
+        else if (containsMarkup)
+        {
+            // Returning the default behaviour here lets XUnity split the
+            // component around its rich-text tags. Auto Chess descriptions
+            // are assembled dynamically and reuse one TMP component, so a
+            // partial hit can leave mismatched closing tags and poison later
+            // agreement selections. Keep this update untranslated instead;
+            // the next text assigned to the component is evaluated afresh.
+            context.IgnoreComponent();
+            if (Interlocked.Exchange(ref firstFragmentFallbackBlockedLogged, 1) == 0)
+            {
+                Log.LogInfo("Blocked XUnity fragment fallback for an unmatched rich-text component.");
             }
         }
     }

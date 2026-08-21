@@ -41,6 +41,12 @@ TABLE_ROOT_WRAPPERS = {
 }
 DISPLAY_TAG_RE = RICH_TEXT_TAG_RE
 SKILL_PLACEHOLDER_RE = re.compile(r"\{(?P<token>[^{}\r\n]+)\}")
+POSITIONAL_FORMAT_RE = re.compile(
+    r"(?<!\{)\{(?P<index>\d+)(?::[^{}\r\n]+)?\}(?!\})"
+)
+AUTO_CHESS_SEASON_RE = re.compile(r"^act(?P<index>\d+)autochess$", re.IGNORECASE)
+AUTO_CHESS_DEBUG_TARGET_RE = re.compile(r"^\s*【\d+】")
+AUTO_CHESS_FORMAT_SPAN_RE = re.compile(r"<@[^>]+>(.*?)</>", re.IGNORECASE | re.DOTALL)
 
 # A few labels on the operator screens are compiled into the client rather
 # than present as standalone values in string_map.txt.  Keep this deliberately
@@ -74,6 +80,16 @@ BUILTIN_OVERRIDES: dict[str, dict[str, str]] = {
         "昇進段階2開放": "精英阶段2解锁",
         "昇進段階2強化": "精英阶段2强化",
         "昇進段階2に昇進後解放": "精英阶段2后解锁",
+        # Auto Chess renders these two descriptions from client-side format
+        # strings instead of assigning the corresponding activity-table value
+        # verbatim. They therefore have no exact key in the public JP dump.
+        "全てのオペレーターの物理・術の被ダメージ-20%。【共同防衛陣営】所属者の与ダメージが120%まで上昇、精鋭状態の【共同防衛陣営】所属者の場合、与ダメージが140%まで上昇": (
+            "所有干员受到的物理和法术伤害-20%。【协防干员】造成的伤害提升至120%，"
+            "精锐状态的【协防干员】造成的伤害提升至140%"
+        ),
+        "戦場の核心盟約の有効化人数が+1され、【調和】所属者は有効化中の核心盟約の効果も受ける": (
+            "场上核心盟约的激活人数+1，【调和】干员享受已激活的核心盟约效果"
+        ),
     },
     "en": {
         # Operator-detail labels and deployment tags are context-free TMP
@@ -119,6 +135,8 @@ class MappingAccumulator:
         self.placeholder_mismatches: list[dict[str, Any]] = []
         self.overrides: dict[str, tuple[str, str]] = {}
         self.resolved_collisions: list[dict[str, Any]] = []
+        self.runtime_format_pairs: list[tuple[str, str]] = []
+        self.auto_chess_garrison_pairs: list[tuple[str, str]] = []
         self.total_seen = 0
 
     def add_override(self, source: str, target: str, provenance: str) -> None:
@@ -174,6 +192,21 @@ class MappingAccumulator:
         evidence.categories[category] += 1
         if len(evidence.provenance) < 8:
             evidence.provenance.append(provenance)
+
+    def add_runtime_format_pair(self, source: str, target: str) -> None:
+        """Remember one client-formatted pair for bounded regex generation."""
+
+        source = normalize_lookup_text(strip_display_markup(source).replace("\x00", ""))
+        target = normalize_lookup_text(strip_display_markup(target).replace("\x00", ""))
+        if (
+            source
+            and target
+            and source != target
+            and contains_han(target)
+            and looks_like_source_language(source, self.source_locale)
+            and positional_format_regex_pair(source, target) is not None
+        ):
+            self.runtime_format_pairs.append((source, target))
 
     def finalize(self) -> tuple[dict[str, list[tuple[str, str]]], list[dict[str, Any]]]:
         by_category: dict[str, list[tuple[str, str]]] = defaultdict(list)
@@ -247,6 +280,118 @@ def strip_display_markup(text: str) -> str:
     return DISPLAY_TAG_RE.sub("", text)
 
 
+def positional_format_regex_pair(source: str, target: str) -> tuple[str, str] | None:
+    """Build a bounded XUnity regex for a ``String.Format`` text pair.
+
+    Arknights formats positional placeholders before assigning text to a UI
+    component. An exact ``{0}`` dictionary entry therefore cannot match a
+    broadcast containing a Doctor name, or an Auto Chess description whose
+    ``{0:0%}`` has become ``125%``. Named captures preserve argument order
+    when the official Chinese text reorders placeholders.
+
+    Very short/all-placeholder templates are intentionally skipped because a
+    context-free regex such as ``.*`` would be unsafe in XUnity's global cache.
+    """
+
+    source_matches = list(POSITIONAL_FORMAT_RE.finditer(source))
+    if not source_matches or source.startswith(("r:", "sr:")):
+        return None
+    target_matches = list(POSITIONAL_FORMAT_RE.finditer(target))
+    source_indexes = {match.group("index") for match in source_matches}
+    target_indexes = {match.group("index") for match in target_matches}
+    if source_indexes != target_indexes:
+        return None
+
+    literal_source = POSITIONAL_FORMAT_RE.sub("", source)
+    if len("".join(literal_source.split())) < 4:
+        return None
+
+    pattern_parts: list[str] = []
+    seen_indexes: set[str] = set()
+    cursor = 0
+    for match in source_matches:
+        pattern_parts.append(re.escape(source[cursor : match.start()]))
+        index = match.group("index")
+        if index in seen_indexes:
+            pattern_parts.append(rf"\k<p{index}>")
+        else:
+            pattern_parts.append(rf"(?<p{index}>[\s\S]*?)")
+            seen_indexes.add(index)
+        cursor = match.end()
+    pattern_parts.append(re.escape(source[cursor:]))
+
+    replacement_parts: list[str] = []
+    cursor = 0
+    for match in target_matches:
+        # In a Match.Result replacement, a literal dollar is written as ``$$``.
+        replacement_parts.append(target[cursor : match.start()].replace("$", "$$"))
+        replacement_parts.append("${p" + match.group("index") + "}")
+        cursor = match.end()
+    replacement_parts.append(target[cursor:].replace("$", "$$"))
+
+    pattern = "".join(pattern_parts)
+    replacement = "".join(replacement_parts)
+    return f'r:"\\A{pattern}\\z"', f'"{replacement}"'
+
+
+def collect_positional_format_regex_pairs(
+    pairs_by_category: dict[str, list[tuple[str, str]]],
+) -> tuple[list[tuple[str, str]], dict[str, int]]:
+    """Return deterministic, non-conflicting regex mappings for UI/table text."""
+
+    candidates: dict[str, set[str]] = defaultdict(set)
+    literal_lengths: dict[str, int] = {}
+    considered = 0
+    for category in ("i18n", "tables"):
+        for source, target in pairs_by_category.get(category, []):
+            pair = positional_format_regex_pair(source, target)
+            if pair is None:
+                continue
+            considered += 1
+            regex_source, regex_target = pair
+            candidates[regex_source].add(regex_target)
+            literal_lengths[regex_source] = len(POSITIONAL_FORMAT_RE.sub("", source))
+
+    conflicts = sum(len(targets) > 1 for targets in candidates.values())
+    result = [
+        (source, next(iter(targets)))
+        for source, targets in candidates.items()
+        if len(targets) == 1
+    ]
+    # XUnity evaluates regexes in reverse load order. Writing longer, more
+    # specific patterns last makes them win over any shorter compatible form.
+    result.sort(key=lambda pair: (literal_lengths[pair[0]], pair[0]))
+    return result, {
+        "considered": considered,
+        "emitted": len(result),
+        "conflicts": conflicts,
+    }
+
+
+def is_auto_chess_runtime_format(source: str, source_locale: str) -> bool:
+    """Recognize finalized Auto Chess formats also present in local extracts.
+
+    A freshly extracted client may contain a newer Auto Chess season than the
+    public data checkout used for structural path matching.  These narrow text
+    markers retain those local-source variants without enabling regexes for
+    every formatted string in the full game dictionary.
+    """
+
+    plain = strip_display_markup(source)
+    if source_locale == "jp":
+        broadcast_markers = (
+            "が敵ボスに",
+            "が与えたダメージが",
+            "が管理センターをLv",
+            "が精鋭オペレーターに昇進",
+            "があなたに",
+        )
+        return "加算数" in plain or (
+            "Dr.{" in plain and any(marker in plain for marker in broadcast_markers)
+        )
+    return False
+
+
 def _add_display_pair(
     accumulator: MappingAccumulator,
     source: str,
@@ -269,6 +414,174 @@ def _add_display_pair(
         )
         return 2
     return 1
+
+
+def collect_auto_chess_garrison_display_pairs(
+    source_data: Any,
+    target_data: Any,
+    source_locale: str,
+) -> tuple[list[tuple[str, str]], dict[str, Any]]:
+    """Collect unambiguous current-season garrison text as missing-only hints.
+
+    Auto Chess reuses some source descriptions between seasons even when the
+    official Chinese wording changes.  The global collision policy correctly
+    rejects those context-free collisions, but the current season has a more
+    precise context: its own ``garrisonDataDict``.  These pairs are therefore
+    kept separately and may only fill sources absent from the finalized pack;
+    they never replace an existing translation.
+    """
+
+    stats: dict[str, Any] = {
+        "season": None,
+        "rows": 0,
+        "source_candidates": 0,
+        "debug_targets_skipped": 0,
+        "markup_only_sources_resolved": 0,
+        "ambiguous_sources": 0,
+        "pairs": 0,
+    }
+    if not isinstance(source_data, dict) or not isinstance(target_data, dict):
+        return [], stats
+
+    source_seasons = source_data.get("activity", {}).get("AUTOCHESS_SEASON", {})
+    target_seasons = target_data.get("activity", {}).get("AUTOCHESS_SEASON", {})
+    if not isinstance(source_seasons, dict) or not isinstance(target_seasons, dict):
+        return [], stats
+
+    common_seasons: list[tuple[int, str]] = []
+    for name in source_seasons.keys() & target_seasons.keys():
+        match = AUTO_CHESS_SEASON_RE.fullmatch(str(name))
+        if match:
+            common_seasons.append((int(match.group("index")), str(name)))
+    if not common_seasons:
+        return [], stats
+
+    _, season = max(common_seasons)
+    stats["season"] = season
+    source_rows = source_seasons.get(season, {}).get("garrisonDataDict", {})
+    target_rows = target_seasons.get(season, {}).get("garrisonDataDict", {})
+    if not isinstance(source_rows, dict) or not isinstance(target_rows, dict):
+        return [], stats
+
+    candidates: dict[str, set[str]] = defaultdict(set)
+    common_rows = source_rows.keys() & target_rows.keys()
+    stats["rows"] = len(common_rows)
+    for row_key in sorted(common_rows):
+        source_row = source_rows[row_key]
+        target_row = target_rows[row_key]
+        if not isinstance(source_row, dict) or not isinstance(target_row, dict):
+            continue
+        for field_name in ("garrisonDesc", "description"):
+            source = source_row.get(field_name)
+            target = target_row.get(field_name)
+            if not isinstance(source, str) or not isinstance(target, str):
+                continue
+            source = normalize_lookup_text(source.replace("\x00", ""))
+            target = normalize_lookup_text(target.replace("\x00", ""))
+            if AUTO_CHESS_DEBUG_TARGET_RE.match(target):
+                stats["debug_targets_skipped"] += 1
+                continue
+            if (
+                not source
+                or not target
+                or source == target
+                or len(source) > 1000
+                or len(target) > 4000
+                or not contains_han(target)
+                or not looks_like_source_language(source, source_locale)
+                # Official Chinese sometimes repeats a colored literal for
+                # two Alliances even though EN/JP writes the value once. Rich
+                # tags are presentation, not runtime interpolation; compare
+                # only the placeholders that remain after stripping markup.
+                or placeholder_counter(strip_display_markup(source))
+                != placeholder_counter(strip_display_markup(target))
+            ):
+                continue
+            candidates[source].add(target)
+
+    stats["source_candidates"] = len(candidates)
+    resolved_candidates: dict[str, str] = {}
+    ambiguous_sources: set[str] = set()
+    for source, targets in candidates.items():
+        if len(targets) == 1:
+            resolved_candidates[source] = next(iter(targets))
+            continue
+        if len({strip_display_markup(target) for target in targets}) != 1:
+            ambiguous_sources.add(source)
+            continue
+
+        # If official targets differ only in rich-tag boundaries, their visible
+        # Chinese is unambiguous. Prefer the variant whose colored span values
+        # mirror the source (for example ``+6`` rather than only ``6``).
+        source_spans = tuple(AUTO_CHESS_FORMAT_SPAN_RE.findall(source))
+
+        def span_score(target: str) -> tuple[int, int]:
+            target_spans = tuple(AUTO_CHESS_FORMAT_SPAN_RE.findall(target))
+            return (
+                int(len(source_spans) == len(target_spans)),
+                sum(left == right for left, right in zip(source_spans, target_spans)),
+            )
+
+        best_score = max(span_score(target) for target in targets)
+        best_targets = sorted(
+            target for target in targets if span_score(target) == best_score
+        )
+        resolved_candidates[source] = best_targets[0]
+        stats["markup_only_sources_resolved"] += 1
+
+    display_candidates: dict[str, set[str]] = defaultdict(set)
+    for source, target in resolved_candidates.items():
+        display_candidates[source].add(target)
+        plain_source = strip_display_markup(source)
+        plain_target = strip_display_markup(target)
+        if plain_source != source or plain_target != target:
+            display_candidates[plain_source].add(plain_target)
+
+    ambiguous_sources.update(
+        source for source, targets in display_candidates.items() if len(targets) != 1
+    )
+    pairs = [
+        (source, next(iter(targets)))
+        for source, targets in display_candidates.items()
+        if source not in ambiguous_sources and len(targets) == 1
+    ]
+    pairs.sort(key=lambda pair: (pair[0].casefold(), pair[0]))
+    stats["ambiguous_sources"] = len(ambiguous_sources)
+    stats["pairs"] = len(pairs)
+    return pairs, stats
+
+
+def merge_missing_pairs(
+    pairs_by_category: dict[str, list[tuple[str, str]]],
+    preferred_pairs: list[tuple[str, str]],
+    *,
+    category: str = "tables",
+) -> dict[str, int]:
+    """Add only absent mappings while preserving every finalized decision."""
+
+    existing: dict[str, set[str]] = defaultdict(set)
+    for pairs in pairs_by_category.values():
+        for source, target in pairs:
+            existing[source].add(target)
+
+    added = 0
+    preserved = 0
+    conflicts = 0
+    output = pairs_by_category.setdefault(category, [])
+    for source, target in preferred_pairs:
+        targets = existing.get(source)
+        if not targets:
+            output.append((source, target))
+            existing[source].add(target)
+            added += 1
+        elif target in targets:
+            preserved += 1
+        else:
+            # The current pack already made a usable decision for this exact
+            # source.  Never let the focused Auto Chess recovery path change it.
+            conflicts += 1
+    output.sort(key=lambda pair: (pair[0].casefold(), pair[0]))
+    return {"added": added, "preserved": preserved, "conflicts": conflicts}
 
 
 def _blackboard_values(value: Any) -> dict[str, Any]:
@@ -628,6 +941,15 @@ def _collect_tables(
         "aligned_source_entries": 0,
         "emitted_pairs": 0,
     }
+    auto_chess_garrison: dict[str, Any] = {
+        "season": None,
+        "rows": 0,
+        "source_candidates": 0,
+        "debug_targets_skipped": 0,
+        "markup_only_sources_resolved": 0,
+        "ambiguous_sources": 0,
+        "pairs": 0,
+    }
     unwrapped_roots: dict[str, list[str]] = {"source": [], "target": []}
     for name in common:
         source_data = read_json(source_files[name])
@@ -640,6 +962,15 @@ def _collect_tables(
             if isinstance(target_data, dict) and set(target_data) == {wrapper}:
                 target_data = target_data[wrapper]
                 unwrapped_roots["target"].append(name)
+        if name == "activity_table.json":
+            garrison_pairs, auto_chess_garrison = (
+                collect_auto_chess_garrison_display_pairs(
+                    source_data,
+                    target_data,
+                    accumulator.source_locale,
+                )
+            )
+            accumulator.auto_chess_garrison_pairs.extend(garrison_pairs)
         table_pairs = 0
         for source, target, path in walk_paired(source_data, target_data):
             observed_count += _add_display_pair(
@@ -650,6 +981,15 @@ def _collect_tables(
                 f"table:{name}:{'/'.join(path)}",
                 path,
             )
+            is_auto_chess_text = path[:1] == ("autoChessData",) or path[:2] == (
+                "activity",
+                "AUTOCHESS_SEASON",
+            )
+            if name == "activity_table.json" and is_auto_chess_text:
+                # Auto Chess formats these fields (agreement values, player
+                # names and broadcast parameters) before assigning the text
+                # component, so exact template entries cannot match at runtime.
+                accumulator.add_runtime_format_pair(source, target)
             table_pairs += 1
         if name == "skill_table.json":
             skill_display = _collect_skill_display_variants(
@@ -684,6 +1024,7 @@ def _collect_tables(
         "candidate_observations": observed_count,
         "skill_display": skill_display,
         "mission_semantic": mission_semantic,
+        "auto_chess_garrison": auto_chess_garrison,
         "parameterized_display": parameterized_display,
         "unwrapped_roots": unwrapped_roots,
         "per_table": per_table,
@@ -803,6 +1144,22 @@ def build_translation_pack(
         )
 
     by_category, collisions = accumulator.finalize()
+    table_stats["auto_chess_garrison"]["merge"] = merge_missing_pairs(
+        by_category,
+        accumulator.auto_chess_garrison_pairs,
+    )
+    finalized_runtime_pairs = [
+        pair
+        for category in ("i18n", "tables")
+        for pair in by_category.get(category, [])
+        if strip_display_markup(pair[0]) == pair[0]
+        and is_auto_chess_runtime_format(pair[0], source_locale)
+    ]
+    format_regex_pairs, format_regex_stats = collect_positional_format_regex_pairs(
+        {
+            "tables": accumulator.runtime_format_pairs + finalized_runtime_pairs,
+        }
+    )
     text_root = output_root / "Translation" / "zh" / "Text"
     file_names = {
         "i18n": "10_i18n.txt",
@@ -815,6 +1172,11 @@ def build_translation_pack(
             by_category.get(category, []),
             f"Arknights {source_locale.upper()} -> zh-CN ({category})",
         )
+    write_translation_file(
+        text_root / "15_format_regex.txt",
+        format_regex_pairs,
+        f"Arknights {source_locale.upper()} -> zh-CN (formatted runtime text)",
+    )
 
     reports = output_root / "reports"
     _write_collisions(reports / "collisions.csv", collisions)
@@ -845,6 +1207,7 @@ def build_translation_pack(
         },
         "collision_sources": len(collisions),
         "resolved_collision_sources": len(accumulator.resolved_collisions),
+        "format_regex": format_regex_stats,
         "builtin_overrides": len(BUILTIN_OVERRIDES[source_locale]),
         "rejected": dict(accumulator.rejected),
         "placeholder_mismatch_samples": len(accumulator.placeholder_mismatches),

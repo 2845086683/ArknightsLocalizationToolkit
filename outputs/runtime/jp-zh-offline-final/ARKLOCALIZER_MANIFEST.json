@@ -15,7 +15,7 @@
   "font": "arialuni_sdf_u2021",
   "rich_text_plugin": {
     "path": "BepInEx/plugins/ArknightsLocalization/ArknightsLocalization.RichTextFix.dll",
-    "sha256": "ad508074fa64276a655caf55e856f4258984078d0cece92270f3a076b6348d5d"
+    "sha256": "562f3159ff05f35943abd2e330eec3cd970c24b302c65e598e440c0a08a845f2"
   },
   "files": [
     {
@@ -216,7 +216,7 @@
     {
       "path": "BepInEx/plugins/ArknightsLocalization/ArknightsLocalization.RichTextFix.dll",
       "bytes": 9216,
-      "sha256": "ad508074fa64276a655caf55e856f4258984078d0cece92270f3a076b6348d5d"
+      "sha256": "562f3159ff05f35943abd2e330eec3cd970c24b302c65e598e440c0a08a845f2"
     },
     {
       "path": "BepInEx/plugins/README (AutoTranslator).md",
@@ -255,13 +255,18 @@
     },
     {
       "path": "BepInEx/Translation/zh/Text/10_i18n.txt",
-      "bytes": 219754,
-      "sha256": "c60a23a07237fddc34a9f9981e905d709a0560d84f9dfb541cee1c6fd19684f2"
+      "bytes": 220368,
+      "sha256": "93db3893e748cd40ffb7cb65e48dc641c97ec38e6d871247409e85e578853d89"
+    },
+    {
+      "path": "BepInEx/Translation/zh/Text/15_format_regex.txt",
+      "bytes": 20600,
+      "sha256": "2195b158b545d57459b19d9768938bc9ed1b36e87a9abfcb3663dfe419d88289"
     },
     {
       "path": "BepInEx/Translation/zh/Text/20_tables.txt",
-      "bytes": 32517879,
-      "sha256": "604b74cdaee6b817ad8c743e894b53f0fa4b8d471fef7fe1483795e27a164d2c"
+      "bytes": 32523157,
+      "sha256": "523d3984117debcefd64758130da2f4928fdd84731def2755d756741ddb974a6"
     },
     {
       "path": "BepInEx/Translation/zh/Text/30_story.txt",

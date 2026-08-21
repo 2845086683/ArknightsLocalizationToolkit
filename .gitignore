@@ -9,4 +9,6 @@ __pycache__/
 /vendor/
 /outputs/builds/
 /outputs/current-*-runtime.txt
+/work/
+/tests/
 /launcher-crash.log

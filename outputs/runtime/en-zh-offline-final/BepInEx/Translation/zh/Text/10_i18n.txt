@@ -1975,6 +1975,7 @@ Update failed after multiple tries. Please check your network and try again.=尝
 Updates after <color\=#d8d769>{0}</color>=<color\=#d8d769>{0}</color>后更新
 Updates after {0}={0}后更新
 Updates in {0}={0}后更新
+Upgrade=升级
 Upgrade <color\=#22BBFF>{0}</color> to Lv.<color\=#22BBFF>{1}</color>?=确认将<color\=#22BBFF>{0}</color>升至<color\=#22BBFF>{1}</color>级?
 Upgrade <color\=#d8d769>Headquarters Level to {0}</color> to unlock the following=升级至<color\=#d8d769>驻扎地等级{0}</color>后将解锁以下内容
 Upgrade Headquarters Level to {0} to unlock the following=升级至驻扎地等级{0}后将解锁以下内容
