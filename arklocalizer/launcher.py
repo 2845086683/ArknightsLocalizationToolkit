@@ -28,7 +28,7 @@ from .launcher_backend import (
     scan_configured_client,
     setup_commands,
 )
-from .runtime import install_runtime, uninstall_runtime
+from .runtime import INSTALL_MANIFEST_SCHEMA, install_runtime, uninstall_runtime
 from .util import write_json
 
 
@@ -45,6 +45,8 @@ COLORS = {
     "danger": "#FF665C",
     "log": "#080A0C",
 }
+
+LAUNCHER_BUILD = "2026.08.27-schema3.1"
 
 
 class LauncherApp(tk.Tk):
@@ -291,6 +293,11 @@ class LauncherApp(tk.Tk):
         open_output.pack(side="left", padx=(8, 0))
 
         self._append_log("启动器就绪。首次使用请先选择游戏安装目录下的 Arknights.exe。", "accent")
+        self._append_log(
+            f"启动器构建：{LAUNCHER_BUILD}；安装清单 schema {INSTALL_MANIFEST_SCHEMA}；"
+            f"运行目录：{project_root()}",
+            "good",
+        )
         self._append_log("本补丁安装一次后会再次启动游戏会自动持续加载，若无需补丁启动请及时卸载。")
         self._append_log("在安装完补丁后启动游戏后会有一个黑色窗口，请耐心等待不要主动关闭它，在准备就绪后游戏进程会自动启动。")
 
@@ -526,7 +533,8 @@ class LauncherApp(tk.Tk):
             self._queue_log(
                 f"运行时状态：{runtime['state']}；已验证 {runtime['verified']}，"
                 f"修改 {runtime['modified']}，缺失 {runtime['missing']}，"
-                f"运行期改写 {runtime.get('runtime_modified', 0)}。"
+                f"运行期改写 {runtime.get('runtime_modified', 0)}，"
+                f"运行期写入中 {runtime.get('runtime_pending', 0)}。"
             )
             translation_pack = result.get("translation_pack", {})
             if translation_pack.get("update_available"):
@@ -735,6 +743,8 @@ class LauncherApp(tk.Tk):
             ),
         }
         title, color, detail = mapping.get(runtime["state"], (runtime["state"], COLORS["muted"], ""))
+        if runtime.get("runtime_pending", 0):
+            detail += f" · 运行期配置写入中 {runtime['runtime_pending']}"
         translation_pack = result.get("translation_pack", {})
         if translation_pack.get("update_available"):
             update_detail = (

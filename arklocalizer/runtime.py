@@ -21,12 +21,18 @@ RICH_TEXT_FIX_PLUGIN = PROJECT_ROOT / "tools" / "runtime" / "ArknightsLocalizati
 RICH_TEXT_FIX_DESTINATION = PurePosixPath(
     "BepInEx/plugins/ArknightsLocalization/ArknightsLocalization.RichTextFix.dll"
 )
+BEPINEX_CONFIG_TEMPLATE = PROJECT_ROOT / "tools" / "runtime" / "BepInEx.cfg"
+BEPINEX_CONFIG_PATH = PurePosixPath("BepInEx/config/BepInEx.cfg")
 COMPONENT_HASHES = {
     BEPINEX_ARCHIVE: "616ec7eb06cf11b2a0000e8fcef04d1b12bb58e84a2e0bdac9523234fc193ceb",
     XUNITY_ARCHIVE: "9d6b26e9d4957459bdb64b6d4852edb39cd5e8d31c28e0a157cefd6510ada811",
 }
 
 AUTO_TRANSLATOR_CONFIG_PATH = "BepInEx/config/AutoTranslatorConfig.ini"
+MUTABLE_RUNTIME_FILES = (
+    AUTO_TRANSLATOR_CONFIG_PATH,
+    BEPINEX_CONFIG_PATH.as_posix(),
+)
 MANAGED_RUNTIME_ROOTS = ("BepInEx", "dotnet")
 # BepInEx/Il2CppInterop and XUnity create these after the first game launch.
 # They cannot be present in the staging manifest, but are still owned runtime
@@ -56,6 +62,7 @@ GENERATED_RUNTIME_FILES = (
     "BepInEx/Translation/zh/Text/30_story.txt",
 )
 BACKUP_STORE_NAME = ".arklocalizer-backup"
+INSTALL_MANIFEST_SCHEMA = 3
 
 
 def validate_game_directory(game_dir: Path) -> Path:
@@ -297,6 +304,12 @@ def stage_runtime(
     plugin_destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(rich_text_plugin, plugin_destination)
 
+    if not BEPINEX_CONFIG_TEMPLATE.is_file():
+        raise FileNotFoundError(f"BepInEx config template not found: {BEPINEX_CONFIG_TEMPLATE}")
+    bepinex_config = output_root.joinpath(*BEPINEX_CONFIG_PATH.parts)
+    bepinex_config.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(BEPINEX_CONFIG_TEMPLATE, bepinex_config)
+
     source_text = pack_root / "Translation" / "zh" / "Text"
     if not source_text.is_dir():
         raise FileNotFoundError(f"Translation pack not found: {source_text}")
@@ -462,6 +475,7 @@ def install_runtime(staging_root: Path, game_dir: Path, *, apply: bool = False) 
             existed_before = not _manifest_owned_root(previous_manifest, root_name)
         managed_roots[root_name] = {"existed_before": existed_before}
     installed: list[dict[str, Any]] = []
+    runtime_mutable_files: list[dict[str, Any]] = []
 
     staged_paths = {str(action["path"]) for action in plan["actions"]}
     retired_actions: list[dict[str, str]] = []
@@ -495,11 +509,24 @@ def install_runtime(staging_root: Path, game_dir: Path, *, apply: bool = False) 
         destination = game_dir.joinpath(*relative.parts)
         previous_item = previous_files.get(relative.as_posix())
         previous_sha256 = action["current_sha256"]
+        previous_untracked_generated = (
+            previous_manifest is not None
+            and previous_item is None
+            and relative.parts
+            in {PurePosixPath(value).parts for value in GENERATED_RUNTIME_FILES}
+            and _manifest_owned_root(previous_manifest, relative.parts[0])
+        )
         previous_is_current = (
             previous_item is not None
             and action["current_sha256"] == previous_item.get("sha256")
         )
-        if previous_is_current:
+        if previous_untracked_generated:
+            # Older toolkit releases let BepInEx create these files after the
+            # first launch. When the toolkit owns the whole runtime root, an
+            # untracked generated file is toolkit state rather than a foreign
+            # original that should be restored by a later uninstall.
+            previous_sha256 = None
+        elif previous_is_current:
             previous_sha256 = previous_item.get("previous_sha256")
             if previous_sha256 is not None:
                 if previous_backup_root is None:
@@ -536,21 +563,39 @@ def install_runtime(staging_root: Path, game_dir: Path, *, apply: bool = False) 
         if action["action"] != "unchanged":
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source, destination)
-        installed.append(
-            {
-                "path": relative.as_posix(),
-                "sha256": sha256_file(destination),
-                "previous_sha256": previous_sha256,
-            }
+        installed_item = {
+            "path": relative.as_posix(),
+            "sha256": sha256_file(destination),
+            "previous_sha256": previous_sha256,
+        }
+        root_state = managed_roots.get(relative.parts[0])
+        omit_owned_mutable = (
+            relative.as_posix() in MUTABLE_RUNTIME_FILES
+            and root_state is not None
+            and not root_state["existed_before"]
         )
+        if omit_owned_mutable:
+            # BepInEx and XUnity rewrite these files on a healthy first run.
+            # Keep their staged digest separately so the current scanner can
+            # validate them semantically, while older strict scanners ignore
+            # them instead of reporting a false repair requirement.
+            runtime_mutable_files.append(
+                {
+                    "path": installed_item["path"],
+                    "staged_sha256": installed_item["sha256"],
+                }
+            )
+        else:
+            installed.append(installed_item)
 
     install_manifest = {
-        "schema": 2,
+        "schema": INSTALL_MANIFEST_SCHEMA,
         "installed_at": timestamp,
         "backup_root": str(backup_root),
         "managed_roots": managed_roots,
         "staging_manifest": manifest,
         "files": installed,
+        "runtime_mutable_files": runtime_mutable_files,
     }
     write_json(game_dir / "ArknightsLocalizationToolkit.install.json", install_manifest)
     removed_backup_generations = _remove_backup_store(game_dir, keep=backup_root)
@@ -575,8 +620,10 @@ def uninstall_runtime(game_dir: Path, *, apply: bool = False) -> dict[str, Any]:
         raise ValueError(f"Backup root escaped game directory: {backup_root}")
 
     actions: list[dict[str, str]] = []
+    tracked_paths: set[tuple[str, ...]] = set()
     for item in manifest["files"]:
         relative = _safe_manifest_path(item["path"])
+        tracked_paths.add(relative.parts)
         destination = game_dir.joinpath(*relative.parts)
         backup = backup_root.joinpath(*relative.parts)
         previous_sha256 = item.get("previous_sha256")
@@ -608,9 +655,10 @@ def uninstall_runtime(game_dir: Path, *, apply: bool = False) -> dict[str, Any]:
         if destination.exists():
             actions.append({"path": relative_name, "action": "remove_generated_tree"})
     for relative_name in GENERATED_RUNTIME_FILES:
-        if PurePosixPath(relative_name).parts[0] not in owned_roots:
+        relative_parts = PurePosixPath(relative_name).parts
+        if relative_parts in tracked_paths or relative_parts[0] not in owned_roots:
             continue
-        destination = game_dir.joinpath(*PurePosixPath(relative_name).parts)
+        destination = game_dir.joinpath(*relative_parts)
         if destination.exists():
             actions.append({"path": relative_name, "action": "remove_generated"})
 

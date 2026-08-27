@@ -1,4 +1,6 @@
 using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -16,7 +18,12 @@ public sealed class RichTextTranslationPlugin : BasePlugin
 {
     public const string PluginGuid = "arklocalizer.richtextfix";
     public const string PluginName = "Arknights Localization Rich Text Fix";
-    public const string PluginVersion = "1.0.4";
+    public const string PluginVersion = "1.0.6";
+
+    private const uint GetWindowOwner = 4;
+    private const int ShowWindowHide = 0;
+    private const int ConsoleHidePollMilliseconds = 100;
+    private const int ConsoleHideTimeoutMilliseconds = 120_000;
 
     private readonly object registrationGate = new();
     private ITranslator? translator;
@@ -28,6 +35,14 @@ public sealed class RichTextTranslationPlugin : BasePlugin
         @"<br\s*/?>",
         RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
+    private static readonly Regex WhitespaceAroundLineBreak = new(
+        @"[ \t]*\n[ \t]*",
+        RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
+    private static readonly Regex RuntimeNumber = new(
+        @"\A[0-9]+(?:\.[0-9]+)?\z",
+        RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
     // Match the same display-only tags stripped by mapping.py. A broad
     // ``<[^>]+>`` pattern also removed Arknights' visible semantic text such
     // as <道路障害物>, producing a lookup key that could never match the pack.
@@ -37,6 +52,8 @@ public sealed class RichTextTranslationPlugin : BasePlugin
 
     public override void Load()
     {
+        StartConsoleAutoHide();
+
         // XUnity's BepInEx entry point is loaded before this plugin, but its
         // AutoTranslationPlugin.Current singleton is created later by an IL2CPP
         // proxy behaviour. Its public completion event runs after the cache and
@@ -106,7 +123,12 @@ public sealed class RichTextTranslationPlugin : BasePlugin
 
         string plain = BreakTag.Replace(original, "\n");
         plain = DisplayTag.Replace(plain, string.Empty);
-        plain = plain.Replace("\r\n", "\n", StringComparison.Ordinal).Replace('\r', '\n');
+        plain = plain.Replace("\\r\\n", "\n", StringComparison.Ordinal)
+            .Replace("\\n", "\n", StringComparison.Ordinal)
+            .Replace("\\r", "\n", StringComparison.Ordinal)
+            .Replace("\r\n", "\n", StringComparison.Ordinal)
+            .Replace('\r', '\n');
+        plain = WhitespaceAroundLineBreak.Replace(plain, "\n").Trim();
 
         ITranslator? current = translator;
         if (current is null)
@@ -119,6 +141,16 @@ public sealed class RichTextTranslationPlugin : BasePlugin
             && !string.IsNullOrWhiteSpace(wholeTranslation))
         {
             translation = wholeTranslation;
+        }
+        else if (TryTranslateSargonAgreement(plain, out string sargonTranslation))
+        {
+            // Sargon's in-battle description is the only current agreement
+            // that formats a stack-dependent duration before assigning the
+            // rich-text component. XUnity's component callback can miss the
+            // generated regex entry depending on the active translation
+            // scope, so handle this one official, tightly identified format
+            // without relaxing fragment fallback for any other component.
+            translation = sargonTranslation;
         }
         else if (containsLineBreak && TryTranslateLines(current, plain, out string lineTranslation))
         {
@@ -154,6 +186,184 @@ public sealed class RichTextTranslationPlugin : BasePlugin
                 Log.LogInfo("Blocked XUnity fragment fallback for an unmatched rich-text component.");
             }
         }
+    }
+
+    private void StartConsoleAutoHide()
+    {
+        if (!OperatingSystem.IsWindows() || GetConsoleWindow() == IntPtr.Zero)
+        {
+            return;
+        }
+
+        Thread worker = new(HideConsoleAfterGameWindowAppears)
+        {
+            IsBackground = true,
+            Name = "ArknightsLocalization.ConsoleAutoHide",
+        };
+        worker.Start();
+    }
+
+    private void HideConsoleAfterGameWindowAppears()
+    {
+        try
+        {
+            IntPtr consoleWindow = GetConsoleWindow();
+            if (consoleWindow == IntPtr.Zero)
+            {
+                return;
+            }
+
+            uint processId = unchecked((uint)Process.GetCurrentProcess().Id);
+            int attempts = ConsoleHideTimeoutMilliseconds / ConsoleHidePollMilliseconds;
+            for (int attempt = 0; attempt < attempts; attempt++)
+            {
+                if (HasVisibleGameWindow(processId, consoleWindow))
+                {
+                    ShowWindowAsync(consoleWindow, ShowWindowHide);
+                    Log.LogInfo("Game window detected; BepInEx console moved to the background.");
+                    return;
+                }
+                Thread.Sleep(ConsoleHidePollMilliseconds);
+            }
+            Log.LogWarning("Timed out waiting for the game window; leaving the BepInEx console visible.");
+        }
+        catch (Exception exception)
+        {
+            // Console presentation is cosmetic. Never let it affect the
+            // translation callback or game startup when Windows APIs fail.
+            Log.LogWarning($"Could not auto-hide the BepInEx console: {exception.Message}");
+        }
+    }
+
+    private static bool HasVisibleGameWindow(uint processId, IntPtr consoleWindow)
+    {
+        bool found = false;
+        EnumWindows(
+            (window, _) =>
+            {
+                if (window == consoleWindow
+                    || !IsWindowVisible(window)
+                    || GetWindow(window, GetWindowOwner) != IntPtr.Zero)
+                {
+                    return true;
+                }
+
+                GetWindowThreadProcessId(window, out uint windowProcessId);
+                if (windowProcessId != processId)
+                {
+                    return true;
+                }
+
+                found = true;
+                return false;
+            },
+            IntPtr.Zero);
+        return found;
+    }
+
+    private delegate bool EnumWindowsCallback(IntPtr window, IntPtr parameter);
+
+    [DllImport("kernel32.dll")]
+    private static extern IntPtr GetConsoleWindow();
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool EnumWindows(EnumWindowsCallback callback, IntPtr parameter);
+
+    [DllImport("user32.dll")]
+    private static extern IntPtr GetWindow(IntPtr window, uint command);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool IsWindowVisible(IntPtr window);
+
+    [DllImport("user32.dll")]
+    private static extern uint GetWindowThreadProcessId(IntPtr window, out uint processId);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool ShowWindowAsync(IntPtr window, int command);
+
+    private static bool TryTranslateSargonAgreement(string text, out string translation)
+    {
+        const string japanesePrefix = "【サルゴン】所属者のスキル発動時、";
+        const string japaneseDurationSuffix = "秒間全ての【サルゴン】所属者の攻撃速度+12";
+        const string japaneseEffectMarker =
+            "<戦場に異なる【サルゴン】所属者を6名配置>上述の効果持続中、" +
+            "全ての【サルゴン】所属者の攻撃力+12%（最大+300%）";
+
+        const string englishPrefix =
+            "When any [Sargon] Operator activates a skill, all [Sargon] Operators " +
+            "+12 ASPD (up to +300), lasting for ";
+        const string englishDurationSuffix = " seconds (affected by no. of stacks)";
+        const string englishEffectMarker =
+            "Skill activations will also cause all [Sargon] Operators to gain " +
+            "+12% ATK (up to +300%)";
+
+        string duration;
+        bool includesStrategy;
+        if (text.StartsWith(japanesePrefix, StringComparison.Ordinal)
+            && text.Contains(japaneseEffectMarker, StringComparison.Ordinal)
+            && TryExtractDuration(
+                text,
+                japanesePrefix.Length,
+                japaneseDurationSuffix,
+                out duration))
+        {
+            includesStrategy = text.Contains("戦術【ナラントゥヤ】", StringComparison.Ordinal);
+        }
+        else if (text.StartsWith(englishPrefix, StringComparison.Ordinal)
+            && text.Contains("<With 6 different [Sargon] Operators on ", StringComparison.Ordinal)
+            && text.Contains(englishEffectMarker, StringComparison.Ordinal)
+            && TryExtractDuration(
+                text,
+                englishPrefix.Length,
+                englishDurationSuffix,
+                out duration))
+        {
+            includesStrategy = text.Contains(
+                "When using Narantuya's Strategy",
+                StringComparison.Ordinal);
+        }
+        else
+        {
+            translation = string.Empty;
+            return false;
+        }
+
+        translation =
+            "【萨尔贡】干员开启技能时，所有【萨尔贡】干员攻击速度+12（至多+300），持续" +
+            duration +
+            "秒（受层数影响）\n" +
+            "<在场6名不同【萨尔贡】干员>开启技能还会使所有【萨尔贡】干员攻击力+12%（至多+300%）";
+        if (includesStrategy)
+        {
+            translation +=
+                "\n选择策略【娜仁图亚】时，<在场6名不同【萨尔贡】干员>的效果会有所改变";
+        }
+        return true;
+    }
+
+    private static bool TryExtractDuration(
+        string text,
+        int startIndex,
+        string suffix,
+        out string duration)
+    {
+        int endIndex = text.IndexOf(suffix, startIndex, StringComparison.Ordinal);
+        if (endIndex <= startIndex)
+        {
+            duration = string.Empty;
+            return false;
+        }
+
+        duration = text.Substring(startIndex, endIndex - startIndex).Trim();
+        if (!RuntimeNumber.IsMatch(duration))
+        {
+            duration = string.Empty;
+            return false;
+        }
+        return true;
     }
 
     private static bool TryTranslateLines(ITranslator current, string text, out string translation)

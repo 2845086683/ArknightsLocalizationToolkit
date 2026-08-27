@@ -15,7 +15,7 @@
   "font": "arialuni_sdf_u2021",
   "rich_text_plugin": {
     "path": "BepInEx/plugins/ArknightsLocalization/ArknightsLocalization.RichTextFix.dll",
-    "sha256": "562f3159ff05f35943abd2e330eec3cd970c24b302c65e598e440c0a08a845f2"
+    "sha256": "b203f953e4a8d09ba0f98be12cec2bdc6ef11c30919461758e2ffb98dfd582d6"
   },
   "files": [
     {
@@ -32,6 +32,11 @@
       "path": "BepInEx/config/AutoTranslatorConfig.ini",
       "bytes": 1100,
       "sha256": "d3171948e74a9e0430ec3a2d16d15aa29e9c628c521d395be4012208b8c52acf"
+    },
+    {
+      "path": "BepInEx/config/BepInEx.cfg",
+      "bytes": 6576,
+      "sha256": "a9c4d5cd127cc62597749bff317f600bada9a1a788fcf8945e0198ed228c1604"
     },
     {
       "path": "BepInEx/core/0Harmony.dll",
@@ -215,8 +220,8 @@
     },
     {
       "path": "BepInEx/plugins/ArknightsLocalization/ArknightsLocalization.RichTextFix.dll",
-      "bytes": 9216,
-      "sha256": "562f3159ff05f35943abd2e330eec3cd970c24b302c65e598e440c0a08a845f2"
+      "bytes": 13824,
+      "sha256": "b203f953e4a8d09ba0f98be12cec2bdc6ef11c30919461758e2ffb98dfd582d6"
     },
     {
       "path": "BepInEx/plugins/README (AutoTranslator).md",

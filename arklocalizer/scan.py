@@ -10,7 +10,12 @@ import subprocess
 from pathlib import Path, PurePosixPath
 from typing import Any
 
-from .runtime import AUTO_TRANSLATOR_CONFIG_PATH, inspect_orphaned_runtime
+from .runtime import (
+    AUTO_TRANSLATOR_CONFIG_PATH,
+    BEPINEX_CONFIG_PATH,
+    BEPINEX_CONFIG_TEMPLATE,
+    inspect_orphaned_runtime,
+)
 from .util import sha256_file
 from .xunity import offline_config
 
@@ -206,7 +211,28 @@ def _compatible_auto_translator_config(path: Path, manifest: dict[str, Any]) -> 
     )
 
 
-def _installed_runtime(game_dir: Path) -> dict[str, Any]:
+def _compatible_bepinex_config(path: Path) -> bool:
+    """Accept BepInEx's comment/order rewrite when all staged values remain intact."""
+    try:
+        expected = _parse_ini(BEPINEX_CONFIG_TEMPLATE.read_text(encoding="utf-8-sig"))
+        actual = _parse_ini(path.read_text(encoding="utf-8-sig"))
+    except (OSError, UnicodeError, configparser.Error, ValueError):
+        return False
+    return all(
+        actual.has_section(section)
+        and all(
+            actual.get(section, option, raw=True, fallback=None) == value
+            for option, value in expected.items(section, raw=True)
+        )
+        for section in expected.sections()
+    )
+
+
+def _installed_runtime(
+    game_dir: Path,
+    *,
+    tolerate_runtime_mutation: bool = False,
+) -> dict[str, Any]:
     install_path = game_dir / "ArknightsLocalizationToolkit.install.json"
     if not install_path.is_file():
         markers = [name for name in INJECTION_MARKERS if (game_dir / name).exists()]
@@ -221,12 +247,15 @@ def _installed_runtime(game_dir: Path) -> dict[str, Any]:
             "modified": 0,
             "missing": 0,
             "runtime_modified": 0,
+            "runtime_pending": 0,
         }
 
     manifest = json.loads(install_path.read_text(encoding="utf-8"))
-    verified = modified = missing = runtime_modified = 0
+    verified = modified = missing = runtime_modified = runtime_pending = 0
+    tracked_paths: set[PurePosixPath] = set()
     for item in manifest.get("files", []):
         relative = PurePosixPath(str(item["path"]))
+        tracked_paths.add(relative)
         destination = game_dir.joinpath(*relative.parts)
         if not destination.is_file():
             missing += 1
@@ -237,6 +266,47 @@ def _installed_runtime(game_dir: Path) -> dict[str, Any]:
             and _compatible_auto_translator_config(destination, manifest)
         ):
             runtime_modified += 1
+        elif relative == BEPINEX_CONFIG_PATH and _compatible_bepinex_config(destination):
+            runtime_modified += 1
+        else:
+            modified += 1
+
+    for item in manifest.get("runtime_mutable_files", []):
+        relative = PurePosixPath(str(item.get("path", "")))
+        staged_sha256 = item.get("staged_sha256")
+        if (
+            not relative.parts
+            or relative.is_absolute()
+            or ".." in relative.parts
+            or relative in tracked_paths
+            or relative.as_posix()
+            not in {AUTO_TRANSLATOR_CONFIG_PATH, BEPINEX_CONFIG_PATH.as_posix()}
+            or not isinstance(staged_sha256, str)
+            or len(staged_sha256) != 64
+        ):
+            modified += 1
+            continue
+        destination = game_dir.joinpath(*relative.parts)
+        if not destination.is_file():
+            if tolerate_runtime_mutation:
+                runtime_pending += 1
+            else:
+                missing += 1
+        elif sha256_file(destination) == staged_sha256:
+            verified += 1
+        elif (
+            relative.as_posix() == AUTO_TRANSLATOR_CONFIG_PATH
+            and _compatible_auto_translator_config(destination, manifest)
+        ):
+            runtime_modified += 1
+        elif relative == BEPINEX_CONFIG_PATH and _compatible_bepinex_config(destination):
+            runtime_modified += 1
+        elif tolerate_runtime_mutation:
+            # BepInEx and XUnity rewrite their configuration files in several
+            # writes during startup. A scan can otherwise observe a partial INI
+            # and report a repairable modification even though the game is
+            # still producing the valid final file.
+            runtime_pending += 1
         else:
             modified += 1
     source_locale = manifest.get("staging_manifest", {}).get("source_locale")
@@ -251,11 +321,13 @@ def _installed_runtime(game_dir: Path) -> dict[str, Any]:
         "modified": modified,
         "missing": missing,
         "runtime_modified": runtime_modified,
+        "runtime_pending": runtime_pending,
     }
 
 
 def scan_client(executable: Path, *, default_runtime: Path | None = None) -> dict[str, Any]:
     executable, game_dir = validate_game_executable(executable)
+    running_processes = running_game_processes()
     data = game_dir / "Arknights_Data"
     base = data / "StreamingAssets" / "AB" / "Windows" / "anon"
     hot = data / "PersistentData" / "Bundles" / "anon"
@@ -268,8 +340,11 @@ def scan_client(executable: Path, *, default_runtime: Path | None = None) -> dic
         "base_layer": _layer_summary(base),
         "hot_layer": _layer_summary(hot),
         "effective_anon_bundles": _effective_anon_count(base, hot),
-        "running_processes": running_game_processes(),
-        "runtime": _installed_runtime(game_dir),
+        "running_processes": running_processes,
+        "runtime": _installed_runtime(
+            game_dir,
+            tolerate_runtime_mutation=bool(running_processes),
+        ),
     }
     if default_runtime is not None:
         result["translation_pack"] = compare_translation_pack(game_dir, default_runtime)
