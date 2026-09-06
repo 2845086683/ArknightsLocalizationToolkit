@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "arknights-localization-toolkit"
-version = "0.1.0"
+version = "2.0.0"
 description = "Offline Arknights EN/JP to Simplified Chinese localization toolkit"
 requires-python = ">=3.12,<3.13"
 dependencies = [
