@@ -50593,6 +50593,13 @@
     "entries": 705,
     "ambiguous": []
   },
+  "operator-character": {
+    "entries": 1296,
+    "ambiguous": [
+      "RAIDIAN",
+      "Raidian"
+    ]
+  },
   "operator-tag": {
     "entries": 1806,
     "ambiguous": []

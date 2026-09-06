@@ -28,12 +28,6 @@ internal static class ComponentContext
             if (ContextTranslations.Lookup("skill", original) == null
                 && ContextTranslations.Lookup("talent", original) == null
                 && ContextTranslations.Lookup("operator", original) == null) return null;
-            if (native.name == "label_realname" && native.transform.parent?.name == "panel_illustration_name")
-            {
-                for (Transform? ancestor = native.transform.parent; ancestor != null; ancestor = ancestor.parent)
-                    if (ancestor.name == "character_info_home_state")
-                        return ContextTranslations.Lookup("operator", original);
-            }
         }
         // Pooled rows can change parents. Do not cache source-only results.
         for (Transform? parent = native.transform; parent != null; parent = parent.parent)

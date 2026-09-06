@@ -22,7 +22,7 @@
   },
   "rich_text_plugin": {
     "path": "BepInEx/plugins/ArknightsLocalization/ArknightsLocalization.RichTextFix.dll",
-    "sha256": "1c258f4fcc40ed129c489ba3d5b517186949d1364e2b624c59108cbed50659d2"
+    "sha256": "25ac53eb01ae98c7e6c74a0aecf177daf2798fdebcf80bb417a6884e218f3a81"
   },
   "files": [
     {
@@ -227,8 +227,8 @@
     },
     {
       "path": "BepInEx/plugins/ArknightsLocalization/ArknightsLocalization.RichTextFix.dll",
-      "bytes": 12399616,
-      "sha256": "1c258f4fcc40ed129c489ba3d5b517186949d1364e2b624c59108cbed50659d2"
+      "bytes": 12408832,
+      "sha256": "25ac53eb01ae98c7e6c74a0aecf177daf2798fdebcf80bb417a6884e218f3a81"
     },
     {
       "path": "BepInEx/plugins/README (AutoTranslator).md",

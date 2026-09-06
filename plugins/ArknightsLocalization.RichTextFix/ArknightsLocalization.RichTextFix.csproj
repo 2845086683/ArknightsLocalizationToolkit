@@ -28,6 +28,7 @@
       <HintPath>..\..\runtime\jp-zh-offline-final\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib" Private="false"><HintPath>$(GameInteropPath)\Il2Cppmscorlib.dll</HintPath></Reference>
+    <Reference Include="Il2CppSystem.Core" Private="false"><HintPath>$(GameInteropPath)\Il2CppSystem.Core.dll</HintPath></Reference>
     <Reference Include="UnityEngine.CoreModule" Private="false"><HintPath>$(GameInteropPath)\UnityEngine.CoreModule.dll</HintPath></Reference>
     <Reference Include="UnityEngine.AssetBundleModule" Private="false"><HintPath>$(GameInteropPath)\UnityEngine.AssetBundleModule.dll</HintPath></Reference>
     <Reference Include="UnityEngine.TextRenderingModule" Private="false"><HintPath>$(GameInteropPath)\UnityEngine.TextRenderingModule.dll</HintPath></Reference>

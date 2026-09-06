@@ -59,6 +59,11 @@ internal static class ComponentFields
                         if (element != null && element == text) return entry.Role;
             }
         }
+        // This illustration label has no exposed owner field. Require the
+        // complete known detail-page hierarchy, including during stabilization.
+        if (text.name == "label_realname" && text.transform.parent?.name == "panel_illustration_name")
+            for (Transform? ancestor = text.transform.parent; ancestor != null; ancestor = ancestor.parent)
+                if (ancestor.name == "character_info_home_state") return "operator-character";
         return null;
     }
 }

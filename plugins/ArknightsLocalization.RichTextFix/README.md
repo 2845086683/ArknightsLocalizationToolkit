@@ -1,12 +1,14 @@
 # 国服字体与富文本插件
 
-版本 1.8.0 按实际字形覆盖决定是否换字体，取代 1.2.0 的强制统一字体策略。UGUI 在 `OnPopulateMesh` / `UpdateGeometry` 之前应用字体，另覆盖 `GetGenerationSettings` 布局查询和游戏 `Torappu.UI.UICommentedText`。换字体时使排版与字形缓存失效；对字体检查全过程防重入，避免 XUnity 同步回调打乱原字体记录。TMP 的初始化和渲染入口覆盖 UI/世界空间文本。启动时只扫描一次已有场景组件；后续不轮询场景。
+版本 1.9.0 按实际字形覆盖决定是否换字体，取代 1.2.0 的强制统一字体策略。UGUI 在 `OnPopulateMesh` / `UpdateGeometry` 之前应用字体，另覆盖 `GetGenerationSettings` 布局查询和游戏 `Torappu.UI.UICommentedText`。换字体时使排版与字形缓存失效；对字体检查全过程防重入，避免 XUnity 同步回调打乱原字体记录。TMP 的初始化和渲染入口覆盖 UI/世界空间文本。启动时只扫描一次已有场景组件；后续不轮询场景。
 
 数字、英文及能完整显示中文的原字体和材质保持不变。UGUI 检查原生 FontEngine 字形索引，避免 `Font.HasCharacter` 将系统回退字体误报为本字体支持中文。缺字时整段中文使用国服字体，避免一句话内中日字形混杂；Bold/Heavy/Black 字体优先选用内嵌国服 Heavy 字库。TMP 从国服材质出发，复制原有面色、描边、阴影等视觉效果。保存原字体与材质，组件复用为数字或英文时恢复。显式 `<font=…>` / `<material=…>` 标签交给 TMP 正常处理，不再吞掉。
 
 `RichTextStyleRestorer` 保留整段翻译，根据整段包装标签、精确译词、无歧义数值恢复样式，不按字符比例猜测位置。`OfficialRichStyles` 额外加载 19,373 条完整中文样式目标及 170 个官方宏定义，恢复国服技能数值与关键词高亮，包括源文本的宏已被剥离的情况。只在目标可见文本与已选译文完全一致时使用，61 个样式冲突目标已排除，不改变翻译内容。更新数据可运行 `tools/build_rich_styles.py`，然后重新编译插件。
 
 1.6 的 `UguiAtlasCache` 修复偶发字形碎片错位：游戏 `UICommentedText` 在 Unity `TextGenerator` 之外另存 `m_tempVerts` 顶点缓存。共享动态图集重建后，Unity 缓存已更新，游戏仍可能复用旧 UV；点击改变文本后才恢复。插件在原生 `Font.InvokeTextureRebuilt_Internal` 通知消费者之前记录图集版本，在该控件生成网格前比较图集版本与完整排版参数，变化时清除过期顶点缓存。相同条件继续复用缓存，不逐帧扫描或强制重绘整个界面，也不清除富文本内容、点击数据和原字体设置。
+
+1.9 修复字体重建回调期间切换字体导致的列表文字空白：原生 `FontUpdateTracker.RebuildForFont` 原本遍历可变 `HashSet`，同步翻译/布局触发字体切换时会抛出 `Collection was modified` 并中断剩余控件刷新。现在先复制本轮文本快照，再通知仍有效且仍使用该字体的控件；保留 Unity 自身的跟踪集合和图集缓存失效机制。新增原生测试在 12 个普通/自定义文本的重建回调中切换字体，1.8 可复现异常，1.9 完成全部回调和网格重建。
 
 `Resources/cn_heavy.bundle` 是国服客户端的 `SourceHanSansCN-Heavy`。`Resources/cn_song.bundle` 是国服 `方正特雅宋_GBK`，用于原宋体缺字时的同类替代，保留数字/拉丁文组件原字体。两者由 `tools/build_cn_display_font.py` 提取（宋体使用 `--role song`）；旁边的 JSON 记录字形数据和 bundle 哈希。不依赖系统安装。国服 `ui/pages/character_info_page.ab` 的 `panel_illustration_name/label_realname` 上字体加载组件 `_fontName` 为 `方正特雅宋_GBK`，`label_nickname` 为 `NotoSansHans-Medium`；日服同路径的声明一致。
 
@@ -19,6 +21,8 @@
 `ComponentFields` 按原生组件的字段引用判断用途：字段必须指向当前文本，单纯位于同一页面不算匹配。1.8 的 `Resources/component_fields.json` 共 85 个类型、104 个字段，已核对美服和日服 interop。覆盖盟约、职业分支、干员正式名、基建房间/技能、公招词条、特勤任务、剧情和卫戍协议播报。只缓存反射元数据，每次赋值重新检查当前父级与字段指针。职业分支 Executor → 处决者，干员 Executor → 送葬人；干员卡片 Gnosis → 灵知，剧情称谓仍遵循原词典。原文与国服相同的正式词条也会保留，防止公招“支援”被全局词典改成“支持”。
 
 1.7 补齐战斗顶部 `AutoChessBattleUIBondItemView`、盟约详情、商店盟约、选人详情以及战斗干员名称字段，覆盖 Precision、Solo、Elite 在局内的显示。干员名称补充官方 appellation 及大写变体；`operator-autochess` 通过双服共有活动行的 `charId` / `backupCharId` 关联国服正式名，共 705 条映射、零域内歧义。国服预备干员 Raidian 与正式干员电弧在英文中同名，活动字段使用预备干员的官方名称；Sharp、Touch、Mechanist 等国服英文代号保留。无活动专属匹配时才使用普通干员名称，仍有歧义则阻止全局误译。玩家名、玩家编号、别名及设计上独立的英文代号字段保持原文。
+
+1.9 新增 `operator-character`，仅从正式 `char_` 行构建干员卡片、选择列表和详情名，不与地图物件/召唤物混用。Mountain → 山、Flint → 燧石、Mint → 薄绿、Vigil → 伺夜及其大写别名因此可以安全消歧。详情大名的完整已知层级也纳入优先匹配与文本稳定等待路径。原有通用、活动和玩家身份规则保留；所有旧上下文字典保持不变，干员之间仍有歧义的名称继续跳过。
 
 1.8 补齐局内点击干员后的左侧详情：`UICharacterInfoStatusSubPanelInAutochess._basicCampText` 和 `_extraCampTexts` 分别匹配主盟约和附加盟约数组。只检查已登记的原生 `Text[]` 字段，每次读取当前元素，不缓存数组成员；空元素跳过。攻击速度 `_atkSpeed`、再部署 `_reviveTime` 与标签 `_textTags` 使用独立词库；Slow 在前者为“慢”、标签为“减速”。速度从官方 string_map 的对应 ID 配对，标签从公招 tagId 及正式干员标签列表构建，支持完整标签组合，保留源分隔符及富文本包装。召唤物详情的速度字段同时覆盖。
 

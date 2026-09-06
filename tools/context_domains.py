@@ -20,10 +20,10 @@ def collect(root: Path, add, templates: list) -> None:
         return render_styles(value, styles) or value
 
     def pair(scope, source, target):
-        if not source or not target or (scope not in {'operator', 'operator-autochess'} and not contains_han(target)):
+        if not source or not target or (scope not in {'operator', 'operator-character', 'operator-autochess'} and not contains_han(target)):
             return
         add(scope, source, rendered(target))
-        if scope in {'subprofession', 'operator', 'operator-autochess', 'bond', 'room', 'building-skill', 'recruit-tag'}:
+        if scope in {'subprofession', 'operator', 'operator-character', 'operator-autochess', 'bond', 'room', 'building-skill', 'recruit-tag'}:
             add(scope, source.upper(), rendered(target))
 
     def template(scope, source, target, roles):
@@ -63,6 +63,13 @@ def collect(root: Path, add, templates: list) -> None:
                 pair('operator', s, t)
         for key in source_chars.keys() & target_chars.keys():
             source, target = source_chars[key], target_chars[key]
+            # Character cards/details cannot display traps or summon tokens.
+            # E.g. Mountain is both char_264_f12yin (山) and a trap (山脉).
+            # Keep the broad domain unchanged for battle/token consumers.
+            if key.startswith('char_'):
+                for alias in (source['name'], source.get('appellation'), target.get('appellation')):
+                    if isinstance(alias, str) and alias.strip():
+                        pair('operator-character', alias.strip(), target['name'])
             for alias in (source.get('appellation'), target.get('appellation')):
                 if isinstance(alias, str) and alias.strip():
                     pair('operator', alias.strip(), target['name'])

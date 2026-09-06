@@ -18,7 +18,7 @@ public sealed class RichTextTranslationPlugin : BasePlugin
 {
     public const string PluginGuid = "arklocalizer.richtextfix";
     public const string PluginName = "Arknights Localization Rich Text Fix";
-    public const string PluginVersion = "1.8.0";
+    public const string PluginVersion = "1.9.0";
 
     private const uint GetWindowOwner = 4;
     private const int ShowWindowHide = 0;

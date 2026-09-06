@@ -4,6 +4,7 @@ using System.Linq;
 using BepInEx.Logging;
 using HarmonyLib;
 using Il2CppInterop.Runtime.InteropTypes;
+using Il2CppInterop.Runtime.InteropTypes.Arrays;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,6 +45,7 @@ internal static class AdaptiveFontPolicy
         if (CnFontOverride.LoadFont() == null) return;
         CnFontOverride.LoadTmp();
         Harmony harmony = new("arklocalizer.cnfont.adaptive");
+        Patch(harmony, typeof(FontUpdateTracker), "RebuildForFont", nameof(RebuildTrackedTexts));
         Patch(harmony, typeof(Text), "set_font", nameof(UguiFontAssigned), true);
         Patch(harmony, typeof(Text), "set_text", nameof(UguiEnsure), true);
         Patch(harmony, typeof(Text), "OnEnable", nameof(UguiEnsure), true);
@@ -94,6 +96,22 @@ internal static class AdaptiveFontPolicy
         if (!uguiStates.TryGetValue(__instance.GetInstanceID(), out var state)) return;
         state.Original = state.Applied = __instance.font;
         state.LastText = null;
+    }
+
+    private static bool RebuildTrackedTexts(Font __0)
+    {
+        // FontTextureChanged can synchronously translate/measure a pooled row
+        // and change its font. Unity's live HashSet enumerator then throws,
+        // abandoning every remaining row (blank text or stale atlas UVs).
+        // Snapshot before invoking callbacks, while keeping Unity's tracker
+        // itself authoritative for new, removed and destroyed components.
+        if (__0 == null || !FontUpdateTracker.m_Tracked.ContainsKey(__0)) return false;
+        var tracked = FontUpdateTracker.m_Tracked[__0];
+        var snapshot = new Il2CppReferenceArray<Text>(tracked.Count);
+        tracked.CopyTo(snapshot);
+        foreach (Text text in snapshot)
+            if (text != null && text.font == __0 && tracked.Contains(text)) text.FontTextureChanged();
+        return false;
     }
 
     private static void TmpFontAssigned(TMP_Text __instance)

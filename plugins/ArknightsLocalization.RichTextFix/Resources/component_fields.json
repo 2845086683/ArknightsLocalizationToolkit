@@ -51,16 +51,16 @@
     "_textVisitorName": "identity"
   },
   "Torappu.Building.UI.Meeting.MeetingCharacterView": {
-    "_name": "operator"
+    "_name": "operator-character"
   },
   "Torappu.Building.UI.StationSelect.BuildingStationSelectCharCard": {
-    "_textName": "operator"
+    "_textName": "operator-character"
   },
   "Torappu.Building.UI.StationSelect.BuildingStationSelectCharInfoView": {
-    "_textName": "operator"
+    "_textName": "operator-character"
   },
   "Torappu.Gacha.PanelCharacterInfo": {
-    "_nameCn": "operator"
+    "_nameCn": "operator-character"
   },
   "Torappu.UI.AutoChess.AutoChessBandChoosePlayerItemView": {
     "_textAlias": "identity",
@@ -136,7 +136,7 @@
     "_name": "operator-autochess"
   },
   "Torappu.UI.CharSelect.CharSelectAttrController": {
-    "_name": "operator"
+    "_name": "operator-character"
   },
   "Torappu.UI.CharSelect.CharSelectBranchGroup": {
     "_subProfName": "subprofession"
@@ -163,10 +163,10 @@
     "_subProfName": "subprofession"
   },
   "Torappu.UI.CharacterInfo.CharacterInfoEvolveState": {
-    "_nameInConfirmInfo": "operator"
+    "_nameInConfirmInfo": "operator-character"
   },
   "Torappu.UI.CharacterInfo.CharacterInfoProfileViewController": {
-    "_realName": "operator"
+    "_realName": "operator-character"
   },
   "Torappu.UI.CharacterInfo.CharacterInfoRightProfSubProfView": {
     "_subProfName": "subprofession"
@@ -183,13 +183,13 @@
     "_textSubProf": "subprofession"
   },
   "Torappu.UI.CharacterShow.CharacterShowV2LeftInfoView": {
-    "_name": "operator"
+    "_name": "operator-character"
   },
   "Torappu.UI.ChooseChar.UIPortraitChooseCharCardView": {
-    "_textName": "operator"
+    "_textName": "operator-character"
   },
   "Torappu.UI.ItemRepo.ItemRepoCharFrontView": {
-    "_charName": "operator"
+    "_charName": "operator-character"
   },
   "Torappu.UI.Mission.DailyMissionTask": {
     "_description": "mission"
@@ -206,7 +206,7 @@
     "_targetPath2": "mission"
   },
   "Torappu.UI.Mission.SoCharMissionCharInfoView": {
-    "_realName": "operator"
+    "_realName": "operator-character"
   },
   "Torappu.UI.Mission.SoCharMissionRightPart": {
     "_maxHint": "mission",
@@ -219,22 +219,22 @@
     "_textContent": "recruit-tag"
   },
   "Torappu.UI.Recruit.RecruitCharDetailObj": {
-    "_charName": "operator"
+    "_charName": "operator-character"
   },
   "Torappu.UI.Recruit.RecruitSpecialCharPortItemView": {
-    "_textCharName": "operator"
+    "_textCharName": "operator-character"
   },
   "Torappu.UI.Recruit.RecruitSpecialGachaUpCharListItemView": {
-    "_textCharName": "operator"
+    "_textCharName": "operator-character"
   },
   "Torappu.UI.Recruit.RecruitUpCharDetailPortraitObj": {
-    "_charName": "operator"
+    "_charName": "operator-character"
   },
   "Torappu.UI.Roguelike.RoguelikeCharCommonCharView": {
-    "_charName": "operator"
+    "_charName": "operator-character"
   },
   "Torappu.UI.Roguelike.RoguelikeCharSelectAttrController": {
-    "_name": "operator"
+    "_name": "operator-character"
   },
   "Torappu.UI.Roguelike.RoguelikeCharSelectBranchGroup": {
     "_subProfName": "subprofession"
@@ -247,22 +247,22 @@
     "_subProfName": "subprofession"
   },
   "Torappu.UI.Shop.ShopDetailCharView": {
-    "_charName": "operator"
+    "_charName": "operator-character"
   },
   "Torappu.UI.Squad.SquadSharedCharHeadIcon": {
-    "_charName": "operator"
+    "_charName": "operator-character"
   },
   "Torappu.UI.TemplateCharSelect.Common.CommonCharSelectDetailPlugin": {
-    "_name": "operator"
+    "_name": "operator-character"
   },
   "Torappu.UI.TemplateShop.TemplateShopCharDetailView": {
-    "_charName": "operator"
+    "_charName": "operator-character"
   },
   "Torappu.UI.UICharacterAttrDetailView": {
-    "_name": "operator"
+    "_name": "operator-character"
   },
   "Torappu.UI.UICharacterCardPanel": {
-    "_textRealName": "operator"
+    "_textRealName": "operator-character"
   },
   "Torappu.UI.UICharacterProfessionFilterSubProfItem": {
     "_name": "subprofession"
