@@ -37,7 +37,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     prepare = subcommands.add_parser(
         "prepare-components",
-        help="Download and verify pinned official runtime components and the Unity 2021 font",
+        help="Download pinned runtime components and prepare the bundled CN font",
     )
     prepare.add_argument("--proxy", help="Optional HTTP(S) proxy, for example http://127.0.0.1:12343")
     prepare.add_argument(
@@ -50,6 +50,10 @@ def build_parser() -> argparse.ArgumentParser:
         type=_path,
         default=PROJECT_ROOT / "cache" / "fonts",
     )
+
+    cn_font = subcommands.add_parser("import-cn-font", help="Import NotoSansHans-Medium from a local CN PC client")
+    cn_font.add_argument("--game-dir", type=_path, required=True)
+    cn_font.add_argument("--output", type=_path, default=PROJECT_ROOT / "cache" / "fonts")
 
     update_data = subcommands.add_parser(
         "update-data",
@@ -107,7 +111,10 @@ def build_parser() -> argparse.ArgumentParser:
         type=_path,
         default=PROJECT_ROOT / "cache" / "official-components",
     )
-    stage.add_argument("--font", type=_path)
+    stage.add_argument(
+        "--font", type=_path,
+        help="Imported CN native font bundle (default: cache/fonts/arknights_cn_notosanshans)",
+    )
 
     validate = subcommands.add_parser("validate-pack", help="Strictly parse and validate a pack")
     validate.add_argument("--pack", type=_path, required=True)
@@ -144,6 +151,11 @@ def main(argv: list[str] | None = None) -> int:
             args.fonts,
             proxy=args.proxy,
         )
+        print(json.dumps(report, ensure_ascii=False, indent=2))
+        return 0
+    if args.command == "import-cn-font":
+        from .cn_font import import_cn_font
+        report = import_cn_font(args.game_dir, args.output)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0
     if args.command == "update-data":

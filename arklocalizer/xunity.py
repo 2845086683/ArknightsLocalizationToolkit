@@ -5,6 +5,11 @@ from pathlib import Path
 from .util import sha256_file
 
 
+DEFAULT_TMP_FONT = "arknights_cn_notosanshans"
+# Virtual XUnity name handled by the companion plugin, NOT an installed font.
+DEFAULT_UGUI_FONT = "Arknights CN NotoSansHans Medium"
+
+
 def encode_translation_text(text: str) -> str:
     """Encode exactly like XUnity AutoTranslator 5.6.1 TextHelper.Encode."""
     result: list[str] = []
@@ -123,10 +128,14 @@ def validate_translation_pack(pack_root: Path) -> dict[str, object]:
     }
 
 
-def offline_config(source_locale: str, font_name: str = "") -> str:
+def offline_config(source_locale: str, font_name: str = DEFAULT_TMP_FONT) -> str:
     if source_locale not in {"en", "jp"}:
         raise ValueError(f"Unsupported source locale: {source_locale}")
-    fallback_font = font_name.strip()
+    override_font = font_name.strip()
+    if not override_font or any(char in override_font for char in "\r\n"):
+        raise ValueError("A non-empty, single-line TMP font bundle name is required")
+    if override_font != DEFAULT_TMP_FONT:
+        raise ValueError("The unified font policy requires the imported CN native font bundle")
     from_language = {"en": "en", "jp": "ja"}[source_locale]
     return f"""[Service]
 Endpoint=
@@ -156,7 +165,7 @@ MaxCharactersPerTranslation=400
 UseStaticTranslations=True
 OverrideFont=
 OverrideFontTextMeshPro=
-FallbackFontTextMeshPro={fallback_font}
+FallbackFontTextMeshPro=
 EnableUIResizing=True
 ForceUIResizing=False
 EnableBatching=False

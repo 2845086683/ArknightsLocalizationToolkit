@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "id": "a25e07ca-a482-5555-b750-ea0b9536f68b",
+  "name": "官方中文词库（美服）",
+  "locale": "en",
+  "repository": "2845086683/ArknightsLocalizationToolkit",
+  "remote_path": "runtime/en-zh-offline-final"
+}

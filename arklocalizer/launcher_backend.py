@@ -6,13 +6,14 @@ import shutil
 import subprocess
 import sys
 import time
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
 from .scan import scan_client, validate_game_executable
 from .util import PROJECT_ROOT, write_json
+from .xunity import DEFAULT_TMP_FONT
 
 
 APP_NAME = "ArknightsLocalizationToolkit"
@@ -25,9 +26,19 @@ class LauncherConfig:
     proxy: str = ""
     update_repositories: bool = True
     last_runtime: str = ""
+    selected_libraries: dict[str, str] = field(default_factory=dict)
+    check_library_updates: bool = True
+    check_software_updates: bool = True
+    update_source: str = "github"
+    update_proxy_mode: str = "auto"
+    mirror_url: str = "https://gh-proxy.com/"
 
     @classmethod
     def from_mapping(cls, value: dict[str, Any]) -> "LauncherConfig":
+        if not isinstance(value, dict):
+            raise ValueError("启动器配置必须是 JSON 对象")
+        selections = value.get("selected_libraries", {})
+        if not isinstance(selections, dict): selections = {}
         locale = str(value.get("locale", "en")).casefold()
         if locale not in {"en", "jp"}:
             locale = "en"
@@ -37,6 +48,12 @@ class LauncherConfig:
             proxy=str(value.get("proxy", "")),
             update_repositories=bool(value.get("update_repositories", True)),
             last_runtime=str(value.get("last_runtime", "")),
+            selected_libraries={k: str(v) for k, v in selections.items() if k in {"en", "jp"}},
+            check_library_updates=bool(value.get("check_library_updates", True)),
+            check_software_updates=bool(value.get("check_software_updates", True)),
+            update_source="mirror" if value.get("update_source") == "mirror" else "github",
+            update_proxy_mode=value.get("update_proxy_mode") if value.get("update_proxy_mode") in {"auto", "direct", "custom"} else "auto",
+            mirror_url=str(value.get("mirror_url", "https://gh-proxy.com/")),
         )
 
 
@@ -66,12 +83,13 @@ def load_config(path: Path | None = None) -> LauncherConfig:
     if not path.is_file():
         return defaults
     try:
-        stored = LauncherConfig.from_mapping(json.loads(path.read_text(encoding="utf-8-sig")))
+        values = json.loads(path.read_text(encoding="utf-8-sig"))
+        stored = LauncherConfig.from_mapping(values)
     except (OSError, ValueError, TypeError, json.JSONDecodeError):
         return defaults
     if not stored.game_executable:
         stored.game_executable = defaults.game_executable
-    if not stored.proxy:
+    if "proxy" not in values:
         stored.proxy = defaults.proxy
     return stored
 
@@ -79,6 +97,12 @@ def load_config(path: Path | None = None) -> LauncherConfig:
 def save_config(config: LauncherConfig, path: Path | None = None) -> Path:
     path = path or config_path()
     normalize_proxy(config.proxy)
+    from .updates import normalize_mirror
+    normalize_mirror(config.mirror_url)
+    if config.update_proxy_mode not in {"auto", "direct", "custom"}:
+        raise ValueError("更新代理模式无效")
+    if config.update_proxy_mode == "custom" and not config.proxy.strip():
+        raise ValueError("仅使用填写代理模式需要填写代理地址")
     if config.locale not in {"en", "jp"}:
         raise ValueError("服务器区域必须是 en 或 jp")
     write_json(path, {"schema": 1, **asdict(config)})
@@ -113,15 +137,17 @@ def configured_game(config: LauncherConfig) -> tuple[Path, Path]:
 
 
 def runtime_for(project: Path, config: LauncherConfig) -> Path:
+    from .libraries import migrate_legacy, official_id
+    libraries = [x for x in migrate_legacy(project, config) if x.locale == config.locale]
+    selected = config.selected_libraries.get(config.locale)
+    if selected:
+        match = next((item for item in libraries if item.id == selected), None)
+        if match is None: raise FileNotFoundError("所选词库已移动或区服不匹配，请重新选择词库")
+        return match.path
+    if libraries: return next((x.path for x in libraries if x.id == official_id(config.locale)), libraries[0].path)
     candidates: list[Path] = []
     if config.last_runtime:
         candidates.append(Path(config.last_runtime))
-    pointer = project / "outputs" / f"current-{config.locale}-runtime.txt"
-    if pointer.is_file():
-        value = pointer.read_text(encoding="utf-8-sig").strip()
-        if value:
-            candidates.append(Path(value))
-    candidates.append(project / "outputs" / "runtime" / f"{config.locale}-zh-offline-final")
     for candidate in candidates:
         manifest = candidate / "ARKLOCALIZER_MANIFEST.json"
         if not manifest.is_file():
@@ -205,13 +231,14 @@ def rebuild_commands(
     if not python.is_file():
         raise FileNotFoundError("构建环境不存在，请先点击“初始化构建环境”")
     stamp = time.strftime("%Y%m%d-%H%M%S")
-    build_root = project / "outputs" / "builds" / f"{config.locale}-{stamp}"
+    build_root = project / "work" / "builds" / f"{config.locale}-{stamp}"
     tables = build_root / "client-tables"
     story = build_root / "client-story"
     pack = build_root / "pack"
-    runtime = build_root / "runtime"
+    from .libraries import library_root
+    runtime = library_root(project) / f"{config.locale}-{stamp}"
     report = build_root / "pack-validation.json"
-    font = project / "cache" / "fonts" / "arialuni_sdf_u2021"
+    font = project / "cache" / "fonts" / DEFAULT_TMP_FONT
 
     proxy = normalize_proxy(config.proxy)
     prepare = cli_command(project, "prepare-components")
@@ -275,8 +302,12 @@ def rebuild_commands(
 
 
 def record_runtime(project: Path, config: LauncherConfig, runtime: Path) -> None:
+    from .libraries import import_library
+    library = import_library(project, runtime)
+    config.selected_libraries[config.locale] = library.id
+    runtime = library.path
     runtime = runtime.resolve()
-    pointer = project / "outputs" / f"current-{config.locale}-runtime.txt"
+    pointer = project / "work" / f"current-{config.locale}-runtime.txt"
     pointer.parent.mkdir(parents=True, exist_ok=True)
     temporary = pointer.with_suffix(pointer.suffix + ".tmp")
     temporary.write_text(str(runtime) + "\n", encoding="utf-8")

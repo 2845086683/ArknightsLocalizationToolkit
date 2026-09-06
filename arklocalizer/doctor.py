@@ -9,8 +9,6 @@ from pathlib import Path
 from typing import Any
 
 from .components import (
-    FONT_ARCHIVE,
-    FONT_ARCHIVE_SHA256,
     FONT_BUNDLE,
     FONT_BUNDLE_SHA256,
 )
@@ -95,8 +93,7 @@ def doctor(
         }
     )
     for name, path, expected in (
-        ("font_archive", components / FONT_ARCHIVE, FONT_ARCHIVE_SHA256),
-        ("unity2021_font", project_root / "cache" / "fonts" / FONT_BUNDLE, FONT_BUNDLE_SHA256),
+        ("cn_font", project_root / "cache" / "fonts" / FONT_BUNDLE, FONT_BUNDLE_SHA256),
     ):
         actual = sha256_file(path) if path.is_file() else None
         checks.append(

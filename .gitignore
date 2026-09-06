@@ -11,4 +11,7 @@ __pycache__/
 /outputs/current-*-runtime.txt
 /work/
 /tests/
+/runtime/*/
+!/runtime/en-zh-offline-final/
+!/runtime/jp-zh-offline-final/
 /launcher-crash.log

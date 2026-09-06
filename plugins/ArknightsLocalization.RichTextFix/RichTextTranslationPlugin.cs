@@ -18,7 +18,7 @@ public sealed class RichTextTranslationPlugin : BasePlugin
 {
     public const string PluginGuid = "arklocalizer.richtextfix";
     public const string PluginName = "Arknights Localization Rich Text Fix";
-    public const string PluginVersion = "1.0.6";
+    public const string PluginVersion = "1.8.0";
 
     private const uint GetWindowOwner = 4;
     private const int ShowWindowHide = 0;
@@ -43,15 +43,20 @@ public sealed class RichTextTranslationPlugin : BasePlugin
         @"\A[0-9]+(?:\.[0-9]+)?\z",
         RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
-    // Match the same display-only tags stripped by mapping.py. A broad
-    // ``<[^>]+>`` pattern also removed Arknights' visible semantic text such
-    // as <道路障害物>, producing a lookup key that could never match the pack.
-    private static readonly Regex DisplayTag = new(
-        @"</>|<[@$][^>]*>|</?(?:alpha|align|b|br|color|cspace|font|i|indent|line-height|line-indent|link|lowercase|mark|material|margin|mspace|nobr|page|pos|rotate|s|size|smallcaps|space|sprite|style|sub|sup|u|uppercase|voffset|width)(?:=[^>]*)?>",
-        RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
-
     public override void Load()
     {
+        try { ContextTranslations.Load(); }
+        catch (Exception exception) { Log.LogWarning($"Could not load contextual translations: {exception}"); }
+        try { Log.LogInfo($"Loaded {OfficialRichStyles.Load()} exact CN rich-text style targets."); }
+        catch (Exception exception) { Log.LogWarning($"Could not load CN rich styles; using source span recovery: {exception}"); }
+        try
+        {
+            CnFontOverride.Enable(Log);
+        }
+        catch (Exception exception)
+        {
+            Log.LogError($"Could not enable CN font loading: {exception}");
+        }
         StartConsoleAutoHide();
 
         // XUnity's BepInEx entry point is loaded before this plugin, but its
@@ -87,7 +92,16 @@ public sealed class RichTextTranslationPlugin : BasePlugin
                     return;
                 }
 
+                try
+                {
+                    CnFontOverride.EnableComponentCoverage();
+                }
+                catch (Exception exception)
+                {
+                    Log.LogError($"Could not enable full CN font coverage: {exception}");
+                }
                 current.RegisterOnTranslatingCallback(TranslateWholeRichText);
+                ComponentTranslationStabilization.Enable();
                 translator = current;
                 registered = true;
 
@@ -111,18 +125,56 @@ public sealed class RichTextTranslationPlugin : BasePlugin
             return;
         }
 
+        string? role = ComponentFields.Role(context.Component);
+        if (role == "identity")
+        {
+            context.IgnoreComponent();
+            return;
+        }
+        string? typed = role == null ? null : DynamicTranslations.Lookup(role, original)
+            ?? ContextTranslations.Lookup(role, original);
+        if (typed == null && role == "operator-autochess" && !ContextTranslations.IsAmbiguous(role, original))
+            typed = ContextTranslations.Lookup("operator", original);
+        if (typed != null)
+        {
+            context.OverrideTranslatedText(OfficialRichStyles.Restore(original, typed, _ => null));
+            return;
+        }
+        if (role != null && (ContextTranslations.IsAmbiguous(role, original)
+            || (role == "operator-autochess" && ContextTranslations.IsAmbiguous("operator", original))))
+        {
+            context.IgnoreComponent();
+            return;
+        }
+
+        string? scoped = ComponentContext.Lookup(context.Component, original, true)
+            ?? ComponentContext.LookupId(context.Component, original);
+        if (scoped != null)
+        {
+            context.OverrideTranslatedText(OfficialRichStyles.Restore(original, scoped, _ => null));
+            return;
+        }
         bool containsMarkup = original.IndexOf('<') >= 0;
         bool containsLineBreak = original.IndexOf('\n') >= 0
             || original.IndexOf('\r') >= 0
             || BreakTag.IsMatch(original);
         if (!containsMarkup && !containsLineBreak)
         {
-            // Let XUnity's normal exact lookup handle ordinary one-line text.
+            // Some game paths resolve/remove data macros before assigning the
+            // component. The exact CN target still carries the lost style.
+            ITranslator? active = translator;
+            if (active != null && active.TryTranslate(original, out string target)
+                && target != original && OfficialRichStyles.HasTarget(target))
+                context.OverrideTranslatedText(OfficialRichStyles.Restore(original, target, _ => null));
+            else if (active != null && (!active.TryTranslate(original, out string existing) || existing == original))
+            {
+                scoped = ComponentContext.Lookup(context.Component, original, false);
+                if (scoped != null) context.OverrideTranslatedText(OfficialRichStyles.Restore(original, scoped, _ => null));
+            }
             return;
         }
 
-        string plain = BreakTag.Replace(original, "\n");
-        plain = DisplayTag.Replace(plain, string.Empty);
+        string plain = RichTextStyleRestorer.PlainText(original);
         plain = plain.Replace("\\r\\n", "\n", StringComparison.Ordinal)
             .Replace("\\n", "\n", StringComparison.Ordinal)
             .Replace("\\r", "\n", StringComparison.Ordinal)
@@ -161,12 +213,17 @@ public sealed class RichTextTranslationPlugin : BasePlugin
             translation = lineTranslation;
         }
 
+        if (string.IsNullOrWhiteSpace(translation))
+            translation = ComponentContext.Lookup(context.Component, original, false);
+
         if (!string.IsNullOrWhiteSpace(translation))
         {
-            // A whole-string replacement is intentional. Reusing the original
-            // rich-text spans would color the wrong words when CN reorders a
-            // value or keyword relative to JP/EN.
-            context.OverrideTranslatedText(translation);
+            // Keep the whole-string lookup, then transfer only styles whose
+            // target spans can be identified without guessing word order.
+            // A no-op translation must not strip literal markup in <noparse>.
+            if (translation == plain) { context.IgnoreComponent(); return; }
+            context.OverrideTranslatedText(OfficialRichStyles.Restore(original, translation,
+                fragment => current.TryTranslate(fragment, out string result) ? result : null));
             if (Interlocked.Exchange(ref firstTranslationLogged, 1) == 0)
             {
                 Log.LogInfo("Applied the first whole rich-text translation.");

@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "id": "203cbbd9-3c99-5849-ba7d-978208397999",
+  "name": "官方中文词库（日服）",
+  "locale": "jp",
+  "repository": "2845086683/ArknightsLocalizationToolkit",
+  "remote_path": "runtime/jp-zh-offline-final"
+}

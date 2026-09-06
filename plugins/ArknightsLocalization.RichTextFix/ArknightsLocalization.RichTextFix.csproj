@@ -11,17 +11,37 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\tools\runtime\</OutputPath>
     <GenerateDependencyFile>false</GenerateDependencyFile>
+    <GameInteropPath Condition="'$(GameInteropPath)' == ''">..\..\cache\game-interop</GameInteropPath>
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\component_fields.json" LogicalName="ArknightsLocalization.ComponentFields" />
+    <EmbeddedResource Include="Resources\cn_song.bundle" LogicalName="ArknightsLocalization.CnSongFont" />
+    <EmbeddedResource Include="Resources\context_translations.json.gz" LogicalName="ArknightsLocalization.ContextTranslations" />
+    <EmbeddedResource Include="Resources\cn_tmp_shader.bundle" LogicalName="ArknightsLocalization.CnTmpShader" />
+    <EmbeddedResource Include="Resources\cn_heavy.bundle" LogicalName="ArknightsLocalization.CnHeavyFont" />
+    <EmbeddedResource Include="Resources\cn_rich_styles.json.gz" LogicalName="ArknightsLocalization.CnRichStyles" />
+    <Reference Include="0Harmony" Private="false">
+      <HintPath>..\..\runtime\jp-zh-offline-final\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime" Private="false">
+      <HintPath>..\..\runtime\jp-zh-offline-final\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib" Private="false"><HintPath>$(GameInteropPath)\Il2Cppmscorlib.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.CoreModule" Private="false"><HintPath>$(GameInteropPath)\UnityEngine.CoreModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.AssetBundleModule" Private="false"><HintPath>$(GameInteropPath)\UnityEngine.AssetBundleModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule" Private="false"><HintPath>$(GameInteropPath)\UnityEngine.TextRenderingModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule" Private="false"><HintPath>$(GameInteropPath)\UnityEngine.TextCoreFontEngineModule.dll</HintPath></Reference>
+    <Reference Include="Unity.TextMeshPro" Private="false"><HintPath>$(GameInteropPath)\Unity.TextMeshPro.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.UI" Private="false"><HintPath>$(GameInteropPath)\UnityEngine.UI.dll</HintPath></Reference>
     <Reference Include="BepInEx.Core" Private="false">
-      <HintPath>..\..\outputs\runtime\jp-zh-offline-final\BepInEx\core\BepInEx.Core.dll</HintPath>
+      <HintPath>..\..\runtime\jp-zh-offline-final\BepInEx\core\BepInEx.Core.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.Unity.IL2CPP" Private="false">
-      <HintPath>..\..\outputs\runtime\jp-zh-offline-final\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+      <HintPath>..\..\runtime\jp-zh-offline-final\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
     </Reference>
     <Reference Include="XUnity.AutoTranslator.Plugin.Core" Private="false">
-      <HintPath>..\..\outputs\runtime\jp-zh-offline-final\BepInEx\plugins\XUnity.AutoTranslator\XUnity.AutoTranslator.Plugin.Core.dll</HintPath>
+      <HintPath>..\..\runtime\jp-zh-offline-final\BepInEx\plugins\XUnity.AutoTranslator\XUnity.AutoTranslator.Plugin.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

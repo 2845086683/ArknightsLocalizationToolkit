@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import http.client
+import json
 import os
 import shutil
 import socket
@@ -11,16 +12,13 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
-import py7zr
-
 from .runtime import BEPINEX_ARCHIVE, COMPONENT_HASHES, XUNITY_ARCHIVE
-from .util import sha256_file
+from .util import PROJECT_ROOT, sha256_file
+from .xunity import DEFAULT_TMP_FONT
 
 
-FONT_ARCHIVE = "TMP_Font_AssetBundles_2025-12-08.7z"
-FONT_ARCHIVE_SHA256 = "889e963fb9dbd4b64927e0adf5d9060e1d0fb9d6bceb0c407d0597643e2b54ec"
-FONT_BUNDLE = "arialuni_sdf_u2021"
-FONT_BUNDLE_SHA256 = "63a5cbf2b9c7351c6ff8f7f592be03d2cc79668fad48f3cfe8e0e547af43aa3c"
+FONT_BUNDLE = DEFAULT_TMP_FONT
+FONT_BUNDLE_SHA256 = "b1962c66f900e0a908ae85b98b9b138b783d7da222b90bbf05cff2d14cc98f5b"
 
 COMPONENT_URLS = {
     BEPINEX_ARCHIVE: (
@@ -30,10 +28,6 @@ COMPONENT_URLS = {
     XUNITY_ARCHIVE: (
         "https://github.com/bbepis/XUnity.AutoTranslator/releases/download/"
         "v5.6.1/XUnity.AutoTranslator-BepInEx-IL2CPP-5.6.1.zip"
-    ),
-    FONT_ARCHIVE: (
-        "https://github.com/bbepis/XUnity.AutoTranslator/releases/download/"
-        "v5.5.0/TMP_Font_AssetBundles_2025-12-08.7z"
     ),
 }
 
@@ -123,7 +117,6 @@ def prepare_official_components(
     proxy: str | None = None,
 ) -> dict[str, Any]:
     expected = dict(COMPONENT_HASHES)
-    expected[FONT_ARCHIVE] = FONT_ARCHIVE_SHA256
     downloads = []
     for name, expected_hash in expected.items():
         destination = components_root / name
@@ -133,15 +126,23 @@ def prepare_official_components(
         )
 
     font = font_root / FONT_BUNDLE
-    if font.is_file() and sha256_file(font) != FONT_BUNDLE_SHA256:
-        raise ValueError(f"Existing font has unexpected SHA-256: {font}")
     if not font.is_file():
+        bundled = PROJECT_ROOT / "runtime" / "jp-zh-offline-final" / FONT_BUNDLE
+        if not bundled.is_file() or sha256_file(bundled) != FONT_BUNDLE_SHA256:
+            raise FileNotFoundError(
+                "CN font not available. Use a complete toolkit or run import-cn-font --game-dir <CN client>."
+            )
         font_root.mkdir(parents=True, exist_ok=True)
-        with py7zr.SevenZipFile(components_root / FONT_ARCHIVE, mode="r") as archive:
-            archive.extract(path=font_root, targets=[FONT_BUNDLE])
+        shutil.copy2(bundled, font)
     actual_font_hash = sha256_file(font)
-    if actual_font_hash != FONT_BUNDLE_SHA256:
-        raise ValueError(f"Extracted font SHA-256 mismatch: {actual_font_hash}")
+    source_report = font.with_name(font.name + ".json")
+    expected_font_hash = FONT_BUNDLE_SHA256
+    if source_report.is_file():
+        expected_font_hash = json.loads(source_report.read_text(encoding="utf-8"))["sha256"]
+    if actual_font_hash != expected_font_hash:
+        raise ValueError(f"CN font SHA-256 mismatch: {font}")
+    from .cn_font import validate_cn_font
+    validate_cn_font(font)
     return {
         "downloads": downloads,
         "font": {"path": str(font.resolve()), "sha256": actual_font_hash},

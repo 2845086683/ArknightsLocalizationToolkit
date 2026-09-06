@@ -12,7 +12,7 @@ from pathlib import Path, PurePosixPath
 from typing import Any
 
 from .util import PROJECT_ROOT, is_within, sha256_file, write_json
-from .xunity import offline_config
+from .xunity import DEFAULT_TMP_FONT, offline_config
 
 
 BEPINEX_ARCHIVE = "BepInEx-Unity.IL2CPP-win-x64-6.0.0-pre.2.zip"
@@ -277,6 +277,19 @@ def stage_runtime(
     font_bundle: Path | None = None,
     rich_text_plugin: Path = RICH_TEXT_FIX_PLUGIN,
 ) -> dict[str, Any]:
+    # Never silently build a runtime that goes back to regional game fonts.
+    if font_bundle is None:
+        font_bundle = PROJECT_ROOT / "cache" / "fonts" / DEFAULT_TMP_FONT
+    if not font_bundle.is_file():
+        raise FileNotFoundError(
+            f"CN native font bundle not found: {font_bundle}. "
+            "Run prepare-components using the complete toolkit, or import-cn-font from your CN client."
+        )
+    from .cn_font import validate_cn_font
+    font_info = validate_cn_font(font_bundle)
+    # Runtime hooks use a stable address regardless of the source filename.
+    font_name = DEFAULT_TMP_FONT
+    config_text = offline_config(source_locale, font_name)
     if output_root.exists() and any(output_root.iterdir()):
         raise FileExistsError(f"Staging directory is not empty: {output_root}")
     output_root.mkdir(parents=True, exist_ok=True)
@@ -318,16 +331,11 @@ def stage_runtime(
     for source in source_text.glob("*.txt"):
         shutil.copy2(source, destination_text / source.name)
 
-    font_name = ""
-    if font_bundle is not None:
-        if not font_bundle.is_file():
-            raise FileNotFoundError(font_bundle)
-        font_name = font_bundle.name
-        shutil.copy2(font_bundle, output_root / font_name)
+    shutil.copy2(font_bundle, output_root / font_name)
 
     config = output_root / "BepInEx" / "config" / "AutoTranslatorConfig.ini"
     config.parent.mkdir(parents=True, exist_ok=True)
-    config.write_text(offline_config(source_locale, font_name), encoding="utf-8", newline="\n")
+    config.write_text(config_text, encoding="utf-8", newline="\n")
 
     files = []
     for path in sorted(output_root.rglob("*")):
@@ -347,7 +355,8 @@ def stage_runtime(
             {"name": BEPINEX_ARCHIVE, "sha256": COMPONENT_HASHES[BEPINEX_ARCHIVE]},
             {"name": XUNITY_ARCHIVE, "sha256": COMPONENT_HASHES[XUNITY_ARCHIVE]},
         ],
-        "font": font_name or None,
+        "font": font_name,
+        "font_source": font_info,
         "rich_text_plugin": {
             "path": RICH_TEXT_FIX_DESTINATION.as_posix(),
             "sha256": sha256_file(plugin_destination),

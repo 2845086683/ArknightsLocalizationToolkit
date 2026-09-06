@@ -5,6 +5,7 @@ import queue
 import subprocess
 import threading
 import time
+from dataclasses import replace
 import tkinter as tk
 from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
@@ -30,6 +31,9 @@ from .launcher_backend import (
 )
 from .runtime import INSTALL_MANIFEST_SCHEMA, install_runtime, uninstall_runtime
 from .util import write_json
+from . import __version__
+from .libraries import library_root, migrate_legacy, import_library, official_id
+from .launcher_updates_ui import LibraryUpdatesUI
 
 
 COLORS = {
@@ -46,14 +50,16 @@ COLORS = {
     "log": "#080A0C",
 }
 
-LAUNCHER_BUILD = "2026.08.27-schema3.1"
+LAUNCHER_BUILD = __version__ + " / 词库管理与在线更新"
 
 
-class LauncherApp(tk.Tk):
-    def __init__(self) -> None:
+class LauncherApp(LibraryUpdatesUI, tk.Tk):
+    def __init__(self, *, startup_check: bool = False) -> None:
         super().__init__()
+        if startup_check:
+            self.withdraw()
         self.project = project_root()
-        self.config_data = load_config()
+        self.config_data = LauncherConfig() if startup_check else load_config()
         self.events: queue.Queue[tuple[str, Any]] = queue.Queue()
         self.current_process: subprocess.Popen[str] | None = None
         self.busy = False
@@ -73,11 +79,19 @@ class LauncherApp(tk.Tk):
         self.status_var = tk.StringVar(value="等待配置")
         self.detail_var = tk.StringVar(value="选择 Arknights.exe 后即可扫描")
         self.task_var = tk.StringVar(value="IDLE / 空闲")
+        self.library_var = tk.StringVar(value="正在读取词库…")
+        self.library_detail = tk.StringVar(value="词库按区服独立选择")
+        self.online_status = tk.StringVar(value="启动后检查词库与软件更新")
+        self.libraries = []
+        self.checking_updates = False
+        self.online_result = {}
+        self.update_window = None
 
         self._configure_styles()
         self._build_interface()
-        self.after(100, self._poll_events)
-        self.after(300, self._initial_scan)
+        if not startup_check:
+            self.after(100, self._poll_events)
+            self.after(300, self._initial_scan)
 
     def _configure_styles(self) -> None:
         style = ttk.Style(self)
@@ -184,7 +198,7 @@ class LauncherApp(tk.Tk):
         ).grid(row=0, column=0, sticky="w", pady=(0, 12))
         tk.Label(
             config_panel,
-            text=f"配置文件：{config_path()}",
+            text="请注意选择正确的词库版本",
             bg=COLORS["panel"],
             fg=COLORS["muted"],
             font=("Cascadia Mono", 8),
@@ -206,35 +220,26 @@ class LauncherApp(tk.Tk):
             width=16,
         )
         locale.grid(row=2, column=1, sticky="w", padx=(12, 8), pady=5)
+        locale.bind("<<ComboboxSelected>>", self._region_changed)
 
-        self._field_label(config_panel, "下载代理", 3)
-        proxy_entry = self._entry(config_panel, self.proxy_var)
-        proxy_entry.grid(row=3, column=1, sticky="ew", padx=(12, 8), pady=5)
-        tk.Label(
-            config_panel,
-            text="可选；仅用于组件、依赖和公开仓库更新",
-            bg=COLORS["panel"],
-            fg=COLORS["muted"],
-            font=("Microsoft YaHei UI", 8),
-        ).grid(row=3, column=2, columnspan=2, sticky="w", pady=5)
-
-        update_check = ttk.Checkbutton(
-            config_panel,
-            text="重建前更新多服词表、FlatBuffers Schema 与解析参考仓库",
-            variable=self.update_var,
-            style="Ark.TCheckbutton",
-        )
-        update_check.grid(row=4, column=1, columnspan=2, sticky="w", padx=(12, 0), pady=(9, 2))
-        save = self._button(config_panel, "保存配置", self._save_from_form, kind="secondary")
-        save.grid(row=4, column=3, sticky="e", padx=(8, 0), pady=(9, 2))
+        self._field_label(config_panel, "当前词库", 3)
+        self.library_combo = ttk.Combobox(config_panel, textvariable=self.library_var, state="readonly", style="Ark.TCombobox")
+        self.library_combo.grid(row=3, column=1, sticky="ew", padx=(12, 8), pady=5)
+        self.library_combo.bind("<<ComboboxSelected>>", self._library_changed)
+        self._button(config_panel, "导入词库", self._import_library, kind="secondary").grid(row=3, column=2, padx=(0, 8))
+        self._button(config_panel, "刷新", self._refresh_libraries, kind="secondary").grid(row=3, column=3)
+        tk.Label(config_panel, textvariable=self.library_detail, bg=COLORS["panel"], fg=COLORS["muted"],
+                 font=("Microsoft YaHei UI", 8), anchor="w").grid(row=4, column=1, columnspan=3, sticky="w", padx=12, pady=6)
+        tk.Label(config_panel, textvariable=self.online_status, bg=COLORS["panel"], fg=COLORS["accent"],
+                 font=("Microsoft YaHei UI", 9), anchor="w").grid(row=5, column=0, columnspan=2, sticky="w", pady=8)
+        self._button(config_panel, "更新与设置", self._update_dialog, kind="secondary").grid(row=5, column=2, sticky="e")
+        self._button(config_panel, "保存配置", self._save_from_form, kind="secondary").grid(row=5, column=3, padx=(8, 0))
         config_panel.columnconfigure(1, weight=1)
 
         actions = tk.Frame(shell, bg=COLORS["bg"], pady=14)
         actions.pack(fill="x")
         for text, command, kind in (
-            ("初始化构建环境", self._check_environment, "secondary"),
             ("扫描客户端", self._scan_client, "secondary"),
-            ("更新词表并重建", self._rebuild, "secondary"),
             ("安装 / 修复并启动", self._install_and_launch, "primary"),
             ("仅启动游戏", self._launch_only, "secondary"),
             ("卸载汉化", self._uninstall, "danger"),
@@ -242,6 +247,18 @@ class LauncherApp(tk.Tk):
             button = self._button(actions, text, command, kind=kind)
             button.pack(side="left", padx=(0, 8))
             self.action_buttons.append(button)
+
+        advanced = self.maintenance_menu = tk.Menubutton(
+            actions, text="维护工具 ▾", bg=COLORS["panel_alt"], fg=COLORS["text"],
+            activebackground="#24303A", activeforeground=COLORS["text"], relief="flat",
+            font=("Microsoft YaHei UI", 9), padx=14, pady=8, cursor="hand2")
+        menu = tk.Menu(advanced, tearoff=False)
+        menu.add_command(label="初始化构建环境", command=self._check_environment)
+        menu.add_command(label="从客户端提取并重建词库", command=self._rebuild)
+        menu.add_checkbutton(label="重建前更新上游数据仓库", variable=self.update_var)
+        advanced.configure(menu=menu)
+        advanced.pack(side="left", padx=(0, 8))
+        self.action_buttons.append(advanced)
 
         monitor = tk.Frame(shell, bg=COLORS["panel"], highlightthickness=1, highlightbackground=COLORS["line"])
         monitor.pack(fill="both", expand=True)
@@ -289,8 +306,13 @@ class LauncherApp(tk.Tk):
         self.cancel_button = self._button(footer, "取消当前任务", self._cancel_task, kind="danger")
         self.cancel_button.configure(state="disabled")
         self.cancel_button.pack(side="left", padx=(12, 0))
-        open_output = self._button(footer, "打开产物目录", self._open_outputs, kind="secondary")
+        open_output = self._button(footer, "打开词库目录", self._open_outputs, kind="secondary")
         open_output.pack(side="left", padx=(8, 0))
+        # Reserve the footer before giving remaining height to the log, so
+        # shrinking the window never hides cancellation or library access.
+        monitor.pack_forget()
+        footer.pack_configure(side="bottom")
+        monitor.pack(fill="both", expand=True)
 
         self._append_log("启动器就绪。首次使用请先选择游戏安装目录下的 Arknights.exe。", "accent")
         self._append_log(
@@ -298,7 +320,7 @@ class LauncherApp(tk.Tk):
             f"运行目录：{project_root()}",
             "good",
         )
-        self._append_log("本补丁安装一次后会再次启动游戏会自动持续加载，若无需补丁启动请及时卸载。")
+        self._append_log("汉化安装后会在每次启动游戏时自动加载；需要恢复原版时，请点击“卸载汉化”。")
         self._append_log("在安装完补丁后启动游戏后会有一个黑色窗口，请耐心等待不要主动关闭它，在准备就绪后游戏进程会自动启动。")
 
     def _field_label(self, parent: tk.Widget, text: str, row: int) -> None:
@@ -358,13 +380,15 @@ class LauncherApp(tk.Tk):
 
     def _form_config(self) -> LauncherConfig:
         locale = "jp" if self.locale_var.get().startswith("日服") else "en"
-        return LauncherConfig(
-            game_executable=self.game_var.get().strip(),
-            locale=locale,
-            proxy=normalize_proxy(self.proxy_var.get()),
-            update_repositories=self.update_var.get(),
-            last_runtime=self.config_data.last_runtime if self.config_data.locale == locale else "",
-        )
+        selected = dict(self.config_data.selected_libraries)
+        library = self._selected_library()
+        if library is not None and library.locale == locale:
+            selected[locale] = library.id
+        return replace(self.config_data,
+            game_executable=self.game_var.get().strip(), locale=locale,
+            proxy=normalize_proxy(self.proxy_var.get()), update_repositories=self.update_var.get(),
+            selected_libraries=selected,
+            last_runtime=self.config_data.last_runtime if self.config_data.locale == locale else "")
 
     def _save_from_form(self, *, show_message: bool = True) -> LauncherConfig | None:
         try:
@@ -392,6 +416,7 @@ class LauncherApp(tk.Tk):
         self.game_var.set(str(Path(selected).resolve()))
         if locale := infer_locale(Path(selected)):
             self.locale_var.set("日服 / JP" if locale == "jp" else "美服 / EN")
+        self._refresh_libraries()
         self._save_from_form(show_message=False)
         self._scan_client()
 
@@ -407,8 +432,32 @@ class LauncherApp(tk.Tk):
         self.events.put(("log", (text, tag)))
 
     def _initial_scan(self) -> None:
-        if self.game_var.get() and Path(self.game_var.get()).is_file():
-            self._scan_client()
+        def worker():
+            migrate_legacy(self.project, self.config_data)
+            previous = None
+            if not self.config_data.selected_libraries.get(self.config_data.locale):
+                try: previous = runtime_for(self.project, self.config_data)
+                except (OSError, ValueError): pass
+                # A prior release's selected rebuild takes precedence during
+                # migration even when official libraries have already been imported.
+                if self.config_data.last_runtime:
+                    candidate = Path(self.config_data.last_runtime)
+                    try:
+                        from .libraries import read_manifest
+                        if read_manifest(candidate)['source_locale'] == self.config_data.locale: previous = candidate
+                    except (OSError, ValueError): pass
+            libraries = migrate_legacy(self.project)
+            if previous is not None:
+                legacy = library_root(self.project) / f'{self.config_data.locale}-zh-offline-final'
+                selected = (next(x for x in libraries if x.id == official_id(self.config_data.locale))
+                            if previous.resolve() == legacy.resolve() else
+                            next((x for x in libraries if x.path == previous.resolve()), None))
+                if selected is None: selected = import_library(self.project, previous)
+                self.events.put(("library_imported", selected))
+            self.events.put(("libraries_changed", None))
+            if self.config_data.game_executable and Path(self.config_data.game_executable).is_file():
+                self.events.put(("scan", scan_configured_client(self.config_data)))
+        self._start_task("词库初始化", worker)
 
     def _start_task(self, label: str, worker: Callable[[], Any]) -> None:
         if self.busy:
@@ -444,6 +493,8 @@ class LauncherApp(tk.Tk):
         try:
             while True:
                 event, payload = self.events.get_nowait()
+                if self._handle_online_event(event, payload):
+                    continue
                 if event == "log":
                     self._append_log(*payload)
                 elif event == "scan":
@@ -453,6 +504,12 @@ class LauncherApp(tk.Tk):
                     self._finish_task()
                     self.task_var.set("DONE / 已完成")
                     self._append_log(f"{label}完成。", "good")
+                    if label == "词库初始化":
+                        self._save_from_form(show_message=False)
+                        self._check_online()
+                    if label in {"导入并校验词库", "词表更新与重建", "在线词库更新"}:
+                        self._refresh_libraries()
+                        self._refresh_update_details()
                     if isinstance(result, dict) and "runtime" in result:
                         self._apply_scan(result)
                 elif event == "error":
@@ -460,6 +517,7 @@ class LauncherApp(tk.Tk):
                     self._finish_task()
                     self.task_var.set("ERROR / 需要处理")
                     self._append_log(f"{label}失败：{detail}", "danger")
+                    if label == "词库初始化": self._check_online()
                     messagebox.showerror(f"{label}失败", detail, parent=self)
         except queue.Empty:
             pass
@@ -773,7 +831,7 @@ class LauncherApp(tk.Tk):
         self._append_log("正在取消当前步骤……", "danger")
 
     def _open_outputs(self) -> None:
-        destination = self.project / "outputs"
+        destination = library_root(self.project)
         destination.mkdir(parents=True, exist_ok=True)
         os.startfile(destination)
 

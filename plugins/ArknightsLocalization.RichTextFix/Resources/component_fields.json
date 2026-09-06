@@ -1,0 +1,276 @@
+{
+  "Torappu.AVG.AVGPlaybackTextView": {
+    "_content": "story"
+  },
+  "Torappu.AVG.AVGReaderModeDecisionItemView": {
+    "_decisionText": "story"
+  },
+  "Torappu.AVG.AVGReaderModeTextView": {
+    "_content": "story"
+  },
+  "Torappu.AVG.AVGStickerTextView": {
+    "_message": "story"
+  },
+  "Torappu.AVG.AVGTimerView": {
+    "_message": "story"
+  },
+  "Torappu.AVG.DialogPanel": {
+    "_message": "story"
+  },
+  "Torappu.AVG.SkipBriefPanel": {
+    "_content": "story"
+  },
+  "Torappu.AVG.SubtitlePanel": {
+    "_message": "story"
+  },
+  "Torappu.Activity.AutoChess.ActAutoChessHandbookBondDetailView": {
+    "_textName": "bond"
+  },
+  "Torappu.Battle.UI.UICharacterInfoStatusSubPanel": {
+    "_nameCnLabel": "operator"
+  },
+  "Torappu.Battle.UI.UICharacterInfoStatusSubPanelInAutochess": {
+    "_basicCampText": "bond",
+    "_extraCampTexts": "bond"
+  },
+  "Torappu.Battle.UI.UICharacterInfoTabGroupSubPanel": {
+    "_subProfessionText": "subprofession"
+  },
+  "Torappu.Building.BP.BRoom": {
+    "_textName": "room"
+  },
+  "Torappu.Building.UI.AbstractBuildingUIRoomTitle`2": {
+    "_textName": "room"
+  },
+  "Torappu.Building.UI.BuildingBuffDescView": {
+    "_textDesc": "building-description",
+    "_textName": "building-skill"
+  },
+  "Torappu.Building.UI.BuildingNameCardView": {
+    "_textUid": "identity",
+    "_textVisitorName": "identity"
+  },
+  "Torappu.Building.UI.Meeting.MeetingCharacterView": {
+    "_name": "operator"
+  },
+  "Torappu.Building.UI.StationSelect.BuildingStationSelectCharCard": {
+    "_textName": "operator"
+  },
+  "Torappu.Building.UI.StationSelect.BuildingStationSelectCharInfoView": {
+    "_textName": "operator"
+  },
+  "Torappu.Gacha.PanelCharacterInfo": {
+    "_nameCn": "operator"
+  },
+  "Torappu.UI.AutoChess.AutoChessBandChoosePlayerItemView": {
+    "_textAlias": "identity",
+    "_textNickNum": "identity",
+    "_textNickname": "identity"
+  },
+  "Torappu.UI.AutoChess.AutoChessBandChooseSelectedDetailDialog": {
+    "_textNickName": "identity"
+  },
+  "Torappu.UI.AutoChess.AutoChessPlayerInfoCardView": {
+    "_nameText": "identity",
+    "_noteNameText": "identity"
+  },
+  "Torappu.UI.AutoChess.AutoChessRoomView": {
+    "_roomIdText": "identity"
+  },
+  "Torappu.UI.AutoChess.AutoChessSettleGamePersonalView": {
+    "_txtPlayerName": "identity"
+  },
+  "Torappu.UI.AutoChess.AutoChessShopCharChessCardView": {
+    "_txtCharName": "operator-autochess"
+  },
+  "Torappu.UI.AutoChess.AutoChessShopQuickAssistItemView": {
+    "_txtFriendAlias": "identity",
+    "_txtFriendCode": "identity",
+    "_txtFriendNickName": "identity"
+  },
+  "Torappu.UI.AutoChess.AutoChessStageInfoBondItemView": {
+    "_textName": "bond"
+  },
+  "Torappu.UI.AutoChess.AutoChessStageInfoChessGroupView": {
+    "_textBondName": "bond"
+  },
+  "Torappu.UI.AutoChess.Battle.AutoChessBattleBroadcastPanel": {
+    "_msgLabel": "broadcast"
+  },
+  "Torappu.UI.AutoChess.Battle.AutoChessBattleObInfoPanel": {
+    "_textNickName": "identity",
+    "_textNickNumber": "identity"
+  },
+  "Torappu.UI.AutoChess.Battle.AutoChessBattleShopBondView": {
+    "_name": "bond"
+  },
+  "Torappu.UI.AutoChess.Battle.AutoChessBattleShopCardView": {
+    "_charName": "operator-autochess"
+  },
+  "Torappu.UI.AutoChess.Battle.AutoChessBattleSpPrepareTopTipView": {
+    "_mateNameText": "identity"
+  },
+  "Torappu.UI.AutoChess.Battle.AutoChessBattleUIBondCharItemView": {
+    "_charNameText": "operator-autochess"
+  },
+  "Torappu.UI.AutoChess.Battle.AutoChessBattleUIBondDetailView": {
+    "_nameText": "bond"
+  },
+  "Torappu.UI.AutoChess.Battle.AutoChessBattleUIBondItemView": {
+    "_nameText": "bond"
+  },
+  "Torappu.UI.AutoChess.Battle.AutoChessBattleUIEquipReplaceDialog": {
+    "_txtCharName": "operator-autochess"
+  },
+  "Torappu.UI.AutoChess.Battle.AutoChessBattleUIPlayerInfoBondItem": {
+    "_bondNameText": "bond"
+  },
+  "Torappu.UI.AutoChess.Battle.AutoChessBattleUIPlayerInfoDialog": {
+    "_bandNameText": "bond"
+  },
+  "Torappu.UI.AutoChess.CharSelect.AutoChessCharSelectDetailBondView": {
+    "_nameText": "bond"
+  },
+  "Torappu.UI.AutoChess.CharSelect.AutoChessCharSelectDetailPanel": {
+    "_codeName": "identity",
+    "_name": "operator-autochess"
+  },
+  "Torappu.UI.CharSelect.CharSelectAttrController": {
+    "_name": "operator"
+  },
+  "Torappu.UI.CharSelect.CharSelectBranchGroup": {
+    "_subProfName": "subprofession"
+  },
+  "Torappu.UI.CharSelect.CharSelectBranchView": {
+    "_multiBranchName": "subprofession",
+    "_singleBranchName": "subprofession"
+  },
+  "Torappu.UI.CharSelect.CharSelectProfessionView": {
+    "_subProfName": "subprofession"
+  },
+  "Torappu.UI.CharacterInfo.CharacterInfoAttributeViewController": {
+    "_atkSpeed": "attack-speed",
+    "_reviveTime": "redeploy-speed",
+    "_textTags": "operator-tag"
+  },
+  "Torappu.UI.CharacterInfo.CharacterInfoBuildingBuffUnlockNotifyView": {
+    "_buffName": "building-skill"
+  },
+  "Torappu.UI.CharacterInfo.CharacterInfoBuildingBuffUpgradeNotifyView": {
+    "_buffName": "building-skill"
+  },
+  "Torappu.UI.CharacterInfo.CharacterInfoDetailSubProfessionView": {
+    "_subProfName": "subprofession"
+  },
+  "Torappu.UI.CharacterInfo.CharacterInfoEvolveState": {
+    "_nameInConfirmInfo": "operator"
+  },
+  "Torappu.UI.CharacterInfo.CharacterInfoProfileViewController": {
+    "_realName": "operator"
+  },
+  "Torappu.UI.CharacterInfo.CharacterInfoRightProfSubProfView": {
+    "_subProfName": "subprofession"
+  },
+  "Torappu.UI.CharacterInfo.CharacterInfoSpOpView": {
+    "_btnText": "mission",
+    "_noticeText": "mission"
+  },
+  "Torappu.UI.CharacterInfo.CharacterTokenDetailShowView": {
+    "_atkSpeed": "attack-speed",
+    "_reviveTime": "redeploy-speed"
+  },
+  "Torappu.UI.CharacterShow.CharacterShowBranchView": {
+    "_textSubProf": "subprofession"
+  },
+  "Torappu.UI.CharacterShow.CharacterShowV2LeftInfoView": {
+    "_name": "operator"
+  },
+  "Torappu.UI.ChooseChar.UIPortraitChooseCharCardView": {
+    "_textName": "operator"
+  },
+  "Torappu.UI.ItemRepo.ItemRepoCharFrontView": {
+    "_charName": "operator"
+  },
+  "Torappu.UI.Mission.DailyMissionTask": {
+    "_description": "mission"
+  },
+  "Torappu.UI.Mission.MainMissionTask": {
+    "_description": "mission",
+    "_requirementText": "mission"
+  },
+  "Torappu.UI.Mission.MissionDetailView": {
+    "_descrption": "mission"
+  },
+  "Torappu.UI.Mission.SOCharMissionRouteView": {
+    "_targetPath": "mission",
+    "_targetPath2": "mission"
+  },
+  "Torappu.UI.Mission.SoCharMissionCharInfoView": {
+    "_realName": "operator"
+  },
+  "Torappu.UI.Mission.SoCharMissionRightPart": {
+    "_maxHint": "mission",
+    "_typeText": "mission"
+  },
+  "Torappu.UI.Recruit.RecruitBuildConfigTagView": {
+    "_textContent": "recruit-tag"
+  },
+  "Torappu.UI.Recruit.RecruitBuildTagView": {
+    "_textContent": "recruit-tag"
+  },
+  "Torappu.UI.Recruit.RecruitCharDetailObj": {
+    "_charName": "operator"
+  },
+  "Torappu.UI.Recruit.RecruitSpecialCharPortItemView": {
+    "_textCharName": "operator"
+  },
+  "Torappu.UI.Recruit.RecruitSpecialGachaUpCharListItemView": {
+    "_textCharName": "operator"
+  },
+  "Torappu.UI.Recruit.RecruitUpCharDetailPortraitObj": {
+    "_charName": "operator"
+  },
+  "Torappu.UI.Roguelike.RoguelikeCharCommonCharView": {
+    "_charName": "operator"
+  },
+  "Torappu.UI.Roguelike.RoguelikeCharSelectAttrController": {
+    "_name": "operator"
+  },
+  "Torappu.UI.Roguelike.RoguelikeCharSelectBranchGroup": {
+    "_subProfName": "subprofession"
+  },
+  "Torappu.UI.Roguelike.RoguelikeCharSelectBranchView": {
+    "_multiBranchName": "subprofession",
+    "_singleBranchName": "subprofession"
+  },
+  "Torappu.UI.Roguelike.RoguelikeCharSelectProfessionView": {
+    "_subProfName": "subprofession"
+  },
+  "Torappu.UI.Shop.ShopDetailCharView": {
+    "_charName": "operator"
+  },
+  "Torappu.UI.Squad.SquadSharedCharHeadIcon": {
+    "_charName": "operator"
+  },
+  "Torappu.UI.TemplateCharSelect.Common.CommonCharSelectDetailPlugin": {
+    "_name": "operator"
+  },
+  "Torappu.UI.TemplateShop.TemplateShopCharDetailView": {
+    "_charName": "operator"
+  },
+  "Torappu.UI.UICharacterAttrDetailView": {
+    "_name": "operator"
+  },
+  "Torappu.UI.UICharacterCardPanel": {
+    "_textRealName": "operator"
+  },
+  "Torappu.UI.UICharacterProfessionFilterSubProfItem": {
+    "_name": "subprofession"
+  },
+  "Torappu.UI.UICharacterProfessionFilterView": {
+    "_selectedName": "subprofession"
+  },
+  "Torappu.UI.UniEquip.UniEquipLevelUpSubProfessionView": {
+    "_subProfessionTitle": "subprofession"
+  }
+}
