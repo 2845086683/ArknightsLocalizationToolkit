@@ -715,8 +715,6 @@ Event Store now has=商店兑换剩余
 Every Time=每次
 Exchange <color\=#0697DDFF>{0}</color> <color\=#0697DDFF>{1}</color> for these items?=是否使用 <color\=#0697DDFF>{0}</color> 个 <color\=#0697DDFF>{1}</color> 兑换以上道具？
 Exchange All=点击全部交付
-Exchange excess Kernel Tokens for certificates?=是否兑换满潜能干员多余的中坚信物？
-Exchange excess Tokens for certificates?=是否兑换满潜能干员多余的信物？
 Exchange visit limit reached today.=今日参与交流已达上限
 Exchange {0} {1} for these items?=是否使用 {0} 个 {1} 兑换以上道具？
 Exit=确认退出
