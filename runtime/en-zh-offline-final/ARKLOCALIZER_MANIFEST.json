@@ -1244,6 +1244,6 @@
     },
     "upstream_repository": "ArknightsAssets/ArknightsGamedata",
     "upstream_commit": "56d5d60d924119ba2a682457577934cc1e71b99a",
-    "builder_sha256": "a3b3489f494779a28ef456d1a6661525893c0b6c6ec2ed5106ebb80f8501d36f"
+    "builder_sha256": "477e81b8e8a1a2ef6ea7cc2f586b7eb798b7ec1de53a55e320b75041ec8cf24a"
   }
 }
