@@ -267,8 +267,8 @@
     },
     {
       "path": "BepInEx/Translation/zh/Text/10_i18n.txt",
-      "bytes": 220368,
-      "sha256": "93db3893e748cd40ffb7cb65e48dc641c97ec38e6d871247409e85e578853d89"
+      "bytes": 219988,
+      "sha256": "0b2d2087693fd9f9b63c91f2e58a22f5c786b65e16c74707bb5cca7db9017828"
     },
     {
       "path": "BepInEx/Translation/zh/Text/15_format_regex.txt",
@@ -277,13 +277,13 @@
     },
     {
       "path": "BepInEx/Translation/zh/Text/20_tables.txt",
-      "bytes": 32709162,
-      "sha256": "399ad8bd0bcac4763ecb01a83422f8eb03572419aeb21bfbe4365144e81994fe"
+      "bytes": 33226993,
+      "sha256": "62c662628c126826aadfb3d7a221a7e1e569ec90509e20ec0dd12ff4d343aa0c"
     },
     {
       "path": "BepInEx/Translation/zh/Text/30_story.txt",
-      "bytes": 59591388,
-      "sha256": "6119ed8f518da8224501a8cadc5a76e43bdf039e180174923ee99e016f9637ec"
+      "bytes": 61791923,
+      "sha256": "cc9f8832e05c43a6635f39a03ade105b0fd0484de9077e0505c52aa9ed3b3bb0"
     },
     {
       "path": "changelog.txt",
@@ -1235,5 +1235,15 @@
       "bytes": 26112,
       "sha256": "d3b62f4c9c3e2196ef82603c52d6b98c043a0d6c125c081fd33d7ca3798b41b8"
     }
-  ]
+  ],
+  "wordlibrary_build": {
+    "source_locale": "jp",
+    "resource_versions": {
+      "jp": "26-10-26-10-03-42_7c52ab",
+      "cn": "26-10-29-15-36-11-33649006"
+    },
+    "upstream_repository": "ArknightsAssets/ArknightsGamedata",
+    "upstream_commit": "56d5d60d924119ba2a682457577934cc1e71b99a",
+    "builder_sha256": "a3b3489f494779a28ef456d1a6661525893c0b6c6ec2ed5106ebb80f8501d36f"
+  }
 }
