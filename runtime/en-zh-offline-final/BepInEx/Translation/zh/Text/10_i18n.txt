@@ -224,12 +224,11 @@ After the exploration is complete, the score obtained during this exploration wi
 Agenda Proposals +{0}=今日[议程提案]次数+{0}
 Agree to proceed with local protocal verification?=本地协议校验,是否同意？
 All=全部
-All claimed=已全部领取
 All deployment spots=全部位
 All Stages Cleared=全部完成
 All Support Operators from non-friended players have capped Specialization levels (Level 7 max).=非好友的助战干员 技能专精等级受限（最高为7级）
 All Test Sites do not have Challenge Tests available currently. Please change the Test Project requirement=当前全部场地不提供危急测试，请重新设置您希望参与的测试项目条件
-All the local cache, including resource files and account data, will be deleted. Continue?=即将删除所有本地缓存的资源文件和账号数据，确定要继续吗？
+All the local cache including resource files will be deleted. Continue?=即将删除所有本地缓存的资源文件和账号数据，确定要继续吗？
 All types=全部类型
 Already cheered today=今日已助威
 Already claimed: {0}=已领取次数:{0}
@@ -521,7 +520,6 @@ Contains {0} x{1}=内含赠送{0}x{1}
 Contention Reiteration Objective Completed=战争浪潮目标已完成
 Contingency Contract=危机合约
 Contingency Level {0}=危机等级{0}
-Continue=继续
 Continue building?=确认继续组装吗？
 Continue exploring to unlock more information=继续探索以解锁更多信息
 Continue exploring to unlock this play=继续探索以获得此剧目
@@ -657,6 +655,7 @@ Earn {0} points to obtain=获取{0}点数可领取
 Edit Birthday=生日编辑
 Effect obtained: [{0}]=获得效果【{0}】
 Eliminated. Entering next round as a spectator=已淘汰，即将观战下一轮比赛
+Elite 1=精英阶段1后
 Elite Advancement Tokens sent to warehouse=多种精英进阶信物已转运入库
 Elite Promotion Available=可进行精英化晋升
 Elite Rank {0} Training Rewards automatically placed in Armory=精英职称{0}培训奖励已自动发放到战备
@@ -1159,6 +1158,7 @@ Obtain {0} Sticker(s) after this round of recycling=本次回收可额外获得{
 Obtain {0} to unlock=获得{0}可解锁
 Obtained after <color\=#0098dc>logging in for {0} days</color>=<color\=#0098dc>累计登录第{0}天</color>获得
 Obtained after logging in for {0} days=累计登录第{0}天获得
+Obtained all clues of {0}=获得了{0}的全部线索
 Obtained new Sticker\n<color\=#0098DCFF>{0}</color>=获得了新标志物\n<color\=#0098DCFF>{0}</color>
 Obtained new Sticker\n{0}=获得了新标志物\n{0}
 Obtained Today=今日获取
@@ -1370,6 +1370,7 @@ Purchase succeeded, but the acquisition of the result failed. Please log in agai
 Purchased=购买成功
 Push the Anti-Witchcraft Repositionable Bomb=推进反巫术变位炸弹
 Q: {0}=问：{0}
+Raid=敌袭
 Raise this operator's Promotion status to unlock this skill.=提升角色精英化等级以解锁该技能
 Raising the equipment's power to explore a new path will decrease the device's Anti-Interference Index. Are you sure you want to continue?=提高设备功率探索新路径会使设备抗干扰指数降低。确认要使用吗?
 Random Event=随机项目
@@ -1384,7 +1385,6 @@ Reach Elite {0} Level {1}.=提升至精英阶段{0}等级{1}
 Reach Lv. {0}=等级达到   {0} 级
 Reach Lv.{0} to buy=Lv.{0}解锁购买
 Reach {0}=到达{0}
-Reach {0} rank in the previous stage to unlock=前置关卡达到{0}评级后解锁
 Reach {0} to unlock=推进至{0}后解锁
 Reach {0} to unlock.=达到{0}解锁
 Reach {0} Trust.=提升信赖至{0}
@@ -1467,7 +1467,6 @@ Return to <color\=#d8d769>{0}{1}</color>?=确认回到 <color\=#d8d769>{0}{1}</c
 Return to the friend interface?=是否确定返回好友列表？
 Return to your Base?=是否确定返回自己的基建？
 Return to {0}{1}?=确认回到 {0}{1} 吗？
-Returning to the login interface. Continue?=即将返回登录界面，是否继续？
 Revoke Authority=结束委托
 Reward <color\=#FF6800>{0}</color>=报酬 <color\=#FF6800>{0}</color>
 Reward {0}=报酬 {0}
@@ -1784,8 +1783,6 @@ There are unsaved changes. Exit anyway?=有未保存的修改，确认直接退�
 There are unused Candle Stands. Are you sure you want to proceed?=还有未部署干员的明烛台，确认直接开始考验吗？
 There is a chance to get any gear other than {0} at the Gear Trading Center=在装备集换处有几率获取除{0}之外的所有装备
 There is a rare tag present, proceed with refresh?=当前存在稀有职业需求，是否确认刷新？
-There is an active subscription for [{0}].\n<color\=#0098dc>Replace with</color> [{1}]?=当前存在已订阅的主题【{0}】\n是否确认<color\=#0098dc>替换为</color>【{1}】？
-There is an active subscription for [{0}].\nReplace with [{1}]?=当前存在已订阅的主题【{0}】\n是否确认替换为【{1}】？
 There is an ongoing exploration, unable to switch modes=当前已有正在进行的探索，无法切换模式
 There is no reverting your decision. Please act with caution.=该操作无法回退，请谨慎操作
 There will be no rewards or penalties given=本次退赛无奖励，同时不计违规次数
@@ -1963,7 +1960,6 @@ Unlocks in {0}={0}后开放
 Unlocks in {0}d={0}日后解锁
 Unobtained Foldartals=尚未获得此密文板
 Unowned Operators will automatically switch to Model Operators\nYou can currently borrow the following Support Operators:=未持有干员自动替换为原型干员\n当前可以借用助战干员
-Unsaved changes will be reset=将会重置所有未保存的操作
 Unseal <color\=#0075a9FF>{0}</color> and raise the Operator to Max Potential?\n<color\=#ffb400FF>* Will also consume all possessed {1}</color>=是否启封<color\=#0075a9FF>{0}</color>，将潜能提升至满级？\n<color\=#ffb400FF>*同时也将消耗全部已有的{1}</color>
 Unseal {0} and raise the Operator to Max Potential?\n* Will also consume all possessed {1}=是否启封{0}，将潜能提升至满级？\n*同时也将消耗全部已有的{1}
 Unselectable=不可选择
@@ -2173,7 +2169,6 @@ Zone Locked=区块尚未解锁
 {0} can hold up to {1} slugs. Exceeded ones will not be captured={0}当前可容纳源石虫数量小于等于{1}，超出可容纳数量会导致捕捉失败
 {0} chances daily=每日{0}次机会
 {0} claimed={0}已领取
-{0} Completed={0}已完成
 {0} consumed=已消耗 {0}
 {0} consumed will be restored.=返还本次消耗的{0}
 {0} Contestants={0}位参赛者
@@ -2229,7 +2224,6 @@ Zone Locked=区块尚未解锁
 {0} Needed=需加工{0}
 {0} new collectible(s) unlocked during this exploration=本次探索新解锁{0}个收藏品
 {0} new Foldartal(s) unlocked during this exploration=本次探索新解锁{0}个密文板
-{0} New Stage Unlocked={0}玩法解锁新关卡
 {0} new Tongbao(s) were unlocked on this adventure=本次冒险新解锁{0}枚通宝
 {0} now in {1}!={0}已被放入{1}！
 {0} obtained=获得了关卡解锁道具[{0}]
@@ -2274,7 +2268,6 @@ Zone Locked=区块尚未解锁
 {0} Unlocks after Prestige reaches {1}={0}声望到达{1}解锁
 {0} until next business day=距离下次营业还有{0}
 {0} Upgradeable Constructs={0}设施可升级
-{0} Upgraded={0}章已升级
 {0} upgraded={0}升级已完成
 {0} was not downloaded, and the corresponding segment will be skipped during the story.=未下载{0}资源，剧情将会跳过相应片段
 {0} Week(s)={0}周
@@ -2296,8 +2289,6 @@ Zone Locked=区块尚未解锁
 {0}/{1} {2:D2}:{3:D2}={0}月{1}日{2:D2}:{3:D2}
 {0}<color\=#0098dc>[{1}]</color> unlock mission status updated.={0}<color\=#0098dc>[{1}]</color>解锁任务进度已更新
 {0}<color\=#22BBFF>{1}</color> locked={0}<color\=#22BBFF>{1}</color>未解锁
-{0}<color\=#C8D6F6> New Stage Unlocked</color>={0}<color\=#C8D6F6>玩法解锁新关卡</color>
-{0}<color\=#C8D6F6> Upgraded</color>={0}<color\=#C8D6F6>章已升级</color>
 {0}[{1}] unlock mission status updated.={0}[{1}]解锁任务进度已更新
 {0}Construct Status={0}内设施现状
 {0}d left=剩余{0}日
