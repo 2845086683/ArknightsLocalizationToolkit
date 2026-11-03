@@ -1,0 +1,146 @@
+name: Update wordlibraries
+
+on:
+  schedule:
+    # UTC; Beijing time 02:17, 08:17, 14:17, 20:17.
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      locale:
+        description: Server to update independently
+        type: choice
+        options: [all, en, jp]
+        default: all
+      force:
+        description: Rebuild even if EN/JP/CN data and builder are unchanged
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-wordlibraries.yml'
+      - 'arklocalizer/**'
+      - 'tests/test_auto_update.py'
+
+permissions:
+  contents: read
+
+jobs:
+  update:
+    name: Update ${{ matrix.locale }} wordlibrary
+    if: github.repository == '2845086683/ArknightsLocalizationToolkit' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        locale: ${{ fromJSON(inputs.locale == 'en' && '["en"]' || inputs.locale == 'jp' && '["jp"]' || '["en","jp"]') }}
+    concurrency:
+      group: update-wordlibrary-${{ matrix.locale }}
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    env:
+      PYTHONUNBUFFERED: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      LOCALE: ${{ matrix.locale }}
+    steps:
+      - name: Check out main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          fetch-depth: 1
+          # Optional bypass-authorized account/App token for protected main.
+          token: ${{ secrets.WORDLIBRARY_PUSH_TOKEN || github.token }}
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+
+      - name: Test update safeguards
+        run: python -m unittest discover -s tests -p test_auto_update.py -v
+
+      - name: Check server and CN versions
+        id: upstream
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FORCE: ${{ inputs.force || false }}
+        shell: bash
+        run: |
+          args=()
+          if [[ "$FORCE" == "true" ]]; then args+=(--force); fi
+          python -m arklocalizer.auto_update check --locale "$LOCALE" "${args[@]}"
+
+      - name: Check out pinned game data
+        if: steps.upstream.outputs.changed == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ArknightsAssets/ArknightsGamedata
+          ref: ${{ steps.upstream.outputs.upstream_sha }}
+          path: cache/ArknightsGamedataMulti
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            ${{ matrix.locale }}/i18n
+            ${{ matrix.locale }}/gamedata/excel
+            ${{ matrix.locale }}/gamedata/story
+            cn/i18n
+            cn/gamedata/excel
+            cn/gamedata/story
+
+      - name: Build and validate server wordlibrary
+        id: build
+        if: steps.upstream.outputs.changed == 'true'
+        run: python -m arklocalizer.auto_update build --locale "$LOCALE"
+
+      - name: Commit validated wordlibraries to main
+        if: steps.upstream.outputs.changed == 'true'
+        env:
+          UPSTREAM_SHA: ${{ steps.upstream.outputs.upstream_sha }}
+          SERVER_VERSION: ${{ steps.build.outputs.server_version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          runtime="runtime/${LOCALE}-zh-offline-final"
+          state=".github/wordlibrary-state/${LOCALE}.json"
+          git add -- "$state" "$runtime/ARKLOCALIZER_MANIFEST.json" \
+            "$runtime"/BepInEx/Translation/zh/Text/*.txt
+          if git diff --cached --quiet; then
+            echo 'Rebuild produced no changes.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          base="$(git rev-parse HEAD)"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "chore(wordlibrary): ${LOCALE^^} ${SERVER_VERSION} (${UPSTREAM_SHA:0:12})"
+          # The other server may publish first. Rebase only when this server's
+          # inputs and builder have not changed; never force-push main.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if ! git diff --quiet "$base" origin/main -- \
+              arklocalizer .github/workflows/update-wordlibraries.yml "$runtime" "$state"; then
+              echo 'Builder or this server changed during the build; rerun this workflow.' >&2
+              exit 1
+            fi
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              echo "Published ${LOCALE^^} ${SERVER_VERSION}: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+          done
+          echo '::error::Push failed. If branch protection rejected github-actions[bot], configure WORDLIBRARY_PUSH_TOKEN with contents:write for a bypass-authorized account/App.'
+          exit 1
+
+      - name: Upload build and validation reports
+        if: always() && steps.upstream.outputs.changed == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: wordlibrary-reports-${{ matrix.locale }}-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            work/wordlibrary-update/${{ matrix.locale }}/build-plan.json
+            work/wordlibrary-update/${{ matrix.locale }}/*/pack-report.json
+            work/wordlibrary-update/${{ matrix.locale }}/*/*validation.json
+            work/wordlibrary-update/${{ matrix.locale }}/*/reports/

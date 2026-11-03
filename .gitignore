@@ -10,8 +10,10 @@ __pycache__/
 /outputs/builds/
 /outputs/current-*-runtime.txt
 /work/
-/tests/
+/tests/*
+!/tests/test_auto_update.py
 /runtime/*/
 !/runtime/en-zh-offline-final/
 !/runtime/jp-zh-offline-final/
 /launcher-crash.log
+/docs
