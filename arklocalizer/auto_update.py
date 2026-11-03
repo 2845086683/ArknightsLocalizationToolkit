@@ -21,7 +21,7 @@ from pathlib import Path
 from .libraries import MANIFEST, official_relative, read_manifest, translation_entries
 from .mapping import build_translation_pack
 from .util import read_json, sha256_file, write_json
-from .xunity import validate_translation_pack
+from .xunity import decode_translation_line, validate_translation_pack, write_translation_file
 
 UPSTREAM = "ArknightsAssets/ArknightsGamedata"
 UPSTREAM_REF = "master"
@@ -143,6 +143,33 @@ def validate_counts(current: dict, previous: dict, locale: str) -> None:
                              "refusing automatic publication (maximum drop: 10%)")
 
 
+def retain_runtime_formats(pack: Path, runtime: Path, locale: str) -> int:
+    """Retain validated client-only regex rules missing from public game data.
+
+    New rules win exact-key conflicts and are loaded last (XUnity's regex
+    precedence). Ordinary text remains entirely rebuilt from current data.
+    """
+    name = "15_format_regex.txt"
+
+    def pairs(path: Path) -> list[tuple[str, str]]:
+        result = []
+        for line in path.read_text(encoding="utf-8-sig").splitlines():
+            if not line or line.lstrip().startswith("//"):
+                continue
+            pair = decode_translation_line(line)
+            if pair is None or not pair[0].startswith(('r:"', 'sr:"')) or not pair[1]:
+                raise ValueError(f"Invalid runtime format rule: {path}")
+            result.append(pair)
+        return result
+
+    generated = pairs(pack / TEXT / name)
+    sources = {source for source, _ in generated}
+    retained = [pair for pair in pairs(runtime / "BepInEx" / TEXT / name) if pair[0] not in sources]
+    write_translation_file(pack / TEXT / name, retained + generated,
+                           f"Arknights {locale.upper()} -> zh-CN (formatted runtime text)")
+    return len(retained)
+
+
 def prepare_locale(project: Path, data: Path, work: Path, locale: str) -> tuple[Path, dict]:
     runtime = project / official_relative(locale)
     manifest = read_manifest(runtime)
@@ -157,10 +184,13 @@ def prepare_locale(project: Path, data: Path, work: Path, locale: str) -> tuple[
             raise ValueError(f"Baseline manifest hash mismatch: {path}")
     previous = validate_translation_pack(runtime / "BepInEx")
     write_json(work / locale / "baseline-validation.json", previous)
+    if not previous["ok"]:
+        raise ValueError(f"{locale}: invalid baseline translations")
     # A fresh directory prevents stale outputs from passing validation on retries.
     with tempfile.TemporaryDirectory(prefix=f"{locale}-pack-", dir=work) as temporary:
         pack = Path(temporary)
         report = build_translation_pack(data, pack, locale)
+        report["retained_client_format_rules"] = retain_runtime_formats(pack, runtime, locale)
         validation = validate_translation_pack(pack)
         write_json(work / locale / "pack-validation.json", validation)
         write_json(work / locale / "pack-report.json", report)

@@ -11,6 +11,7 @@
 - EN、JP 使用两个独立任务，分别验证、分别直接推送 `main`，不创建 PR。某服失败不会取消另一服。每次只更新本服 `runtime/{en|jp}-zh-offline-final` 下的四份翻译文本、`ARKLOCALIZER_MANIFEST.json` 和 `.github/wordlibrary-state/{en|jp}.json`。启动器的现有 Git 词库更新功能即可获取结果。
 - 版本使用上游各服 `hot_update_list.json` 的 `versionId`（游戏资源版本，不冒充 PC 客户端安装包版本）。提交标题及运行摘要标明 EN/JP 和资源版本；清单的 `wordlibrary_build` 与状态文件同时记录本服、CN 资源版本、上游提交 SHA 和构建器哈希。
 - 保留运行时插件、字体、配置、`WORDLIBRARY.json` 身份和清单中非翻译文件的元数据。仅使用公开数据，覆盖率受上游同步进度影响，不能代替本地客户端提取。
+- `15_format_regex.txt` 中已验证的客户端格式匹配规则会在公开数据未生成同名规则时保留；新生成的同名规则优先。构建报告的 `retained_client_format_rules` 记录保留数量，普通文本仍从最新数据重建。
 
 ## 启用与手动运行
 

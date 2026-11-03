@@ -148,6 +148,23 @@ class UpdateTests(unittest.TestCase):
         with patch.object(updater, "github_json", side_effect=[{"object": {"sha": "a" * 40}}, tree]):
             self.assertEqual(set(updater.upstream_snapshot("en")["trees"]), {"en", "cn"})
 
+    def test_client_regex_survives_and_new_rule_takes_precedence(self):
+        pack = self.work / "pack"
+        runtime = self.project / updater.official_relative("en")
+        old_only = (r'r:"\Aold (?<p0>.*?)\z"', '"旧${p0}"')
+        old_shared = (r'r:"\Ashared (?<p0>.*?)\z"', '"原${p0}"')
+        new_shared = (old_shared[0], '"新${p0}"')
+        write_translation_file(runtime / "BepInEx" / updater.TEXT / "15_format_regex.txt",
+                               [old_only, old_shared], "old")
+        write_translation_file(pack / updater.TEXT / "15_format_regex.txt", [new_shared], "new")
+        self.assertEqual(updater.retain_runtime_formats(pack, runtime, "en"), 1)
+        validation = validate_translation_pack(pack)
+        self.assertTrue(validation["ok"])
+        self.assertEqual(validation["mappings"], 2)
+        from arklocalizer.xunity import decode_translation_line
+        lines = (pack / updater.TEXT / "15_format_regex.txt").read_text(encoding="utf-8").splitlines()[2:]
+        self.assertEqual([decode_translation_line(line) for line in lines], [old_only, new_shared])
+
     def test_hash_mismatch_aborts(self):
         path = self.project / updater.official_relative("en") / "BepInEx" / updater.TEXT / "10_i18n.txt"
         path.write_text("tampered=value\n", encoding="utf-8")
