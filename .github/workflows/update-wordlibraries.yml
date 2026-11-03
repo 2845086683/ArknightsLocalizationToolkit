@@ -2,8 +2,8 @@ name: Update wordlibraries
 
 on:
   schedule:
-    # UTC; Beijing time 02:17, 08:17, 14:17, 20:17.
-    - cron: '17 */6 * * *'
+    # UTC; daily at 00:00 Beijing time (UTC+8).
+    - cron: '0 16 * * *'
   workflow_dispatch:
     inputs:
       locale:
