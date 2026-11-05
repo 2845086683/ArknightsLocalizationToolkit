@@ -277,8 +277,8 @@
     },
     {
       "path": "BepInEx/Translation/zh/Text/20_tables.txt",
-      "bytes": 27224366,
-      "sha256": "586ac3034139c9514fa2f9b638e4a05cb05f0f8436588735b0e3176092b9546e"
+      "bytes": 27226158,
+      "sha256": "68c6bad83ea153e9455777e898d8c8e6487c9eccd8b1bd4ae0711fa40b5fb3ee"
     },
     {
       "path": "BepInEx/Translation/zh/Text/30_story.txt",
@@ -1239,11 +1239,11 @@
   "wordlibrary_build": {
     "source_locale": "en",
     "resource_versions": {
-      "en": "26-10-26-10-03-17_824ce7",
+      "en": "26-11-02-05-12-02_1cd3b6",
       "cn": "26-10-29-15-36-11-33649006"
     },
     "upstream_repository": "ArknightsAssets/ArknightsGamedata",
-    "upstream_commit": "56d5d60d924119ba2a682457577934cc1e71b99a",
+    "upstream_commit": "721ddaf0f1635f60a914a0f0e15db5f92b37a4fe",
     "builder_sha256": "477e81b8e8a1a2ef6ea7cc2f586b7eb798b7ec1de53a55e320b75041ec8cf24a"
   }
 }

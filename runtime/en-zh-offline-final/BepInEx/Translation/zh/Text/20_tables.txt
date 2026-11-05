@@ -6059,6 +6059,8 @@
 <color name\=#ffffff>Bloodline of Combat Collection/Blade-cleaved Tides. Thorns bares his blade, and Iberia's fleet sets sail after a century of silence. A golden secret has emerged in lawless lands, and seas of sand and salt can no longer conceal its radiance.</color>=<color name\=#ffffff>斗争血脉系列/锋潮。棘刺亮出剑锋，沉寂近百年的伊比利亚舰队再度起航。黄金璀璨的秘密显于律外之地，无垠沙海与汪洋再难掩盖夺目辉光。</color>
 <color name\=#ffffff>Bloodline of Combat Collection/Born as One. An engraving leaves a shadow, like two sides of a coin, or the cycle of day and night. When both are aware of their dual nature, Laurentina possesses a soul most complete, like unto the twin moons.=<color name\=#ffffff>斗争血脉系列/生而为一。雕刻留下阴影，正如硬币正反，日夜双分。当彼此都意识到自我的两面性时，劳伦缇娜便拥有双月般最完整的灵魂。
 <color name\=#ffffff>Bloodline of Combat Collection/Born as One. An engraving leaves a shadow, like two sides of a coin, or the cycle of day and night. When both are aware of their dual nature, Laurentina possesses a soul most complete, like unto the twin moons.</color>=<color name\=#ffffff>斗争血脉系列/生而为一。雕刻留下阴影，正如硬币正反，日夜双分。当彼此都意识到自我的两面性时，劳伦缇娜便拥有双月般最完整的灵魂。</color>
+<color name\=#ffffff>Bloodline of Combat Collection/Caelum Aeternum. Dangers and hardships are never confined to a single fleeting moment. A true guardian keeps watch over the eternal cycle of day and night, never resting. Sankta Miksaparato was born for this.=<color name\=#ffffff>斗争血脉系列/天穹肇始。危难与困境从来都不会只停留在某个瞬间，真正的卫士守护着永恒交替的昼夜，一刻不休。信仰搅拌机，正为此而生。
+<color name\=#ffffff>Bloodline of Combat Collection/Caelum Aeternum. Dangers and hardships are never confined to a single fleeting moment. A true guardian keeps watch over the eternal cycle of day and night, never resting. Sankta Miksaparato was born for this.</color>=<color name\=#ffffff>斗争血脉系列/天穹肇始。危难与困境从来都不会只停留在某个瞬间，真正的卫士守护着永恒交替的昼夜，一刻不休。信仰搅拌机，正为此而生。</color>
 <color name\=#ffffff>Bloodline of Combat Collection/Dark Cloud. Mountain's attire at his parents' funeral. Though he personally slew his own enemy, there is no hint of joy in his heart. There are still things he needs to do.=<color name\=#ffffff>斗争血脉系列/乌云。山在父母葬礼上的装束。即使手刃仇敌，他的心中也没有丝毫喜悦，他还有要做的事。
 <color name\=#ffffff>Bloodline of Combat Collection/Dark Cloud. Mountain's attire at his parents' funeral. Though he personally slew his own enemy, there is no hint of joy in his heart. There are still things he needs to do.</color>=<color name\=#ffffff>斗争血脉系列/乌云。山在父母葬礼上的装束。即使手刃仇敌，他的心中也没有丝毫喜悦，他还有要做的事。</color>
 <color name\=#ffffff>Bloodline of Combat Collection/Distinguished Visitor. The outfit worn by Angelina while she was stationed at the 2nd Final Defense Front. The substance of reality slowly flows between her fingers and her tools.=<color name\=#ffffff>斗争血脉系列/质素访客。干员安洁莉娜驻扎在第二最终防卫阵线时穿着的装束。实相物质在她的施术单元与手指间缓慢流淌。
@@ -29573,6 +29575,7 @@ Bloodline of Combat Collection/300 Metres Underground. Savage raises her lantern
 Bloodline of Combat Collection/Blade-cleaved Tides. Thorns bares his blade, and Iberia's fleet sets sail after a century of silence. A golden secret has emerged in lawless lands, and seas of sand and salt can no longer conceal its radiance.=斗争血脉系列/锋潮。棘刺亮出剑锋，沉寂近百年的伊比利亚舰队再度起航。黄金璀璨的秘密显于律外之地，无垠沙海与汪洋再难掩盖夺目辉光。
 Bloodline of Combat Collection/Born as One. An engraving leaves a shadow, like two sides of a coin, or the cycle of day and night. When both are aware of their dual nature, Laurentina possesses a soul most complete, like unto the twin moons.=斗争血脉系列/生而为一。雕刻留下阴影，正如硬币正反，日夜双分。当彼此都意识到自我的两面性时，劳伦缇娜便拥有双月般最完整的灵魂。
 Bloodline of Combat Collection/Breaking the Ice. Operator Frostleaf's attire during her special appointment by the Rhodes Island Columbia branch to conduct a search and rescue in the nation's north. Life has bestowed her the resolve to return to the battlefield.=斗争血脉系列/破冰。罗德岛哥伦比亚分部特派干员霜叶在哥伦比亚北部执行搜救任务时的装束。生活赋予了她重返战场的决心。
+Bloodline of Combat Collection/Caelum Aeternum. Dangers and hardships are never confined to a single fleeting moment. A true guardian keeps watch over the eternal cycle of day and night, never resting. Sankta Miksaparato was born for this.=斗争血脉系列/天穹肇始。危难与困境从来都不会只停留在某个瞬间，真正的卫士守护着永恒交替的昼夜，一刻不休。信仰搅拌机，正为此而生。
 Bloodline of Combat Collection/Dark Cloud. Mountain's attire at his parents' funeral. Though he personally slew his own enemy, there is no hint of joy in his heart. There are still things he needs to do.=斗争血脉系列/乌云。山在父母葬礼上的装束。即使手刃仇敌，他的心中也没有丝毫喜悦，他还有要做的事。
 Bloodline of Combat Collection/Distinguished Visitor. The outfit worn by Angelina while she was stationed at the 2nd Final Defense Front. The substance of reality slowly flows between her fingers and her tools.=斗争血脉系列/质素访客。干员安洁莉娜驻扎在第二最终防卫阵线时穿着的装束。实相物质在她的施术单元与手指间缓慢流淌。
 Bloodline of Combat Collection/Dreadnaught. The attire worn by the elite operator, Beagle, when serving as rearguard during the Great March of Bolívar. This is her final test.=斗争血脉系列/无畏。精英干员米格鲁在玻利瓦尔大行军负责殿后时穿着的装束。这是她最后的考验。
@@ -29615,6 +29618,7 @@ Bloodline of Combat/VII=斗争血脉/VII
 Bloodline of Combat/VIII=斗争血脉/VIII
 Bloodline of Combat/X=斗争血脉/X
 Bloodline of Combat/XI=斗争血脉/XI
+Bloodline of Combat/XII=斗争血脉/XII
 Bloodline of Desecrated Earth=秽壤的血脉
 Bloodlines of antiquity burst forth, with voices resounding through the battlefield, lingering and clinging on and on.\n<@lv.fs>Abilities of Duq'arael, 'Regent's Crimson':</>Recovers faster after being attacked by <Anti-Witchcraft Repositionable Bomb>; 1st form [Moon-Devouring Bloodmist] selects one additional target; 2nd form [Crimson Edict] spawns Blood Ambers more quickly and Blood Mist duration is extended.=远古血脉迸发的声音在战场上回荡，久久不愿散去。\n<@lv.fs>杜卡雷，“君主之红”附加能力：</>受到<反巫术变位炸弹>攻击后更快恢复；第一形态下【血霭遮月】额外选择一个目标；第二形态下【殷红敕令】生成血珀速度加快，血雾持续时间延长
 Bloodlines of antiquity burst forth, with voices resounding through the battlefield, lingering and clinging on and on.\nAbilities of Duq'arael, 'Regent's Crimson':Recovers faster after being attacked by <Anti-Witchcraft Repositionable Bomb>; 1st form [Moon-Devouring Bloodmist] selects one additional target; 2nd form [Crimson Edict] spawns Blood Ambers more quickly and Blood Mist duration is extended.=远古血脉迸发的声音在战场上回荡，久久不愿散去。\n杜卡雷，“君主之红”附加能力：受到<反巫术变位炸弹>攻击后更快恢复；第一形态下【血霭遮月】额外选择一个目标；第二形态下【殷红敕令】生成血珀速度加快，血雾持续时间延长
@@ -30694,6 +30698,7 @@ Cacophonous Rattlefin=狂噪鳞
 Cacophonous Sky=嘈杂的天空
 Cactus Dunes=仙人掌沙丘
 Cactus Fluorescent Light=仙人掌灯管
+Caelum Aeternum=天穹肇始
 Caerula Animus=深蓝之心
 Caerula Arbor=深蓝之树
 Caerula Laboratory=深蓝实验室
@@ -78958,6 +78963,7 @@ One of Saileach's casual outfits.=琴柳的私服之一。
 One of Saileach's summer outfits.=琴柳的夏日装扮之一。
 One of Sakiko Togawa's Terran stage costumes.=丰川祥子的泰拉演出服之一。
 One of Sand Reckoner's casual outfits.=衡沙的私服之一。
+One of Sankta Miksaparato's outfits for crucial moments.=信仰搅拌机在重要时刻的装扮之一。
 One of Santalla's summer outfits.=寒檀的夏日装扮之一。
 One of Sargon's most drought-resistant plants, able to stand tall in the sea of sand. A favorite gift of locals, representing health, tranquility, and peace. 'May you be as eternal as this great land.'=萨尔贡最耐旱的绿色植物，可以在沙海中久立不倒。在当地常被人们当作礼物赠送，寓意是身体健康，宁静和平。\n“祝您与这片大地一样恒久。”
 One of Sargonian Lords Ameer's subordinate. Sand pervades sky, dust obstructs sun. Life collapses, evil flourishes.=萨尔贡王酋下属之一。沙砾弥天，尘影蔽日，生灵崩解，邪念尤盛。
@@ -117864,6 +117870,7 @@ You are standing in a cliffside cemetery, where a farewell ceremony is being hel
 You are startled awake one night by a flock of fowlbeasts crying out. You look out your tent to find nothing amiss, other than one of the twin moons quietly hiding behind a mountain and turning your surroundings dimmer. You calm down and fall back asleep.\nBut when you wake up, you suddenly recall there are only low hills in that direction, with no mountains at all.=一天晚上，你被一阵羽兽叫声惊醒，看向帐篷外，发现并无异样，只是双月中的一个悄悄藏至峭壁之后，四周变得越发昏暗。于是你安定心神，倒头重新睡去。\n但第二天睡醒后，你猛然回忆起，那个方位没有高山，只有低矮的丘陵。
 You are sure that this place has been influenced by the Collapsals. But the question is, how do you deal with invisible and intangible enemies hiding within the hearts of others?=你确信这里已经受到了坍缩体的影响。可问题是，你怎么面对那些躲在他人心灵中，看不见摸不着的敌人呢？
 You are the Doctor? Hi… No, I mean it is an honor to be in your presence. My name is Saga, a wandering monk from Higashi. Should there be any place thou mayst need me, refrain not in sending me!=你就是博士？你好……啊，这种时候应该严肃一些对吧？咳咳，小僧名唤嵯峨，是一名云游僧，如果有用得到小僧的地方，任凭差遣！
+You are the light of the innocent, the night of the guilty. Though you walk upon the earth, you are the might of the heavens.=你即是无辜者的光，你即是有罪者的夜，你虽行于大地，却是天穹之威。
 You are the one who woke me.=是您唤醒了我。
 You are the source of suffering=你是苦难的根源
 You are the true hunter.=您才是真正的猎手。

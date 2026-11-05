@@ -4,15 +4,15 @@
   "upstream": {
     "repository": "ArknightsAssets/ArknightsGamedata",
     "ref": "master",
-    "commit": "56d5d60d924119ba2a682457577934cc1e71b99a",
+    "commit": "721ddaf0f1635f60a914a0f0e15db5f92b37a4fe",
     "trees": {
-      "en": "ac68d86fd2a7b0f613be6339126a46d73fba8f7c",
+      "en": "dc5ccea5a007eb36c1bbc51db78856996e856712",
       "cn": "caa1f04b6bfc53d7e696111a4e247ab7d74373fd"
     }
   },
   "builder_sha256": "477e81b8e8a1a2ef6ea7cc2f586b7eb798b7ec1de53a55e320b75041ec8cf24a",
   "resource_versions": {
-    "en": "26-10-26-10-03-17_824ce7",
+    "en": "26-11-02-05-12-02_1cd3b6",
     "cn": "26-10-29-15-36-11-33649006"
   }
 }
